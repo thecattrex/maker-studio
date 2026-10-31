@@ -24,6 +24,7 @@ bin/
 
 # Rendered deliverables & temporary scratch media
 studio/samples/*.mp4
+studio/samples/*.png
 studio/_scratch/
 studio/cloud_out/
 *.tmp.mp4

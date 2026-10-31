@@ -33,6 +33,7 @@ from .motion_director import (
     add_kinetic_motion_hud,
     composite_motion_overlay,
 )
+from .ironman_edit import render_ironman_style_edit
 
 __all__ = [
     "score_slideshow_risk",
@@ -62,4 +63,5 @@ __all__ = [
     "choreograph_shots_table",
     "add_kinetic_motion_hud",
     "composite_motion_overlay",
+    "render_ironman_style_edit",
 ]

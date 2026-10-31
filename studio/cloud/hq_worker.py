@@ -36,6 +36,7 @@ from om_hybrid import (  # noqa: E402
     lut3d_filter_str,
     master_polish_video,
     plan_smart_camera,
+    render_ironman_style_edit,
     render_subpixel_segments,
     run_full_qa,
     score_hook_candidates,
@@ -634,9 +635,64 @@ def run_master(job: dict, out_dir: Path) -> dict:
     return report
 
 
+def run_ironman_edit(job: dict, out_dir: Path) -> dict:
+    """Render a 2-act `@technocraftss` Iron Man-style Difference-Typography + Optical-Flow Velocity Edit."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    work = Path("/tmp/maker_ironman_work")
+    work.mkdir(parents=True, exist_ok=True)
+
+    # Download named source URLs (`job["sources"] = {"d23": "https://...", ...}`)
+    local_sources: dict[str, str] = {}
+    for alias, url in (job.get("sources") or {}).items():
+        dst_s = work / f"src_{alias}.mp4"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=180) as r, open(dst_s, "wb") as f:
+            f.write(r.read())
+        local_sources[alias] = str(dst_s)
+
+    spec = json.loads(json.dumps(job["spec"]))
+    for s in spec.get("act1_segments", []):
+        if s.get("src") in local_sources:
+            s["src"] = local_sources[s["src"]]
+    for c in spec.get("act2_velocity_cuts", []):
+        if c.get("src") in local_sources:
+            c["src"] = local_sources[c["src"]]
+    for v in spec.get("vocal_clips", []):
+        if v.get("src") in local_sources:
+            v["src"] = local_sources[v["src"]]
+    if spec.get("act2_bed") and spec["act2_bed"].get("src") in local_sources:
+        spec["act2_bed"]["src"] = local_sources[spec["act2_bed"]["src"]]
+
+    out_name = job.get("out_name", "ironman_style_edit.mp4")
+    out_mp4 = out_dir / out_name
+    res = render_ironman_style_edit(spec, str(out_mp4))
+    w = int(spec.get("width", 1920))
+    h = int(spec.get("height", 1080))
+    qa = run_full_qa(
+        str(out_mp4),
+        expected_size=(w, h),
+        min_dur=10.0,
+        max_dur=65.0,
+        sheet_out=str(out_dir / "qa_sheet.jpg"),
+    )
+    report = {
+        "mode": "ironman_edit",
+        "runner_ram_gb": _ram_gb(),
+        "runner_cpus": multiprocessing.cpu_count(),
+        **res,
+        "qa": qa,
+    }
+    (out_dir / "cloud_report.json").write_text(json.dumps(report, indent=2))
+    return report
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master"], required=True)
+    ap.add_argument(
+        "--mode",
+        choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit"],
+        required=True,
+    )
     ap.add_argument("--job-b64", default="")
     ap.add_argument("--out-dir", default=str(ROOT / "studio" / "cloud_out"))
     args = ap.parse_args()
@@ -656,11 +712,13 @@ def main() -> None:
         res = run_real_sfx(job, out_dir)
     elif args.mode == "master":
         res = run_master(job, out_dir)
+    elif args.mode == "ironman_edit":
+        res = run_ironman_edit(job, out_dir)
     else:
         res = run_remotion(job, out_dir)
 
     print(json.dumps(res, indent=2))
-    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot", "real_sfx", "master") and not res.get("qa", {}).get("passed", False):
+    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit") and not res.get("qa", {}).get("passed", False):
         sys.exit(1)
 
 

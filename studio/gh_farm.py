@@ -187,7 +187,7 @@ def main() -> None:
 
     p_run = sub.add_parser("run")
     p_run.add_argument("--repo", default=DEFAULT_REPO)
-    p_run.add_argument("--mode", choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master"], default="smoke")
+    p_run.add_argument("--mode", choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit"], default="smoke")
     p_run.add_argument("--job-file", "--job", dest="job_file", default=None)
     p_run.add_argument("--out-dir", default=None)
 

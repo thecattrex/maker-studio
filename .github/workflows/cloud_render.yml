@@ -45,6 +45,9 @@ jobs:
             pip install --quiet soxr librosa pyloudnorm scikit-learn matplotlib transformers
             pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu
           fi
+          if [ "$RENDER_MODE" = "ironman_edit" ]; then
+            pip install --quiet torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          fi
 
       - name: Set up Node.js + Remotion Dependencies (only when mode == remotion)
         if: ${{ inputs.mode == 'remotion' }}

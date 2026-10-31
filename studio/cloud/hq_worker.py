@@ -666,8 +666,8 @@ def run_ironman_edit(job: dict, out_dir: Path) -> dict:
     out_name = job.get("out_name", "ironman_style_edit.mp4")
     out_mp4 = out_dir / out_name
     res = render_ironman_style_edit(spec, str(out_mp4))
-    w = int(spec.get("width", 1920))
-    h = int(spec.get("height", 1080))
+    w = int(res.get("width", spec.get("width", 1080)))
+    h = int(res.get("height", spec.get("height", 1920)))
     qa = run_full_qa(
         str(out_mp4),
         expected_size=(w, h),

@@ -24,8 +24,10 @@ from om_hybrid import (  # noqa: E402
     detect_silences,
     extract_ign_1080p_mp4,
     list_cinema_looks,
+    list_sfx_bank,
     list_sources,
     plan_smart_camera,
+    render_synced_sfx,
     run_full_qa,
     search_stock_clips,
 )
@@ -63,6 +65,17 @@ def main() -> None:
     p_g.add_argument("--intensity", type=float, default=None)
     p_g.add_argument("--out", required=True)
 
+    p_sl = sub.add_parser("sfx-list", help="List shipped Earshot procedural studio SFX (252 sounds)")
+    p_sl.add_argument("--kind", default=None)
+    p_sl.add_argument("--category", default=None)
+
+    p_sr = sub.add_parser("sfx-render", help="Render a procedural SFX synced to cut_time_s")
+    p_sr.add_argument("sfx_id")
+    p_sr.add_argument("--out", required=True)
+    p_sr.add_argument("--cut-time", type=float, default=0.0)
+    p_sr.add_argument("--dur", type=float, default=None)
+    p_sr.add_argument("--apex", type=float, default=None)
+
     args = ap.parse_args()
 
     if args.cmd == "sources":
@@ -96,6 +109,11 @@ def main() -> None:
         print(json.dumps(list_cinema_looks(), indent=2))
     elif args.cmd == "grade":
         print(json.dumps(apply_cinema_look(args.video, args.out, look_id=args.look, intensity=args.intensity), indent=2))
+    elif args.cmd == "sfx-list":
+        items = list_sfx_bank(kind=args.kind, category=args.category)
+        print(json.dumps({"count": len(items), "items": items}, indent=2))
+    elif args.cmd == "sfx-render":
+        print(json.dumps(render_synced_sfx(args.sfx_id, args.out, cut_time_s=args.cut_time, dur=args.dur, apex=args.apex), indent=2))
 
 
 if __name__ == "__main__":

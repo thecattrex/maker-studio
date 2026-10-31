@@ -20,6 +20,7 @@ from .pacing_audio import detect_silences, analyze_energy, score_hook_candidates
 from .clip_scout import list_sources, search_stock_clips, extract_ign_1080p_mp4
 from .visual_qa import run_full_qa
 from .cinema_looks import list_cinema_looks, generate_cube_lut, lut3d_filter_str, apply_cinema_look
+from .sfx_sync import list_sfx_bank, render_synced_sfx, mix_sfx_cues
 
 __all__ = [
     "score_slideshow_risk",
@@ -37,4 +38,7 @@ __all__ = [
     "generate_cube_lut",
     "lut3d_filter_str",
     "apply_cinema_look",
+    "list_sfx_bank",
+    "render_synced_sfx",
+    "mix_sfx_cues",
 ]

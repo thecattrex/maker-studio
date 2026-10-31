@@ -434,9 +434,81 @@ def run_hyperframes(job: dict, out_dir: Path) -> dict:
     return report
 
 
+def run_earshot(job: dict, out_dir: Path) -> dict:
+    """Run full Neural Earshot ('AI Ears': CLAP + AST critique, timeline, sheet PNG, or forge) on 16GB runner."""
+    from om_hybrid import mix_sfx_cues
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    env = os.environ.copy()
+    env["PYTHONPATH"] = f"{STUDIO}:{env.get('PYTHONPATH', '')}"
+    env["EARSHOT_THREADS"] = "4"
+
+    # Resolve target media: download URL, repo file, or generate a 4s synced-SFX demo clip
+    target = Path("/tmp/earshot_target.mp4")
+    if job.get("media_url"):
+        urllib.request.urlretrieve(job["media_url"], str(target))
+    elif job.get("media_path"):
+        target = ROOT / job["media_path"]
+    else:
+        raw = Path("/tmp/earshot_base.mp4")
+        subprocess.run(
+            [
+                "ffmpeg", "-y", "-v", "warning",
+                "-f", "lavfi", "-i", "testsrc2=size=1080x1920:rate=24:duration=4",
+                "-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo:d=4",
+                "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac", "-shortest",
+                str(raw),
+            ],
+            check=True,
+        )
+        mix_sfx_cues(
+            str(raw),
+            [
+                {"sfx_id": "click/thock", "at_s": 0.40, "gain_db": -3.0},
+                {"sfx_id": "pro_whoosh_big/swell", "at_s": 1.60, "gain_db": -2.0},
+                {"sfx_id": "cut_hit/punch", "at_s": 1.60, "gain_db": -2.0},
+                {"sfx_id": "logo_sting/whoosh_glass", "at_s": 3.00, "gain_db": -2.0},
+            ],
+            str(target),
+        )
+
+    action = job.get("action", "sheet_and_critique")
+    sheet_png = out_dir / "earshot_sheet.png"
+    critique_json = out_dir / "earshot_critique.json"
+
+    if action == "describe":
+        p = subprocess.run(
+            [sys.executable, "-m", "earshot", "describe", str(target), "--json"],
+            env=env, capture_output=True, text=True, check=True,
+        )
+        critique_json.write_text(p.stdout)
+    else:
+        subprocess.run(
+            [sys.executable, "-m", "earshot", "sheet", str(target), "-o", str(sheet_png), "--detail", "low"],
+            env=env, check=True,
+        )
+        p = subprocess.run(
+            [sys.executable, "-m", "earshot", "critique", str(target), "--fast", "--json"],
+            env=env, capture_output=True, text=True, check=True,
+        )
+        critique_json.write_text(p.stdout)
+
+    report = {
+        "mode": "earshot",
+        "action": action,
+        "runner_ram_gb": _ram_gb(),
+        "runner_cpus": multiprocessing.cpu_count(),
+        "sheet_generated": sheet_png.exists(),
+        "critique_generated": critique_json.exists(),
+        "qa": {"passed": critique_json.exists()},
+    }
+    (out_dir / "cloud_report.json").write_text(json.dumps(report, indent=2))
+    return report
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["smoke", "t1_hq", "remotion", "hyperframes"], required=True)
+    ap.add_argument("--mode", choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot"], required=True)
     ap.add_argument("--job-b64", default="")
     ap.add_argument("--out-dir", default=str(ROOT / "studio" / "cloud_out"))
     args = ap.parse_args()
@@ -450,11 +522,13 @@ def main() -> None:
         res = run_t1_hq(job, out_dir)
     elif args.mode == "hyperframes":
         res = run_hyperframes(job, out_dir)
+    elif args.mode == "earshot":
+        res = run_earshot(job, out_dir)
     else:
         res = run_remotion(job, out_dir)
 
     print(json.dumps(res, indent=2))
-    if args.mode in ("smoke", "t1_hq", "hyperframes") and not res.get("qa", {}).get("passed", False):
+    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot") and not res.get("qa", {}).get("passed", False):
         sys.exit(1)
 
 

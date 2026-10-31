@@ -73,4 +73,17 @@ Inspected `https://github.com/heygen-com/hyperframes` (`Apache-2.0`, `v0.8.224+`
 - Unlocks **unlimited free GitHub Actions minutes** AND upgrades standard `ubuntu-latest` cloud runners from `7.75 GB / 2 vCPU` to the full **`16 GB RAM / 4 vCPU`** tier (`workflow_dispatch` remains restricted exclusively to repository writers).
 
 ---
-*(Subsequent changes in Phase 5+ will be appended directly below.)*
+### Phase 5 — `Leonxlnx/earshot` Integration ("AI Ears" + 252 Procedural Studio SFX — `2026-11-01`)
+Inspected `https://github.com/Leonxlnx/earshot` (`MIT` license, `v0.4.0`, procedural physical-synthesis SFX bank + CLAP/AST neural audio perception & audio-video sync critique) and integrated a **Local + 16 GB Cloud** pipeline:
+
+1. **Runs 100% Locally in Arena (`<0.4s`, Zero Model Overhead) & on Cloud:**
+   - `/home/user/studio/earshot/` (`3.6 MB`, `MIT` license; see `studio/earshot/LICENSE_EARSHOT_MIT.txt`) — Vendored core package containing **252 procedural studio sound effects** across 34+ motion-design categories (`cut_hit`, `pro_whoosh_big`, `whoosh`, `swish`, `swipe`, `pro_riser`, `riser`, `downlifter`, `pro_sub_drop`, `click`, `pop`, `drip`, `glitch`, `logo_sting`, `pluck`, `fit/*`).
+   - `/home/user/studio/om_hybrid/sfx_sync.py` — Frame-exact SFX wrapper (`list_sfx_bank`, `render_synced_sfx`, `mix_sfx_cues`): renders 48 kHz WAVs via NumPy/SciPy and aligns each sound's measured acoustic peak (`meta["peak_s"]`) to the exact video cut timestamp (`insert_at_s = cut_time_s - peak_s`, `0 ms` lag) using FFmpeg `adelay` + unity `amix`.
+   - `/home/user/studio/om_hybrid/__init__.py` & `/home/user/studio/om_hybrid/cli.py` — Added `sfx-list` and `sfx-render` CLI subcommands.
+
+2. **Runs on Unlimited 16 GB / 4 vCPU GitHub Cloud Farm (`--mode earshot`):**
+   - Installs CPU PyTorch + HuggingFace `transformers` (`CLAP` + `AST` audio models) + `librosa`/`pyloudnorm`/`matplotlib` when `mode == 'earshot'`.
+   - Generates `earshot_sheet.png` (annotated video frames + spectrogram + loudness + beat/cut sync markers) and `earshot_critique.json` (`earshot critique --fast --json` or `earshot describe --json`) so the agent can visually and quantitatively "hear" any rendered video's mix & cut timing.
+
+---
+*(Subsequent changes in Phase 6+ will be appended directly below.)*

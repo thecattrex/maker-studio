@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "Render mode: smoke | t1_hq | remotion | hyperframes"
+        description: "Render mode: smoke | t1_hq | remotion | hyperframes | earshot"
         required: true
         default: "smoke"
       job_b64:
@@ -37,9 +37,13 @@ jobs:
           RENDER_MODE: ${{ inputs.mode }}
         run: |
           pip install --quiet --upgrade pip
-          pip install --quiet numpy opencv-python-headless Pillow requests pyyaml mediapipe
+          pip install --quiet numpy scipy soundfile opencv-python-headless Pillow requests pyyaml mediapipe
           if [ "$RENDER_MODE" = "t1_hq" ]; then
             pip install --quiet faster-whisper
+          fi
+          if [ "$RENDER_MODE" = "earshot" ]; then
+            pip install --quiet soxr librosa pyloudnorm scikit-learn matplotlib transformers
+            pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu
           fi
 
       - name: Set up Node.js + Remotion Dependencies (only when mode == remotion)

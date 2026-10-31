@@ -124,4 +124,14 @@ Added automatic motion choreography, vector kinetic HUDs, live-action motion-gra
 - Added `/home/user/studio/MOTION_AND_TOOL_ROUTING.md` and linked it in `/home/user/START_HERE.md` so any future session automatically applies the full motion + LUT + SFX stack per video type.
 
 ---
-*(Subsequent changes in Phase 9+ will be appended directly below.)*
+### Phase 9 — `@technocraftss` Iron Man-Style Difference-Typography + Optical-Flow Velocity Engine (`2026-11-01`)
+Reverse-engineered the exact After Effects / Alight Motion mechanics behind the viral `@technocraftss` Iron Man edit format (`33 ms` frame-by-frame RGB math + optical-flow inspection) and built a reusable production engine locally & on the 16 GB Cloud Farm:
+- `/home/user/studio/om_hybrid/ironman_edit.py` (`render_ironman_style_edit`):
+  - **Act 1 (`0..drop_s`):** 2x supersampled `ArchivoBlack` `#FFFFFF` typography with `1.13 -> 1.00` ease-out scale slam composited via true **`Blending Mode = Difference` (`|255 - BaseRGB|`)** (warm flames/flares auto-invert to cobalt/cyan, cyan/blue lightning auto-inverts to copper/orange, dark armor/silhouettes auto-turn `#FFFFFF`), `5–8f` `#000000` hard strobe cuts, left-aligned 2-line pre-drop stacked slam, and pre-drop blackout tension gap.
+  - **Act 2 (`drop_s..end`):** Half-beat (`0.48s` / `125 BPM`) cubic-bezier velocity speed-ramp (`2.8x` entry snap -> `0.38x` silky slow-mo settle) with dense **Farneback optical-flow frame interpolation (`flow_blend`)**, `wiggle` impact camera shake, dark moody cinema color grade, and `3f` cut-flash decay.
+  - **Soundtrack Synthesizer (`synthesize_phonk_edit_audio`):** Procedural `125 BPM` dark cinema-phonk `55 Hz` distorted 808 kicks, sawtooth Reese sub-bass, pre-drop riser, word-synced dialogue mastering, and frame-locked `earshot` 252 hits/swishes (`loudnorm` to `-14.6 LUFS`, `-1.2 dBTP`).
+- Wired **`--mode ironman_edit`** across `.github/workflows/cloud_render.yml`, `studio/cloud/hq_worker.py`, `studio/gh_farm.py`, `studio/om_hybrid/__init__.py`, and `studio/MOTION_AND_TOOL_ROUTING.md`.
+- **Live Production Verification:** Rendered ***Avengers: Doomsday* (2026) — Robert Downey Jr. (Doctor Doom) Edit** (`avengers_doomsday_ironman_edit.mp4`, `1920x1080 @ 30fps`, `20.64s`, `17.06 MB`) on GitHub Actions Run `#41249662111` (`15.61 GB RAM / 4 vCPU`, `-14.6 LUFS`, `-1.2 dBTP`, `qa.passed: true`, `0` errors/warnings).
+
+---
+*(Subsequent changes in Phase 10+ will be appended directly below.)*

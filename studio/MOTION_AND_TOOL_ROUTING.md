@@ -34,6 +34,9 @@ This playbook defines **how the agent must actively combine every integrated rep
    - **Standalone Motion Scenes / Explainers / Intro Cards:** Render via Cloud `--mode hyperframes` (Node 22 HTML+CSS+GSAP, `448` installable blocks via `hyperframes add <block>`) or `--mode remotion` (`CinematicRenderer`, `Explainer`, `TitledVideo`, `CollageBurst`, `LyricOverlay`).
    - **Overlaying Motion Graphics ON TOP OF Live Video (`om_hybrid.motion_director.composite_motion_overlay`):**
      Render the HyperFrames/Remotion badge, kinetic lower-third, stat counter, or title burst on pure `#000000` black and composite onto the live-action video with `cli.py overlay base.mp4 overlay.mp4 --out final.mp4 --mode screen` (zero alpha-fringe halo).
+4. **Viral AE/Alight-Motion Signature Edits (`om_hybrid.ironman_edit.render_ironman_style_edit` / Cloud `--mode ironman_edit`):**
+   - **Act 1 (`0..drop_s`):** Supersampled `ArchivoBlack` `#FFFFFF` typography composited via true **`Blending Mode: DIFFERENCE` (`|255 - BaseRGB|`)** so warm glows auto-invert to cobalt/cyan, cyan/blue lightning auto-inverts to copper/amber, and dark armor/silhouettes auto-turn pure `#FFFFFF` — punctuated by `5–8f` `#000000` strobe cuts, 2-line left-aligned pre-drop slam, and pre-drop blackout tension gap.
+   - **Act 2 (`drop_s..end`):** Half-beat (`0.48s` @ `125 BPM`) Farneback optical-flow velocity speed-ramp montage (`2.8x` fast entry -> `0.38x` motion-interpolated slow-mo settle + subtle camera shake + radial edge vignette + cut-flash pops) paired with dark cinema-phonk 808 Reese bass & `earshot` 252 metallic hits (`-14.6 LUFS`).
 
 ---
 

@@ -1,0 +1,119 @@
+{
+  "title": [
+    [
+      [
+        "Ranking Best",
+        "&H00FFFFFF&"
+      ],
+      [
+        "Fail",
+        "&H002828F0&"
+      ]
+    ],
+    [
+      [
+        "Moments",
+        "&H0000D7FF&"
+      ]
+    ]
+  ],
+  "band": 360,
+  "bottom": 132,
+  "gap": 0.16,
+  "items": [
+    {
+      "n": 1,
+      "ss": 0.0,
+      "dur": 5.3,
+      "label": "UNICORN FLOAT FAIL",
+      "color": "&H000000FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 5.0,
+          "key": "record_scratch"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "ss": 5.3,
+      "dur": 5.0,
+      "label": "PULL-UP BAR OOPS",
+      "color": "&H000011FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 4.75,
+          "key": "yeet"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ss": 10.3,
+      "dur": 4.3,
+      "label": "LAWN CHAIR FAIL",
+      "color": "&H0000A5FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 3.95,
+          "key": "bruh"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "ss": 14.6,
+      "dur": 4.7,
+      "label": "SHORELINE SLIP",
+      "color": "&H00FFFFFF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 4.55,
+          "key": "quack"
+        }
+      ]
+    }
+  ],
+  "music": "/home/user/studio/type2/assets/c2_48.wav",
+  "music_ss": 0.0,
+  "music_vol": 0.17,
+  "clip_vol": 0.68,
+  "sfx_dir": "/home/user/studio/trial/sfx",
+  "sfx_peak_db": -10.0,
+  "ladder": "asc",
+  "order": [
+    3,
+    2,
+    1,
+    0
+  ],
+  "title_size": 116
+}

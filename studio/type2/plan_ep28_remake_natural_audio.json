@@ -1,0 +1,119 @@
+{
+  "title": [
+    [
+      [
+        "Ranking ",
+        "&H00FFFFFF&"
+      ],
+      [
+        "Funniest",
+        "&H002828F0&"
+      ]
+    ],
+    [
+      [
+        "Falls",
+        "&H0000D7FF&"
+      ]
+    ]
+  ],
+  "band": 360,
+  "bottom": 132,
+  "gap": 0.16,
+  "items": [
+    {
+      "n": 1,
+      "ss": 0.0,
+      "dur": 3.7,
+      "label": "TRAMPOLINE DUNK FAIL",
+      "color": "&H000000FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 3.6,
+          "key": "yeet"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "ss": 3.7,
+      "dur": 4.2,
+      "label": "UNEQUAL BARS OOPS",
+      "color": "&H000011FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 3.15,
+          "key": "oof"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ss": 7.9,
+      "dur": 3.8,
+      "label": "GRASS SLIP-UP",
+      "color": "&H0000A5FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 3.35,
+          "key": "ba_drum_tss"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "ss": 11.7,
+      "dur": 5.1,
+      "label": "WET GRASS TUMBLE",
+      "color": "&H00FFFFFF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 4.65,
+          "key": "fail"
+        }
+      ]
+    }
+  ],
+  "music": "/home/user/studio/type2/assets/c2_48.wav",
+  "music_ss": 0.0,
+  "music_vol": 0.17,
+  "clip_vol": 0.68,
+  "sfx_dir": "/home/user/studio/trial/sfx",
+  "sfx_peak_db": -10.0,
+  "ladder": "asc",
+  "order": [
+    3,
+    2,
+    1,
+    0
+  ],
+  "title_size": 116
+}

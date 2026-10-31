@@ -1,0 +1,90 @@
+{
+ "name": "danapur_platform",
+ "source": {
+  "local": "/home/user/studio/projects/danapur_platform/source.mp4",
+  "url": "",
+  "note": "Pexels free-license stock b-roll"
+ },
+ "look": "film",
+ "layout": {
+  "size": [
+   1080,
+   1920
+  ],
+  "band": 360,
+  "bottom_band": 360,
+  "cap_y": 1260,
+  "cap_size": 60,
+  "cap_line_chars": 26
+ },
+ "header": [
+  {
+   "text": "DANAPUR",
+   "color": "white",
+   "hi": "DANAPUR",
+   "hi_color": "red",
+   "size": 160,
+   "y": 112
+  },
+  {
+   "text": "PLATFORM 3",
+   "color": "white",
+   "hi": "3",
+   "hi_color": "yellow",
+   "size": 118,
+   "y": 208
+  }
+ ],
+ "audio": {
+  "duck": 0.5,
+  "master_gain_db": 2.5
+ },
+ "clips": [
+  {
+   "ss": 0.0,
+   "dur": 45.0,
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.02
+  }
+ ],
+ "narration": [
+  {
+   "id": "01_hook",
+   "at": 0.3,
+   "file": "narr/01.mp3",
+   "caption": "DANAPUR STATION. RAAT 2:40. PLATFORM 3 PAR EK TRAIN AATI HAI - JO KISI TIMETABLE MEIN NAHI HAI.",
+   "lang": "hi"
+  },
+  {
+   "id": "02_see",
+   "at": 10.21,
+   "file": "narr/02.mp3",
+   "caption": "RAHUL NE USE DEKHA. COACH KHAALI THA - PAR HAR KHIDKI SE EK HI AADMI JHANK RAHA THA.",
+   "lang": "hi"
+  },
+  {
+   "id": "03_door",
+   "at": 17.24,
+   "file": "narr/03.mp3",
+   "caption": "TRAIN RUKI. DARWAZA KHULA. AUR ANDAR SE AAWAZ AAYI - RAHUL, TERI SEAT KHAALI HAI.",
+   "lang": "hi"
+  },
+  {
+   "id": "04_name",
+   "at": 24.55,
+   "file": "narr/04.mp3",
+   "caption": "WO USKA NAAM KAISE JAANTI THI? RAHUL NE PEECHE DEKHA - STATION PAR KOI NAHI THA. SIRF EK BOARD: DANAPUR, BAND.",
+   "lang": "hi"
+  },
+  {
+   "id": "05_end",
+   "at": 33.26,
+   "file": "narr/05.mp3",
+   "caption": "AGLI SUBAH LOGON KO USKI CHAPPAL PLATFORM 3 PAR MILI. AUR RAHUL AAJ BHI WAHIN HAI - US TRAIN MEIN. HAR RAAT.",
+   "lang": "hi"
+  }
+ ]
+}

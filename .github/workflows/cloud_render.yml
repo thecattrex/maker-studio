@@ -1,0 +1,86 @@
+name: Maker Studio 16GB Cloud Render
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Render mode: smoke | t1_hq | remotion | hyperframes"
+        required: true
+        default: "smoke"
+      job_b64:
+        description: "Base64-encoded JSON job payload (optional for smoke / hyperframes starter)"
+        required: false
+        default: ""
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout Maker Studio
+        uses: actions/checkout@v4
+
+      - name: Install FFmpeg + libass + system libs
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg libass9 libgl1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: .github/workflows/cloud_render.yml
+
+      - name: Install Python Media + MediaPipe + Whisper Stack
+        env:
+          RENDER_MODE: ${{ inputs.mode }}
+        run: |
+          pip install --quiet --upgrade pip
+          pip install --quiet numpy opencv-python-headless Pillow requests pyyaml mediapipe
+          if [ "$RENDER_MODE" = "t1_hq" ]; then
+            pip install --quiet faster-whisper
+          fi
+
+      - name: Set up Node.js + Remotion Dependencies (only when mode == remotion)
+        if: ${{ inputs.mode == 'remotion' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: studio/remotion-composer/package-lock.json
+
+      - name: Install Remotion packages
+        if: ${{ inputs.mode == 'remotion' }}
+        working-directory: studio/remotion-composer
+        run: npm ci --no-audit --no-fund
+
+      - name: Set up Node.js 22 + HyperFrames Engine (only when mode == hyperframes)
+        if: ${{ inputs.mode == 'hyperframes' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install HyperFrames CLI & Ensure Browser
+        if: ${{ inputs.mode == 'hyperframes' }}
+        env:
+          HYPERFRAMES_SKIP_SKILLS: "1"
+          HYPERFRAMES_TELEMETRY_DISABLED: "1"
+        run: |
+          npm install -g hyperframes --no-audit --no-fund
+          hyperframes browser ensure
+
+      - name: Execute 16GB Cloud Render Worker
+        env:
+          RENDER_MODE: ${{ inputs.mode }}
+          JOB_B64: ${{ inputs.job_b64 }}
+        run: |
+          python3 studio/cloud/hq_worker.py --mode "$RENDER_MODE" --job-b64 "$JOB_B64" --out-dir studio/cloud_out
+
+      - name: Upload Rendered Video & QA Report Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: maker-render-${{ github.run_id }}
+          path: studio/cloud_out/*
+          retention-days: 7

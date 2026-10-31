@@ -1,0 +1,119 @@
+{
+  "series": "type2",
+  "frame": {
+    "w": 1080,
+    "h": 1920,
+    "band": 360,
+    "bottom": 132
+  },
+  "gap": 0.16,
+  "ladder": "asc",
+  "title": [
+    [
+      [
+        "Ranking Best",
+        "&H00FFFFFF&"
+      ],
+      [
+        "Fail",
+        "&H002828F0&"
+      ]
+    ],
+    [
+      [
+        "Moments",
+        "&H0000D7FF&"
+      ]
+    ]
+  ],
+  "clips": [
+    {
+      "n": 4,
+      "ss": 0.0,
+      "dur": 4.6,
+      "label": "BOWLING WIPEOUT",
+      "color": "&H0000D7FF&",
+      "sfx": {
+        "key": "yeet",
+        "at": 3.6,
+        "peak_db": -7.0
+      },
+      "audio_file": "/home/user/studio/type2/assets/ep10_replacement_source_silence.wav"
+    },
+    {
+      "n": 3,
+      "ss": 0.0,
+      "dur": 4.4,
+      "label": "DOCKSIDE SPLASH",
+      "color": "&H0000A5FF&",
+      "sfx": {
+        "key": "ba_drum_tss",
+        "at": 3.8,
+        "peak_db": -8.0
+      },
+      "audio_file": "/home/user/studio/type2/assets/ep10_replacement_source_silence.wav"
+    },
+    {
+      "n": 2,
+      "ss": 0.0,
+      "dur": 4.8,
+      "label": "POOL-TABLE WIPEOUT",
+      "color": "&H000011FF&",
+      "sfx": {
+        "key": "oof",
+        "at": 4.0,
+        "peak_db": -7.5
+      },
+      "audio_file": "/home/user/studio/type2/assets/ep10_replacement_source_silence.wav"
+    },
+    {
+      "n": 1,
+      "ss": 0.0,
+      "dur": 4.7,
+      "label": "CHAIR TIP-OVER",
+      "color": "&H000000FF&",
+      "sfx": {
+        "key": "fail",
+        "at": 3.8,
+        "peak_db": -6.0
+      },
+      "audio_file": "/home/user/studio/type2/assets/ep10_replacement_source_silence.wav"
+    }
+  ],
+  "music": {
+    "file": "assets/c2_48.wav",
+    "rms_db": -27.4,
+    "fade_out": 0.5
+  },
+  "voice": {
+    "file": "/home/user/sfx/got_this_clean.wav",
+    "rms_db": -13.0,
+    "before_cut": 0.35,
+    "duck": 0.15,
+    "first_at": 0.0
+  },
+  "chicken": {
+    "video": "/home/user/sfx/chicken_face.mp4",
+    "scream": "assets/scream48.wav",
+    "dur": 0.5667,
+    "rms_db": -10.5,
+    "duck": 0.45
+  },
+  "bed": {
+    "clip_gain_db": 2.0,
+    "tanh": 1.2,
+    "rms_db": -20.0
+  },
+  "master": {
+    "tanh": 1.1,
+    "peak_cap": -4.8,
+    "lufs": -13.0
+  },
+  "sfx_dir": "/home/user/studio/trial/sfx",
+  "audio": {
+    "sr": 48000,
+    "duck_fade": 0.08,
+    "duck_tail": 0.1
+  },
+  "gap_luma": 15.0
+}

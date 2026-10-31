@@ -1,0 +1,32 @@
+{
+ "title": [
+  [
+   ["TOP 5", "&H00FFFFFF&"],
+   ["DUMB", "&H0000D7FF&"]
+  ],
+  [
+   ["MOMENTS", "&H000000FF&"]
+  ]
+ ],
+ "band": 360,
+ "bottom": 132,
+ "gap": 0.25,
+ "items": [
+  {"n": 5, "ss": 0.00, "dur": 6.4, "label": "the cyclist", "color": "&H00FFFFFF&",
+   "focus": [0.62, 0.45], "zoom_to": 1.10, "sfx": [{"at": 2.6, "key": "what"}]},
+  {"n": 4, "ss": 6.60, "dur": 6.4, "label": "the parker", "color": "&H0000D7FF&",
+   "focus": [0.50, 0.48], "zoom_to": 1.16, "sfx": [{"at": 2.2, "key": "oof"}]},
+  {"n": 3, "ss": 13.20, "dur": 6.4, "label": "the roof guy", "color": "&H0000A5FF&",
+   "focus": [0.52, 0.45], "zoom_to": 1.08, "sfx": [{"at": 2.6, "key": "yeet"}]},
+  {"n": 2, "ss": 19.70, "dur": 6.4, "label": "the red light", "color": "&H000000FF&",
+   "focus": [0.55, 0.45], "zoom_to": 1.10, "sfx": [{"at": 2.0, "key": "dun_dun"}]},
+  {"n": 1, "ss": 26.30, "dur": 6.5, "label": "the faceplant", "color": "&H000000FF&",
+   "focus": [0.50, 0.45], "zoom_to": 1.05, "sfx": [{"at": 2.8, "key": "fail"}]}
+ ],
+ "music": "/home/user/studio/assets/music/Monkeys Spinning Monkeys.mp3",
+ "music_ss": 70.0,
+ "music_vol": 0.65,
+ "clip_vol": 0.55,
+ "sfx_dir": "/home/user/studio/trial/sfx",
+ "sfx_peak_db": -11.0
+}

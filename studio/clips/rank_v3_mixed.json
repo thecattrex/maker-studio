@@ -1,0 +1,83 @@
+{
+ "title": [
+  [
+   [
+    "Ranking Best",
+    "&H00FFFFFF&"
+   ],
+   [
+    "Fail",
+    "&H002828F0&"
+   ]
+  ],
+  [
+   [
+    "Moments",
+    "&H0000D7FF&"
+   ]
+  ]
+ ],
+ "band": 360,
+ "bottom": 132,
+ "gap": 0.25,
+ "items": [
+  {
+   "n": 4,
+   "ss": 0.0,
+   "dur": 5.4,
+   "label": "the rink",
+   "color": "&H00FFFFFF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  },
+  {
+   "n": 3,
+   "ss": 5.4,
+   "dur": 2.74,
+   "label": "the bike",
+   "color": "&H0000D7FF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  },
+  {
+   "n": 2,
+   "ss": 8.14,
+   "dur": 4.4,
+   "label": "the flip",
+   "color": "&H0000A5FF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  },
+  {
+   "n": 1,
+   "ss": 12.54,
+   "dur": 4.87,
+   "label": "the river",
+   "color": "&H000000FF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  }
+ ],
+ "music": "/home/user/studio/assets/music/Monkeys Spinning Monkeys.mp3",
+ "music_ss": 30.0,
+ "music_vol": 0.62,
+ "clip_vol": 0.85,
+ "sfx_dir": "/home/user/studio/trial/sfx",
+ "sfx_peak_db": -10.0
+}

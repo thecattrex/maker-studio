@@ -1,0 +1,119 @@
+{
+  "title": [
+    [
+      [
+        "Ranking Best",
+        "&H00FFFFFF&"
+      ],
+      [
+        "Fail",
+        "&H002828F0&"
+      ]
+    ],
+    [
+      [
+        "Moments",
+        "&H0000D7FF&"
+      ]
+    ]
+  ],
+  "band": 360,
+  "bottom": 132,
+  "gap": 0.16,
+  "items": [
+    {
+      "n": 1,
+      "ss": 0.0,
+      "dur": 4.0,
+      "label": "ARCADE PUNCH WIPEOUT",
+      "color": "&H000000FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 3.88,
+          "key": "yeet"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "ss": 4.0,
+      "dur": 2.85,
+      "label": "INFLATABLE WATER-PARK SLIP",
+      "color": "&H000011FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 2.75,
+          "key": "quack"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ss": 6.85,
+      "dur": 2.72,
+      "label": "SHOP STOOL SPILL",
+      "color": "&H0000A5FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 2.55,
+          "key": "slap"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "ss": 9.57,
+      "dur": 5.45,
+      "label": "EGG CHAIR TOPPLE",
+      "color": "&H00FFFFFF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 5.33,
+          "key": "ba_drum_tss"
+        }
+      ]
+    }
+  ],
+  "music": "/home/user/studio/type2/assets/c2_48.wav",
+  "music_ss": 0.0,
+  "music_vol": 0.17,
+  "clip_vol": 0.68,
+  "sfx_dir": "/home/user/studio/trial/sfx",
+  "sfx_peak_db": -10.0,
+  "ladder": "asc",
+  "order": [
+    3,
+    2,
+    1,
+    0
+  ],
+  "title_size": 116
+}

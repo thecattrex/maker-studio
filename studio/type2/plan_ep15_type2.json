@@ -1,0 +1,119 @@
+{
+  "title": [
+    [
+      [
+        "Ranking Best",
+        "&H00FFFFFF&"
+      ],
+      [
+        "Fail",
+        "&H002828F0&"
+      ]
+    ],
+    [
+      [
+        "Moments",
+        "&H0000D7FF&"
+      ]
+    ]
+  ],
+  "band": 360,
+  "bottom": 132,
+  "gap": 0.16,
+  "items": [
+    {
+      "n": 1,
+      "ss": 0.0,
+      "dur": 5.3,
+      "label": "BOAT-SIDE TUMBLE",
+      "color": "&H000000FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.128125,
+      "crop_bottom": 0.128125,
+      "sfx": [
+        {
+          "at": 1.5,
+          "key": "yeet"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "ss": 5.3,
+      "dur": 8.3,
+      "label": "TRAY FLIP",
+      "color": "&H000011FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.128125,
+      "crop_bottom": 0.128125,
+      "sfx": [
+        {
+          "at": 6.0,
+          "key": "ba_drum_tss"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ss": 13.6,
+      "dur": 6.8,
+      "label": "SAUCE BOTTLE FAIL",
+      "color": "&H0000A5FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.128125,
+      "crop_bottom": 0.128125,
+      "sfx": [
+        {
+          "at": 3.2,
+          "key": "oof"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "ss": 20.4,
+      "dur": 7.8,
+      "label": "TREADMILL TROUBLE",
+      "color": "&H00FFFFFF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.128125,
+      "crop_bottom": 0.128125,
+      "sfx": [
+        {
+          "at": 3.3,
+          "key": "fail"
+        }
+      ]
+    }
+  ],
+  "music": "/home/user/studio/type2/assets/c2_48.wav",
+  "music_ss": 0.0,
+  "music_vol": 0.17,
+  "clip_vol": 0.0,
+  "sfx_dir": "/home/user/studio/trial/sfx",
+  "sfx_peak_db": -7.5,
+  "ladder": "asc",
+  "order": [
+    3,
+    2,
+    1,
+    0
+  ],
+  "title_size": 116
+}

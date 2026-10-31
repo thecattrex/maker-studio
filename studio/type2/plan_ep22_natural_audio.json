@@ -1,0 +1,119 @@
+{
+  "title": [
+    [
+      [
+        "Ranking Best",
+        "&H00FFFFFF&"
+      ],
+      [
+        "Fail",
+        "&H002828F0&"
+      ]
+    ],
+    [
+      [
+        "Moments",
+        "&H0000D7FF&"
+      ]
+    ]
+  ],
+  "band": 360,
+  "bottom": 132,
+  "gap": 0.16,
+  "items": [
+    {
+      "n": 1,
+      "ss": 0.0,
+      "dur": 5.2,
+      "label": "CAMPING CHAIR DOUBLE FAIL",
+      "color": "&H000000FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 5.0,
+          "key": "yeet"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "ss": 5.2,
+      "dur": 2.75,
+      "label": "CHAIR PULL PRANK",
+      "color": "&H000011FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 2.45,
+          "key": "record_scratch"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ss": 7.95,
+      "dur": 3.4,
+      "label": "MOMS RACE WIPEOUT",
+      "color": "&H0000A5FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 3.15,
+          "key": "ba_drum_tss"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "ss": 11.35,
+      "dur": 5.25,
+      "label": "TABLETOP STUNT FAIL",
+      "color": "&H00FFFFFF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 5.05,
+          "key": "slap"
+        }
+      ]
+    }
+  ],
+  "music": "/home/user/studio/type2/assets/c2_48.wav",
+  "music_ss": 0.0,
+  "music_vol": 0.17,
+  "clip_vol": 0.68,
+  "sfx_dir": "/home/user/studio/trial/sfx",
+  "sfx_peak_db": -10.0,
+  "ladder": "asc",
+  "order": [
+    3,
+    2,
+    1,
+    0
+  ],
+  "title_size": 116
+}

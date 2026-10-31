@@ -1,0 +1,254 @@
+[
+ {
+  "name": "YEET",
+  "file": "sfx/yeet.mp3",
+  "key": "yeet",
+  "feeling": "action / kuch udd gaya",
+  "duration": 2.1,
+  "source": "N1BOQ_9laWs",
+  "src_t": "12.40-14.50"
+ },
+ {
+  "name": "METAL GEAR",
+  "file": "sfx/metal_gear.mp3",
+  "key": "metal_gear",
+  "feeling": "alert / spotted!",
+  "duration": 1.0,
+  "source": "ULbkoWwMeRo",
+  "src_t": "19.30-20.30"
+ },
+ {
+  "name": "OKAY",
+  "file": "sfx/okay.mp3",
+  "key": "okay",
+  "feeling": "bas theek hai / surrender",
+  "duration": 0.67,
+  "source": "2M43iYA5vPQ",
+  "src_t": "12.10-12.80"
+ },
+ {
+  "name": "OOOF",
+  "file": "sfx/oof.mp3",
+  "key": "oof",
+  "feeling": "chot laga / sympathy",
+  "duration": 1.74,
+  "source": "N1BOQ_9laWs",
+  "src_t": "0.35-2.10"
+ },
+ {
+  "name": "AHH SCARY",
+  "file": "sfx/ahh_scary.mp3",
+  "key": "ahh_scary",
+  "feeling": "darr / shock",
+  "duration": 1.6,
+  "source": "N1BOQ_9laWs",
+  "src_t": "1.30-2.95"
+ },
+ {
+  "name": "DRAMATIC VINE",
+  "file": "sfx/dramatic_vine.mp3",
+  "key": "dramatic_vine",
+  "feeling": "dramatic entry",
+  "duration": 2.5,
+  "source": "r6qhPwnsiZ4",
+  "src_t": "1.50-4.00"
+ },
+ {
+  "name": "GOD",
+  "file": "sfx/god.mp3",
+  "key": "god",
+  "feeling": "epic / divine",
+  "duration": 0.9,
+  "source": "N1BOQ_9laWs",
+  "src_t": "16.60-17.50"
+ },
+ {
+  "name": "FAIL",
+  "file": "sfx/fail.mp3",
+  "key": "fail",
+  "feeling": "fail hua",
+  "duration": 2.07,
+  "source": "ULbkoWwMeRo",
+  "src_t": "0.00-2.10"
+ },
+ {
+  "name": "RIZZ",
+  "file": "sfx/rizz.mp3",
+  "key": "rizz",
+  "feeling": "flirty / smooth (joke)",
+  "duration": 1.23,
+  "source": "ULbkoWwMeRo",
+  "src_t": "8.75-10.80"
+ },
+ {
+  "name": "QUACK",
+  "file": "sfx/quack.mp3",
+  "key": "quack",
+  "feeling": "funny / battakh / silly",
+  "duration": 2.1,
+  "source": "ULbkoWwMeRo",
+  "src_t": "5.30-7.40"
+ },
+ {
+  "name": "THUG LIFE",
+  "file": "sfx/thug_life.mp3",
+  "key": "thug_life",
+  "feeling": "gangsta reveal / swagger",
+  "duration": 1.1,
+  "source": "r6qhPwnsiZ4",
+  "src_t": "8.50-9.60"
+ },
+ {
+  "name": "OH MY GOD",
+  "file": "sfx/oh_my_god.mp3",
+  "key": "oh_my_god",
+  "feeling": "haww / bada shock",
+  "duration": 2.05,
+  "source": "N1BOQ_9laWs",
+  "src_t": "10.70-12.75"
+ },
+ {
+  "name": "DUN DUN DUN",
+  "file": "sfx/dun_dun_dun.mp3",
+  "key": "dun_dun_dun",
+  "feeling": "impact / khatra / bada moment",
+  "duration": 3.76,
+  "source": "2M43iYA5vPQ",
+  "src_t": "0.10-3.90"
+ },
+ {
+  "name": "FAAH",
+  "file": "sfx/faah.mp3",
+  "key": "faah",
+  "feeling": "impact punch / gapshap",
+  "duration": 1.8,
+  "source": "ULbkoWwMeRo",
+  "src_t": "16.90-18.70"
+ },
+ {
+  "name": "BA DRUM TSS",
+  "file": "sfx/ba_drum_tss.mp3",
+  "key": "ba_drum_tss",
+  "feeling": "joke punchline",
+  "duration": 1.18,
+  "source": "2M43iYA5vPQ",
+  "src_t": "21.00-22.20"
+ },
+ {
+  "name": "BRUH",
+  "file": "sfx/bruh.mp3",
+  "key": "bruh",
+  "feeling": "kya bakwas / disappointment",
+  "duration": 2.1,
+  "source": "N1BOQ_9laWs",
+  "src_t": "9.90-12.00"
+ },
+ {
+  "name": "WHAT",
+  "file": "sfx/what.mp3",
+  "key": "what",
+  "feeling": "kya hua?",
+  "duration": 0.58,
+  "source": "2M43iYA5vPQ",
+  "src_t": "7.30-8.10"
+ },
+ {
+  "name": "2 HOURS LATER",
+  "file": "sfx/2_hours_later.mp3",
+  "key": "2_hours_later",
+  "feeling": "lamba time skip",
+  "duration": 2.1,
+  "source": "N1BOQ_9laWs",
+  "src_t": "13.50-15.60"
+ },
+ {
+  "name": "DISAPPOINTED",
+  "file": "sfx/disappointed.mp3",
+  "key": "disappointed",
+  "feeling": "niraasha / flop",
+  "duration": 3.1,
+  "source": "2M43iYA5vPQ",
+  "src_t": "13.20-16.30"
+ },
+ {
+  "name": "RECORD SCRATCH",
+  "file": "sfx/record_scratch.mp3",
+  "key": "record_scratch",
+  "feeling": "ruko! / rewind",
+  "duration": 0.66,
+  "source": "2M43iYA5vPQ",
+  "src_t": "4.20-4.90"
+ },
+ {
+  "name": "IMPOSTER",
+  "file": "sfx/imposter.mp3",
+  "key": "imposter",
+  "feeling": "shak / doubt",
+  "duration": 2.0,
+  "source": "r6qhPwnsiZ4",
+  "src_t": "3.00-5.00"
+ },
+ {
+  "name": "DUN DUN",
+  "file": "sfx/dun_dun.mp3",
+  "key": "dun_dun",
+  "feeling": "short impact / warning",
+  "duration": 2.1,
+  "source": "ULbkoWwMeRo",
+  "src_t": "10.80-12.90"
+ },
+ {
+  "name": "AWW",
+  "file": "sfx/aww.mp3",
+  "key": "aww",
+  "feeling": "soft / cute / pity",
+  "duration": 1.39,
+  "source": "2M43iYA5vPQ",
+  "src_t": "18.60-20.00"
+ },
+ {
+  "name": "SUSPENSE",
+  "file": "sfx/suspense.mp3",
+  "key": "suspense",
+  "feeling": "tension / kuch hone wala hai",
+  "duration": 3.0,
+  "source": "2M43iYA5vPQ",
+  "src_t": "8.70-11.70"
+ },
+ {
+  "name": "SLAP",
+  "file": "sfx/slap.mp3",
+  "key": "slap",
+  "feeling": "thapad / zor ka hit",
+  "duration": 2.09,
+  "source": "ULbkoWwMeRo",
+  "src_t": "15.10-17.20"
+ },
+ {
+  "name": "A FEW MOMENTS LATER",
+  "file": "sfx/a_few_moments_later.mp3",
+  "key": "a_few_moments_later",
+  "feeling": "time skip",
+  "duration": 1.8,
+  "source": "2M43iYA5vPQ",
+  "src_t": "5.20-7.00"
+ },
+ {
+  "name": "ALIEN",
+  "file": "sfx/alien.mp3",
+  "key": "alien",
+  "feeling": "weird / out of place",
+  "duration": 1.0,
+  "source": "r6qhPwnsiZ4",
+  "src_t": "7.50-8.50"
+ },
+ {
+  "name": "ANIME WOW",
+  "file": "sfx/anime_wow.mp3",
+  "key": "anime_wow",
+  "feeling": "whoa / impressed",
+  "duration": 2.1,
+  "source": "N1BOQ_9laWs",
+  "src_t": "3.60-5.70"
+ }
+]

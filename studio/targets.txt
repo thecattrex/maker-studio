@@ -1,0 +1,11 @@
+# targets.txt — ek line = ek clip
+# format:  URL | start | duration_seconds | name
+#
+# start = "1:20" (1 min 20 sec)  ya  "80"  (seconds)
+# duration = seconds
+#
+# Example (apne hisaab se badlo):
+# https://www.youtube.com/watch?v=XXXXXXXXXXX | 1:20 | 6 | clip01
+# https://www.youtube.com/watch?v=YYYYYYYYYYY | 3:05 | 6 | clip02
+#
+# Rule: sab ek hi baar me. Beech me -F ya test download mat karo.

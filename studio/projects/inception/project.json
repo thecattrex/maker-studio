@@ -1,0 +1,224 @@
+{
+ "name": "inception",
+ "source": {
+  "url": "https://youtu.be/XQPy88-E2zo",
+  "local": "/tmp/inc.mp4",
+  "format": "248-sr+140/399-sr+140/b",
+  "md5": "66d82059bc78aa448be79e9b1ef46c5b"
+ },
+ "look": "film",
+ "layout": {
+  "size": [
+   1080,
+   1920
+  ],
+  "band": 360,
+  "bottom_band": 360,
+  "cap_y": 1260,
+  "cap_size": 58,
+  "cap_line_chars": 24,
+  "cap_words": 4
+ },
+ "header": [
+  {
+   "text": "INCEPTION MOVIE",
+   "color": "white",
+   "hi": "INCEPTION",
+   "hi_color": "red",
+   "size": 148,
+   "y": 112
+  },
+  {
+   "text": "ENDING EXPLAINED",
+   "color": "white",
+   "hi": "ENDING",
+   "hi_color": "yellow",
+   "size": 113,
+   "y": 202
+  }
+ ],
+ "audio": {
+  "duck": 0.5,
+  "master_gain_db": 2.5
+ },
+ "clips": [
+  {
+   "ss": 206.0,
+   "dur": 3.2,
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "zoom_to": 1.06
+  },
+  {
+   "ss": 0.0,
+   "dur": 7.6,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 54.0,
+   "dur": 6.4,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 96.0,
+   "dur": 6.6,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 138.0,
+   "dur": 6.4,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 168.0,
+   "dur": 6.4,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 176.0,
+   "dur": 6.4,
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 186.0,
+   "dur": 5.4,
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 186.0,
+   "dur": 3.2,
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 205.0,
+   "dur": 7.2,
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "zoom_to": 1.02
+  }
+ ],
+ "narration": [
+  {
+   "id": "01_hook",
+   "at": 0.0,
+   "file": "narr/01_hook.mp3",
+   "caption": "TOP... GIRA YA NAHI? RUKO — PHIR SE DEKHTE HAIN",
+   "hindi": "टॉप... गिरा या नहीं? रुको — फिर से देखते हैं।",
+   "lang": "hi"
+  },
+  {
+   "id": "02_plane",
+   "at": 4.8,
+   "file": "narr/02_plane.mp3",
+   "caption": "PLANE UTAR GAYA HAI... AUR KISI NE SAPNE KA NAAM TAK NAHI LIYA",
+   "hindi": "प्लेन उतर गया है... और किसी ने सपने का नाम तक नहीं लिया।",
+   "lang": "hi"
+  },
+  {
+   "id": "03_normal",
+   "at": 9.6,
+   "file": "narr/03_normal.mp3",
+   "caption": "SAB KUCH BILKUL NORMAL HAI... PAR ASAL MEIN, KUCH BHI ASLI NAHI",
+   "hindi": "सब कुछ बिल्कुल नॉर्मल है... पर असल में, कुछ भी असली नहीं।",
+   "lang": "hi"
+  },
+  {
+   "id": "04_call",
+   "at": 17.4,
+   "file": "narr/04_call.mp3",
+   "caption": "BAS EK PHONE CALL! AUR USKA NAAM SAAF",
+   "hindi": "बस एक फोन कॉल! और उसका नाम साफ।",
+   "lang": "hi"
+  },
+  {
+   "id": "05_free",
+   "at": 21.0,
+   "file": "narr/05_free.mp3",
+   "caption": "WO BAHAR NIKALTA HAI — AAZAD",
+   "hindi": "वो बाहर निकलता है — आज़ाद।",
+   "lang": "hi"
+  },
+  {
+   "id": "10_out",
+   "at": 24.2,
+   "file": "narr/10_out.mp3",
+   "caption": "AB BAHAR... KOI PEECHHA NAHI, KOI SAWAAL NAHI",
+   "hindi": "अब बाहर... कोई पीछा नहीं, कोई सवाल नहीं।",
+   "lang": "hi"
+  },
+  {
+   "id": "06_house",
+   "at": 30.4,
+   "file": "narr/06_house.mp3",
+   "caption": "AUR WO GHAR... JAHAN WO KABHI PONCH HI NAHI PAYA",
+   "hindi": "और वो घर... जहाँ वो कभी पहुँच ही नहीं पाया।",
+   "lang": "hi"
+  },
+  {
+   "id": "07_kids",
+   "at": 34.2,
+   "file": "narr/07_kids.mp3",
+   "caption": "BACCHE! WAHI CHEHRE JO USNE SAALON SE NAHI DEKHE",
+   "hindi": "बच्चे! वही चेहरे जो उसने सालों से नहीं देखे।",
+   "lang": "hi"
+  },
+  {
+   "id": "08_faces",
+   "at": 43.2,
+   "file": "narr/08_faces.mp3",
+   "caption": "PAR WO UNKE CHEHRE KI TARAF NAHI DEKHTA... YAHI ASLI DETAIL HAI",
+   "hindi": "पर वो उनके चेहरे की तरफ़ नहीं देखता... यही असली डिटेल है।",
+   "lang": "hi"
+  },
+  {
+   "id": "09_end",
+   "at": 51.6,
+   "file": "narr/09_end.mp3",
+   "caption": "TO... GIRA YA NAHI? KHUD DEKHO",
+   "hindi": "तो... गिरा या नहीं? खुद देखो।",
+   "lang": "hi"
+  }
+ ],
+ "end_card": {
+  "text": "THE END",
+  "from": 55.2,
+  "y": 1260,
+  "size": 136
+ }
+}

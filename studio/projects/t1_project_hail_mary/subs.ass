@@ -1,0 +1,111 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+
+Style: Title,Anton,112,&H00FFFFFF,&H000000FF,8,&H00000000,-1,0,0,0,100,100,2,0,1,7,0,5,60,60,120,1
+Style: TitleHi,Anton,112,&H2E2EF7&,&H000000FF,8,&H00000000,-1,0,0,0,100,100,2,0,1,7,0,5,60,60,120,1
+Style: Sub,Bebas Neue,54,&H00FFFFFF,&H000000FF,8,&H00000000,-1,0,0,0,100,100,0,0,1,6,0,5,60,60,60,1
+Style: Cap,Anton,76,&H00FFFFFF,&H0030C8FF,7,&H80101010,-1,0,0,0,100,100,2,0,1,6,2,2,60,60,80,1
+Style: CapHi,Anton,76,&H2E2EF7&,&H0030C8FF,7,&H80101010,-1,0,0,0,100,100,2,0,1,6,2,2,60,60,80,1
+Style: Rank,Archivo Black,44,&H00FFFFFF,&H000000FF,4,&H00000000,-1,0,0,0,100,100,2,0,1,5,1,2,0,0,0,1
+Style: RankDim,Archivo Black,44,&H00787878,&H000000FF,4,&H00000000,-1,0,0,0,100,100,2,0,1,5,1,2,0,0,0,1
+Style: Small,Inter,34,&H00FFFFFF,&H000000FF,3,&HB0000000,-1,0,0,0,100,100,2,0,1,3,0,2,20,20,20,1
+Style: Chip,Inter,34,&H00FFFFFF,&H000000FF,3,&H90000000,-1,0,0,0,100,100,2,0,4,3,0,2,10,10,10,1
+Style: Watermark,Inter,30,&H60FFFFFF,&H000000FF,0,&H60000000,-1,0,0,0,100,100,7,0,1,0,0,2,10,10,10,1
+Style: Header,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,10,&HA0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,60,1
+Style: HeaderHi,Poppins ExtraBold,54,&H2E2EF7&,&H000000FF,10,&HA0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,60,1
+Style: ActionCap,Poppins ExtraBold,40,&H14FFFFFF,&H000000FF,9,&H99000000,-1,0,0,0,100,100,5,0,1,7,0,3,40,40,40,1
+Style: Impact,Barlow Condensed ExtraBold,96,&H00FFFFFF,&H000000FF,12,&HC0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,40,1
+Style: RankNum,Poppins ExtraBold,64,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: RankLbl,Poppins ExtraBold,40,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: CapYellow,Poppins Bold,38,&H0000D7FF,&H000000FF,6,&H90000000,-1,0,0,0,100,100,5,0,1,7,0,3,26,26,26,1
+Style: Dialogue,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,7,&HB0000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: DialogueHi,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,7,&HB0000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.05,0:00:00.49,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}THAT{\c&HFFFFFF&\fscy100} IS\NWHERE HE IS—
+Dialogue: 0,0:00:00.49,0:00:00.63,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THAT {\c&H0000D7FF&\fscy118}IS{\c&HFFFFFF&\fscy100}\NWHERE HE IS—
+Dialogue: 0,0:00:00.63,0:00:00.81,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THAT IS\N{\c&H0000D7FF&\fscy118}WHERE{\c&HFFFFFF&\fscy100} HE IS—
+Dialogue: 0,0:00:00.81,0:00:00.95,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THAT IS\NWHERE {\c&H0000D7FF&\fscy118}HE{\c&HFFFFFF&\fscy100} IS—
+Dialogue: 0,0:00:00.95,0:00:01.25,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THAT IS\NWHERE HE {\c&H0000D7FF&\fscy118}IS—{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:01.27,0:00:01.59,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}HELLO,{\c&HFFFFFF&\fscy100} GRACE.
+Dialogue: 0,0:00:01.59,0:00:02.11,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}HELLO, {\c&H0000D7FF&\fscy118}GRACE.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:02.83,0:00:03.29,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}PERSONAL{\c&HFFFFFF&\fscy100} SPACE\NIS AT A PREMIUM.
+Dialogue: 0,0:00:03.29,0:00:03.67,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}PERSONAL {\c&H0000D7FF&\fscy118}SPACE{\c&HFFFFFF&\fscy100}\NIS AT A PREMIUM.
+Dialogue: 0,0:00:03.67,0:00:04.25,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}PERSONAL SPACE\N{\c&H0000D7FF&\fscy118}IS{\c&HFFFFFF&\fscy100} AT A PREMIUM.
+Dialogue: 0,0:00:04.25,0:00:04.55,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}PERSONAL SPACE\NIS {\c&H0000D7FF&\fscy118}AT{\c&HFFFFFF&\fscy100} A PREMIUM.
+Dialogue: 0,0:00:04.55,0:00:04.81,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}PERSONAL SPACE\NIS AT {\c&H0000D7FF&\fscy118}A{\c&HFFFFFF&\fscy100} PREMIUM.
+Dialogue: 0,0:00:04.81,0:00:05.50,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}PERSONAL SPACE\NIS AT A {\c&H0000D7FF&\fscy118}PREMIUM.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:05.67,0:00:05.89,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}WHO{\c&HFFFFFF&\fscy100} IS GRACE TALKING\NTO? QUESTION.
+Dialogue: 0,0:00:05.89,0:00:06.03,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}WHO {\c&H0000D7FF&\fscy118}IS{\c&HFFFFFF&\fscy100} GRACE TALKING\NTO? QUESTION.
+Dialogue: 0,0:00:06.03,0:00:06.21,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}WHO IS {\c&H0000D7FF&\fscy118}GRACE{\c&HFFFFFF&\fscy100} TALKING\NTO? QUESTION.
+Dialogue: 0,0:00:06.21,0:00:06.49,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}WHO IS GRACE {\c&H0000D7FF&\fscy118}TALKING{\c&HFFFFFF&\fscy100}\NTO? QUESTION.
+Dialogue: 0,0:00:06.49,0:00:06.79,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}WHO IS GRACE TALKING\N{\c&H0000D7FF&\fscy118}TO?{\c&HFFFFFF&\fscy100} QUESTION.
+Dialogue: 0,0:00:06.79,0:00:07.40,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}WHO IS GRACE TALKING\NTO? {\c&H0000D7FF&\fscy118}QUESTION.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:08.45,0:00:08.81,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}THERE'S{\c&HFFFFFF&\fscy100} NO WAY YOU\NCAN HEAR ME RIGHT NOW.
+Dialogue: 0,0:00:08.81,0:00:08.95,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THERE'S {\c&H0000D7FF&\fscy118}NO{\c&HFFFFFF&\fscy100} WAY YOU\NCAN HEAR ME RIGHT NOW.
+Dialogue: 0,0:00:08.95,0:00:09.09,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THERE'S NO {\c&H0000D7FF&\fscy118}WAY{\c&HFFFFFF&\fscy100} YOU\NCAN HEAR ME RIGHT NOW.
+Dialogue: 0,0:00:09.09,0:00:09.23,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THERE'S NO WAY {\c&H0000D7FF&\fscy118}YOU{\c&HFFFFFF&\fscy100}\NCAN HEAR ME RIGHT NOW.
+Dialogue: 0,0:00:09.23,0:00:09.37,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THERE'S NO WAY YOU\N{\c&H0000D7FF&\fscy118}CAN{\c&HFFFFFF&\fscy100} HEAR ME RIGHT NOW.
+Dialogue: 0,0:00:09.37,0:00:09.51,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THERE'S NO WAY YOU\NCAN {\c&H0000D7FF&\fscy118}HEAR{\c&HFFFFFF&\fscy100} ME RIGHT NOW.
+Dialogue: 0,0:00:09.51,0:00:09.65,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THERE'S NO WAY YOU\NCAN HEAR {\c&H0000D7FF&\fscy118}ME{\c&HFFFFFF&\fscy100} RIGHT NOW.
+Dialogue: 0,0:00:09.65,0:00:09.83,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THERE'S NO WAY YOU\NCAN HEAR ME {\c&H0000D7FF&\fscy118}RIGHT{\c&HFFFFFF&\fscy100} NOW.
+Dialogue: 0,0:00:09.83,0:00:10.30,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THERE'S NO WAY YOU\NCAN HEAR ME RIGHT {\c&H0000D7FF&\fscy118}NOW.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:10.33,0:00:10.57,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}CAN{\c&HFFFFFF&\fscy100} HEAR. WHO ARE\NYOU TALKING TO?
+Dialogue: 0,0:00:10.57,0:00:10.95,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}CAN {\c&H0000D7FF&\fscy118}HEAR.{\c&HFFFFFF&\fscy100} WHO ARE\NYOU TALKING TO?
+Dialogue: 0,0:00:10.95,0:00:11.07,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}CAN HEAR. {\c&H0000D7FF&\fscy118}WHO{\c&HFFFFFF&\fscy100} ARE\NYOU TALKING TO?
+Dialogue: 0,0:00:11.07,0:00:11.23,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}CAN HEAR. WHO {\c&H0000D7FF&\fscy118}ARE{\c&HFFFFFF&\fscy100}\NYOU TALKING TO?
+Dialogue: 0,0:00:11.23,0:00:11.39,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}CAN HEAR. WHO ARE\N{\c&H0000D7FF&\fscy118}YOU{\c&HFFFFFF&\fscy100} TALKING TO?
+Dialogue: 0,0:00:11.39,0:00:11.63,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}CAN HEAR. WHO ARE\NYOU {\c&H0000D7FF&\fscy118}TALKING{\c&HFFFFFF&\fscy100} TO?
+Dialogue: 0,0:00:11.63,0:00:12.05,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}CAN HEAR. WHO ARE\NYOU TALKING {\c&H0000D7FF&\fscy118}TO?{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:12.07,0:00:12.33,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}YOU{\c&HFFFFFF&\fscy100} CAN HEAR THIS?
+Dialogue: 0,0:00:12.33,0:00:12.49,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YOU {\c&H0000D7FF&\fscy118}CAN{\c&HFFFFFF&\fscy100} HEAR THIS?
+Dialogue: 0,0:00:12.49,0:00:12.65,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YOU CAN {\c&H0000D7FF&\fscy118}HEAR{\c&HFFFFFF&\fscy100} THIS?
+Dialogue: 0,0:00:12.65,0:00:13.15,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YOU CAN HEAR {\c&H0000D7FF&\fscy118}THIS?{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:13.21,0:00:13.83,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}YES.{\c&HFFFFFF&\fscy100} GRACE SAY,\N'YOU CAN HEAR THIS.'
+Dialogue: 0,0:00:13.83,0:00:13.99,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YES. {\c&H0000D7FF&\fscy118}GRACE{\c&HFFFFFF&\fscy100} SAY,\N'YOU CAN HEAR THIS.'
+Dialogue: 0,0:00:13.99,0:00:14.19,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YES. GRACE {\c&H0000D7FF&\fscy118}SAY,{\c&HFFFFFF&\fscy100}\N'YOU CAN HEAR THIS.'
+Dialogue: 0,0:00:14.19,0:00:14.37,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YES. GRACE SAY,\N{\c&H0000D7FF&\fscy118}'YOU{\c&HFFFFFF&\fscy100} CAN HEAR THIS.'
+Dialogue: 0,0:00:14.37,0:00:14.53,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YES. GRACE SAY,\N'YOU {\c&H0000D7FF&\fscy118}CAN{\c&HFFFFFF&\fscy100} HEAR THIS.'
+Dialogue: 0,0:00:14.53,0:00:14.71,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YES. GRACE SAY,\N'YOU CAN {\c&H0000D7FF&\fscy118}HEAR{\c&HFFFFFF&\fscy100} THIS.'
+Dialogue: 0,0:00:14.71,0:00:15.25,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YES. GRACE SAY,\N'YOU CAN HEAR {\c&H0000D7FF&\fscy118}THIS.'{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:15.57,0:00:15.87,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}WHAT{\c&HFFFFFF&\fscy100} ABOUT THIS?
+Dialogue: 0,0:00:15.87,0:00:16.07,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}WHAT {\c&H0000D7FF&\fscy118}ABOUT{\c&HFFFFFF&\fscy100} THIS?
+Dialogue: 0,0:00:16.07,0:00:16.41,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}WHAT ABOUT {\c&H0000D7FF&\fscy118}THIS?{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:16.43,0:00:16.95,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}YES.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:16.97,0:00:17.21,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}OH{\c&HFFFFFF&\fscy100} MY GOD,\NLOOK AT THIS.
+Dialogue: 0,0:00:17.21,0:00:17.39,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}OH {\c&H0000D7FF&\fscy118}MY{\c&HFFFFFF&\fscy100} GOD,\NLOOK AT THIS.
+Dialogue: 0,0:00:17.39,0:00:17.73,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}OH MY {\c&H0000D7FF&\fscy118}GOD,{\c&HFFFFFF&\fscy100}\NLOOK AT THIS.
+Dialogue: 0,0:00:17.73,0:00:17.93,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}OH MY GOD,\N{\c&H0000D7FF&\fscy118}LOOK{\c&HFFFFFF&\fscy100} AT THIS.
+Dialogue: 0,0:00:17.93,0:00:18.05,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}OH MY GOD,\NLOOK {\c&H0000D7FF&\fscy118}AT{\c&HFFFFFF&\fscy100} THIS.
+Dialogue: 0,0:00:18.05,0:00:18.23,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}OH MY GOD,\NLOOK AT {\c&H0000D7FF&\fscy118}THIS.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:18.25,0:00:18.41,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}LOOK{\c&HFFFFFF&\fscy100} HOW FAR\NAWAY HE IS!
+Dialogue: 0,0:00:18.41,0:00:18.53,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}LOOK {\c&H0000D7FF&\fscy118}HOW{\c&HFFFFFF&\fscy100} FAR\NAWAY HE IS!
+Dialogue: 0,0:00:18.53,0:00:18.71,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}LOOK HOW {\c&H0000D7FF&\fscy118}FAR{\c&HFFFFFF&\fscy100}\NAWAY HE IS!
+Dialogue: 0,0:00:18.71,0:00:18.91,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}LOOK HOW FAR\N{\c&H0000D7FF&\fscy118}AWAY{\c&HFFFFFF&\fscy100} HE IS!
+Dialogue: 0,0:00:18.91,0:00:19.03,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}LOOK HOW FAR\NAWAY {\c&H0000D7FF&\fscy118}HE{\c&HFFFFFF&\fscy100} IS!
+Dialogue: 0,0:00:19.03,0:00:19.47,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}LOOK HOW FAR\NAWAY HE {\c&H0000D7FF&\fscy118}IS!{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:20.61,0:00:21.05,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}THAT{\c&HFFFFFF&\fscy100} IS\NWHERE HE IS—
+Dialogue: 0,0:00:21.05,0:00:21.19,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THAT {\c&H0000D7FF&\fscy118}IS{\c&HFFFFFF&\fscy100}\NWHERE HE IS—
+Dialogue: 0,0:00:21.19,0:00:21.37,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THAT IS\N{\c&H0000D7FF&\fscy118}WHERE{\c&HFFFFFF&\fscy100} HE IS—
+Dialogue: 0,0:00:21.37,0:00:21.51,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THAT IS\NWHERE {\c&H0000D7FF&\fscy118}HE{\c&HFFFFFF&\fscy100} IS—
+Dialogue: 0,0:00:21.51,0:00:21.81,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}THAT IS\NWHERE HE {\c&H0000D7FF&\fscy118}IS—{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:21.83,0:00:22.15,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}HELLO,{\c&HFFFFFF&\fscy100} GRACE.
+Dialogue: 0,0:00:22.15,0:00:22.67,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}HELLO, {\c&H0000D7FF&\fscy118}GRACE.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:23.33,0:00:23.67,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}HELLO,{\c&HFFFFFF&\fscy100} GRACE\NFRIEND.
+Dialogue: 0,0:00:23.67,0:00:23.87,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}HELLO, {\c&H0000D7FF&\fscy118}GRACE{\c&HFFFFFF&\fscy100}\NFRIEND.
+Dialogue: 0,0:00:23.87,0:00:24.40,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}HELLO, GRACE\N{\c&H0000D7FF&\fscy118}FRIEND.{\c&HFFFFFF&\fscy100}
+Dialogue: 2,0:00:00.20,0:00:24.32,Small,,0,0,0,,{\an5\pos(540,1648)\fnBebas Neue\fs46\fsp6\c&H00969696&\bord0\shad0\alpha&HFF&\t(0,350,\alpha&H20&)}PROJECT HAIL MARY
+Dialogue: 4,0:00:07.40,0:00:08.37,ActionCap,,0,0,0,,{\an2\pos(540,1400)\fnBarlow Condensed\b1\fs58\fsp3\c&H00E8E8E8&\bord8\3c&H000000&\3a&H00&\shad3\4c&H000000&\4a&H70&\blur14\alpha&HFF&\t(0,140,\blur0\alpha&H00&)}(WHISPERS ACROSS THE SHIP)
+Dialogue: 5,0:00:00.00,0:00:24.32,Title,,0,0,0,,{\an5\fnAnton\fs90\fsp2\bord0\shad0\c&H00FFFFFF&\move(540,164,540,134,0,260)\blur16\alpha&HFF&\t(0,260,\blur0\alpha&H00&)}WHISPERING ABOUT HIS
+Dialogue: 5,0:00:00.08,0:00:24.32,Title,,0,0,0,,{\an5\fnAnton\fs122\fsp2\bord0\shad0\move(540,284,540,254,0,280)\blur16\alpha&HFF&\t(0,280,\blur0\alpha&H00&)}{\c&H002E2EF7&}ALIEN {\c&H00FFFFFF&}ROOMMATE
+Dialogue: 6,0:00:02.01,0:00:02.77,Impact,,0,0,0,,{\an2\pos(540,1405)\fnAnton\fs96\fsp3\c&H002E2EF7&\bord9\3c&H000000&\3a&H00&\shad4\4c&H000000&\4a&H60&\fscx78\fscy78\blur16\alpha&HFF&\t(0,115,\fscx108\fscy108\blur0\alpha&H00&)\t(115,205,\fscx100\fscy100)}HE'S RIGHT HERE!
+Dialogue: 6,0:00:22.57,0:00:23.33,Impact,,0,0,0,,{\an2\pos(540,1405)\fnAnton\fs96\fsp3\c&H002E2EF7&\bord9\3c&H000000&\3a&H00&\shad4\4c&H000000&\4a&H60&\fscx78\fscy78\blur16\alpha&HFF&\t(0,115,\fscx108\fscy108\blur0\alpha&H00&)\t(115,205,\fscx100\fscy100)}HE'S RIGHT HERE!

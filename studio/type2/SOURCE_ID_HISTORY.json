@@ -1,0 +1,49 @@
+{
+  "purpose": "Reusable Type-2 source-ID history. Check before selecting clips; do not reuse IDs marked selected or replaced/suspect without explicit approval.",
+  "episodes": {
+    "35": {
+      "history_check_scope": "All locally available Type-2 manifests, progress notes, specs and configs were checked; EP27 manifest was unavailable, so global history is incomplete.",
+      "selected_final_sources": [
+        {
+          "rank": 1,
+          "id": "1G82kMHcc00",
+          "platform": "YouTube Shorts",
+          "url": "https://www.youtube.com/shorts/1G82kMHcc00"
+        },
+        {
+          "rank": 2,
+          "id": "x9lvhrc",
+          "platform": "Dailymotion",
+          "url": "https://www.dailymotion.com/video/x9lvhrc"
+        },
+        {
+          "rank": 3,
+          "id": "xbpkk62",
+          "platform": "Dailymotion",
+          "url": "https://www.dailymotion.com/video/xbpkk62"
+        },
+        {
+          "rank": 4,
+          "id": "x9mbz5g",
+          "platform": "Dailymotion",
+          "url": "https://www.dailymotion.com/video/x9mbz5g"
+        },
+        {
+          "rank": 5,
+          "id": "x9ssap0",
+          "platform": "Dailymotion",
+          "url": "https://www.dailymotion.com/video/x9ssap0"
+        }
+      ],
+      "replaced_or_suspect_sources": [
+        {
+          "id": "D-pIVV-n6eA",
+          "platform": "YouTube Shorts",
+          "url": "https://www.youtube.com/shorts/D-pIVV-n6eA",
+          "status": "removed_from_final_visual_suspicion",
+          "note": "User flagged an AI-generated appearance. This is a visual suspicion, not a forensic determination. Do not reuse as an authentic clip without re-review."
+        }
+      ]
+    }
+  }
+}

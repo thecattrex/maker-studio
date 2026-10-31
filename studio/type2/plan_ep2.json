@@ -1,0 +1,97 @@
+{
+ "title": [
+  [
+   [
+    "Ranking Best",
+    "&H00FFFFFF&"
+   ],
+   [
+    "Fail",
+    "&H002828F0&"
+   ]
+  ],
+  [
+   [
+    "Moments",
+    "&H0000D7FF&"
+   ]
+  ]
+ ],
+ "band": 360,
+ "bottom": 132,
+ "gap": 0.25,
+ "items": [
+  {
+   "n": 3,
+   "ss": 0.0,
+   "dur": 2.8,
+   "label": "the faceplant",
+   "color": "&H0000A5FF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  },
+  {
+   "n": 5,
+   "ss": 2.9,
+   "dur": 3.45,
+   "label": "the kitchen",
+   "color": "&H00FFFFFF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  },
+  {
+   "n": 2,
+   "ss": 6.5,
+   "dur": 3.05,
+   "label": "the wakeboard",
+   "color": "&H000011FF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  },
+  {
+   "n": 4,
+   "ss": 9.7,
+   "dur": 1.55,
+   "label": "the golf swing",
+   "color": "&H0000D7FF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  },
+  {
+   "n": 1,
+   "ss": 11.4,
+   "dur": 4.85,
+   "label": "the side-by-side",
+   "color": "&H000000FF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  }
+ ],
+ "music": null,
+ "music_ss": 0.0,
+ "music_vol": 0.0,
+ "clip_vol": 1.0,
+ "sfx_dir": "/home/user/studio/trial/sfx",
+ "sfx_peak_db": -10.0,
+ "ladder": "asc"
+}

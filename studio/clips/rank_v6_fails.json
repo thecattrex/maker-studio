@@ -1,0 +1,83 @@
+{
+ "title": [
+  [
+   [
+    "Ranking Best",
+    "&H00FFFFFF&"
+   ],
+   [
+    "Fail",
+    "&H002828F0&"
+   ]
+  ],
+  [
+   [
+    "Moments",
+    "&H0000D7FF&"
+   ]
+  ]
+ ],
+ "band": 360,
+ "bottom": 132,
+ "gap": 0.25,
+ "items": [
+  {
+   "n": 4,
+   "ss": 9.62,
+   "dur": 3.2,
+   "label": "the lobby",
+   "color": "&H00FFFFFF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  },
+  {
+   "n": 3,
+   "ss": 6.6,
+   "dur": 3.0,
+   "label": "the bowl",
+   "color": "&H0000D7FF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  },
+  {
+   "n": 2,
+   "ss": 3.33,
+   "dur": 3.2,
+   "label": "the trail",
+   "color": "&H0000A5FF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  },
+  {
+   "n": 1,
+   "ss": 0.0,
+   "dur": 3.33,
+   "label": "the ladder",
+   "color": "&H000000FF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  }
+ ],
+ "music": "/home/user/studio/assets/music/Monkeys Spinning Monkeys.mp3",
+ "music_ss": 30.0,
+ "music_vol": 0.62,
+ "clip_vol": 0.85,
+ "sfx_dir": "/home/user/studio/trial/sfx",
+ "sfx_peak_db": -10.0
+}

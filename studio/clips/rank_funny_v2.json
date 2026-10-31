@@ -1,0 +1,32 @@
+{
+ "title": [
+  [
+   ["TOP 5", "&H00FFFFFF&"],
+   ["FUNNY", "&H0000D7FF&"]
+  ],
+  [
+   ["ANIMALS", "&H000000FF&"]
+  ]
+ ],
+ "band": 360,
+ "bottom": 132,
+ "gap": 0.25,
+ "items": [
+  {"n": 5, "ss": 0.0, "dur": 6.4, "label": "zoomies", "color": "&H00FFFFFF&",
+   "focus": [0.5, 0.45], "sfx": [{"at": 1.2, "key": "aww"}]},
+  {"n": 4, "ss": 6.6, "dur": 6.4, "label": "monkey business", "color": "&H0000D7FF&",
+   "focus": [0.5, 0.45], "sfx": [{"at": 1.4, "key": "what"}]},
+  {"n": 3, "ss": 13.2, "dur": 6.4, "label": "the sprinter", "color": "&H00FFFFFF&",
+   "focus": [0.5, 0.45], "sfx": [{"at": 1.5, "key": "yeet"}]},
+  {"n": 2, "ss": 19.8, "dur": 6.4, "label": "the ambush", "color": "&H0000A5FF&",
+   "focus": [0.5, 0.45], "sfx": [{"at": 1.6, "key": "oof"}]},
+  {"n": 1, "ss": 26.4, "dur": 6.5, "label": "the meerkat", "color": "&H000000FF&",
+   "focus": [0.5, 0.45], "sfx": [{"at": 1.5, "key": "ba_drum_tss"}]}
+ ],
+ "music": "/home/user/studio/assets/music/QKThr.mp3",
+ "music_ss": 10.0,
+ "music_vol": 0.67,
+ "clip_vol": 0.55,
+ "sfx_dir": "/home/user/studio/trial/sfx",
+ "sfx_peak_db": -11.0
+}

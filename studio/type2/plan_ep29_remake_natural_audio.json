@@ -1,0 +1,119 @@
+{
+  "title": [
+    [
+      [
+        "Ranking ",
+        "&H00FFFFFF&"
+      ],
+      [
+        "Epic",
+        "&H002828F0&"
+      ]
+    ],
+    [
+      [
+        "Water Fails",
+        "&H0000D7FF&"
+      ]
+    ]
+  ],
+  "band": 360,
+  "bottom": 132,
+  "gap": 0.16,
+  "items": [
+    {
+      "n": 1,
+      "ss": 0.0,
+      "dur": 5.2,
+      "label": "ROPE SWING SPLASH",
+      "color": "&H000000FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 4.45,
+          "key": "yeet"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "ss": 5.2,
+      "dur": 5.8,
+      "label": "SURFBOARD WIPEOUT",
+      "color": "&H000011FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 5.35,
+          "key": "record_scratch"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ss": 11.0,
+      "dur": 3.2,
+      "label": "SWING DROP",
+      "color": "&H0000A5FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 2.75,
+          "key": "oof"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "ss": 14.2,
+      "dur": 3.6,
+      "label": "BASKETBALL SLIP",
+      "color": "&H00FFFFFF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.0,
+      "crop_bottom": 0.0,
+      "sfx": [
+        {
+          "at": 3.25,
+          "key": "fail"
+        }
+      ]
+    }
+  ],
+  "music": "/home/user/studio/type2/assets/c2_48.wav",
+  "music_ss": 0.0,
+  "music_vol": 0.17,
+  "clip_vol": 0.68,
+  "sfx_dir": "/home/user/studio/trial/sfx",
+  "sfx_peak_db": -10.0,
+  "ladder": "asc",
+  "order": [
+    3,
+    2,
+    1,
+    0
+  ],
+  "title_size": 116
+}

@@ -1,0 +1,91 @@
+{
+ "title": [
+  [
+   [
+    "RANKING",
+    "&H00FFFFFF&"
+   ],
+   [
+    "INSANE",
+    "&H0000D7FF&"
+   ]
+  ],
+  [
+   [
+    "FAILS",
+    "&H000000FF&"
+   ],
+   [
+    "CAUGHT ON CAM",
+    "&H00FFFFFF&"
+   ]
+  ]
+ ],
+ "band": 360,
+ "bottom": 132,
+ "gap": 0.25,
+ "items": [
+  {
+   "n": 1,
+   "ss": 439.4,
+   "dur": 5.0,
+   "label": "trust the net",
+   "color": "&H0000D7FF&",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "n": 2,
+   "ss": 71.3,
+   "dur": 5.0,
+   "label": "piano 1 - 0",
+   "color": "&H00FFFFFF&",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "n": 3,
+   "ss": 454.7,
+   "dur": 4.0,
+   "label": "stage wipeout",
+   "color": "&H0000A5FF&",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "n": 4,
+   "ss": 24.8,
+   "dur": 5.0,
+   "label": "trampoline fail",
+   "color": "&H00FFFFFF&",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "n": 5,
+   "ss": 65.3,
+   "dur": 4.0,
+   "label": "sprint gone wrong",
+   "color": "&H0000D7FF&",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ],
+ "order": [
+  2,
+  4,
+  1,
+  3,
+  0
+ ]
+}

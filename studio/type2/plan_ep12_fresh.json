@@ -1,0 +1,119 @@
+{
+  "title": [
+    [
+      [
+        "Ranking Best",
+        "&H00FFFFFF&"
+      ],
+      [
+        "Fail",
+        "&H002828F0&"
+      ]
+    ],
+    [
+      [
+        "Moments",
+        "&H0000D7FF&"
+      ]
+    ]
+  ],
+  "band": 360,
+  "bottom": 132,
+  "gap": 0.16,
+  "items": [
+    {
+      "n": 1,
+      "ss": 0.0,
+      "dur": 6.3,
+      "label": "CHALLENGE FLOOR FAIL",
+      "color": "&H000000FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.128125,
+      "crop_bottom": 0.128125,
+      "sfx": [
+        {
+          "at": 2.45,
+          "key": "fail"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "ss": 6.3,
+      "dur": 4.1,
+      "label": "BIKE WHEELIE WIPEOUT",
+      "color": "&H000011FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.128125,
+      "crop_bottom": 0.128125,
+      "sfx": [
+        {
+          "at": 2.55,
+          "key": "yeet"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "ss": 10.4,
+      "dur": 3.7,
+      "label": "POGO STICK FAIL",
+      "color": "&H0000A5FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.128125,
+      "crop_bottom": 0.128125,
+      "sfx": [
+        {
+          "at": 1.8,
+          "key": "oof"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "ss": 14.1,
+      "dur": 6.5,
+      "label": "SKATEBOARD SHUVIT FAIL",
+      "color": "&H00FFFFFF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "crop_top": 0.128125,
+      "crop_bottom": 0.128125,
+      "sfx": [
+        {
+          "at": 5.0,
+          "key": "ba_drum_tss"
+        }
+      ]
+    }
+  ],
+  "music": "/home/user/studio/type2/assets/c2_48.wav",
+  "music_ss": 0.0,
+  "music_vol": 0.17,
+  "clip_vol": 0.0,
+  "sfx_dir": "/home/user/studio/trial/sfx",
+  "sfx_peak_db": -7.5,
+  "ladder": "asc",
+  "order": [
+    3,
+    2,
+    1,
+    0
+  ],
+  "title_size": 116
+}

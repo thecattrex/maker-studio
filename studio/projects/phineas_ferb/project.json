@@ -1,0 +1,90 @@
+{
+ "name": "phineas_ferb",
+ "source": {
+  "local": "/home/user/studio/projects/phineas_ferb/source.mp4",
+  "url": "",
+  "note": "Pexels free-license stock b-roll"
+ },
+ "look": "film",
+ "layout": {
+  "size": [
+   1080,
+   1920
+  ],
+  "band": 360,
+  "bottom_band": 360,
+  "cap_y": 1260,
+  "cap_size": 60,
+  "cap_line_chars": 26
+ },
+ "header": [
+  {
+   "text": "PHINEAS",
+   "color": "white",
+   "hi": "PHINEAS",
+   "hi_color": "yellow",
+   "size": 148,
+   "y": 112
+  },
+  {
+   "text": "AND FERB",
+   "color": "white",
+   "hi": "FERB",
+   "hi_color": "red",
+   "size": 118,
+   "y": 202
+  }
+ ],
+ "audio": {
+  "duck": 0.5,
+  "master_gain_db": 2.5
+ },
+ "clips": [
+  {
+   "ss": 0.0,
+   "dur": 43.2,
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.02
+  }
+ ],
+ "narration": [
+  {
+   "id": "01_hook",
+   "at": 0.3,
+   "file": "narr/01.mp3",
+   "caption": "104 DIN KI GARMI KI CHHUTTI - AUR DO SAUTELE BHAI, PHINEAS AUR FERB, HAR DIN KUCH NAYA BANATE HAIN.",
+   "lang": "hi"
+  },
+  {
+   "id": "02_what",
+   "at": 10.16,
+   "file": "narr/02.mp3",
+   "caption": "AAJ ROLLERCOASTER, KAL ROBOT, PARSON PURA BEACH - AUR SAB KUCH GHAR KE PICHHWADE MEIN.",
+   "lang": "hi"
+  },
+  {
+   "id": "03_candace",
+   "at": 18.65,
+   "file": "narr/03.mp3",
+   "caption": "BEHAN CANDACE HAR ROZ UNHE MAAN KE SAAMNE PAKADWANA CHAHTI HAI - PAR MAAN KO KABHI KUCH DIKHTA NAHI.",
+   "lang": "hi"
+  },
+  {
+   "id": "04_perry",
+   "at": 24.79,
+   "file": "narr/04.mp3",
+   "caption": "KYUNKI PALTU PLATYPUS PERRY ASAL MEIN EK SECRET AGENT HAI - AUR DR. DOOFENSHMIRTZ KI MACHINE HAR BAAR SAARA SABOOT MITA DETI HAI.",
+   "lang": "hi"
+  },
+  {
+   "id": "05_end",
+   "at": 34.78,
+   "file": "narr/05.mp3",
+   "caption": "YAHI IS SHOW KA JAADU HAI - EK HI FORMULA, 104 BAAR - AUR HAR BAAR MAZA.",
+   "lang": "hi"
+  }
+ ]
+}

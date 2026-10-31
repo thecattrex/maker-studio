@@ -1,0 +1,164 @@
+{
+ "type": 1,
+ "name": "kgf_rocky_intro",
+ "source": "/home/user/media/kgf_source.mp4",
+ "size": [
+  1080,
+  1920
+ ],
+ "band": 360,
+ "bottom_band": 360,
+ "fit": "crop",
+ "look": "ai",
+ "bright": 0.0,
+ "grade": true,
+ "scene": {
+  "ss": 102.0,
+  "dur": 25.6
+ },
+ "hook": {
+  "ss": 117.8,
+  "dur": 4.8
+ },
+ "header": {
+  "line1": "KGF",
+  "line1_color": "&H002222D6&",
+  "line1_size": 230,
+  "line1_y": 150,
+  "line2": "ROCKY",
+  "line2_color": "&H00FFFFFF&",
+  "line2_size": 128,
+  "line2_y": 282
+ },
+ "cap_style": {
+  "font": "Inter Black",
+  "size": 60,
+  "fsp": -1.5,
+  "bord": 4,
+  "shad": 3,
+  "y": 1260,
+  "line_chars": 26,
+  "lead": 0.25,
+  "tail": 0.45,
+  "scale": 122
+ },
+ "cap_words": [
+  [
+   [
+    "KAUN",
+    0.42,
+    0.62
+   ],
+   [
+    "HAI",
+    0.62,
+    0.72
+   ],
+   [
+    "WO",
+    0.72,
+    0.85
+   ],
+   [
+    "LADKA?",
+    0.85,
+    1.2
+   ]
+  ],
+  [
+   [
+    "MERE",
+    1.22,
+    1.44
+   ],
+   [
+    "KO",
+    1.44,
+    1.56
+   ],
+   [
+    "CHAHIYE",
+    1.56,
+    1.98
+   ]
+  ],
+  [
+   [
+    "HAAN",
+    2.0,
+    2.18
+   ],
+   [
+    "SAAB",
+    2.18,
+    2.44
+   ]
+  ],
+  [
+   [
+    "LADKA",
+    10.0,
+    12.0
+   ],
+   [
+    "NAHI...",
+    12.0,
+    12.56
+   ],
+   [
+    "MERA",
+    12.56,
+    13.44
+   ],
+   [
+    "NAAM",
+    13.44,
+    13.78
+   ],
+   [
+    "ROCKY",
+    13.78,
+    14.5
+   ],
+   [
+    "HAI",
+    14.5,
+    14.76
+   ]
+  ],
+  [
+   [
+    "YAAD",
+    16.58,
+    17.0
+   ],
+   [
+    "RAHEGA",
+    17.0,
+    17.4
+   ],
+   [
+    "NA?",
+    17.4,
+    17.64
+   ]
+  ],
+  [
+   [
+    "ROCKY!",
+    17.66,
+    18.8
+   ]
+  ],
+  [
+   [
+    "SAAB.",
+    23.16,
+    24.6
+   ]
+  ]
+ ],
+ "clip_vol": 1.0,
+ "master_gain_db": 0.0,
+ "crf": 23
+}

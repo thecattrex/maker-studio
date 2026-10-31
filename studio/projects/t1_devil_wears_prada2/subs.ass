@@ -1,0 +1,93 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+
+Style: Title,Anton,112,&H00FFFFFF,&H000000FF,8,&H00000000,-1,0,0,0,100,100,2,0,1,7,0,5,60,60,120,1
+Style: TitleHi,Anton,112,&H2E2EF7&,&H000000FF,8,&H00000000,-1,0,0,0,100,100,2,0,1,7,0,5,60,60,120,1
+Style: Sub,Bebas Neue,54,&H00FFFFFF,&H000000FF,8,&H00000000,-1,0,0,0,100,100,0,0,1,6,0,5,60,60,60,1
+Style: Cap,Anton,76,&H00FFFFFF,&H0030C8FF,7,&H80101010,-1,0,0,0,100,100,2,0,1,6,2,2,60,60,80,1
+Style: CapHi,Anton,76,&H2E2EF7&,&H0030C8FF,7,&H80101010,-1,0,0,0,100,100,2,0,1,6,2,2,60,60,80,1
+Style: Rank,Archivo Black,44,&H00FFFFFF,&H000000FF,4,&H00000000,-1,0,0,0,100,100,2,0,1,5,1,2,0,0,0,1
+Style: RankDim,Archivo Black,44,&H00787878,&H000000FF,4,&H00000000,-1,0,0,0,100,100,2,0,1,5,1,2,0,0,0,1
+Style: Small,Inter,34,&H00FFFFFF,&H000000FF,3,&HB0000000,-1,0,0,0,100,100,2,0,1,3,0,2,20,20,20,1
+Style: Chip,Inter,34,&H00FFFFFF,&H000000FF,3,&H90000000,-1,0,0,0,100,100,2,0,4,3,0,2,10,10,10,1
+Style: Watermark,Inter,30,&H60FFFFFF,&H000000FF,0,&H60000000,-1,0,0,0,100,100,7,0,1,0,0,2,10,10,10,1
+Style: Header,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,10,&HA0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,60,1
+Style: HeaderHi,Poppins ExtraBold,54,&H2E2EF7&,&H000000FF,10,&HA0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,60,1
+Style: ActionCap,Poppins ExtraBold,40,&H14FFFFFF,&H000000FF,9,&H99000000,-1,0,0,0,100,100,5,0,1,7,0,3,40,40,40,1
+Style: Impact,Barlow Condensed ExtraBold,96,&H00FFFFFF,&H000000FF,12,&HC0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,40,1
+Style: RankNum,Poppins ExtraBold,64,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: RankLbl,Poppins ExtraBold,40,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: CapYellow,Poppins Bold,38,&H0000D7FF,&H000000FF,6,&H90000000,-1,0,0,0,100,100,5,0,1,7,0,3,26,26,26,1
+Style: Dialogue,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,7,&HB0000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: DialogueHi,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,7,&HB0000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.04,0:00:00.68,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}HI,{\c&HFFFFFF&\fscy100} GOOD\NMORNING, MIRANDA.
+Dialogue: 0,0:00:00.68,0:00:00.84,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}HI, {\c&H0000D7FF&\fscy118}GOOD{\c&HFFFFFF&\fscy100}\NMORNING, MIRANDA.
+Dialogue: 0,0:00:00.84,0:00:01.04,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}HI, GOOD\N{\c&H0000D7FF&\fscy118}MORNING,{\c&HFFFFFF&\fscy100} MIRANDA.
+Dialogue: 0,0:00:01.04,0:00:01.56,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}HI, GOOD\NMORNING, {\c&H0000D7FF&\fscy118}MIRANDA.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:01.84,0:00:02.24,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}YES,{\c&HFFFFFF&\fscy100} ASHLEY,\NFLAG ON THE PLAY.
+Dialogue: 0,0:00:02.24,0:00:02.80,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YES, {\c&H0000D7FF&\fscy118}ASHLEY,{\c&HFFFFFF&\fscy100}\NFLAG ON THE PLAY.
+Dialogue: 0,0:00:02.80,0:00:02.94,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YES, ASHLEY,\N{\c&H0000D7FF&\fscy118}FLAG{\c&HFFFFFF&\fscy100} ON THE PLAY.
+Dialogue: 0,0:00:02.94,0:00:03.06,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YES, ASHLEY,\NFLAG {\c&H0000D7FF&\fscy118}ON{\c&HFFFFFF&\fscy100} THE PLAY.
+Dialogue: 0,0:00:03.06,0:00:03.18,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YES, ASHLEY,\NFLAG ON {\c&H0000D7FF&\fscy118}THE{\c&HFFFFFF&\fscy100} PLAY.
+Dialogue: 0,0:00:03.18,0:00:03.44,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YES, ASHLEY,\NFLAG ON THE {\c&H0000D7FF&\fscy118}PLAY.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:03.46,0:00:03.68,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}WE{\c&HFFFFFF&\fscy100} DON'T NEED YOU\NTHIS MORNING...
+Dialogue: 0,0:00:03.68,0:00:03.84,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}WE {\c&H0000D7FF&\fscy118}DON'T{\c&HFFFFFF&\fscy100} NEED YOU\NTHIS MORNING...
+Dialogue: 0,0:00:03.84,0:00:04.02,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}WE DON'T {\c&H0000D7FF&\fscy118}NEED{\c&HFFFFFF&\fscy100} YOU\NTHIS MORNING...
+Dialogue: 0,0:00:04.02,0:00:04.16,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}WE DON'T NEED {\c&H0000D7FF&\fscy118}YOU{\c&HFFFFFF&\fscy100}\NTHIS MORNING...
+Dialogue: 0,0:00:04.16,0:00:04.32,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}WE DON'T NEED YOU\N{\c&H0000D7FF&\fscy118}THIS{\c&HFFFFFF&\fscy100} MORNING...
+Dialogue: 0,0:00:04.32,0:00:04.94,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}WE DON'T NEED YOU\NTHIS {\c&H0000D7FF&\fscy118}MORNING...{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:06.34,0:00:06.62,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}SO{\c&HFFFFFF&\fscy100} PACK UP\NYOUR THINGS,
+Dialogue: 0,0:00:06.62,0:00:06.90,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}SO {\c&H0000D7FF&\fscy118}PACK{\c&HFFFFFF&\fscy100} UP\NYOUR THINGS,
+Dialogue: 0,0:00:06.90,0:00:07.06,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}SO PACK {\c&H0000D7FF&\fscy118}UP{\c&HFFFFFF&\fscy100}\NYOUR THINGS,
+Dialogue: 0,0:00:07.06,0:00:07.22,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}SO PACK UP\N{\c&H0000D7FF&\fscy118}YOUR{\c&HFFFFFF&\fscy100} THINGS,
+Dialogue: 0,0:00:07.22,0:00:07.96,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}SO PACK UP\NYOUR {\c&H0000D7FF&\fscy118}THINGS,{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:08.06,0:00:08.46,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}AND{\c&HFFFFFF&\fscy100} HR WILL BE IN\NTO SEE YOU SHORTLY.
+Dialogue: 0,0:00:08.46,0:00:09.26,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}AND {\c&H0000D7FF&\fscy118}HR{\c&HFFFFFF&\fscy100} WILL BE IN\NTO SEE YOU SHORTLY.
+Dialogue: 0,0:00:09.26,0:00:09.48,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}AND HR {\c&H0000D7FF&\fscy118}WILL{\c&HFFFFFF&\fscy100} BE IN\NTO SEE YOU SHORTLY.
+Dialogue: 0,0:00:09.48,0:00:09.62,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}AND HR WILL {\c&H0000D7FF&\fscy118}BE{\c&HFFFFFF&\fscy100} IN\NTO SEE YOU SHORTLY.
+Dialogue: 0,0:00:09.62,0:00:09.76,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}AND HR WILL BE {\c&H0000D7FF&\fscy118}IN{\c&HFFFFFF&\fscy100}\NTO SEE YOU SHORTLY.
+Dialogue: 0,0:00:09.76,0:00:09.90,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}AND HR WILL BE IN\N{\c&H0000D7FF&\fscy118}TO{\c&HFFFFFF&\fscy100} SEE YOU SHORTLY.
+Dialogue: 0,0:00:09.90,0:00:10.10,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}AND HR WILL BE IN\NTO {\c&H0000D7FF&\fscy118}SEE{\c&HFFFFFF&\fscy100} YOU SHORTLY.
+Dialogue: 0,0:00:10.10,0:00:10.28,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}AND HR WILL BE IN\NTO SEE {\c&H0000D7FF&\fscy118}YOU{\c&HFFFFFF&\fscy100} SHORTLY.
+Dialogue: 0,0:00:10.28,0:00:10.89,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}AND HR WILL BE IN\NTO SEE YOU {\c&H0000D7FF&\fscy118}SHORTLY.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:13.52,0:00:13.80,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}YOU{\c&HFFFFFF&\fscy100} JUST COST CORNELL'S\NSUMMA CUM LAUDE HER JOB.
+Dialogue: 0,0:00:13.80,0:00:14.00,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YOU {\c&H0000D7FF&\fscy118}JUST{\c&HFFFFFF&\fscy100} COST CORNELL'S\NSUMMA CUM LAUDE HER JOB.
+Dialogue: 0,0:00:14.00,0:00:14.40,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YOU JUST {\c&H0000D7FF&\fscy118}COST{\c&HFFFFFF&\fscy100} CORNELL'S\NSUMMA CUM LAUDE HER JOB.
+Dialogue: 0,0:00:14.40,0:00:15.34,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YOU JUST COST {\c&H0000D7FF&\fscy118}CORNELL'S{\c&HFFFFFF&\fscy100}\NSUMMA CUM LAUDE HER JOB.
+Dialogue: 0,0:00:15.34,0:00:15.62,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YOU JUST COST CORNELL'S\N{\c&H0000D7FF&\fscy118}SUMMA{\c&HFFFFFF&\fscy100} CUM LAUDE HER JOB.
+Dialogue: 0,0:00:15.62,0:00:15.80,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YOU JUST COST CORNELL'S\NSUMMA {\c&H0000D7FF&\fscy118}CUM{\c&HFFFFFF&\fscy100} LAUDE HER JOB.
+Dialogue: 0,0:00:15.80,0:00:16.10,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YOU JUST COST CORNELL'S\NSUMMA CUM {\c&H0000D7FF&\fscy118}LAUDE{\c&HFFFFFF&\fscy100} HER JOB.
+Dialogue: 0,0:00:16.10,0:00:16.28,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YOU JUST COST CORNELL'S\NSUMMA CUM LAUDE {\c&H0000D7FF&\fscy118}HER{\c&HFFFFFF&\fscy100} JOB.
+Dialogue: 0,0:00:16.28,0:00:16.94,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}YOU JUST COST CORNELL'S\NSUMMA CUM LAUDE HER {\c&H0000D7FF&\fscy118}JOB.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:17.84,0:00:18.22,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}FIRST{\c&HFFFFFF&\fscy100} IN HER FAMILY TO\NGO TO COLLEGE, I BELIEVE.
+Dialogue: 0,0:00:18.22,0:00:18.46,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}FIRST {\c&H0000D7FF&\fscy118}IN{\c&HFFFFFF&\fscy100} HER FAMILY TO\NGO TO COLLEGE, I BELIEVE.
+Dialogue: 0,0:00:18.46,0:00:18.60,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}FIRST IN {\c&H0000D7FF&\fscy118}HER{\c&HFFFFFF&\fscy100} FAMILY TO\NGO TO COLLEGE, I BELIEVE.
+Dialogue: 0,0:00:18.60,0:00:18.94,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}FIRST IN HER {\c&H0000D7FF&\fscy118}FAMILY{\c&HFFFFFF&\fscy100} TO\NGO TO COLLEGE, I BELIEVE.
+Dialogue: 0,0:00:18.94,0:00:19.12,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}FIRST IN HER FAMILY {\c&H0000D7FF&\fscy118}TO{\c&HFFFFFF&\fscy100}\NGO TO COLLEGE, I BELIEVE.
+Dialogue: 0,0:00:19.12,0:00:19.28,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}FIRST IN HER FAMILY TO\N{\c&H0000D7FF&\fscy118}GO{\c&HFFFFFF&\fscy100} TO COLLEGE, I BELIEVE.
+Dialogue: 0,0:00:19.28,0:00:19.46,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}FIRST IN HER FAMILY TO\NGO {\c&H0000D7FF&\fscy118}TO{\c&HFFFFFF&\fscy100} COLLEGE, I BELIEVE.
+Dialogue: 0,0:00:19.46,0:00:19.76,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}FIRST IN HER FAMILY TO\NGO TO {\c&H0000D7FF&\fscy118}COLLEGE,{\c&HFFFFFF&\fscy100} I BELIEVE.
+Dialogue: 0,0:00:19.76,0:00:19.92,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}FIRST IN HER FAMILY TO\NGO TO COLLEGE, {\c&H0000D7FF&\fscy118}I{\c&HFFFFFF&\fscy100} BELIEVE.
+Dialogue: 0,0:00:19.92,0:00:20.56,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}FIRST IN HER FAMILY TO\NGO TO COLLEGE, I {\c&H0000D7FF&\fscy118}BELIEVE.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:21.28,0:00:22.28,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5\blur18\alpha&HFF&\t(0,166,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy118}ANYWAY,{\c&HFFFFFF&\fscy100} COME\NALONG. COME ON.
+Dialogue: 0,0:00:22.28,0:00:22.44,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}ANYWAY, {\c&H0000D7FF&\fscy118}COME{\c&HFFFFFF&\fscy100}\NALONG. COME ON.
+Dialogue: 0,0:00:22.44,0:00:23.06,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}ANYWAY, COME\N{\c&H0000D7FF&\fscy118}ALONG.{\c&HFFFFFF&\fscy100} COME ON.
+Dialogue: 0,0:00:23.06,0:00:23.28,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}ANYWAY, COME\NALONG. {\c&H0000D7FF&\fscy118}COME{\c&HFFFFFF&\fscy100} ON.
+Dialogue: 0,0:00:23.28,0:00:23.84,Cap,,0,0,0,,{\an2\pos(540,1405)\fn Archivo Black\fs64\bord8\shad4\3c&H000000&\4c&H000000&\fsp-0.5}ANYWAY, COME\NALONG. COME {\c&H0000D7FF&\fscy118}ON.{\c&HFFFFFF&\fscy100}
+Dialogue: 2,0:00:00.20,0:00:23.94,Small,,0,0,0,,{\an5\pos(540,1648)\fnBebas Neue\fs46\fsp6\c&H00969696&\bord0\shad0\alpha&HFF&\t(0,350,\alpha&H20&)}THE DEVIL WEARS PRADA 2
+Dialogue: 4,0:00:10.80,0:00:11.82,ActionCap,,0,0,0,,{\an2\pos(540,1400)\fnBarlow Condensed\b1\fs58\fsp3\c&H00E8E8E8&\bord8\3c&H000000&\3a&H00&\shad3\4c&H000000&\4a&H70&\blur14\alpha&HFF&\t(0,140,\blur0\alpha&H00&)}(HANGS UP COLDLY)
+Dialogue: 5,0:00:00.00,0:00:23.94,Title,,0,0,0,,{\an5\fnAnton\fs94\fsp2\bord0\shad0\c&H00FFFFFF&\move(540,164,540,134,0,260)\blur16\alpha&HFF&\t(0,260,\blur0\alpha&H00&)}HIRED LAST NIGHT...
+Dialogue: 5,0:00:00.08,0:00:23.94,Title,,0,0,0,,{\an5\fnAnton\fs126\fsp2\bord0\shad0\move(540,284,540,254,0,280)\blur16\alpha&HFF&\t(0,280,\blur0\alpha&H00&)}{\c&H002E2EF7&}FIRED {\c&H00FFFFFF&}ON SPEAKER
+Dialogue: 6,0:00:04.78,0:00:06.18,Impact,,0,0,0,,{\an2\pos(540,1405)\fnAnton\fs98\fsp3\c&H002E2EF7&\bord9\3c&H000000&\3a&H00&\shad4\4c&H000000&\4a&H60&\fscx82\fscy82\blur16\alpha&HFF&\t(0,120,\fscx107\fscy107\blur0\alpha&H00&)\t(120,210,\fscx100\fscy100)}OR EVER.
+Dialogue: 6,0:00:11.92,0:00:12.98,Impact,,0,0,0,,{\an2\pos(540,1405)\fnAnton\fs104\fsp3\c&H0000D7FF&\bord9\3c&H000000&\3a&H00&\shad4\4c&H000000&\4a&H60&\fscx78\fscy78\blur16\alpha&HFF&\t(0,120,\fscx108\fscy108\blur0\alpha&H00&)\t(120,210,\fscx100\fscy100)}HAPPY?

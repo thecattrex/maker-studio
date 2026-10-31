@@ -1,0 +1,97 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+
+Style: Title,Anton,112,&H00FFFFFF,&H000000FF,8,&H00000000,-1,0,0,0,100,100,2,0,1,7,0,5,60,60,120,1
+Style: TitleHi,Anton,112,&H2E2EF7&,&H000000FF,8,&H00000000,-1,0,0,0,100,100,2,0,1,7,0,5,60,60,120,1
+Style: Sub,Bebas Neue,54,&H00FFFFFF,&H000000FF,8,&H00000000,-1,0,0,0,100,100,0,0,1,6,0,5,60,60,60,1
+Style: Cap,Anton,76,&H00FFFFFF,&H0030C8FF,7,&H80101010,-1,0,0,0,100,100,2,0,1,6,2,2,60,60,80,1
+Style: CapHi,Anton,76,&H2E2EF7&,&H0030C8FF,7,&H80101010,-1,0,0,0,100,100,2,0,1,6,2,2,60,60,80,1
+Style: Rank,Archivo Black,44,&H00FFFFFF,&H000000FF,4,&H00000000,-1,0,0,0,100,100,2,0,1,5,1,2,0,0,0,1
+Style: RankDim,Archivo Black,44,&H00787878,&H000000FF,4,&H00000000,-1,0,0,0,100,100,2,0,1,5,1,2,0,0,0,1
+Style: Small,Inter,34,&H00FFFFFF,&H000000FF,3,&HB0000000,-1,0,0,0,100,100,2,0,1,3,0,2,20,20,20,1
+Style: Chip,Inter,34,&H00FFFFFF,&H000000FF,3,&H90000000,-1,0,0,0,100,100,2,0,4,3,0,2,10,10,10,1
+Style: Watermark,Inter,30,&H60FFFFFF,&H000000FF,0,&H60000000,-1,0,0,0,100,100,7,0,1,0,0,2,10,10,10,1
+Style: Header,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,10,&HA0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,60,1
+Style: HeaderHi,Poppins ExtraBold,54,&H2E2EF7&,&H000000FF,10,&HA0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,60,1
+Style: ActionCap,Poppins ExtraBold,40,&H14FFFFFF,&H000000FF,9,&H99000000,-1,0,0,0,100,100,5,0,1,7,0,3,40,40,40,1
+Style: Impact,Barlow Condensed ExtraBold,96,&H00FFFFFF,&H000000FF,12,&HC0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,40,1
+Style: RankNum,Poppins ExtraBold,64,&H00FFFFFF,&H000000FF,9,&H00000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: RankLbl,Poppins ExtraBold,40,&H00FFFFFF,&H000000FF,8,&H00000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: CapYellow,Poppins Bold,38,&H0000D7FF,&H000000FF,6,&H90000000,-1,0,0,0,100,100,5,0,1,7,0,3,26,26,26,1
+Style: Dialogue,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,7,&HB0000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: DialogueHi,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,7,&HB0000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:59.60,Title,,0,0,0,,{\an5\pos(540,150)\fs230\fsp2\bord0\shad0\c&H002222D6&}KGF
+Dialogue: 0,0:00:00.00,0:00:59.60,Title,,0,0,0,,{\an5\pos(540,282)\fs128\fsp2\bord0\shad0\c&H00FFFFFF&}CHAPTER 1
+Dialogue: 0,0:00:04.32,0:00:05.30,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,260,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}SAB,{\c&H00FFFFFF&\fscy100} WO MERA LADKA HAI
+Dialogue: 0,0:00:05.30,0:00:05.38,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}SAB, {\c&H0000D7FF&\fscy122}WO{\c&H00FFFFFF&\fscy100} MERA LADKA HAI
+Dialogue: 0,0:00:05.38,0:00:05.58,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}SAB, WO {\c&H0000D7FF&\fscy122}MERA{\c&H00FFFFFF&\fscy100} LADKA HAI
+Dialogue: 0,0:00:05.58,0:00:05.80,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}SAB, WO MERA {\c&H0000D7FF&\fscy122}LADKA{\c&H00FFFFFF&\fscy100} HAI
+Dialogue: 0,0:00:05.80,0:00:06.00,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}SAB, WO MERA LADKA {\c&H0000D7FF&\fscy122}HAI{\c&H00FFFFFF&\fscy100}
+Dialogue: 0,0:00:06.02,0:00:07.02,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,260,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}ANDHERE{\c&H00FFFFFF&\fscy100} MEIN\NBAITHA THA USKO
+Dialogue: 0,0:00:07.02,0:00:07.12,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}ANDHERE {\c&H0000D7FF&\fscy122}MEIN{\c&H00FFFFFF&\fscy100}\NBAITHA THA USKO
+Dialogue: 0,0:00:07.12,0:00:07.36,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}ANDHERE MEIN\N{\c&H0000D7FF&\fscy122}BAITHA{\c&H00FFFFFF&\fscy100} THA USKO
+Dialogue: 0,0:00:07.36,0:00:07.50,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}ANDHERE MEIN\NBAITHA {\c&H0000D7FF&\fscy122}THA{\c&H00FFFFFF&\fscy100} USKO
+Dialogue: 0,0:00:07.50,0:00:07.86,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}ANDHERE MEIN\NBAITHA THA {\c&H0000D7FF&\fscy122}USKO{\c&H00FFFFFF&\fscy100}
+Dialogue: 0,0:00:07.88,0:00:08.58,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,260,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}MAJAK{\c&H00FFFFFF&\fscy100} MEIN POLICE\NWALE KO MAARNE KE LIYE
+Dialogue: 0,0:00:08.58,0:00:08.66,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}MAJAK {\c&H0000D7FF&\fscy122}MEIN{\c&H00FFFFFF&\fscy100} POLICE\NWALE KO MAARNE KE LIYE
+Dialogue: 0,0:00:08.66,0:00:08.88,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}MAJAK MEIN {\c&H0000D7FF&\fscy122}POLICE{\c&H00FFFFFF&\fscy100}\NWALE KO MAARNE KE LIYE
+Dialogue: 0,0:00:08.88,0:00:09.06,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}MAJAK MEIN POLICE\N{\c&H0000D7FF&\fscy122}WALE{\c&H00FFFFFF&\fscy100} KO MAARNE KE LIYE
+Dialogue: 0,0:00:09.06,0:00:09.16,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}MAJAK MEIN POLICE\NWALE {\c&H0000D7FF&\fscy122}KO{\c&H00FFFFFF&\fscy100} MAARNE KE LIYE
+Dialogue: 0,0:00:09.16,0:00:09.44,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}MAJAK MEIN POLICE\NWALE KO {\c&H0000D7FF&\fscy122}MAARNE{\c&H00FFFFFF&\fscy100} KE LIYE
+Dialogue: 0,0:00:09.44,0:00:09.54,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}MAJAK MEIN POLICE\NWALE KO MAARNE {\c&H0000D7FF&\fscy122}KE{\c&H00FFFFFF&\fscy100} LIYE
+Dialogue: 0,0:00:09.54,0:00:09.88,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}MAJAK MEIN POLICE\NWALE KO MAARNE KE {\c&H0000D7FF&\fscy122}LIYE{\c&H00FFFFFF&\fscy100}
+Dialogue: 0,0:00:09.90,0:00:10.50,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,260,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}LEKIN{\c&H00FFFFFF&\fscy100} WO KUCH NAHI KARTA
+Dialogue: 0,0:00:10.50,0:00:10.62,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}LEKIN {\c&H0000D7FF&\fscy122}WO{\c&H00FFFFFF&\fscy100} KUCH NAHI KARTA
+Dialogue: 0,0:00:10.62,0:00:10.78,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}LEKIN WO {\c&H0000D7FF&\fscy122}KUCH{\c&H00FFFFFF&\fscy100} NAHI KARTA
+Dialogue: 0,0:00:10.78,0:00:10.88,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}LEKIN WO KUCH {\c&H0000D7FF&\fscy122}NAHI{\c&H00FFFFFF&\fscy100} KARTA
+Dialogue: 0,0:00:10.88,0:00:11.32,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}LEKIN WO KUCH NAHI {\c&H0000D7FF&\fscy122}KARTA{\c&H00FFFFFF&\fscy100}
+Dialogue: 0,0:00:11.34,0:00:12.26,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,260,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}MAINE{\c&H00FFFFFF&\fscy100} POLICE SE\NUSKO CHHUDA DIYA HAI
+Dialogue: 0,0:00:12.26,0:00:12.58,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}MAINE {\c&H0000D7FF&\fscy122}POLICE{\c&H00FFFFFF&\fscy100} SE\NUSKO CHHUDA DIYA HAI
+Dialogue: 0,0:00:12.58,0:00:12.68,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}MAINE POLICE {\c&H0000D7FF&\fscy122}SE{\c&H00FFFFFF&\fscy100}\NUSKO CHHUDA DIYA HAI
+Dialogue: 0,0:00:12.68,0:00:12.88,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}MAINE POLICE SE\N{\c&H0000D7FF&\fscy122}USKO{\c&H00FFFFFF&\fscy100} CHHUDA DIYA HAI
+Dialogue: 0,0:00:12.88,0:00:13.24,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}MAINE POLICE SE\NUSKO {\c&H0000D7FF&\fscy122}CHHUDA{\c&H00FFFFFF&\fscy100} DIYA HAI
+Dialogue: 0,0:00:13.24,0:00:13.50,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}MAINE POLICE SE\NUSKO CHHUDA {\c&H0000D7FF&\fscy122}DIYA{\c&H00FFFFFF&\fscy100} HAI
+Dialogue: 0,0:00:13.50,0:00:14.19,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}MAINE POLICE SE\NUSKO CHHUDA DIYA {\c&H0000D7FF&\fscy122}HAI{\c&H00FFFFFF&\fscy100}
+Dialogue: 0,0:00:17.50,0:00:18.50,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,260,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}OE,{\c&H00FFFFFF&\fscy100} KIDHAR GAYA\NTHA MAIN TU
+Dialogue: 0,0:00:18.50,0:00:18.66,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}OE, {\c&H0000D7FF&\fscy122}KIDHAR{\c&H00FFFFFF&\fscy100} GAYA\NTHA MAIN TU
+Dialogue: 0,0:00:18.66,0:00:18.84,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}OE, KIDHAR {\c&H0000D7FF&\fscy122}GAYA{\c&H00FFFFFF&\fscy100}\NTHA MAIN TU
+Dialogue: 0,0:00:18.84,0:00:18.98,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}OE, KIDHAR GAYA\N{\c&H0000D7FF&\fscy122}THA{\c&H00FFFFFF&\fscy100} MAIN TU
+Dialogue: 0,0:00:18.98,0:00:19.08,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}OE, KIDHAR GAYA\NTHA {\c&H0000D7FF&\fscy122}MAIN{\c&H00FFFFFF&\fscy100} TU
+Dialogue: 0,0:00:19.08,0:00:19.75,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}OE, KIDHAR GAYA\NTHA MAIN {\c&H0000D7FF&\fscy122}TU{\c&H00FFFFFF&\fscy100}
+Dialogue: 0,0:00:21.78,0:00:22.52,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,260,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}NAAM{\c&H00FFFFFF&\fscy100} KAMANE GAYA THA
+Dialogue: 0,0:00:22.52,0:00:23.00,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}NAAM {\c&H0000D7FF&\fscy122}KAMANE{\c&H00FFFFFF&\fscy100} GAYA THA
+Dialogue: 0,0:00:23.00,0:00:23.34,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}NAAM KAMANE {\c&H0000D7FF&\fscy122}GAYA{\c&H00FFFFFF&\fscy100} THA
+Dialogue: 0,0:00:23.34,0:00:24.30,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}NAAM KAMANE GAYA {\c&H0000D7FF&\fscy122}THA{\c&H00FFFFFF&\fscy100}
+Dialogue: 0,0:00:24.32,0:00:24.94,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,260,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}US{\c&H00FFFFFF&\fscy100} POLICE WALE\NKO KYUN MAARA RE
+Dialogue: 0,0:00:24.94,0:00:25.18,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}US {\c&H0000D7FF&\fscy122}POLICE{\c&H00FFFFFF&\fscy100} WALE\NKO KYUN MAARA RE
+Dialogue: 0,0:00:25.18,0:00:25.34,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}US POLICE {\c&H0000D7FF&\fscy122}WALE{\c&H00FFFFFF&\fscy100}\NKO KYUN MAARA RE
+Dialogue: 0,0:00:25.34,0:00:25.44,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}US POLICE WALE\N{\c&H0000D7FF&\fscy122}KO{\c&H00FFFFFF&\fscy100} KYUN MAARA RE
+Dialogue: 0,0:00:25.44,0:00:25.52,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}US POLICE WALE\NKO {\c&H0000D7FF&\fscy122}KYUN{\c&H00FFFFFF&\fscy100} MAARA RE
+Dialogue: 0,0:00:25.52,0:00:25.72,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}US POLICE WALE\NKO KYUN {\c&H0000D7FF&\fscy122}MAARA{\c&H00FFFFFF&\fscy100} RE
+Dialogue: 0,0:00:25.72,0:00:26.49,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}US POLICE WALE\NKO KYUN MAARA {\c&H0000D7FF&\fscy122}RE{\c&H00FFFFFF&\fscy100}
+Dialogue: 0,0:00:27.28,0:00:27.94,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,260,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}KISI{\c&H00FFFFFF&\fscy100} KO MAARA TO\NPOLICE DHOONDHEGA
+Dialogue: 0,0:00:27.94,0:00:28.08,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}KISI {\c&H0000D7FF&\fscy122}KO{\c&H00FFFFFF&\fscy100} MAARA TO\NPOLICE DHOONDHEGA
+Dialogue: 0,0:00:28.08,0:00:28.52,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}KISI KO {\c&H0000D7FF&\fscy122}MAARA{\c&H00FFFFFF&\fscy100} TO\NPOLICE DHOONDHEGA
+Dialogue: 0,0:00:28.52,0:00:28.68,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}KISI KO MAARA {\c&H0000D7FF&\fscy122}TO{\c&H00FFFFFF&\fscy100}\NPOLICE DHOONDHEGA
+Dialogue: 0,0:00:28.68,0:00:30.28,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}KISI KO MAARA TO\N{\c&H0000D7FF&\fscy122}POLICE{\c&H00FFFFFF&\fscy100} DHOONDHEGA
+Dialogue: 0,0:00:30.28,0:00:31.61,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}KISI KO MAARA TO\NPOLICE {\c&H0000D7FF&\fscy122}DHOONDHEGA{\c&H00FFFFFF&\fscy100}
+Dialogue: 0,0:00:31.78,0:00:32.54,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,260,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}POLICE{\c&H00FFFFFF&\fscy100} WALE KO KOI MAARA\NTO TUMHARE JAISA DHOONDHEGA
+Dialogue: 0,0:00:32.54,0:00:32.88,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}POLICE {\c&H0000D7FF&\fscy122}WALE{\c&H00FFFFFF&\fscy100} KO KOI MAARA\NTO TUMHARE JAISA DHOONDHEGA
+Dialogue: 0,0:00:32.88,0:00:33.02,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}POLICE WALE {\c&H0000D7FF&\fscy122}KO{\c&H00FFFFFF&\fscy100} KOI MAARA\NTO TUMHARE JAISA DHOONDHEGA
+Dialogue: 0,0:00:33.02,0:00:33.12,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}POLICE WALE KO {\c&H0000D7FF&\fscy122}KOI{\c&H00FFFFFF&\fscy100} MAARA\NTO TUMHARE JAISA DHOONDHEGA
+Dialogue: 0,0:00:33.12,0:00:33.50,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}POLICE WALE KO KOI {\c&H0000D7FF&\fscy122}MAARA{\c&H00FFFFFF&\fscy100}\NTO TUMHARE JAISA DHOONDHEGA
+Dialogue: 0,0:00:33.50,0:00:33.78,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}POLICE WALE KO KOI MAARA\N{\c&H0000D7FF&\fscy122}TO{\c&H00FFFFFF&\fscy100} TUMHARE JAISA DHOONDHEGA
+Dialogue: 0,0:00:33.78,0:00:36.54,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}POLICE WALE KO KOI MAARA\NTO {\c&H0000D7FF&\fscy122}TUMHARE{\c&H00FFFFFF&\fscy100} JAISA DHOONDHEGA
+Dialogue: 0,0:00:36.54,0:00:36.70,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}POLICE WALE KO KOI MAARA\NTO TUMHARE {\c&H0000D7FF&\fscy122}JAISA{\c&H00FFFFFF&\fscy100} DHOONDHEGA
+Dialogue: 0,0:00:36.70,0:00:38.00,Cap,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}POLICE WALE KO KOI MAARA\NTO TUMHARE JAISA {\c&H0000D7FF&\fscy122}DHOONDHEGA{\c&H00FFFFFF&\fscy100}

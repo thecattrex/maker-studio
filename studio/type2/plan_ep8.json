@@ -1,0 +1,104 @@
+{
+  "title": [
+    [
+      [
+        "Ranking Best",
+        "&H00FFFFFF&"
+      ],
+      [
+        "Fail",
+        "&H002828F0&"
+      ]
+    ],
+    [
+      [
+        "Moments",
+        "&H0000D7FF&"
+      ]
+    ]
+  ],
+  "band": 360,
+  "bottom": 132,
+  "gap": 0.16,
+  "items": [
+    {
+      "n": 1,
+      "ss": 0.0,
+      "dur": 3.3,
+      "label": "DOG TACKLE",
+      "color": "&H000000FF&",
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "zoom_to": 1.0,
+      "sfx": []
+    },
+    {
+      "n": 2,
+      "ss": 3.3,
+      "dur": 3.3,
+      "label": "RIVER MISSTEP",
+      "color": "&H000011FF&",
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "zoom_to": 1.0,
+      "sfx": []
+    },
+    {
+      "n": 3,
+      "ss": 6.6,
+      "dur": 3.3,
+      "label": "DOORSTEP SLIP",
+      "color": "&H0000A5FF&",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "zoom_to": 1.0,
+      "sfx": []
+    },
+    {
+      "n": 4,
+      "ss": 9.9,
+      "dur": 4.2,
+      "label": "POOL COUNTDOWN",
+      "color": "&H0000D7FF&",
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "zoom_to": 1.0,
+      "sfx": []
+    },
+    {
+      "n": 5,
+      "ss": 14.1,
+      "dur": 3.3,
+      "label": "ICE WALK FAIL",
+      "color": "&H00FFFFFF&",
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "zoom_to": 1.0,
+      "sfx": []
+    }
+  ],
+  "music": null,
+  "music_ss": 0.0,
+  "music_vol": 0.0,
+  "clip_vol": 0.0,
+  "sfx_dir": "/home/user/studio/trial/sfx",
+  "sfx_peak_db": -10.0,
+  "ladder": "asc",
+  "order": [
+    2,
+    4,
+    1,
+    3,
+    0
+  ]
+}

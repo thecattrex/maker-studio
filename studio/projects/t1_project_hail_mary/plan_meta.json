@@ -1,0 +1,67 @@
+{
+  "slug": "t1_project_hail_mary",
+  "out": "/home/user/studio/samples/type1_project_hail_mary_hook_first.mp4",
+  "src": "/home/user/studio/_scratch/phm_personal.mp4",
+  "movie_tag": "PROJECT HAIL MARY",
+  "hdr1": "WHISPERING ABOUT HIS",
+  "hdr2_red": "ALIEN ",
+  "hdr2_white": "ROOMMATE",
+  "grade_vf": "eq=contrast=1.08:saturation=1.12:brightness=0.015:gamma=0.97,unsharp=5:5:0.45:5:5:0.0",
+  "vol_db": 10.5,
+  "hook_frames": [
+    1132,
+    1201
+  ],
+  "scene_frames": [
+    708,
+    1222
+  ],
+  "shots": [
+    [
+      708,
+      1095,
+      0.44,
+      0.46,
+      0.46,
+      0.45,
+      1.02,
+      1.082
+    ],
+    [
+      1095,
+      1160,
+      0.44,
+      0.46,
+      0.47,
+      0.47,
+      1.02,
+      1.05
+    ],
+    [
+      1160,
+      1225,
+      0.46,
+      0.48,
+      0.47,
+      0.47,
+      1.04,
+      1.085
+    ]
+  ],
+  "impacts_src": [
+    [
+      49.22,
+      49.98,
+      "HE'S RIGHT HERE!",
+      "&H002E2EF7&",
+      96
+    ]
+  ],
+  "actions_src": [
+    [
+      34.05,
+      35.02,
+      "(WHISPERS ACROSS THE SHIP)"
+    ]
+  ]
+}

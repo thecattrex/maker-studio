@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Maker Studio x HyperFrames</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ground: #f3efe6;
+        --ink: #121210;
+        --accent: #e63928;
+        --card: #181816;
+        --card-ink: #f7f4ec;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--ground);
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        background: var(--ground);
+        color: var(--ink);
+        overflow: hidden;
+      }
+      .stage {
+        position: absolute;
+        inset: 140px 84px 320px 84px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .kicker {
+        font-size: 34px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .headline {
+        margin-top: 26px;
+        font-size: 118px;
+        font-weight: 900;
+        line-height: 0.94;
+        letter-spacing: -0.04em;
+      }
+      .headline span {
+        display: block;
+      }
+      .headline .accent-word {
+        color: var(--accent);
+      }
+      .metric-card {
+        background: var(--card);
+        color: var(--card-ink);
+        border-radius: 36px;
+        padding: 58px 60px;
+        box-shadow: 0 28px 60px rgba(18, 18, 16, 0.18);
+      }
+      .metric-label {
+        font-size: 30px;
+        font-weight: 700;
+        opacity: 0.72;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .metric-row {
+        margin-top: 18px;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+      .metric-num {
+        font-size: 126px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        color: #ffd13b;
+      }
+      .metric-sub {
+        font-size: 36px;
+        font-weight: 700;
+      }
+      .bar-track {
+        margin-top: 34px;
+        width: 100%;
+        height: 26px;
+        background: rgba(255, 255, 255, 0.14);
+        border-radius: 13px;
+        overflow: hidden;
+      }
+      .bar-fill {
+        width: 100%;
+        height: 100%;
+        background: var(--accent);
+        border-radius: 13px;
+        transform-origin: left center;
+      }
+      .caption-rail {
+        position: absolute;
+        left: 84px;
+        right: 84px;
+        bottom: 240px;
+        display: flex;
+        justify-content: center;
+      }
+      .rail-pill {
+        background: var(--ink);
+        color: var(--card-ink);
+        padding: 22px 48px;
+        border-radius: 24px;
+        font-size: 44px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+      .rail-pill .active {
+        color: #ffd13b;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="3.5"
+      data-fps="30"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div id="scene-main" class="clip" data-start="0" data-duration="3.5" data-track-index="0">
+        <div class="stage">
+          <div id="hero-copy">
+            <div id="kicker" class="kicker">HYPERFRAMES ENGINE</div>
+            <h1 class="headline">
+              <span id="ln1">HTML IN.</span>
+              <span id="ln2" class="accent-word">CINEMA</span>
+              <span id="ln3">VIDEO OUT.</span>
+            </h1>
+          </div>
+
+          <div id="card" class="metric-card">
+            <div class="metric-label">READY REGISTRY BLOCKS</div>
+            <div class="metric-row">
+              <div class="metric-num">448</div>
+              <div class="metric-sub">1080x1920 @ 30fps</div>
+            </div>
+            <div class="bar-track">
+              <div id="bar" class="bar-fill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="rail-wrap" class="clip" data-start="0.2" data-duration="3.3" data-track-index="1">
+        <div class="caption-rail">
+          <div id="rail" class="rail-pill">
+            Deterministic <span class="active">GSAP</span> Cloud Render
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#kicker", { y: 28, opacity: 0 }, { y: 0, opacity: 1, duration: 0.32, ease: "power3.out" }, 0.05);
+      tl.fromTo("#ln1", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.38, ease: "power4.out" }, 0.14);
+      tl.fromTo("#ln2", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.38, ease: "power4.out" }, 0.24);
+      tl.fromTo("#ln3", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.38, ease: "power4.out" }, 0.34);
+
+      tl.fromTo("#card", { y: 80, scale: 0.94, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.48, ease: "power4.out" }, 0.48);
+      tl.fromTo("#bar", { scaleX: 0 }, { scaleX: 1, duration: 0.85, ease: "power3.out" }, 0.72);
+      tl.fromTo("#rail", { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.32, ease: "power3.out" }, 0.30);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

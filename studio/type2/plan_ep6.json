@@ -1,0 +1,22 @@
+{
+  "title": [
+    [["Ranking Best", "&H00FFFFFF&"], ["Fail", "&H002828F0&"]],
+    [["Moments", "&H0000D7FF&"]]
+  ],
+  "items": [
+    {"n": 3, "ss": 0.0, "dur": 3.666667, "label": "MISSED CAR JUMP", "color": "&H0000A5FF&"},
+    {"n": 5, "ss": 3.666667, "dur": 3.666667, "label": "PORCH SLIP", "color": "&H00FFFFFF&"},
+    {"n": 2, "ss": 7.333333, "dur": 3.6, "label": "LASSO MISFIRE", "color": "&H000011FF&"},
+    {"n": 4, "ss": 10.933333, "dur": 3.2, "label": "OBSTACLE WIPEOUT", "color": "&H0000D7FF&"},
+    {"n": 1, "ss": 14.133333, "dur": 3.6, "label": "POOL COLLAPSE", "color": "&H000000FF&"}
+  ],
+  "order": [0, 1, 2, 3, 4],
+  "ladder": "asc",
+  "title_size": 116,
+  "band": 360,
+  "bottom": 132,
+  "gap": 0.25,
+  "music": null,
+  "music_vol": 0.0,
+  "clip_vol": 0.0
+}

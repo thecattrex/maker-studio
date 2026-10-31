@@ -1,0 +1,122 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+
+Style: Title,Anton,112,&H00FFFFFF,&H000000FF,8,&H00000000,-1,0,0,0,100,100,2,0,1,7,0,5,60,60,120,1
+Style: TitleHi,Anton,112,&H2E2EF7&,&H000000FF,8,&H00000000,-1,0,0,0,100,100,2,0,1,7,0,5,60,60,120,1
+Style: Sub,Bebas Neue,54,&H00FFFFFF,&H000000FF,8,&H00000000,-1,0,0,0,100,100,0,0,1,6,0,5,60,60,60,1
+Style: Cap,Anton,76,&H00FFFFFF,&H0030C8FF,7,&H80101010,-1,0,0,0,100,100,2,0,1,6,2,2,60,60,80,1
+Style: CapHi,Anton,76,&H2E2EF7&,&H0030C8FF,7,&H80101010,-1,0,0,0,100,100,2,0,1,6,2,2,60,60,80,1
+Style: Rank,Archivo Black,44,&H00FFFFFF,&H000000FF,4,&H00000000,-1,0,0,0,100,100,2,0,1,5,1,2,0,0,0,1
+Style: RankDim,Archivo Black,44,&H00787878,&H000000FF,4,&H00000000,-1,0,0,0,100,100,2,0,1,5,1,2,0,0,0,1
+Style: Small,Inter,34,&H00FFFFFF,&H000000FF,3,&HB0000000,-1,0,0,0,100,100,2,0,1,3,0,2,20,20,20,1
+Style: Chip,Inter,34,&H00FFFFFF,&H000000FF,3,&H90000000,-1,0,0,0,100,100,2,0,4,3,0,2,10,10,10,1
+Style: Watermark,Inter,30,&H60FFFFFF,&H000000FF,0,&H60000000,-1,0,0,0,100,100,7,0,1,0,0,2,10,10,10,1
+Style: Header,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,10,&HA0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,60,1
+Style: HeaderHi,Poppins ExtraBold,54,&H2E2EF7&,&H000000FF,10,&HA0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,60,1
+Style: ActionCap,Poppins ExtraBold,40,&H14FFFFFF,&H000000FF,9,&H99000000,-1,0,0,0,100,100,5,0,1,7,0,3,40,40,40,1
+Style: Impact,Barlow Condensed ExtraBold,96,&H00FFFFFF,&H000000FF,12,&HC0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,40,1
+Style: RankNum,Poppins ExtraBold,64,&H00FFFFFF,&H000000FF,9,&H00000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: RankLbl,Poppins ExtraBold,40,&H00FFFFFF,&H000000FF,8,&H00000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: CapYellow,Poppins Bold,38,&H0000D7FF,&H000000FF,6,&H90000000,-1,0,0,0,100,100,5,0,1,7,0,3,26,26,26,1
+Style: Dialogue,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,7,&HB0000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: DialogueHi,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,7,&HB0000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:58.80,Title,,0,0,0,,{\an5\pos(540,112)\fs148\fsp2\bord8\bordcolor&H000000&\shad2\4c&H000000&}{\c&H2E2EF7&}INCEPTION {\c&H00FFFFFF&} MOVIE
+Dialogue: 0,0:00:00.00,0:00:58.80,Title,,0,0,0,,{\an5\pos(540,202)\fs113\fsp2\bord8\bordcolor&H000000&\shad2\4c&H000000&}{\c&H0000D7FF&}ENDING {\c&H00FFFFFF&} EXPLAINED
+Dialogue: 0,0:00:00.00,0:00:00.38,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}TOP...
+Dialogue: 0,0:00:00.38,0:00:01.10,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}TOP... {\c&H0000D7FF&}GIRA
+Dialogue: 0,0:00:01.10,0:00:01.35,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}TOP... {\c&H0000D7FF&}GIRA {\c&H0000D7FF&}YA
+Dialogue: 0,0:00:01.35,0:00:02.39,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}TOP... {\c&H0000D7FF&}GIRA {\c&H0000D7FF&}YA {\c&H0000D7FF&}NAHI?
+Dialogue: 0,0:00:02.39,0:00:03.35,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}TOP... {\c&HFFFFFF&}GIRA {\c&HFFFFFF&}YA {\c&HFFFFFF&}NAHI?\N{\c&H0000D7FF&}RUKO
+Dialogue: 0,0:00:03.35,0:00:03.44,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}TOP... {\c&HFFFFFF&}GIRA {\c&HFFFFFF&}YA {\c&HFFFFFF&}NAHI?\N{\c&H0000D7FF&}RUKO {\c&H0000D7FF&}—
+Dialogue: 0,0:00:03.44,0:00:03.68,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}TOP... {\c&HFFFFFF&}GIRA {\c&HFFFFFF&}YA {\c&HFFFFFF&}NAHI?\N{\c&H0000D7FF&}RUKO {\c&H0000D7FF&}— {\c&H0000D7FF&}PHIR
+Dialogue: 0,0:00:03.68,0:00:03.73,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}TOP... {\c&HFFFFFF&}GIRA {\c&HFFFFFF&}YA {\c&HFFFFFF&}NAHI?\N{\c&H0000D7FF&}RUKO {\c&H0000D7FF&}— {\c&H0000D7FF&}PHIR {\c&H0000D7FF&}SE
+Dialogue: 0,0:00:03.74,0:00:04.03,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}RUKO {\c&HFFFFFF&}— {\c&HFFFFFF&}PHIR {\c&HFFFFFF&}SE\N{\c&H0000D7FF&}DEKHTE
+Dialogue: 0,0:00:04.03,0:00:04.66,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}RUKO {\c&HFFFFFF&}— {\c&HFFFFFF&}PHIR {\c&HFFFFFF&}SE\N{\c&H0000D7FF&}DEKHTE {\c&H0000D7FF&}HAIN
+Dialogue: 0,0:00:04.80,0:00:04.89,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}PLANE
+Dialogue: 0,0:00:04.90,0:00:05.39,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}PLANE {\c&H0000D7FF&}UTAR
+Dialogue: 0,0:00:05.39,0:00:06.03,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}PLANE {\c&H0000D7FF&}UTAR {\c&H0000D7FF&}GAYA
+Dialogue: 0,0:00:06.03,0:00:06.70,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}PLANE {\c&H0000D7FF&}UTAR {\c&H0000D7FF&}GAYA {\c&H0000D7FF&}HAI...
+Dialogue: 0,0:00:06.71,0:00:06.89,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}PLANE {\c&HFFFFFF&}UTAR {\c&HFFFFFF&}GAYA {\c&HFFFFFF&}HAI...\N{\c&H0000D7FF&}AUR
+Dialogue: 0,0:00:06.89,0:00:07.12,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}PLANE {\c&HFFFFFF&}UTAR {\c&HFFFFFF&}GAYA {\c&HFFFFFF&}HAI...\N{\c&H0000D7FF&}AUR {\c&H0000D7FF&}KISI
+Dialogue: 0,0:00:07.12,0:00:07.21,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}PLANE {\c&HFFFFFF&}UTAR {\c&HFFFFFF&}GAYA {\c&HFFFFFF&}HAI...\N{\c&H0000D7FF&}AUR {\c&H0000D7FF&}KISI {\c&H0000D7FF&}NE
+Dialogue: 0,0:00:07.21,0:00:07.59,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}PLANE {\c&HFFFFFF&}UTAR {\c&HFFFFFF&}GAYA {\c&HFFFFFF&}HAI...\N{\c&H0000D7FF&}AUR {\c&H0000D7FF&}KISI {\c&H0000D7FF&}NE {\c&H0000D7FF&}SAPNE
+Dialogue: 0,0:00:07.59,0:00:07.68,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}AUR {\c&HFFFFFF&}KISI {\c&HFFFFFF&}NE {\c&HFFFFFF&}SAPNE\N{\c&H0000D7FF&}KA
+Dialogue: 0,0:00:07.68,0:00:07.86,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}AUR {\c&HFFFFFF&}KISI {\c&HFFFFFF&}NE {\c&HFFFFFF&}SAPNE\N{\c&H0000D7FF&}KA {\c&H0000D7FF&}NAAM
+Dialogue: 0,0:00:07.86,0:00:08.02,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}AUR {\c&HFFFFFF&}KISI {\c&HFFFFFF&}NE {\c&HFFFFFF&}SAPNE\N{\c&H0000D7FF&}KA {\c&H0000D7FF&}NAAM {\c&H0000D7FF&}TAK
+Dialogue: 0,0:00:08.02,0:00:08.29,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}AUR {\c&HFFFFFF&}KISI {\c&HFFFFFF&}NE {\c&HFFFFFF&}SAPNE\N{\c&H0000D7FF&}KA {\c&H0000D7FF&}NAAM {\c&H0000D7FF&}TAK {\c&H0000D7FF&}NAHI
+Dialogue: 0,0:00:08.29,0:00:09.32,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}KA {\c&HFFFFFF&}NAAM {\c&HFFFFFF&}TAK {\c&HFFFFFF&}NAHI\N{\c&H0000D7FF&}LIYA
+Dialogue: 0,0:00:09.60,0:00:09.69,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}SAB {\c&H0000D7FF&}KUCH
+Dialogue: 0,0:00:09.69,0:00:10.04,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}SAB {\c&H0000D7FF&}KUCH {\c&H0000D7FF&}BILKUL
+Dialogue: 0,0:00:10.04,0:00:10.08,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}SAB {\c&H0000D7FF&}KUCH {\c&H0000D7FF&}BILKUL {\c&H0000D7FF&}NORMAL
+Dialogue: 0,0:00:10.08,0:00:10.13,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}SAB {\c&HFFFFFF&}KUCH {\c&HFFFFFF&}BILKUL {\c&HFFFFFF&}NORMAL\N{\c&H0000D7FF&}HAI...
+Dialogue: 0,0:00:10.15,0:00:10.23,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}SAB {\c&HFFFFFF&}KUCH {\c&HFFFFFF&}BILKUL {\c&HFFFFFF&}NORMAL\N{\c&H0000D7FF&}HAI... {\c&H0000D7FF&}PAR {\c&H0000D7FF&}ASAL
+Dialogue: 0,0:00:10.24,0:00:10.35,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}SAB {\c&HFFFFFF&}KUCH {\c&HFFFFFF&}BILKUL {\c&HFFFFFF&}NORMAL\N{\c&H0000D7FF&}HAI... {\c&H0000D7FF&}PAR {\c&H0000D7FF&}ASAL {\c&H0000D7FF&}MEIN,
+Dialogue: 0,0:00:10.35,0:00:10.42,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}HAI... {\c&HFFFFFF&}PAR {\c&HFFFFFF&}ASAL {\c&HFFFFFF&}MEIN,\N{\c&H0000D7FF&}KUCH
+Dialogue: 0,0:00:10.42,0:00:10.86,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}HAI... {\c&HFFFFFF&}PAR {\c&HFFFFFF&}ASAL {\c&HFFFFFF&}MEIN,\N{\c&H0000D7FF&}KUCH {\c&H0000D7FF&}BHI {\c&H0000D7FF&}ASLI
+Dialogue: 0,0:00:10.86,0:00:14.32,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}HAI... {\c&HFFFFFF&}PAR {\c&HFFFFFF&}ASAL {\c&HFFFFFF&}MEIN,\N{\c&H0000D7FF&}KUCH {\c&H0000D7FF&}BHI {\c&H0000D7FF&}ASLI {\c&H0000D7FF&}NAHI
+Dialogue: 0,0:00:17.40,0:00:17.53,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}BAS {\c&H0000D7FF&}EK
+Dialogue: 0,0:00:17.53,0:00:17.89,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}BAS {\c&H0000D7FF&}EK {\c&H0000D7FF&}PHONE
+Dialogue: 0,0:00:17.89,0:00:18.20,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}BAS {\c&H0000D7FF&}EK {\c&H0000D7FF&}PHONE {\c&H0000D7FF&}CALL!
+Dialogue: 0,0:00:18.20,0:00:19.01,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}BAS {\c&HFFFFFF&}EK {\c&HFFFFFF&}PHONE {\c&HFFFFFF&}CALL!\N{\c&H0000D7FF&}AUR
+Dialogue: 0,0:00:19.02,0:00:19.41,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}BAS {\c&HFFFFFF&}EK {\c&HFFFFFF&}PHONE {\c&HFFFFFF&}CALL!\N{\c&H0000D7FF&}AUR {\c&H0000D7FF&}USKA
+Dialogue: 0,0:00:19.41,0:00:19.63,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}BAS {\c&HFFFFFF&}EK {\c&HFFFFFF&}PHONE {\c&HFFFFFF&}CALL!\N{\c&H0000D7FF&}AUR {\c&H0000D7FF&}USKA {\c&H0000D7FF&}NAAM
+Dialogue: 0,0:00:19.63,0:00:20.72,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}BAS {\c&HFFFFFF&}EK {\c&HFFFFFF&}PHONE {\c&HFFFFFF&}CALL!\N{\c&H0000D7FF&}AUR {\c&H0000D7FF&}USKA {\c&H0000D7FF&}NAAM {\c&H0000D7FF&}SAAF
+Dialogue: 0,0:00:21.00,0:00:21.12,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}WO {\c&H0000D7FF&}BAHAR
+Dialogue: 0,0:00:21.13,0:00:21.64,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}WO {\c&H0000D7FF&}BAHAR {\c&H0000D7FF&}NIKALTA
+Dialogue: 0,0:00:21.64,0:00:21.91,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}WO {\c&H0000D7FF&}BAHAR {\c&H0000D7FF&}NIKALTA {\c&H0000D7FF&}HAI
+Dialogue: 0,0:00:21.91,0:00:22.00,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}WO {\c&HFFFFFF&}BAHAR {\c&HFFFFFF&}NIKALTA {\c&HFFFFFF&}HAI\N{\c&H0000D7FF&}—
+Dialogue: 0,0:00:22.00,0:00:23.02,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}WO {\c&HFFFFFF&}BAHAR {\c&HFFFFFF&}NIKALTA {\c&HFFFFFF&}HAI\N{\c&H0000D7FF&}— {\c&H0000D7FF&}AAZAD
+Dialogue: 0,0:00:24.20,0:00:24.53,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}AB {\c&H0000D7FF&}BAHAR...
+Dialogue: 0,0:00:24.53,0:00:24.80,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}AB {\c&H0000D7FF&}BAHAR... {\c&H0000D7FF&}KOI
+Dialogue: 0,0:00:24.80,0:00:25.85,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}AB {\c&H0000D7FF&}BAHAR... {\c&H0000D7FF&}KOI {\c&H0000D7FF&}PEECHHA
+Dialogue: 0,0:00:25.85,0:00:26.36,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}AB {\c&HFFFFFF&}BAHAR... {\c&HFFFFFF&}KOI {\c&HFFFFFF&}PEECHHA\N{\c&H0000D7FF&}NAHI,
+Dialogue: 0,0:00:26.36,0:00:26.79,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}AB {\c&HFFFFFF&}BAHAR... {\c&HFFFFFF&}KOI {\c&HFFFFFF&}PEECHHA\N{\c&H0000D7FF&}NAHI, {\c&H0000D7FF&}KOI
+Dialogue: 0,0:00:26.79,0:00:27.22,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}AB {\c&HFFFFFF&}BAHAR... {\c&HFFFFFF&}KOI {\c&HFFFFFF&}PEECHHA\N{\c&H0000D7FF&}NAHI, {\c&H0000D7FF&}KOI {\c&H0000D7FF&}SAWAAL
+Dialogue: 0,0:00:27.22,0:00:28.20,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}AB {\c&HFFFFFF&}BAHAR... {\c&HFFFFFF&}KOI {\c&HFFFFFF&}PEECHHA\N{\c&H0000D7FF&}NAHI, {\c&H0000D7FF&}KOI {\c&H0000D7FF&}SAWAAL {\c&H0000D7FF&}NAHI
+Dialogue: 0,0:00:30.40,0:00:30.48,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}AUR {\c&H0000D7FF&}WO
+Dialogue: 0,0:00:30.48,0:00:30.89,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}AUR {\c&H0000D7FF&}WO {\c&H0000D7FF&}GHAR...
+Dialogue: 0,0:00:30.89,0:00:31.50,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}AUR {\c&H0000D7FF&}WO {\c&H0000D7FF&}GHAR... {\c&H0000D7FF&}JAHAN
+Dialogue: 0,0:00:31.50,0:00:31.93,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}AUR {\c&HFFFFFF&}WO {\c&HFFFFFF&}GHAR... {\c&HFFFFFF&}JAHAN\N{\c&H0000D7FF&}WO
+Dialogue: 0,0:00:31.93,0:00:32.18,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}AUR {\c&HFFFFFF&}WO {\c&HFFFFFF&}GHAR... {\c&HFFFFFF&}JAHAN\N{\c&H0000D7FF&}WO {\c&H0000D7FF&}KABHI
+Dialogue: 0,0:00:32.18,0:00:32.58,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}AUR {\c&HFFFFFF&}WO {\c&HFFFFFF&}GHAR... {\c&HFFFFFF&}JAHAN\N{\c&H0000D7FF&}WO {\c&H0000D7FF&}KABHI {\c&H0000D7FF&}PONCH
+Dialogue: 0,0:00:32.59,0:00:32.78,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}AUR {\c&HFFFFFF&}WO {\c&HFFFFFF&}GHAR... {\c&HFFFFFF&}JAHAN\N{\c&H0000D7FF&}WO {\c&H0000D7FF&}KABHI {\c&H0000D7FF&}PONCH {\c&H0000D7FF&}HI
+Dialogue: 0,0:00:32.78,0:00:32.94,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}WO {\c&HFFFFFF&}KABHI {\c&HFFFFFF&}PONCH {\c&HFFFFFF&}HI\N{\c&H0000D7FF&}NAHI
+Dialogue: 0,0:00:32.94,0:00:33.88,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}WO {\c&HFFFFFF&}KABHI {\c&HFFFFFF&}PONCH {\c&HFFFFFF&}HI\N{\c&H0000D7FF&}NAHI {\c&H0000D7FF&}PAYA
+Dialogue: 0,0:00:34.20,0:00:35.02,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}BACCHE!
+Dialogue: 0,0:00:35.03,0:00:35.48,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}BACCHE! {\c&H0000D7FF&}WAHI
+Dialogue: 0,0:00:35.48,0:00:36.00,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}BACCHE! {\c&H0000D7FF&}WAHI {\c&H0000D7FF&}CHEHRE
+Dialogue: 0,0:00:36.00,0:00:36.08,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}BACCHE! {\c&H0000D7FF&}WAHI {\c&H0000D7FF&}CHEHRE {\c&H0000D7FF&}JO
+Dialogue: 0,0:00:36.08,0:00:36.22,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}BACCHE! {\c&HFFFFFF&}WAHI {\c&HFFFFFF&}CHEHRE {\c&HFFFFFF&}JO\N{\c&H0000D7FF&}USNE
+Dialogue: 0,0:00:36.23,0:00:36.46,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}BACCHE! {\c&HFFFFFF&}WAHI {\c&HFFFFFF&}CHEHRE {\c&HFFFFFF&}JO\N{\c&H0000D7FF&}USNE {\c&H0000D7FF&}SAALON
+Dialogue: 0,0:00:36.46,0:00:36.66,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}BACCHE! {\c&HFFFFFF&}WAHI {\c&HFFFFFF&}CHEHRE {\c&HFFFFFF&}JO\N{\c&H0000D7FF&}USNE {\c&H0000D7FF&}SAALON {\c&H0000D7FF&}SE
+Dialogue: 0,0:00:36.66,0:00:36.88,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}BACCHE! {\c&HFFFFFF&}WAHI {\c&HFFFFFF&}CHEHRE {\c&HFFFFFF&}JO\N{\c&H0000D7FF&}USNE {\c&H0000D7FF&}SAALON {\c&H0000D7FF&}SE {\c&H0000D7FF&}NAHI
+Dialogue: 0,0:00:36.88,0:00:37.98,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}USNE {\c&HFFFFFF&}SAALON {\c&HFFFFFF&}SE {\c&HFFFFFF&}NAHI\N{\c&H0000D7FF&}DEKHE
+Dialogue: 0,0:00:43.20,0:00:43.27,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}PAR {\c&H0000D7FF&}WO
+Dialogue: 0,0:00:43.28,0:00:43.53,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}PAR {\c&H0000D7FF&}WO {\c&H0000D7FF&}UNKE
+Dialogue: 0,0:00:43.53,0:00:43.75,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}PAR {\c&H0000D7FF&}WO {\c&H0000D7FF&}UNKE {\c&H0000D7FF&}CHEHRE
+Dialogue: 0,0:00:43.76,0:00:43.84,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}PAR {\c&HFFFFFF&}WO {\c&HFFFFFF&}UNKE {\c&HFFFFFF&}CHEHRE\N{\c&H0000D7FF&}KI
+Dialogue: 0,0:00:43.84,0:00:44.18,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}PAR {\c&HFFFFFF&}WO {\c&HFFFFFF&}UNKE {\c&HFFFFFF&}CHEHRE\N{\c&H0000D7FF&}KI {\c&H0000D7FF&}TARAF
+Dialogue: 0,0:00:44.18,0:00:44.46,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}PAR {\c&HFFFFFF&}WO {\c&HFFFFFF&}UNKE {\c&HFFFFFF&}CHEHRE\N{\c&H0000D7FF&}KI {\c&H0000D7FF&}TARAF {\c&H0000D7FF&}NAHI
+Dialogue: 0,0:00:44.46,0:00:44.99,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}PAR {\c&HFFFFFF&}WO {\c&HFFFFFF&}UNKE {\c&HFFFFFF&}CHEHRE\N{\c&H0000D7FF&}KI {\c&H0000D7FF&}TARAF {\c&H0000D7FF&}NAHI {\c&H0000D7FF&}DEKHTA...
+Dialogue: 0,0:00:45.00,0:00:45.72,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}KI {\c&HFFFFFF&}TARAF {\c&HFFFFFF&}NAHI {\c&HFFFFFF&}DEKHTA...\N{\c&H0000D7FF&}YAHI
+Dialogue: 0,0:00:45.72,0:00:46.25,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}KI {\c&HFFFFFF&}TARAF {\c&HFFFFFF&}NAHI {\c&HFFFFFF&}DEKHTA...\N{\c&H0000D7FF&}YAHI {\c&H0000D7FF&}ASLI
+Dialogue: 0,0:00:46.26,0:00:46.88,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}KI {\c&HFFFFFF&}TARAF {\c&HFFFFFF&}NAHI {\c&HFFFFFF&}DEKHTA...\N{\c&H0000D7FF&}YAHI {\c&H0000D7FF&}ASLI {\c&H0000D7FF&}DETAIL
+Dialogue: 0,0:00:46.89,0:00:47.72,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}KI {\c&HFFFFFF&}TARAF {\c&HFFFFFF&}NAHI {\c&HFFFFFF&}DEKHTA...\N{\c&H0000D7FF&}YAHI {\c&H0000D7FF&}ASLI {\c&H0000D7FF&}DETAIL {\c&H0000D7FF&}HAI
+Dialogue: 0,0:00:51.60,0:00:52.06,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}TO...
+Dialogue: 0,0:00:52.06,0:00:52.59,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}TO... {\c&H0000D7FF&}GIRA
+Dialogue: 0,0:00:52.59,0:00:52.70,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}TO... {\c&H0000D7FF&}GIRA {\c&H0000D7FF&}YA
+Dialogue: 0,0:00:52.70,0:00:52.99,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&H0000D7FF&}TO... {\c&H0000D7FF&}GIRA {\c&H0000D7FF&}YA {\c&H0000D7FF&}NAHI?
+Dialogue: 0,0:00:52.99,0:00:53.74,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}TO... {\c&HFFFFFF&}GIRA {\c&HFFFFFF&}YA {\c&HFFFFFF&}NAHI?\N{\c&H0000D7FF&}KHUD
+Dialogue: 0,0:00:53.74,0:00:54.58,CapYellow,,0,0,0,,{\an5\pos(540,1260)\fs58\bord10\bordcolor&H000000&\shad4\4c&H000000&\4a&H70&}{\c&HFFFFFF&}{\c&HFFFFFF&}TO... {\c&HFFFFFF&}GIRA {\c&HFFFFFF&}YA {\c&HFFFFFF&}NAHI?\N{\c&H0000D7FF&}KHUD {\c&H0000D7FF&}DEKHO
+Dialogue: 0,0:00:55.20,0:00:58.80,Title,,0,0,0,,{\an5\pos(540,1260)\fs136\c&H00FFFFFF&\bord10\bordcolor&H000000&}THE END

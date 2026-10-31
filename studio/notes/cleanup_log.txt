@@ -1,0 +1,61 @@
+# cleanup 2026-10-26T05:31:08Z
+   496K  caption_compare_t3.jpg
+   144K  filter_2up.jpg
+   172K  filter_compare.jpg
+   196K  filter_compare_zoom.jpg
+   244K  filter_final_compare.jpg
+   148K  filter_warm_sharp.jpg
+   120K  filter_warm_sharp_zoom.jpg
+   232K  dl/type2_ep1_sheet.jpg
+   236K  dl/type2_ep2_sheet.jpg
+   252K  dl/type2_ep3_sheet.jpg
+   300K  dl/type2_ep4_sheet.jpg
+   564K  dl/type2_ep3_shortlist.jpg
+   616K  dl/compare_5clips_v3.jpg
+   604K  src2/C_h4U9klE-Mb8_sheet0.jpg
+   524K  src2/C_h4U9klE-Mb8_sheet1.jpg
+   320K  src2/C_h4U9klE-Mb8_sheet2.jpg
+   516K  src3/B_jH39BOWwfvE_sheet0.jpg
+   116K  src3/B_jH39BOWwfvE_sheet1.jpg
+   684K  src3/D_oJSl5mWNLOo_sheet0.jpg
+   536K  src3/K_SEMbkckFJGg_sheet0.jpg
+   416K  src3/K_SEMbkckFJGg_sheet1.jpg
+  9620K  dl/type2_ep1.mp4
+ 12400K  dl/type2_ep2.mp4
+ 12144K  dl/type2_ep3.mp4
+ 12420K  dl/type2_ep3_prev15.5s.mp4
+  8636K  dl/type2_ep3_short_9.7s.mp4
+  9836K  dl/type2_5clips_v3.mp4
+  1736K  studio/type2/assets/1_golf.mp4
+  1604K  studio/type2/assets/1_golf_fill.mp4
+  4848K  studio/type2/assets/2_surf.mp4
+  2472K  studio/type2/assets/3_tube.mp4
+  2108K  studio/type2/assets/3_tube_clean.mp4
+  1196K  studio/type2/assets/4_tramp.mp4
+  1000K  studio/type2/assets/4_tramp_fill.mp4
+  2012K  studio/type2/assets/5_gym.mp4
+ 11556K  studio/type2/assets/rc5_src.mp4
+     1K  studio/type2/assets/list.txt
+  2628K  9_audition.mp3
+  2628K  SUNO-YE-6-TRACKS.mp3
+  1844K  BRASS_5_OPTIONS.mp3
+  1596K  SUNO_4_FINAL.mp3
+  1104K  TUTU_AUDIO.mp3
+   796K  PEP_BRASS.mp3
+   748K  TUTU_NO_DRUMS.mp3
+  4008K  BRASS_5_v2_individual.zip
+  2912K  MUSIC_TUTU
+   780K  MUSIC_PEP
+
+== 26 Oct — ep6 delivery + cleanup ==
+DELETE (purane attempts): studio/out/type2-ep6-base_1026-0658.{mp4,_sheet.jpg},
+  0709.{mp4,_sheet.jpg}, 0712.{mp4,_sheet.jpg}  (3 galat build — plan order + seg cache bug)
+DELETE (ep5 dupe sheets): studio/out/type2-ep5-base_1026-0601_sheet.jpg, 0603_sheet.jpg
+DELETE (scratch jpg): S1 F1 F2 ep6_clips ep6_v2 float_check dbg fix1 fix2 chk2..chk9 snowzone
+  row_sn2 row_fl2 RR_hk RR_fl r_eleph r_grill r_hockey2 + rc/out/seektest/base_chk/newbase/
+  final_chk/clipchk (ep6 verify strips)
+DELETE (ep5 verify jpg): ep5_end ep5_ladder ep5_shortlist
+KEEP: dl/type2_ep1..ep6.mp4 + _sheet.jpg · studio/out/{ep5,ep6} latest base ·
+  studio/type2/assets/ep6/ 5 clips + list + rc5_src · config/plan (+ep1/2/4/5 backups) ·
+  src6/A.mp4 (re-downloadable)
+EP6 FINAL: 1VamtpTSGmcZWvk2fxHE4M09yVnHHd3fF · 11,332,967 B · 16.967 s · -14.4 LUFS · public/reader/discovery off

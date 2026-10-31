@@ -1,0 +1,36 @@
+# Credentials & local shell state (NEVER commit!)
+.git-credentials
+.gitconfig
+.netrc
+.env
+*.pem
+*.key
+
+# Caches, runtimes, build dirs
+.arena/
+.cache/
+.local/
+.deno/
+.npm/
+.venv/
+__pycache__/
+*.py[cod]
+node_modules/
+dist/
+build/
+out/
+bin/
+.sudo_as_admin_successful
+
+# Rendered deliverables & temporary scratch media
+studio/samples/*.mp4
+studio/_scratch/
+studio/cloud_out/
+*.tmp.mp4
+
+# Keep unlisted Google Drive episode manifests/links local-only (public repo hygiene)
+uploads/
+studio/projects/*manifest*.json
+studio/type2/*manifest*.json
+studio/type2/*PROGRESS*.md
+studio/type2/REPLACEMENT_STATUS.md

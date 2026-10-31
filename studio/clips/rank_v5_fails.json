@@ -1,0 +1,83 @@
+{
+ "title": [
+  [
+   [
+    "Ranking Best",
+    "&H00FFFFFF&"
+   ],
+   [
+    "Fail",
+    "&H002828F0&"
+   ]
+  ],
+  [
+   [
+    "Moments",
+    "&H0000D7FF&"
+   ]
+  ]
+ ],
+ "band": 360,
+ "bottom": 132,
+ "gap": 0.25,
+ "items": [
+  {
+   "n": 4,
+   "ss": 11.4,
+   "dur": 3.2,
+   "label": "the roof",
+   "color": "&H00FFFFFF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  },
+  {
+   "n": 3,
+   "ss": 7.9,
+   "dur": 3.2,
+   "label": "the night",
+   "color": "&H0000D7FF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  },
+  {
+   "n": 2,
+   "ss": 3.3,
+   "dur": 3.6,
+   "label": "the gate",
+   "color": "&H0000A5FF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  },
+  {
+   "n": 1,
+   "ss": 0.0,
+   "dur": 3.3,
+   "label": "the ladder",
+   "color": "&H000000FF&",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom_to": 1.0,
+   "sfx": []
+  }
+ ],
+ "music": "/home/user/studio/assets/music/Monkeys Spinning Monkeys.mp3",
+ "music_ss": 30.0,
+ "music_vol": 0.62,
+ "clip_vol": 0.85,
+ "sfx_dir": "/home/user/studio/trial/sfx",
+ "sfx_peak_db": -10.0
+}

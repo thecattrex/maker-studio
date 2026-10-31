@@ -1,0 +1,163 @@
+{
+ "words": "clips/gl_words.json",
+ "clips": [
+  {
+   "ss": 155.0,
+   "dur": 1.7,
+   "focus": [
+    0.5,
+    0.38
+   ],
+   "zoom_to": 1.05
+  },
+  {
+   "ss": 101.0,
+   "dur": 1.7,
+   "focus": [
+    0.5,
+    0.38
+   ],
+   "zoom_to": 1.05
+  },
+  {
+   "ss": 59.5,
+   "dur": 3.4,
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "zoom_to": 1.05,
+   "bright": 0.1
+  },
+  {
+   "ss": 55.0,
+   "dur": 2.6,
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 79.0,
+   "dur": 21.8,
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "zoom_to": 1.05
+  },
+  {
+   "ss": 123.0,
+   "dur": 3.2,
+   "focus": [
+    0.5,
+    0.38
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 63.0,
+   "dur": 2.8,
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "zoom_to": 1.05
+  },
+  {
+   "ss": 149.0,
+   "dur": 3.0,
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "zoom_to": 1.05
+  },
+  {
+   "ss": 155.2,
+   "dur": 4.0,
+   "focus": [
+    0.5,
+    0.38
+   ],
+   "zoom_to": 1.07
+  }
+ ],
+ "dialogue": {
+  "clip": 4,
+  "y": 1212,
+  "size": 58,
+  "max_words": 3
+ },
+ "texts": [
+  {
+   "t": 0.0,
+   "dur": 1.7,
+   "kind": "impact",
+   "text": "THIS SLAVE",
+   "y": 1345,
+   "size": 108
+  },
+  {
+   "t": 1.7,
+   "dur": 1.7,
+   "kind": "impact",
+   "text": "BROKE AN EMPEROR",
+   "y": 1345,
+   "size": 92
+  },
+  {
+   "t": 0.0,
+   "dur": 33.2,
+   "kind": "header",
+   "text": [
+    "GLADIATOR",
+    "MY NAME IS MAXIMUS"
+   ]
+  },
+  {
+   "t": 3.4,
+   "dur": 3.4,
+   "kind": "action",
+   "text": "he walks into the arena",
+   "y": 1212
+  },
+  {
+   "t": 6.8,
+   "dur": 2.6,
+   "kind": "action",
+   "text": "the helmet is still on",
+   "y": 1212
+  },
+  {
+   "t": 33.2,
+   "dur": 3.2,
+   "kind": "action",
+   "text": "the crowd goes silent",
+   "y": 1212
+  },
+  {
+   "t": 36.4,
+   "dur": 2.8,
+   "kind": "action",
+   "text": "Commodus can't meet his eyes",
+   "y": 1212
+  },
+  {
+   "t": 39.2,
+   "dur": 3.0,
+   "kind": "action",
+   "text": "the name he feared most",
+   "y": 1212
+  },
+  {
+   "t": 42.2,
+   "dur": 4.0,
+   "kind": "impact",
+   "text": "PEAK CINEMA",
+   "y": 1345,
+   "size": 104
+  }
+ ]
+}

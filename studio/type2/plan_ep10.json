@@ -1,0 +1,90 @@
+{
+  "title": [
+    [
+      [
+        "Ranking Best",
+        "&H00FFFFFF&"
+      ],
+      [
+        "Fail",
+        "&H002828F0&"
+      ]
+    ],
+    [
+      [
+        "Moments",
+        "&H0000D7FF&"
+      ]
+    ]
+  ],
+  "band": 360,
+  "bottom": 132,
+  "gap": 0.16,
+  "items": [
+    {
+      "n": 1,
+      "ss": 0.0,
+      "dur": 5.7,
+      "label": "BARREL CHAIR FAIL",
+      "color": "&H000000FF&",
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "zoom_to": 1.0,
+      "sfx": []
+    },
+    {
+      "n": 2,
+      "ss": 5.7,
+      "dur": 5.2,
+      "label": "ROWER WIPEOUT",
+      "color": "&H000011FF&",
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "zoom_to": 1.0,
+      "sfx": []
+    },
+    {
+      "n": 3,
+      "ss": 10.9,
+      "dur": 4.8,
+      "label": "RIVER ROCK SLIP",
+      "color": "&H0000A5FF&",
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "zoom_to": 1.0,
+      "sfx": []
+    },
+    {
+      "n": 4,
+      "ss": 15.7,
+      "dur": 3.25,
+      "label": "CARTWHEEL WIPEOUT",
+      "color": "&H0000D7FF&",
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "zoom_to": 1.0,
+      "sfx": []
+    }
+  ],
+  "music": null,
+  "music_ss": 0.0,
+  "music_vol": 0.0,
+  "clip_vol": 0.0,
+  "sfx_dir": "/home/user/studio/trial/sfx",
+  "sfx_peak_db": -10.0,
+  "ladder": "asc",
+  "order": [
+    3,
+    2,
+    1,
+    0
+  ]
+}

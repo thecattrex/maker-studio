@@ -1,0 +1,30 @@
+{
+ "title": [
+  [
+   ["TOP 4", "&H00FFFFFF&"],
+   ["DUMB", "&H0000D7FF&"]
+  ],
+  [
+   ["MOMENTS", "&H000000FF&"]
+  ]
+ ],
+ "band": 360,
+ "bottom": 132,
+ "gap": 0.25,
+ "items": [
+  {"n": 4, "ss": 0.0, "dur": 6.4, "label": "the roof guy", "color": "&H00FFFFFF&",
+   "focus": [0.5, 0.45], "zoom_to": 1.06, "sfx": [{"at": 2.4, "key": "yeet"}]},
+  {"n": 3, "ss": 6.6, "dur": 6.4, "label": "the flyer", "color": "&H0000D7FF&",
+   "focus": [0.5, 0.45], "zoom_to": 1.05, "sfx": [{"at": 2.6, "key": "oof"}]},
+  {"n": 2, "ss": 13.2, "dur": 6.4, "label": "the wall jump", "color": "&H0000A5FF&",
+   "focus": [0.5, 0.45], "zoom_to": 1.05, "sfx": [{"at": 3.0, "key": "fail"}]},
+  {"n": 1, "ss": 19.8, "dur": 6.5, "label": "the landing", "color": "&H000000FF&",
+   "focus": [0.5, 0.45], "zoom_to": 1.05, "sfx": [{"at": 2.0, "key": "dun_dun"}]}
+ ],
+ "music": "/home/user/studio/assets/music/Monkeys Spinning Monkeys.mp3",
+ "music_ss": 70.0,
+ "music_vol": 0.65,
+ "clip_vol": 0.55,
+ "sfx_dir": "/home/user/studio/trial/sfx",
+ "sfx_peak_db": -11.0
+}

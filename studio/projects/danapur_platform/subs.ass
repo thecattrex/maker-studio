@@ -1,0 +1,129 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+
+Style: Title,Anton,112,&H00FFFFFF,&H000000FF,8,&H00000000,-1,0,0,0,100,100,2,0,1,7,0,5,60,60,120,1
+Style: TitleHi,Anton,112,&H2E2EF7&,&H000000FF,8,&H00000000,-1,0,0,0,100,100,2,0,1,7,0,5,60,60,120,1
+Style: Sub,Bebas Neue,54,&H00FFFFFF,&H000000FF,8,&H00000000,-1,0,0,0,100,100,0,0,1,6,0,5,60,60,60,1
+Style: Cap,Anton,76,&H00FFFFFF,&H0030C8FF,7,&H80101010,-1,0,0,0,100,100,2,0,1,6,2,2,60,60,80,1
+Style: CapHi,Anton,76,&H2E2EF7&,&H0030C8FF,7,&H80101010,-1,0,0,0,100,100,2,0,1,6,2,2,60,60,80,1
+Style: Rank,Archivo Black,44,&H00FFFFFF,&H000000FF,4,&H00000000,-1,0,0,0,100,100,2,0,1,5,1,2,0,0,0,1
+Style: RankDim,Archivo Black,44,&H00787878,&H000000FF,4,&H00000000,-1,0,0,0,100,100,2,0,1,5,1,2,0,0,0,1
+Style: Small,Inter,34,&H00FFFFFF,&H000000FF,3,&HB0000000,-1,0,0,0,100,100,2,0,1,3,0,2,20,20,20,1
+Style: Chip,Inter,34,&H00FFFFFF,&H000000FF,3,&H90000000,-1,0,0,0,100,100,2,0,4,3,0,2,10,10,10,1
+Style: Watermark,Inter,30,&H60FFFFFF,&H000000FF,0,&H60000000,-1,0,0,0,100,100,7,0,1,0,0,2,10,10,10,1
+Style: Header,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,10,&HA0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,60,1
+Style: HeaderHi,Poppins ExtraBold,54,&H2E2EF7&,&H000000FF,10,&HA0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,60,1
+Style: ActionCap,Poppins ExtraBold,40,&H14FFFFFF,&H000000FF,9,&H99000000,-1,0,0,0,100,100,5,0,1,7,0,3,40,40,40,1
+Style: Impact,Barlow Condensed ExtraBold,96,&H00FFFFFF,&H000000FF,12,&HC0000000,-1,0,0,0,100,100,5,0,1,7,0,4,40,40,40,1
+Style: RankNum,Poppins ExtraBold,64,&H00FFFFFF,&H000000FF,9,&H00000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: RankLbl,Poppins ExtraBold,40,&H00FFFFFF,&H000000FF,8,&H00000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: CapYellow,Poppins Bold,38,&H0000D7FF,&H000000FF,6,&H90000000,-1,0,0,0,100,100,5,0,1,7,0,3,26,26,26,1
+Style: Dialogue,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,7,&HB0000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+Style: DialogueHi,Poppins ExtraBold,54,&H00FFFFFF,&H000000FF,7,&HB0000000,-1,0,0,0,100,100,5,0,1,7,0,3,30,30,30,1
+
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:45.00,Title,,0,0,0,,{\an5\pos(540,112)\fs160\fsp2\bord8\bordcolor&H000000&\shad2\4c&H000000&}{\c&H2E2EF7&}DANAPUR
+Dialogue: 0,0:00:00.00,0:00:45.00,Title,,0,0,0,,{\an5\pos(540,208)\fs118\fsp2\bord8\bordcolor&H000000&\shad2\4c&H000000&}{\c&H00FFFFFF&}PLATFORM  {\c&H0000D7FF&}3
+Dialogue: 0,0:00:00.05,0:00:01.10,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}DANAPUR{\c&HFFFFFF&\fscy100} STATION. RAAT\N2:40. PLATFORM 3 PAR EK
+Dialogue: 0,0:00:01.10,0:00:02.35,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}DANAPUR {\c&H0000D7FF&\fscy122}STATION.{\c&HFFFFFF&\fscy100} RAAT\N2:40. PLATFORM 3 PAR EK
+Dialogue: 0,0:00:02.35,0:00:02.59,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}DANAPUR STATION. {\c&H0000D7FF&\fscy122}RAAT{\c&HFFFFFF&\fscy100}\N2:40. PLATFORM 3 PAR EK
+Dialogue: 0,0:00:02.59,0:00:02.91,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}DANAPUR STATION. RAAT\N{\c&H0000D7FF&\fscy122}2:40.{\c&HFFFFFF&\fscy100} PLATFORM 3 PAR EK
+Dialogue: 0,0:00:02.91,0:00:04.48,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}DANAPUR STATION. RAAT\N2:40. {\c&H0000D7FF&\fscy122}PLATFORM{\c&HFFFFFF&\fscy100} 3 PAR EK
+Dialogue: 0,0:00:04.48,0:00:04.69,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}DANAPUR STATION. RAAT\N2:40. PLATFORM {\c&H0000D7FF&\fscy122}3{\c&HFFFFFF&\fscy100} PAR EK
+Dialogue: 0,0:00:04.69,0:00:05.13,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}DANAPUR STATION. RAAT\N2:40. PLATFORM 3 {\c&H0000D7FF&\fscy122}PAR{\c&HFFFFFF&\fscy100} EK
+Dialogue: 0,0:00:05.13,0:00:05.71,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}DANAPUR STATION. RAAT\N2:40. PLATFORM 3 PAR {\c&H0000D7FF&\fscy122}EK{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:05.73,0:00:06.27,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}TRAIN{\c&HFFFFFF&\fscy100} AATI HAI - JO\NKISI TIMETABLE MEIN
+Dialogue: 0,0:00:06.27,0:00:06.78,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN {\c&H0000D7FF&\fscy122}AATI{\c&HFFFFFF&\fscy100} HAI - JO\NKISI TIMETABLE MEIN
+Dialogue: 0,0:00:06.78,0:00:07.19,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN AATI {\c&H0000D7FF&\fscy122}HAI{\c&HFFFFFF&\fscy100} - JO\NKISI TIMETABLE MEIN
+Dialogue: 0,0:00:07.19,0:00:07.28,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN AATI HAI {\c&H0000D7FF&\fscy122}-{\c&HFFFFFF&\fscy100} JO\NKISI TIMETABLE MEIN
+Dialogue: 0,0:00:07.28,0:00:07.49,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN AATI HAI - {\c&H0000D7FF&\fscy122}JO{\c&HFFFFFF&\fscy100}\NKISI TIMETABLE MEIN
+Dialogue: 0,0:00:07.49,0:00:08.10,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN AATI HAI - JO\N{\c&H0000D7FF&\fscy122}KISI{\c&HFFFFFF&\fscy100} TIMETABLE MEIN
+Dialogue: 0,0:00:08.10,0:00:08.87,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN AATI HAI - JO\NKISI {\c&H0000D7FF&\fscy122}TIMETABLE{\c&HFFFFFF&\fscy100} MEIN
+Dialogue: 0,0:00:08.87,0:00:09.48,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN AATI HAI - JO\NKISI TIMETABLE {\c&H0000D7FF&\fscy122}MEIN{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:09.50,0:00:09.83,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}NAHI{\c&HFFFFFF&\fscy100} HAI.
+Dialogue: 0,0:00:09.83,0:00:10.41,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}NAHI {\c&H0000D7FF&\fscy122}HAI.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:10.43,0:00:10.61,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}RAHUL{\c&HFFFFFF&\fscy100} NE USE DEKHA.\NCOACH KHAALI THA -
+Dialogue: 0,0:00:10.61,0:00:10.89,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}RAHUL {\c&H0000D7FF&\fscy122}NE{\c&HFFFFFF&\fscy100} USE DEKHA.\NCOACH KHAALI THA -
+Dialogue: 0,0:00:10.89,0:00:11.07,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}RAHUL NE {\c&H0000D7FF&\fscy122}USE{\c&HFFFFFF&\fscy100} DEKHA.\NCOACH KHAALI THA -
+Dialogue: 0,0:00:11.07,0:00:11.39,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}RAHUL NE USE {\c&H0000D7FF&\fscy122}DEKHA.{\c&HFFFFFF&\fscy100}\NCOACH KHAALI THA -
+Dialogue: 0,0:00:11.39,0:00:12.51,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}RAHUL NE USE DEKHA.\N{\c&H0000D7FF&\fscy122}COACH{\c&HFFFFFF&\fscy100} KHAALI THA -
+Dialogue: 0,0:00:12.51,0:00:12.99,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}RAHUL NE USE DEKHA.\NCOACH {\c&H0000D7FF&\fscy122}KHAALI{\c&HFFFFFF&\fscy100} THA -
+Dialogue: 0,0:00:12.99,0:00:13.68,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}RAHUL NE USE DEKHA.\NCOACH KHAALI {\c&H0000D7FF&\fscy122}THA{\c&HFFFFFF&\fscy100} -
+Dialogue: 0,0:00:13.68,0:00:14.19,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}RAHUL NE USE DEKHA.\NCOACH KHAALI THA {\c&H0000D7FF&\fscy122}-{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:14.21,0:00:14.47,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}PAR{\c&HFFFFFF&\fscy100} HAR KHIDKI SE\NEK HI AADMI JHANK
+Dialogue: 0,0:00:14.47,0:00:14.59,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR {\c&H0000D7FF&\fscy122}HAR{\c&HFFFFFF&\fscy100} KHIDKI SE\NEK HI AADMI JHANK
+Dialogue: 0,0:00:14.59,0:00:15.11,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR HAR {\c&H0000D7FF&\fscy122}KHIDKI{\c&HFFFFFF&\fscy100} SE\NEK HI AADMI JHANK
+Dialogue: 0,0:00:15.11,0:00:15.24,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR HAR KHIDKI {\c&H0000D7FF&\fscy122}SE{\c&HFFFFFF&\fscy100}\NEK HI AADMI JHANK
+Dialogue: 0,0:00:15.24,0:00:15.35,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR HAR KHIDKI SE\N{\c&H0000D7FF&\fscy122}EK{\c&HFFFFFF&\fscy100} HI AADMI JHANK
+Dialogue: 0,0:00:15.35,0:00:15.54,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR HAR KHIDKI SE\NEK {\c&H0000D7FF&\fscy122}HI{\c&HFFFFFF&\fscy100} AADMI JHANK
+Dialogue: 0,0:00:15.54,0:00:15.86,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR HAR KHIDKI SE\NEK HI {\c&H0000D7FF&\fscy122}AADMI{\c&HFFFFFF&\fscy100} JHANK
+Dialogue: 0,0:00:15.86,0:00:16.72,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR HAR KHIDKI SE\NEK HI AADMI {\c&H0000D7FF&\fscy122}JHANK{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:16.74,0:00:17.22,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}RAHA{\c&HFFFFFF&\fscy100} THA.
+Dialogue: 0,0:00:17.22,0:00:18.21,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}RAHA {\c&H0000D7FF&\fscy122}THA.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:18.23,0:00:18.31,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}TRAIN{\c&HFFFFFF&\fscy100} RUKI. DARWAZA\NKHULA. AUR ANDAR SE AAWAZ
+Dialogue: 0,0:00:18.31,0:00:18.85,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN {\c&H0000D7FF&\fscy122}RUKI.{\c&HFFFFFF&\fscy100} DARWAZA\NKHULA. AUR ANDAR SE AAWAZ
+Dialogue: 0,0:00:18.85,0:00:19.89,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN RUKI. {\c&H0000D7FF&\fscy122}DARWAZA{\c&HFFFFFF&\fscy100}\NKHULA. AUR ANDAR SE AAWAZ
+Dialogue: 0,0:00:19.89,0:00:21.06,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN RUKI. DARWAZA\N{\c&H0000D7FF&\fscy122}KHULA.{\c&HFFFFFF&\fscy100} AUR ANDAR SE AAWAZ
+Dialogue: 0,0:00:21.06,0:00:21.13,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN RUKI. DARWAZA\NKHULA. {\c&H0000D7FF&\fscy122}AUR{\c&HFFFFFF&\fscy100} ANDAR SE AAWAZ
+Dialogue: 0,0:00:21.13,0:00:21.51,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN RUKI. DARWAZA\NKHULA. AUR {\c&H0000D7FF&\fscy122}ANDAR{\c&HFFFFFF&\fscy100} SE AAWAZ
+Dialogue: 0,0:00:21.51,0:00:21.60,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN RUKI. DARWAZA\NKHULA. AUR ANDAR {\c&H0000D7FF&\fscy122}SE{\c&HFFFFFF&\fscy100} AAWAZ
+Dialogue: 0,0:00:21.60,0:00:22.14,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}TRAIN RUKI. DARWAZA\NKHULA. AUR ANDAR SE {\c&H0000D7FF&\fscy122}AAWAZ{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:22.16,0:00:22.47,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}AAYI{\c&HFFFFFF&\fscy100} - RAHUL, TERI\NSEAT KHAALI HAI.
+Dialogue: 0,0:00:22.47,0:00:22.54,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}AAYI {\c&H0000D7FF&\fscy122}-{\c&HFFFFFF&\fscy100} RAHUL, TERI\NSEAT KHAALI HAI.
+Dialogue: 0,0:00:22.54,0:00:23.52,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}AAYI - {\c&H0000D7FF&\fscy122}RAHUL,{\c&HFFFFFF&\fscy100} TERI\NSEAT KHAALI HAI.
+Dialogue: 0,0:00:23.52,0:00:24.33,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}AAYI - RAHUL, {\c&H0000D7FF&\fscy122}TERI{\c&HFFFFFF&\fscy100}\NSEAT KHAALI HAI.
+Dialogue: 0,0:00:24.33,0:00:24.59,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}AAYI - RAHUL, TERI\N{\c&H0000D7FF&\fscy122}SEAT{\c&HFFFFFF&\fscy100} KHAALI HAI.
+Dialogue: 0,0:00:24.59,0:00:24.91,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}AAYI - RAHUL, TERI\NSEAT {\c&H0000D7FF&\fscy122}KHAALI{\c&HFFFFFF&\fscy100} HAI.
+Dialogue: 0,0:00:24.91,0:00:25.49,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}AAYI - RAHUL, TERI\NSEAT KHAALI {\c&H0000D7FF&\fscy122}HAI.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:25.51,0:00:25.55,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}WO{\c&HFFFFFF&\fscy100} USKA NAAM KAISE\NJAANTI THI? RAHUL NE
+Dialogue: 0,0:00:25.55,0:00:25.64,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}WO {\c&H0000D7FF&\fscy122}USKA{\c&HFFFFFF&\fscy100} NAAM KAISE\NJAANTI THI? RAHUL NE
+Dialogue: 0,0:00:25.64,0:00:25.89,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}WO USKA {\c&H0000D7FF&\fscy122}NAAM{\c&HFFFFFF&\fscy100} KAISE\NJAANTI THI? RAHUL NE
+Dialogue: 0,0:00:25.89,0:00:26.20,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}WO USKA NAAM {\c&H0000D7FF&\fscy122}KAISE{\c&HFFFFFF&\fscy100}\NJAANTI THI? RAHUL NE
+Dialogue: 0,0:00:26.20,0:00:26.56,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}WO USKA NAAM KAISE\N{\c&H0000D7FF&\fscy122}JAANTI{\c&HFFFFFF&\fscy100} THI? RAHUL NE
+Dialogue: 0,0:00:26.56,0:00:26.91,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}WO USKA NAAM KAISE\NJAANTI {\c&H0000D7FF&\fscy122}THI?{\c&HFFFFFF&\fscy100} RAHUL NE
+Dialogue: 0,0:00:26.91,0:00:27.50,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}WO USKA NAAM KAISE\NJAANTI THI? {\c&H0000D7FF&\fscy122}RAHUL{\c&HFFFFFF&\fscy100} NE
+Dialogue: 0,0:00:27.50,0:00:28.06,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}WO USKA NAAM KAISE\NJAANTI THI? RAHUL {\c&H0000D7FF&\fscy122}NE{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:28.08,0:00:28.50,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}PEECHE{\c&HFFFFFF&\fscy100} DEKHA - STATION\NPAR KOI NAHI THA.
+Dialogue: 0,0:00:28.50,0:00:28.73,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PEECHE {\c&H0000D7FF&\fscy122}DEKHA{\c&HFFFFFF&\fscy100} - STATION\NPAR KOI NAHI THA.
+Dialogue: 0,0:00:28.73,0:00:28.80,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PEECHE DEKHA {\c&H0000D7FF&\fscy122}-{\c&HFFFFFF&\fscy100} STATION\NPAR KOI NAHI THA.
+Dialogue: 0,0:00:28.80,0:00:29.76,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PEECHE DEKHA - {\c&H0000D7FF&\fscy122}STATION{\c&HFFFFFF&\fscy100}\NPAR KOI NAHI THA.
+Dialogue: 0,0:00:29.76,0:00:30.02,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PEECHE DEKHA - STATION\N{\c&H0000D7FF&\fscy122}PAR{\c&HFFFFFF&\fscy100} KOI NAHI THA.
+Dialogue: 0,0:00:30.02,0:00:30.17,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PEECHE DEKHA - STATION\NPAR {\c&H0000D7FF&\fscy122}KOI{\c&HFFFFFF&\fscy100} NAHI THA.
+Dialogue: 0,0:00:30.17,0:00:30.37,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PEECHE DEKHA - STATION\NPAR KOI {\c&H0000D7FF&\fscy122}NAHI{\c&HFFFFFF&\fscy100} THA.
+Dialogue: 0,0:00:30.37,0:00:31.10,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PEECHE DEKHA - STATION\NPAR KOI NAHI {\c&H0000D7FF&\fscy122}THA.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:31.12,0:00:31.57,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}SIRF{\c&HFFFFFF&\fscy100} EK BOARD:\NDANAPUR, BAND.
+Dialogue: 0,0:00:31.57,0:00:31.86,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}SIRF {\c&H0000D7FF&\fscy122}EK{\c&HFFFFFF&\fscy100} BOARD:\NDANAPUR, BAND.
+Dialogue: 0,0:00:31.86,0:00:32.29,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}SIRF EK {\c&H0000D7FF&\fscy122}BOARD:{\c&HFFFFFF&\fscy100}\NDANAPUR, BAND.
+Dialogue: 0,0:00:32.29,0:00:32.93,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}SIRF EK BOARD:\N{\c&H0000D7FF&\fscy122}DANAPUR,{\c&HFFFFFF&\fscy100} BAND.
+Dialogue: 0,0:00:32.93,0:00:34.65,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}SIRF EK BOARD:\NDANAPUR, {\c&H0000D7FF&\fscy122}BAND.{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:34.67,0:00:34.71,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}AGLI{\c&HFFFFFF&\fscy100} SUBAH LOGON KO\NUSKI CHAPPAL PLATFORM 3
+Dialogue: 0,0:00:34.71,0:00:35.25,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}AGLI {\c&H0000D7FF&\fscy122}SUBAH{\c&HFFFFFF&\fscy100} LOGON KO\NUSKI CHAPPAL PLATFORM 3
+Dialogue: 0,0:00:35.25,0:00:35.73,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}AGLI SUBAH {\c&H0000D7FF&\fscy122}LOGON{\c&HFFFFFF&\fscy100} KO\NUSKI CHAPPAL PLATFORM 3
+Dialogue: 0,0:00:35.73,0:00:35.96,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}AGLI SUBAH LOGON {\c&H0000D7FF&\fscy122}KO{\c&HFFFFFF&\fscy100}\NUSKI CHAPPAL PLATFORM 3
+Dialogue: 0,0:00:35.96,0:00:36.14,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}AGLI SUBAH LOGON KO\N{\c&H0000D7FF&\fscy122}USKI{\c&HFFFFFF&\fscy100} CHAPPAL PLATFORM 3
+Dialogue: 0,0:00:36.14,0:00:37.08,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}AGLI SUBAH LOGON KO\NUSKI {\c&H0000D7FF&\fscy122}CHAPPAL{\c&HFFFFFF&\fscy100} PLATFORM 3
+Dialogue: 0,0:00:37.08,0:00:38.07,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}AGLI SUBAH LOGON KO\NUSKI CHAPPAL {\c&H0000D7FF&\fscy122}PLATFORM{\c&HFFFFFF&\fscy100} 3
+Dialogue: 0,0:00:38.07,0:00:38.40,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}AGLI SUBAH LOGON KO\NUSKI CHAPPAL PLATFORM {\c&H0000D7FF&\fscy122}3{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:38.42,0:00:38.66,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}PAR{\c&HFFFFFF&\fscy100} MILI. AUR RAHUL\NAAJ BHI WAHIN HAI
+Dialogue: 0,0:00:38.66,0:00:38.69,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR {\c&H0000D7FF&\fscy122}MILI.{\c&HFFFFFF&\fscy100} AUR RAHUL\NAAJ BHI WAHIN HAI
+Dialogue: 0,0:00:38.69,0:00:39.07,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR MILI. {\c&H0000D7FF&\fscy122}AUR{\c&HFFFFFF&\fscy100} RAHUL\NAAJ BHI WAHIN HAI
+Dialogue: 0,0:00:39.07,0:00:40.14,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR MILI. AUR {\c&H0000D7FF&\fscy122}RAHUL{\c&HFFFFFF&\fscy100}\NAAJ BHI WAHIN HAI
+Dialogue: 0,0:00:40.14,0:00:40.53,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR MILI. AUR RAHUL\N{\c&H0000D7FF&\fscy122}AAJ{\c&HFFFFFF&\fscy100} BHI WAHIN HAI
+Dialogue: 0,0:00:40.53,0:00:41.06,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR MILI. AUR RAHUL\NAAJ {\c&H0000D7FF&\fscy122}BHI{\c&HFFFFFF&\fscy100} WAHIN HAI
+Dialogue: 0,0:00:41.06,0:00:41.28,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR MILI. AUR RAHUL\NAAJ BHI {\c&H0000D7FF&\fscy122}WAHIN{\c&HFFFFFF&\fscy100} HAI
+Dialogue: 0,0:00:41.28,0:00:41.74,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}PAR MILI. AUR RAHUL\NAAJ BHI WAHIN {\c&H0000D7FF&\fscy122}HAI{\c&HFFFFFF&\fscy100}
+Dialogue: 0,0:00:41.76,0:00:41.98,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5\blur24\alpha&HFF&\t(0,266,\blur0\alpha&H00&)}{\c&H0000D7FF&\fscy122}-{\c&HFFFFFF&\fscy100} US TRAIN MEIN. HAR RAAT.
+Dialogue: 0,0:00:41.98,0:00:42.44,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}- {\c&H0000D7FF&\fscy122}US{\c&HFFFFFF&\fscy100} TRAIN MEIN. HAR RAAT.
+Dialogue: 0,0:00:42.44,0:00:42.95,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}- US {\c&H0000D7FF&\fscy122}TRAIN{\c&HFFFFFF&\fscy100} MEIN. HAR RAAT.
+Dialogue: 0,0:00:42.95,0:00:43.32,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}- US TRAIN {\c&H0000D7FF&\fscy122}MEIN.{\c&HFFFFFF&\fscy100} HAR RAAT.
+Dialogue: 0,0:00:43.32,0:00:43.49,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}- US TRAIN MEIN. {\c&H0000D7FF&\fscy122}HAR{\c&HFFFFFF&\fscy100} RAAT.
+Dialogue: 0,0:00:43.49,0:00:45.27,CapYellow,,0,0,0,,{\an2\pos(540,1260)\fn Inter Black\fs60\bord4\shad3\3c&H000000&\4c&H000000&\fsp-1.5}- US TRAIN MEIN. HAR {\c&H0000D7FF&\fscy122}RAAT.{\c&HFFFFFF&\fscy100}

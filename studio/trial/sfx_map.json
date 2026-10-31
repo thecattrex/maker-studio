@@ -1,0 +1,73 @@
+{
+ "video": "samples/type2_dashcam_close_calls.mp4",
+ "duration": 25.4,
+ "bg": {
+  "file": "assets/music/QKThr.mp3",
+  "ss": 10,
+  "vol": 0.67
+ },
+ "clip_audio_vol": 0.55,
+ "sfx_target_peak_db": -6.0,
+ "clips": [
+  {
+   "n": 3,
+   "t0": 0.0,
+   "dur": 5.0,
+   "sfx": [
+    {
+     "at": 1.35,
+     "key": "suspense",
+     "vol": 2.328,
+     "what": "car aane wali hai",
+     "src_peak_db": -2.2,
+     "bed_db": -18.1
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "t0": 5.25,
+   "dur": 4.8,
+   "sfx": [
+    {
+     "at": 1.45,
+     "key": "faah",
+     "vol": 1.753,
+     "what": "white car saamne se",
+     "src_peak_db": -6.6,
+     "bed_db": -20.6
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "t0": 10.3,
+   "dur": 5.0,
+   "sfx": [
+    {
+     "at": 2.0,
+     "key": "dun_dun_dun",
+     "vol": 1.464,
+     "what": "red car frame bhar deta hai",
+     "src_peak_db": -1.5,
+     "bed_db": -23.0
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "t0": 15.55,
+   "dur": 4.6,
+   "sfx": [
+    {
+     "at": 1.6,
+     "key": "yeet",
+     "vol": 1.15,
+     "what": "gaadi camera ke saamne se",
+     "src_peak_db": -3.1,
+     "bed_db": -24.2
+    }
+   ]
+  }
+ ]
+}

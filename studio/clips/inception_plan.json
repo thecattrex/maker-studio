@@ -1,0 +1,196 @@
+{
+ "clips": [
+  {
+   "ss": 206.0,
+   "dur": 3.2,
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "zoom_to": 1.06
+  },
+  {
+   "ss": 0.0,
+   "dur": 7.6,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 54.0,
+   "dur": 6.4,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 96.0,
+   "dur": 6.6,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 138.0,
+   "dur": 6.4,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 168.0,
+   "dur": 6.4,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 176.0,
+   "dur": 6.4,
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 186.0,
+   "dur": 5.4,
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 186.0,
+   "dur": 3.2,
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "zoom_to": 1.04
+  },
+  {
+   "ss": 205.0,
+   "dur": 7.2,
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "zoom_to": 1.02
+  }
+ ],
+ "voice": [
+  {
+   "path": "clips/narr_deep_1.wav",
+   "at": 3.2,
+   "gain": 1.0
+  },
+  {
+   "path": "clips/narr_deep_2.wav",
+   "at": 31.0,
+   "gain": 1.0
+  }
+ ],
+ "duck": 0.35,
+ "size": [
+  864,
+  1080
+ ],
+ "look": "film",
+ "top_text": [
+  {
+   "text": "INCEPTION",
+   "color": "red",
+   "size": 96,
+   "y": 72
+  },
+  {
+   "text": "THE ENDING EXPLAINED",
+   "color": "white",
+   "hi": "ENDING",
+   "hi_color": "yellow",
+   "size": 58,
+   "y": 158
+  }
+ ],
+ "band": 200,
+ "band_text_y": 74,
+ "cap_y": 760,
+ "cap_size": 66,
+ "bottom_band": 0,
+ "cap_lines": [
+  {
+   "t0": 3.2,
+   "t1": 10.8,
+   "text": "Cobb wakes up on the plane"
+  },
+  {
+   "t0": 10.8,
+   "t1": 17.2,
+   "text": "nobody mentions the dream"
+  },
+  {
+   "t0": 17.2,
+   "t1": 23.8,
+   "text": "one phone call clears his name"
+  },
+  {
+   "t0": 23.8,
+   "t1": 30.2,
+   "text": "he walks out a free man"
+  },
+  {
+   "t0": 30.2,
+   "t1": 36.6,
+   "text": "the house he never reached"
+  },
+  {
+   "t0": 36.6,
+   "t1": 43.0,
+   "text": "his kids, finally in reach"
+  },
+  {
+   "t0": 43.0,
+   "t1": 48.4,
+   "text": "he never looks at their faces"
+  },
+  {
+   "t0": 51.0,
+   "t1": 56.4,
+   "text": "watch the top"
+  }
+ ],
+ "texts": [
+  {
+   "t": 0.0,
+   "dur": 3.2,
+   "kind": "impact",
+   "text": "DID IT FALL?",
+   "y": 700,
+   "size": 104
+  },
+  {
+   "t": 57.0,
+   "dur": 1.8,
+   "kind": "impact",
+   "text": "THE END",
+   "y": 700,
+   "size": 110
+  }
+ ],
+ "cap_max_words": 3,
+ "header_gap": 84,
+ "header_size": 58
+}

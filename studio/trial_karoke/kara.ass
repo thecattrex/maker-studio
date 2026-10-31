@@ -1,0 +1,28 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: K,Inter Black,60,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,0,0,0,0,100,100,-1.5,0,1,4,3,2,62,62,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.95,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&\blur26\alpha&HFF&\t(0,300,\blur0\alpha&H00&){\c&H0000D7FF&\fscy122}MAJAK{\r\c&H00FFFFFF&} MEIN POLICE WALE KO MAARNE KE LIYE
+Dialogue: 0,0:00:00.95,0:00:01.47,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&}MAJAK {\c&H0000D7FF&\fscy122}MEIN{\r\c&H00FFFFFF&} POLICE WALE KO MAARNE KE LIYE
+Dialogue: 0,0:00:01.47,0:00:02.25,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&}MAJAK MEIN {\c&H0000D7FF&\fscy122}POLICE{\r\c&H00FFFFFF&} WALE KO MAARNE KE LIYE
+Dialogue: 0,0:00:02.25,0:00:02.78,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&}MAJAK MEIN POLICE {\c&H0000D7FF&\fscy122}WALE{\r\c&H00FFFFFF&} KO MAARNE KE LIYE
+Dialogue: 0,0:00:02.78,0:00:03.04,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&}MAJAK MEIN POLICE WALE {\c&H0000D7FF&\fscy122}KO{\r\c&H00FFFFFF&} MAARNE KE LIYE
+Dialogue: 0,0:00:03.04,0:00:03.82,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&}MAJAK MEIN POLICE WALE KO {\c&H0000D7FF&\fscy122}MAARNE{\r\c&H00FFFFFF&} KE LIYE
+Dialogue: 0,0:00:03.82,0:00:04.08,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&}MAJAK MEIN POLICE WALE KO MAARNE {\c&H0000D7FF&\fscy122}KE{\r\c&H00FFFFFF&} LIYE
+Dialogue: 0,0:00:04.08,0:00:05.20,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&}MAJAK MEIN POLICE WALE KO MAARNE KE {\c&H0000D7FF&\fscy122}LIYE{\r\c&H00FFFFFF&}
+Dialogue: 0,0:00:04.90,0:00:06.15,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&\blur26\alpha&HFF&\t(0,300,\blur0\alpha&H00&){\c&H0000D7FF&\fscy122}TUMHARE{\r\c&H00FFFFFF&} JAISA DHOONDHEGA
+Dialogue: 0,0:00:06.15,0:00:06.84,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&}TUMHARE {\c&H0000D7FF&\fscy122}JAISA{\r\c&H00FFFFFF&} DHOONDHEGA
+Dialogue: 0,0:00:06.84,0:00:08.80,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&}TUMHARE JAISA {\c&H0000D7FF&\fscy122}DHOONDHEGA{\r\c&H00FFFFFF&}
+Dialogue: 0,0:00:08.60,0:00:09.33,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&\blur26\alpha&HFF&\t(0,300,\blur0\alpha&H00&){\c&H0000D7FF&\fscy122}AUR{\r\c&H00FFFFFF&} KYA CHAHIYE TEREKO
+Dialogue: 0,0:00:09.33,0:00:09.75,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&}AUR {\c&H0000D7FF&\fscy122}KYA{\r\c&H00FFFFFF&} CHAHIYE TEREKO
+Dialogue: 0,0:00:09.75,0:00:10.75,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&}AUR KYA {\c&H0000D7FF&\fscy122}CHAHIYE{\r\c&H00FFFFFF&} TEREKO
+Dialogue: 0,0:00:10.75,0:00:12.20,K,,0,0,0,,{\an2\pos(540,1260)\3c&H000000&\4c&H000000&}AUR KYA CHAHIYE {\c&H0000D7FF&\fscy122}TEREKO{\r\c&H00FFFFFF&}

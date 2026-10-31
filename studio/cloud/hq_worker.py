@@ -547,7 +547,12 @@ def run_real_sfx(job: dict, out_dir: Path) -> dict:
         duck=bool(job.get("duck", True)),
         hyperframes_dir=hf_dir,
     )
-    qa = run_full_qa(str(out_mp4), sheet_out=str(out_dir / "qa_sheet.jpg"), check_captions=False)
+    qa = run_full_qa(
+        str(out_mp4),
+        min_dur=2.0,
+        max_dur=90.0,
+        sheet_out=str(out_dir / "qa_sheet.jpg"),
+    )
 
     report = {
         "mode": "real_sfx",

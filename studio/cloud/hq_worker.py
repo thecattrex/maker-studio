@@ -30,7 +30,9 @@ if str(STUDIO) not in sys.path:
 
 import textkit  # noqa: E402
 from om_hybrid import (  # noqa: E402
+    add_kinetic_motion_hud,
     auto_sound_design_video,
+    choreograph_shots_table,
     lut3d_filter_str,
     master_polish_video,
     plan_smart_camera,
@@ -154,31 +156,36 @@ def run_t1_hq(job: dict, out_dir: Path) -> dict:
         else:
             hook_s0, hook_s1 = max(scene_s0, scene_s1 - 3.5), scene_s1
 
-    # 2. MediaPipe Face-Tracked Smart Camera Plan
+    # 2. MediaPipe Face-Tracked Smart Camera Plan + Alternating Shot Choreography
     cam = plan_smart_camera(str(src_mp4), start_s=scene_s0, end_s=scene_s1)
     fps = cam["fps"]
     hf = (int(round(hook_s0 * fps)), int(round(hook_s1 * fps)))
     sf = (int(round(scene_s0 * fps)), int(round(scene_s1 * fps)))
+    shots_choreo = choreograph_shots_table(cam["shots_table"], hook_frame_range=hf)
     raw_v = work / "raw_motion.mp4"
-    grade_vf = "eq=contrast=1.08:saturation=1.12:gamma=0.97,unsharp=5:5:0.45:5:5:0.0"
-    if job.get("look_id"):
-        grade_vf = f"{lut3d_filter_str(job['look_id'], intensity=job.get('look_intensity'))},unsharp=5:5:0.40:5:5:0.0"
+    look_id = job.get("look_id", "teal-orange-blockbuster")
+    if look_id and look_id != "none":
+        grade_vf = f"{lut3d_filter_str(look_id, intensity=job.get('look_intensity', 0.60))},unsharp=5:5:0.40:5:5:0.0"
+    else:
+        grade_vf = "eq=contrast=1.08:saturation=1.12:gamma=0.97,unsharp=5:5:0.45:5:5:0.0"
     render_subpixel_segments(
         str(src_mp4),
         str(raw_v),
         [hf, sf],
-        cam["shots_table"],
+        shots_choreo,
         grade_vf=grade_vf,
         fps_num_den=(24000, 1001) if abs(fps - 23.976) < 0.1 else (int(round(fps)), 1),
-        dip_frames=int(job.get("seam_frames", 5)),
-        seam_mode=job.get("seam_mode", "dip"),
+        dip_frames=int(job.get("seam_frames", 6)),
+        seam_mode=job.get("seam_mode", "zoom_through"),
     )
 
-    # 3. Build Hook + Scene ASS captions
+    # 3. Build Hook + Scene ASS captions + Kinetic Motion HUD
     hdur = (hf[1] - hf[0]) / fps
     sdur = (sf[1] - sf[0]) / fps
     total = hdur + sdur
     ov = textkit.Overlay(playres=(1080, 1920))
+    if job.get("motion_hud", True):
+        add_kinetic_motion_hud(ov, total_dur=total, hook_end_s=hdur)
     ov.add(
         0.0, total, "Title",
         r"{\an5\fnAnton\fs90\fsp2\bord0\shad0\c&H00FFFFFF&"

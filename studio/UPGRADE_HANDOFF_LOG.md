@@ -114,4 +114,14 @@ Audited cross-tool integration so engines do not sit as isolated modes, and conn
 - **Live Verification:** Tested locally on `ep1` (`23.94s`, `teal-orange-blockbuster`, `13 cues / 10 distinct files`, `-15.5 LUFS`, `-1.6 dBTP`, `0` warnings) AND on GitHub Actions Run `#41246749221` (`--mode master`, `conclusion: "success"`, `15.61 GB RAM / 4 vCPU`, `openverse_api` `200 OK` + `crisp-editorial` LUT + `Real-SFX` + `CLAP/AST` `earshot_sheet.png` + `qa.passed: true`).
 
 ---
-*(Subsequent changes in Phase 8+ will be appended directly below.)*
+### Phase 8 — `Motion Director` + Automatic Multi-Repo Motion Routing (`2026-11-01`)
+Added automatic motion choreography, vector kinetic HUDs, live-action motion-graphic compositing, and explicit routing rules so every integrated repo's motion & audio features are actively used in real videos:
+- `/home/user/studio/om_hybrid/motion_director.py`:
+  - `choreograph_shots_table`: Replaces uniform zoom curves with alternating cinematic shot choreography (`hook_punch`, `push_in`, `pull_reveal`, `drift_push`, `climax_punch`).
+  - `add_kinetic_motion_hud`: Zero-RAM `libass` vector motion accents (Frame-0 optical hook flash, Hook->Story seam flash, and smooth bottom-edge retention progress bar).
+  - `composite_motion_overlay` (`cli.py overlay`): Composites `HyperFrames` (448 GSAP blocks) or `Remotion` motion graphics directly onto live-action video via `screen` luma blend, `colorkey`, or `alpha`.
+- Upgraded `studio/cloud/hq_worker.py` (`run_t1_hq`) to enable `choreograph_shots_table`, `add_kinetic_motion_hud`, `seam_mode="zoom_through"`, `look_id="teal-orange-blockbuster"`, and `sound_design=True` by default.
+- Added `/home/user/studio/MOTION_AND_TOOL_ROUTING.md` and linked it in `/home/user/START_HERE.md` so any future session automatically applies the full motion + LUT + SFX stack per video type.
+
+---
+*(Subsequent changes in Phase 9+ will be appended directly below.)*

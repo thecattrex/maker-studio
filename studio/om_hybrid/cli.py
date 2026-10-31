@@ -22,6 +22,7 @@ from om_hybrid import (  # noqa: E402
     analyze_energy,
     apply_cinema_look,
     auto_sound_design_video,
+    composite_motion_overlay,
     detect_silences,
     ensure_realsfx_ready,
     extract_ign_1080p_mp4,
@@ -108,6 +109,13 @@ def main() -> None:
     p_ms.add_argument("--openverse-query", default=None)
     p_ms.add_argument("--no-sfx", action="store_true")
 
+    p_ovl = sub.add_parser("overlay", help="Composite HyperFrames/Remotion motion graphic over live video")
+    p_ovl.add_argument("base_mp4")
+    p_ovl.add_argument("overlay_mp4")
+    p_ovl.add_argument("--out", required=True)
+    p_ovl.add_argument("--at", type=float, default=0.0)
+    p_ovl.add_argument("--mode", choices=["screen", "colorkey", "alpha"], default="screen")
+
     args = ap.parse_args()
 
     if args.cmd == "sources":
@@ -168,6 +176,8 @@ def main() -> None:
                 indent=2,
             )
         )
+    elif args.cmd == "overlay":
+        print(json.dumps(composite_motion_overlay(args.base_mp4, args.overlay_mp4, args.out, at_s=args.at, mode=args.mode), indent=2))
 
 
 if __name__ == "__main__":

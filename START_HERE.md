@@ -68,6 +68,8 @@ This is a portable copy of the reusable video-maker workspace and its operating 
 ## Key reusable paths
 
 - `studio/SPEC.md` — master type map and accepted locked decisions.
+- `studio/MOTION_AND_TOOL_ROUTING.md` — mandatory playbook for applying camera choreography, velocity transitions, `.cube` cinema LUTs, HyperFrames/Remotion motion overlays, and `Openverse + earshot + Real-SFX` sound design across videos.
+- `studio/UPGRADE_HANDOFF_LOG.md` — complete chronological record of all hybrid/cloud studio upgrades (`Phases 1–8+`).
 - `studio/t1.py` — Type-1 engine; see unresolved layout note above.
 - `studio/render.py`, `studio/templates.py`, `studio/textkit.py`, `studio/run.py` — shared rendering, text, and CLI.
 - `studio/t3.py` — Type-3 engine.

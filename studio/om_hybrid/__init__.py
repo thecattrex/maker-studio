@@ -28,6 +28,11 @@ from .openverse_realsfx import (
     auto_sound_design_video,
 )
 from .master_pipeline import master_polish_video, has_neural_ears
+from .motion_director import (
+    choreograph_shots_table,
+    add_kinetic_motion_hud,
+    composite_motion_overlay,
+)
 
 __all__ = [
     "score_slideshow_risk",
@@ -54,4 +59,7 @@ __all__ = [
     "auto_sound_design_video",
     "master_polish_video",
     "has_neural_ears",
+    "choreograph_shots_table",
+    "add_kinetic_motion_hud",
+    "composite_motion_overlay",
 ]

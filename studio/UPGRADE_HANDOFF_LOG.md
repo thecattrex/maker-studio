@@ -111,6 +111,7 @@ Audited cross-tool integration so engines do not sit as isolated modes, and conn
 - `/home/user/studio/om_hybrid/master_pipeline.py` (`master_polish_video` + `cli.py master`): Chains `OpenMontage` intelligence (`detect_silences`, `analyze_energy`, `plan_smart_camera`) -> `HyperFrames` `.cube` 3D LUT color grade (`apply_cinema_look`) -> `Openverse` CC audio + `earshot` 252 bank + `Clipwing Real-SFX` voice-safe ducked sound design (`auto_sound_design_video`) -> `visual_qa` (`run_full_qa`) -> `earshot` Neural AI Ears (`CLAP + AST` sheet & critique when `torch` is installed).
 - Upgraded `studio/cloud/hq_worker.py` (`run_t1_hq` and `run_hyperframes`) so both automatically run `Real-SFX` (`sound_design: true` by default, voice-safe ducked on `t1_hq`), and added **`--mode master`** across `.github/workflows/cloud_render.yml`, `hq_worker.py`, and `gh_farm.py` to execute all 6 layers (Node 22 HyperFrames + Openverse + Earshot + Real-SFX + PyTorch CLAP/AST AI Ears + Visual QA) in one Cloud run.
 - Added root `/home/user/README.md` documenting the 6-layer stack and 1-command clone/bootstrap workflow.
+- **Live Verification:** Tested locally on `ep1` (`23.94s`, `teal-orange-blockbuster`, `13 cues / 10 distinct files`, `-15.5 LUFS`, `-1.6 dBTP`, `0` warnings) AND on GitHub Actions Run `#41246749221` (`--mode master`, `conclusion: "success"`, `15.61 GB RAM / 4 vCPU`, `openverse_api` `200 OK` + `crisp-editorial` LUT + `Real-SFX` + `CLAP/AST` `earshot_sheet.png` + `qa.passed: true`).
 
 ---
 *(Subsequent changes in Phase 8+ will be appended directly below.)*

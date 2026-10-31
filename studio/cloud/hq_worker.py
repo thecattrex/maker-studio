@@ -30,11 +30,14 @@ if str(STUDIO) not in sys.path:
 
 import textkit  # noqa: E402
 from om_hybrid import (  # noqa: E402
+    auto_sound_design_video,
     lut3d_filter_str,
     plan_smart_camera,
     render_subpixel_segments,
     run_full_qa,
     score_hook_candidates,
+    search_openverse_audio,
+    search_openverse_images,
 )
 
 
@@ -506,9 +509,65 @@ def run_earshot(job: dict, out_dir: Path) -> dict:
     return report
 
 
+def run_real_sfx(job: dict, out_dir: Path) -> dict:
+    """Openverse 5M+ CC Audio Scout + Clipwing Real-SFX Frame-Exact Sound Design."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    work = Path("/tmp/maker_realsfx_work")
+    work.mkdir(parents=True, exist_ok=True)
+
+    # 1. Query Openverse live from GitHub runner IP & download CC0/CC tracks into real_sfx library
+    ov_query = job.get("openverse_query", "whoosh")
+    ov_lib = ROOT / "studio" / "real_sfx" / "openverse_cc0"
+    ov_audio = search_openverse_audio(ov_query, license_type=job.get("license"), limit=3, download_dir=str(ov_lib))
+    ov_img = search_openverse_images(job.get("image_query", "cinema"), limit=2)
+    (out_dir / "openverse_manifest.json").write_text(
+        json.dumps({"audio": ov_audio, "images": ov_img}, indent=2)
+    )
+
+    # 2. Prepare target video (either job['src_url'] or fresh HyperFrames 1080x1920 render)
+    hf_dir = None
+    src_mp4 = work / "base_video.mp4"
+    if job.get("src_url"):
+        req = urllib.request.Request(job["src_url"], headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=120) as r, open(src_mp4, "wb") as f:
+            f.write(r.read())
+    else:
+        hf_proj = ROOT / "studio" / "hyperframes" / "starter_short"
+        hf_dir = str(hf_proj)
+        subprocess.run(
+            ["hyperframes", "render", str(hf_proj), "--output", str(src_mp4), "--fps", "30", "--quality", "high"],
+            check=True,
+        )
+
+    out_mp4 = out_dir / job.get("out_name", "realsfx_cloud_demo.mp4")
+    mix_res = auto_sound_design_video(
+        str(src_mp4),
+        str(out_mp4),
+        voice_safe=bool(job.get("voice_safe", True)),
+        duck=bool(job.get("duck", True)),
+        hyperframes_dir=hf_dir,
+    )
+    qa = run_full_qa(str(out_mp4), sheet_out=str(out_dir / "qa_sheet.jpg"), check_captions=False)
+
+    report = {
+        "mode": "real_sfx",
+        "runner_ram_gb": _ram_gb(),
+        "runner_cpus": multiprocessing.cpu_count(),
+        "openverse_audio_backend": ov_audio.get("backend"),
+        "openverse_audio_hits": ov_audio.get("count", 0),
+        "openverse_image_backend": ov_img.get("backend"),
+        "indexed_sounds": mix_res.get("indexed_sounds"),
+        "out_file": out_mp4.name,
+        "sfx_stem_wav": Path(mix_res["sfx_stem_wav"]).name if mix_res.get("sfx_stem_wav") else None,
+        "qa": qa,
+    }
+    (out_dir / "cloud_report.json").write_text(json.dumps(report, indent=2))
+    return report
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot"], required=True)
+    ap.add_argument("--mode", choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx"], required=True)
     ap.add_argument("--job-b64", default="")
     ap.add_argument("--out-dir", default=str(ROOT / "studio" / "cloud_out"))
     args = ap.parse_args()
@@ -524,11 +583,13 @@ def main() -> None:
         res = run_hyperframes(job, out_dir)
     elif args.mode == "earshot":
         res = run_earshot(job, out_dir)
+    elif args.mode == "real_sfx":
+        res = run_real_sfx(job, out_dir)
     else:
         res = run_remotion(job, out_dir)
 
     print(json.dumps(res, indent=2))
-    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot") and not res.get("qa", {}).get("passed", False):
+    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot", "real_sfx") and not res.get("qa", {}).get("passed", False):
         sys.exit(1)
 
 

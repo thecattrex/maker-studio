@@ -5,16 +5,18 @@
 #   bash bootstrap.sh browser  # + Playwright + Chromium fallback
 #   bash bootstrap.sh all      # full + browser dono
 set -e
-echo "== ffmpeg =="
-if [ ! -x /tmp/vidtools/ffmpeg ]; then
-  pip3 install -q imageio-ffmpeg
+echo "== ffmpeg + ffprobe =="
+if [ ! -x /tmp/vidtools/ffmpeg ] || [ ! -x /tmp/vidtools/ffprobe ]; then
   mkdir -p /tmp/vidtools
-  cp "$(python3 -c 'import imageio_ffmpeg,shutil;print(imageio_ffmpeg.get_ffmpeg_exe())')" /tmp/vidtools/ffmpeg
-  chmod +x /tmp/vidtools/ffmpeg
+  curl -fsSL https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz \
+    | tar -xJ -C /tmp/vidtools --strip-components=1 --wildcards '*/ffmpeg' '*/ffprobe'
+  chmod +x /tmp/vidtools/ffmpeg /tmp/vidtools/ffprobe
 fi
 mkdir -p /home/user/bin
 ln -sf /tmp/vidtools/ffmpeg /home/user/bin/ffmpeg
+ln -sf /tmp/vidtools/ffprobe /home/user/bin/ffprobe
 /tmp/vidtools/ffmpeg -version | head -1
+/tmp/vidtools/ffprobe -version | head -1
 
 echo "== yt-dlp =="
 python3 -c "import yt_dlp" 2>/dev/null || pip3 install -q -U yt-dlp

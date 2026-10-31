@@ -68,8 +68,9 @@ This file preserves reusable production decisions and corrections, not episode-s
   - `visual_qa.py` & `slideshow_risk.py`: Pre-delivery codec/black-frame/loudness/safe-zone QA gate and 6-dimension slideshow-risk scorer.
   - `cinema_looks.py` & `smart_camera.py` (adapted from `heygen-com/hyperframes`, `Apache-2.0`; see `studio/hyperframes/NOTICE_HYPERFRAMES.md`): Offline NumPy 3D `.cube` LUT generator (`teal-orange-blockbuster`, `bleach-bypass`, `film-fade`, `warm-cinema`, `crisp-editorial`, `scifi-cool`) + velocity-matched seam modes (`seam_mode="dip"|"zoom_through"|"whip_pan"|"rack_focus"`) — both run locally in Arena (`<5ms` LUT build) and on Cloud.
   - `sfx_sync.py` & `studio/earshot/` (adapted/vendored from `Leonxlnx/earshot`, `MIT` license): 252 zero-copyright procedural studio SFX (`cut_hit`, `pro_whoosh_big`, `riser`, `sub_drop`, `click`, `pop`, `glitch`, `logo_sting`) rendered offline in `<0.4s` via NumPy/SciPy with sub-millisecond peak-to-cut alignment (`insert_at_s = cut_time_s - peak_s`).
-  - `_ffmpeg.py`: Self-healing FFmpeg resolver that automatically runs `studio/bootstrap.sh` if container snapshot resume resets `/tmp/vidtools/ffmpeg`.
-  - CLI: `python3 -m om_hybrid.cli {sources|search|ign|analyze|qa|looks|grade|sfx-list|sfx-render}` (run from `/home/user/studio`).
+  - `openverse_realsfx.py` & `studio/real_sfx/` (`Openverse` `MIT` + `Clipwing/skills` `real-sfx` `MIT` + 78 CC0 `uisfx` cues): Searches & downloads CC0/CC real recordings via `api.openverse.org/v1/` (with automatic Wikimedia Commons + Archive.org CC fallback on datacenter IPs) and auto-mixes frame-accurate, voice-ducked SFX (`from_hyperframes.py` / `find_moments.py` -> `suggest_cues.py` -> `mix.py --voice-safe --duck` -> `critique.py`).
+  - `_ffmpeg.py`: Self-healing `ffmpeg` + `ffprobe` (`7.0.2-static`) resolver that automatically runs `studio/bootstrap.sh` if container snapshot resume resets `/tmp/vidtools/`.
+  - CLI: `python3 -m om_hybrid.cli {sources|search|ign|analyze|qa|looks|grade|sfx-list|sfx-render|openverse-audio|openverse-images|realsfx-setup|realsfx-mix}` (run from `/home/user/studio`).
 
 ## GitHub Cloud Render Farm (`thecattrex/maker-studio` — 2026-11-01)
 - Dedicated **public** GitHub repository: `https://github.com/thecattrex/maker-studio` (unlimited Actions minutes + `16 GB RAM / 4 vCPU` runners; strictly isolated — never touch user's other GitHub repos; never commit tokens/credentials or unlisted Google Drive URLs). Full chronological upgrade record: `studio/UPGRADE_HANDOFF_LOG.md`.
@@ -77,9 +78,10 @@ This file preserves reusable production decisions and corrections, not episode-s
   1. **`t1_hq`**: `faster-whisper medium.en` word-level ASR + `mediapipe` BlazeFace tracking + sub-pixel `INTER_LANCZOS4` + optional `.cube` `look_id` & velocity `seam_mode` + `libx264 -preset slow -crf 17` + true 2-pass linear `loudnorm` (`-14.8 LUFS`, `-1.5 dBTP`).
   2. **`hyperframes`**: Node 22 + HeyGen `hyperframes` CLI (`studio/hyperframes/`) — deterministic HTML + CSS + GSAP -> Chrome `BeginFrame` -> FFmpeg rendering + on-demand installation from 448 registry blocks/components.
   3. **`earshot`**: PyTorch CPU + `CLAP` + `AST` neural audio perception ("AI Ears") — generates `earshot_sheet.png` (annotated frames + spectrogram + loudness + beat/cut sync map) and `earshot_critique.json`.
-  4. **`remotion`**: Full React/Remotion rendering via `studio/remotion-composer/` (`CinematicRenderer`, `Explainer`, `TitledVideo`, `TalkingHead`, `CollageBurst`, `LyricOverlay`) on headless Chromium.
-  5. **`smoke`**: Fast health/QA verification of the cloud runner + artifact round-trip.
+  4. **`real_sfx`**: Live `api.openverse.org/v1/` CC0/CC audio & image scout + Clipwing `real-sfx` frame-exact sound design (`*_sfx.mp4` + `*_sfx_track.wav` stem + QA).
+  5. **`remotion`**: Full React/Remotion rendering via `studio/remotion-composer/` (`CinematicRenderer`, `Explainer`, `TitledVideo`, `TalkingHead`, `CollageBurst`, `LyricOverlay`) on headless Chromium.
+  6. **`smoke`**: Fast health/QA verification of the cloud runner + artifact round-trip.
 - Controller CLI:
   - Status: `python3 /home/user/studio/gh_farm.py status`
-  - Run job & pull MP4/QA back into workspace: `python3 /home/user/studio/gh_farm.py run --mode {smoke|t1_hq|hyperframes|earshot|remotion} [--job path/to/job.json] --out-dir /tmp/cloud_out`
+  - Run job & pull MP4/QA back into workspace: `python3 /home/user/studio/gh_farm.py run --mode {smoke|t1_hq|hyperframes|earshot|real_sfx|remotion} [--job path/to/job.json] --out-dir /tmp/cloud_out`
 

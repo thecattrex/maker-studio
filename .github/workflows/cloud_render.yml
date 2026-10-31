@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "Render mode: smoke | t1_hq | remotion | hyperframes | earshot"
+        description: "Render mode: smoke | t1_hq | remotion | hyperframes | earshot | real_sfx"
         required: true
         default: "smoke"
       job_b64:
@@ -59,14 +59,14 @@ jobs:
         working-directory: studio/remotion-composer
         run: npm ci --no-audit --no-fund
 
-      - name: Set up Node.js 22 + HyperFrames Engine (only when mode == hyperframes)
-        if: ${{ inputs.mode == 'hyperframes' }}
+      - name: Set up Node.js 22 + HyperFrames Engine (when mode == hyperframes or real_sfx)
+        if: ${{ inputs.mode == 'hyperframes' || inputs.mode == 'real_sfx' }}
         uses: actions/setup-node@v4
         with:
           node-version: "22"
 
       - name: Install HyperFrames CLI & Ensure Browser
-        if: ${{ inputs.mode == 'hyperframes' }}
+        if: ${{ inputs.mode == 'hyperframes' || inputs.mode == 'real_sfx' }}
         env:
           HYPERFRAMES_SKIP_SKILLS: "1"
           HYPERFRAMES_TELEMETRY_DISABLED: "1"

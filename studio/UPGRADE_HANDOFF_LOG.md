@@ -84,6 +84,25 @@ Inspected `https://github.com/Leonxlnx/earshot` (`MIT` license, `v0.4.0`, proced
 2. **Runs on Unlimited 16 GB / 4 vCPU GitHub Cloud Farm (`--mode earshot`):**
    - Installs CPU PyTorch + HuggingFace `transformers` (`CLAP` + `AST` audio models) + `librosa`/`pyloudnorm`/`matplotlib` when `mode == 'earshot'`.
    - Generates `earshot_sheet.png` (annotated video frames + spectrogram + loudness + beat/cut sync markers) and `earshot_critique.json` (`earshot critique --fast --json` or `earshot describe --json`) so the agent can visually and quantitatively "hear" any rendered video's mix & cut timing.
+   - **Live Verification:** GitHub Actions Run `#41244579041` completed with `conclusion: "success"` (`earshot_sheet.png` + `earshot_critique.json` downloaded & verified).
 
 ---
-*(Subsequent changes in Phase 6+ will be appended directly below.)*
+### Phase 6 — `Openverse` + `Clipwing Real SFX` Integration (Complete 3-Tool Sound Design Stack — `2026-11-01`)
+Discovered and integrated the remaining two tools of the 3-tool open motion sound-design workflow alongside `earshot`:
+- **`Openverse`** (`https://api.openverse.org/v1/` / `WordPress/openverse`, `MIT` license): Keyless public search API across **5M+ openly-licensed real audio files** (Wikimedia Commons `3.88M+`, Jamendo `627K+`, Freesound `587K+`) and **800M+ CC/Public-Domain images**.
+- **`Real SFX`** (`https://github.com/Clipwing/skills` -> `skills/real-sfx`, `MIT` scripts + **78 CC0 `uisfx` sounds**): Frame-exact video & HyperFrames sound-design mixer with speech-aware ducking, tonal key matching, mono-cancellation check, AAC true-peak overshoot guard, and separate stem export.
+
+1. **Runs Locally in Arena & on Cloud (`studio/real_sfx/` + `studio/om_hybrid/openverse_realsfx.py`):**
+   - `/home/user/studio/real_sfx/` (`1.2 MB`, `MIT`; see `studio/real_sfx/LICENSE_REAL_SFX_MIT.txt`) — Vendored Clipwing `real-sfx` engine (`find_moments.py`, `from_hyperframes.py`, `ui_events.py`, `suggest_cues.py`, `mix.py --voice-safe --duck`, `tonal.py`, `beats.py`, `texture.py`, `bed.py`, `critique.py`, plus `vendor/package.json` installing 78 CC0 `uisfx` cues).
+   - `/home/user/studio/om_hybrid/openverse_realsfx.py`:
+     - `search_openverse_audio` & `search_openverse_images`: Queries `https://api.openverse.org/v1/` directly on unfiltered cloud IPs (`4.5s` timeout), with automatic fallback to Openverse's upstream Wikimedia Commons + Internet Archive CC catalogs when datacenter IPs block Cloudflare.
+     - `ensure_realsfx_ready`: Seeds a 22-sound multi-role `starter_lib/` (`8` distinct whoosh families, `4` hits, risers, drops, pops, clicks, chimes, glitches), indexes any downloaded `openverse_cc0/` recordings, and installs `uisfx` (`78` CC0 UI cues).
+     - `auto_sound_design_video`: Runs `from_hyperframes.py` or `find_moments.py --fine` -> `suggest_cues.py` -> `mix.py --voice-safe --duck` -> `critique.py`, outputting both `*_sfx.mp4` and isolated `*_sfx_track.wav` stems.
+   - `/home/user/studio/bootstrap.sh` & `/home/user/studio/om_hybrid/_ffmpeg.py`: Upgraded to self-heal **both `ffmpeg` and `ffprobe` (`7.0.2-static`)** in `/tmp/vidtools/`.
+   - `/home/user/studio/om_hybrid/cli.py`: Added subcommands `openverse-audio`, `openverse-images`, `realsfx-setup`, and `realsfx-mix`.
+
+2. **Runs on Unlimited 16 GB / 4 vCPU GitHub Cloud Farm (`--mode real_sfx`):**
+   - Added `real_sfx` mode across `.github/workflows/cloud_render.yml`, `studio/cloud/hq_worker.py`, and `studio/gh_farm.py` — queries live `api.openverse.org` directly from GitHub's runner IP, renders HyperFrames (or custom `src_url`), mixes frame-exact voice-safe SFX, and runs full visual + loudness QA.
+
+---
+*(Subsequent changes in Phase 7+ will be appended directly below.)*

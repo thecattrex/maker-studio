@@ -21,7 +21,9 @@ if STUDIO not in sys.path:
 from om_hybrid import (  # noqa: E402
     analyze_energy,
     apply_cinema_look,
+    auto_sound_design_video,
     detect_silences,
+    ensure_realsfx_ready,
     extract_ign_1080p_mp4,
     list_cinema_looks,
     list_sfx_bank,
@@ -29,6 +31,8 @@ from om_hybrid import (  # noqa: E402
     plan_smart_camera,
     render_synced_sfx,
     run_full_qa,
+    search_openverse_audio,
+    search_openverse_images,
     search_stock_clips,
 )
 
@@ -76,6 +80,25 @@ def main() -> None:
     p_sr.add_argument("--dur", type=float, default=None)
     p_sr.add_argument("--apex", type=float, default=None)
 
+    p_ova = sub.add_parser("openverse-audio", help="Search Openverse 5M+ open audio (CC0/CC-BY)")
+    p_ova.add_argument("query")
+    p_ova.add_argument("--license", default=None)
+    p_ova.add_argument("--limit", type=int, default=5)
+    p_ova.add_argument("--download-dir", default=None)
+
+    p_ovi = sub.add_parser("openverse-images", help="Search Openverse 800M+ open images")
+    p_ovi.add_argument("query")
+    p_ovi.add_argument("--license", default=None)
+    p_ovi.add_argument("--limit", type=int, default=5)
+    p_ovi.add_argument("--download-dir", default=None)
+
+    sub.add_parser("realsfx-setup", help="Initialize Clipwing Real-SFX + 78 CC0 uisfx sounds + index")
+
+    p_rm = sub.add_parser("realsfx-mix", help="Auto-detect moments & sound-design video via Real-SFX")
+    p_rm.add_argument("video")
+    p_rm.add_argument("--out", required=True)
+    p_rm.add_argument("--hyperframes-dir", default=None)
+
     args = ap.parse_args()
 
     if args.cmd == "sources":
@@ -114,6 +137,14 @@ def main() -> None:
         print(json.dumps({"count": len(items), "items": items}, indent=2))
     elif args.cmd == "sfx-render":
         print(json.dumps(render_synced_sfx(args.sfx_id, args.out, cut_time_s=args.cut_time, dur=args.dur, apex=args.apex), indent=2))
+    elif args.cmd == "openverse-audio":
+        print(json.dumps(search_openverse_audio(args.query, license_type=args.license, limit=args.limit, download_dir=args.download_dir), indent=2))
+    elif args.cmd == "openverse-images":
+        print(json.dumps(search_openverse_images(args.query, license_type=args.license, limit=args.limit, download_dir=args.download_dir), indent=2))
+    elif args.cmd == "realsfx-setup":
+        print(json.dumps(ensure_realsfx_ready(install_uisfx=True), indent=2))
+    elif args.cmd == "realsfx-mix":
+        print(json.dumps(auto_sound_design_video(args.video, args.out, hyperframes_dir=args.hyperframes_dir), indent=2))
 
 
 if __name__ == "__main__":

@@ -27,6 +27,11 @@ studio/samples/*.mp4
 studio/samples/*.png
 studio/_scratch/
 studio/cloud_out/
+studio/real_sfx/config.json
+studio/real_sfx/library_index.json
+studio/real_sfx/starter_lib/
+studio/real_sfx/openverse_cc0/
+studio/real_sfx/vendor/package-lock.json
 *.tmp.mp4
 
 # Keep unlisted Google Drive episode manifests/links local-only (public repo hygiene)

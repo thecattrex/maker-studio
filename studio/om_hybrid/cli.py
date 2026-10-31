@@ -28,6 +28,7 @@ from om_hybrid import (  # noqa: E402
     list_cinema_looks,
     list_sfx_bank,
     list_sources,
+    master_polish_video,
     plan_smart_camera,
     render_synced_sfx,
     run_full_qa,
@@ -99,6 +100,14 @@ def main() -> None:
     p_rm.add_argument("--out", required=True)
     p_rm.add_argument("--hyperframes-dir", default=None)
 
+    p_ms = sub.add_parser("master", help="Unified 6-layer Master Pipeline (Grade + SFX + QA + AI Ears) for ANY video")
+    p_ms.add_argument("video")
+    p_ms.add_argument("--out", required=True)
+    p_ms.add_argument("--preset", choices=["movie", "cinema", "motion", "reaction", "scifi", "none"], default="movie")
+    p_ms.add_argument("--hyperframes-dir", default=None)
+    p_ms.add_argument("--openverse-query", default=None)
+    p_ms.add_argument("--no-sfx", action="store_true")
+
     args = ap.parse_args()
 
     if args.cmd == "sources":
@@ -145,6 +154,20 @@ def main() -> None:
         print(json.dumps(ensure_realsfx_ready(install_uisfx=True), indent=2))
     elif args.cmd == "realsfx-mix":
         print(json.dumps(auto_sound_design_video(args.video, args.out, hyperframes_dir=args.hyperframes_dir), indent=2))
+    elif args.cmd == "master":
+        print(
+            json.dumps(
+                master_polish_video(
+                    args.video,
+                    args.out,
+                    preset=args.preset,
+                    enable_sfx=not args.no_sfx,
+                    openverse_seed_query=args.openverse_query,
+                    hyperframes_dir=args.hyperframes_dir,
+                ),
+                indent=2,
+            )
+        )
 
 
 if __name__ == "__main__":

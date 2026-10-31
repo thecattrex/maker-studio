@@ -32,6 +32,7 @@ import textkit  # noqa: E402
 from om_hybrid import (  # noqa: E402
     auto_sound_design_video,
     lut3d_filter_str,
+    master_polish_video,
     plan_smart_camera,
     render_subpixel_segments,
     run_full_qa,
@@ -289,12 +290,18 @@ def run_t1_hq(job: dict, out_dir: Path) -> dict:
         check=True,
     )
 
+    if job.get("sound_design", True):
+        pre_sfx = work / "t1_pre_sfx.mp4"
+        final_mp4.rename(pre_sfx)
+        auto_sound_design_video(str(pre_sfx), str(final_mp4), voice_safe=True, duck=True)
+
     sheet_jpg = out_dir / "qa_sheet.jpg"
     qa = run_full_qa(str(final_mp4), sheet_out=str(sheet_jpg))
     report = {
         "mode": "t1_hq",
         "whisper_model": w_model_name,
         "camera_detector": cam["detector"],
+        "sound_design": bool(job.get("sound_design", True)),
         "runner_ram_gb": _ram_gb(),
         "qa": qa,
     }
@@ -394,6 +401,11 @@ def run_hyperframes(job: dict, out_dir: Path) -> dict:
     if job.get("fps"):
         render_cmd.extend(["--fps", str(job["fps"])])
     subprocess.run(render_cmd, env=env, check=True)
+
+    if job.get("sound_design", True):
+        raw_hf = work_proj / "_raw_hf.mp4"
+        shutil.move(str(out_mp4), str(raw_hf))
+        auto_sound_design_video(str(raw_hf), str(out_mp4), hyperframes_dir=str(work_proj))
 
     # Probe rendered MP4 with ffprobe + extract contact sheet
     probe_p = subprocess.run(
@@ -570,9 +582,54 @@ def run_real_sfx(job: dict, out_dir: Path) -> dict:
     return report
 
 
+def run_master(job: dict, out_dir: Path) -> dict:
+    """Unified 6-Layer Master Pipeline: OpenMontage + HyperFrames LUT + Openverse + Earshot + Real-SFX + AI Ears QA."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    work = Path("/tmp/maker_master_cloud")
+    work.mkdir(parents=True, exist_ok=True)
+
+    hf_dir = None
+    src_mp4 = work / "source_input.mp4"
+    if job.get("src_url"):
+        req = urllib.request.Request(job["src_url"], headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=120) as r, open(src_mp4, "wb") as f:
+            f.write(r.read())
+    else:
+        hf_proj = ROOT / "studio" / "hyperframes" / "starter_short"
+        hf_dir = str(hf_proj)
+        subprocess.run(
+            ["hyperframes", "render", str(hf_proj), "--output", str(src_mp4), "--fps", "30", "--quality", "high"],
+            check=True,
+        )
+
+    out_mp4 = out_dir / job.get("out_name", "master_cloud_final.mp4")
+    res = master_polish_video(
+        str(src_mp4),
+        str(out_mp4),
+        preset=job.get("preset", "motion" if hf_dir else "movie"),
+        look_id=job.get("look_id"),
+        look_intensity=job.get("look_intensity"),
+        enable_sfx=bool(job.get("enable_sfx", True)),
+        voice_safe=bool(job.get("voice_safe", True)),
+        duck=bool(job.get("duck", True)),
+        openverse_seed_query=job.get("openverse_query", "whoosh"),
+        hyperframes_dir=hf_dir,
+        run_ai_ears="always",
+        artifacts_dir=str(out_dir),
+    )
+    report = {
+        "mode": "master",
+        "runner_ram_gb": _ram_gb(),
+        "runner_cpus": multiprocessing.cpu_count(),
+        **res,
+    }
+    (out_dir / "cloud_report.json").write_text(json.dumps(report, indent=2))
+    return report
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx"], required=True)
+    ap.add_argument("--mode", choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master"], required=True)
     ap.add_argument("--job-b64", default="")
     ap.add_argument("--out-dir", default=str(ROOT / "studio" / "cloud_out"))
     args = ap.parse_args()
@@ -590,11 +647,13 @@ def main() -> None:
         res = run_earshot(job, out_dir)
     elif args.mode == "real_sfx":
         res = run_real_sfx(job, out_dir)
+    elif args.mode == "master":
+        res = run_master(job, out_dir)
     else:
         res = run_remotion(job, out_dir)
 
     print(json.dumps(res, indent=2))
-    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot", "real_sfx") and not res.get("qa", {}).get("passed", False):
+    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot", "real_sfx", "master") and not res.get("qa", {}).get("passed", False):
         sys.exit(1)
 
 

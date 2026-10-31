@@ -27,6 +27,7 @@ from .openverse_realsfx import (
     ensure_realsfx_ready,
     auto_sound_design_video,
 )
+from .master_pipeline import master_polish_video, has_neural_ears
 
 __all__ = [
     "score_slideshow_risk",
@@ -51,4 +52,6 @@ __all__ = [
     "search_openverse_images",
     "ensure_realsfx_ready",
     "auto_sound_design_video",
+    "master_polish_video",
+    "has_neural_ears",
 ]

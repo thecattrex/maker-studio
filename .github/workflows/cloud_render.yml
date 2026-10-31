@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "Render mode: smoke | t1_hq | remotion | hyperframes | earshot | real_sfx"
+        description: "Render mode: smoke | t1_hq | remotion | hyperframes | earshot | real_sfx | master"
         required: true
         default: "smoke"
       job_b64:
@@ -41,7 +41,7 @@ jobs:
           if [ "$RENDER_MODE" = "t1_hq" ]; then
             pip install --quiet faster-whisper
           fi
-          if [ "$RENDER_MODE" = "earshot" ]; then
+          if [ "$RENDER_MODE" = "earshot" ] || [ "$RENDER_MODE" = "master" ]; then
             pip install --quiet soxr librosa pyloudnorm scikit-learn matplotlib transformers
             pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu
           fi
@@ -59,14 +59,14 @@ jobs:
         working-directory: studio/remotion-composer
         run: npm ci --no-audit --no-fund
 
-      - name: Set up Node.js 22 + HyperFrames Engine (when mode == hyperframes or real_sfx)
-        if: ${{ inputs.mode == 'hyperframes' || inputs.mode == 'real_sfx' }}
+      - name: Set up Node.js 22 + HyperFrames Engine (when mode == hyperframes, real_sfx, or master)
+        if: ${{ inputs.mode == 'hyperframes' || inputs.mode == 'real_sfx' || inputs.mode == 'master' }}
         uses: actions/setup-node@v4
         with:
           node-version: "22"
 
       - name: Install HyperFrames CLI & Ensure Browser
-        if: ${{ inputs.mode == 'hyperframes' || inputs.mode == 'real_sfx' }}
+        if: ${{ inputs.mode == 'hyperframes' || inputs.mode == 'real_sfx' || inputs.mode == 'master' }}
         env:
           HYPERFRAMES_SKIP_SKILLS: "1"
           HYPERFRAMES_TELEMETRY_DISABLED: "1"

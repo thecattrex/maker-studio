@@ -103,6 +103,7 @@ Discovered and integrated the remaining two tools of the 3-tool open motion soun
 
 2. **Runs on Unlimited 16 GB / 4 vCPU GitHub Cloud Farm (`--mode real_sfx`):**
    - Added `real_sfx` mode across `.github/workflows/cloud_render.yml`, `studio/cloud/hq_worker.py`, and `studio/gh_farm.py` — queries live `api.openverse.org` directly from GitHub's runner IP, renders HyperFrames (or custom `src_url`), mixes frame-exact voice-safe SFX, and runs full visual + loudness QA.
+   - **Live Verification:** GitHub Actions Run `#41246041068` completed with `conclusion: "success"` (`15.61 GB RAM / 4 vCPU`, `1080x1920 @ 30fps`, `-14.5 LUFS`, `-1.7 dBTP`, `qa.passed: true`, `0` errors/warnings).
 
 ---
 *(Subsequent changes in Phase 7+ will be appended directly below.)*

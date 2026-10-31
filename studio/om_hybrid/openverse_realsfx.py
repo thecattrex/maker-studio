@@ -80,8 +80,8 @@ def search_openverse_audio(
     if license_type:
         params["license"] = license_type
     if download_dir:
-        # Prefer direct-downloadable sources (Wikimedia Commons & Jamendo; Freesound /apiv2/download requires separate OAuth)
-        params["source"] = "wikimedia_audio,jamendo"
+        # Openverse v1 `source` accepts one slug; `wikimedia_audio` provides direct-download CC0/CC files without Freesound OAuth
+        params["source"] = "wikimedia_audio"
 
     api_url = f"https://api.openverse.org/v1/audio/?{urllib.parse.urlencode(params)}"
     results: list[dict[str, Any]] = []

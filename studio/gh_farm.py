@@ -26,8 +26,9 @@ WORKFLOW_FILE = "cloud_render.yml"
 
 
 def _load_token() -> str:
-    if os.environ.get("GITHUB_TOKEN"):
-        return os.environ["GITHUB_TOKEN"].strip()
+    for env_key in ("GITHUB_TOKEN", "GH_TOKEN"):
+        if os.environ.get(env_key):
+            return os.environ[env_key].strip()
     cred = Path("/home/user/.git-credentials")
     if cred.exists():
         for line in cred.read_text().splitlines():

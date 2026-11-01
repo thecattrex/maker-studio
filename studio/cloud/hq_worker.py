@@ -767,8 +767,10 @@ def run_aura_edit(job: dict, out_dir: Path) -> dict:
 
     song_p: str | None = None
     if job.get("song_url"):
-        dst_song = work / "real_song.mp3"
-        req_song = urllib.request.Request(job["song_url"], headers={"User-Agent": "Mozilla/5.0"})
+        s_url = str(job["song_url"])
+        s_ext = ".flac" if ".flac" in s_url.lower() else (".wav" if ".wav" in s_url.lower() else ".mp3")
+        dst_song = work / f"real_song{s_ext}"
+        req_song = urllib.request.Request(s_url, headers={"User-Agent": "Mozilla/5.0"})
         with urllib.request.urlopen(req_song, timeout=180) as r, open(dst_song, "wb") as f:
             f.write(r.read())
         song_p = str(dst_song)

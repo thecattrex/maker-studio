@@ -123,9 +123,30 @@ def _crop_9x10_smart(
     detect_fn: Any = None,
     cx_override: float | None = None,
 ) -> list[np.ndarray]:
-    """Crop 16:9 frames cleanly into 1080x1200 (9:10) centered on single face or two-shot midpoint."""
+    """Crop 16:9 frames cleanly into 1080x1200 (9:10) centered on single face or two-shot midpoint.
+    Automatically trims baked-in horizontal black letterbox bars first so active cinema fills 100% of 9:10!
+    """
     if not frames_bgr:
         return []
+
+    # Auto-detect & trim baked-in top/bottom black letterbox bars (up to 18% each side)
+    h0, w0 = frames_bgr[0].shape[:2]
+    probe_idxs = sorted(set([0, len(frames_bgr) // 2, len(frames_bgr) - 1]))
+    row_max_luma = np.zeros(h0, dtype=np.float32)
+    for pidx in probe_idxs:
+        gray_p = cv2.cvtColor(frames_bgr[pidx], cv2.COLOR_BGR2GRAY)
+        row_p90 = np.percentile(gray_p[:, int(w0 * 0.22):int(w0 * 0.72)], 90, axis=1)
+        row_max_luma = np.maximum(row_max_luma, row_p90)
+    max_trim = int(h0 * 0.28)
+    y_top = 0
+    while y_top < max_trim and row_max_luma[y_top] < 16.0:
+        y_top += 1
+    y_bot = h0
+    while (h0 - y_bot) < max_trim and row_max_luma[y_bot - 1] < 16.0:
+        y_bot -= 1
+    if (y_top > 6 or (h0 - y_bot) > 6) and (y_bot - y_top) >= int(h0 * 0.44):
+        frames_bgr = [fr[y_top:y_bot, :] for fr in frames_bgr]
+
     sh, sw = frames_bgr[0].shape[:2]
     target_aspect = box_w / float(box_h)  # 0.900
 
@@ -294,8 +315,11 @@ def _apply_impact_shake_and_flash(
     shake_px: float = 22.0,
     flash_peak: float = 0.55,
     shockwave: bool = False,
+    clip_start_s: float = 0.0,
+    drop_s: float = 0.0,
+    bpm: float = 120.0,
 ) -> list[np.ndarray]:
-    """Apply damped AE S_Shake + white exposure flash + optional radial bass shockwave on beat entry."""
+    """Apply damped AE S_Shake + white exposure flash + radial shockwave + subtle tempo-locked beat nod."""
     if not frames_bgr:
         return []
     bh, bw = frames_bgr[0].shape[:2]
@@ -303,6 +327,7 @@ def _apply_impact_shake_and_flash(
     cx, cy = bw * 0.5, bh * 0.5
     rr = np.sqrt((xx - cx) ** 2 + (yy - cy) ** 2) + 1e-4
     max_r = math.hypot(cx, cy)
+    beat_s = 60.0 / max(60.0, bpm)
 
     out: list[np.ndarray] = []
     for i, fr in enumerate(frames_bgr):
@@ -319,6 +344,15 @@ def _apply_impact_shake_and_flash(
                 [0.0, s, (1.0 - s) * cy + dy],
             ], dtype=np.float32)
             cur = cv2.warpAffine(cur, M, (bw, bh), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT_101)
+        elif t >= 0.28:
+            # Subtle @thisiszohair beat-locked micro-zoom pulse on internal quarter-note beats!
+            rel_drop = max(0.0, (clip_start_s + t) - drop_s)
+            phase_b = rel_drop % beat_s
+            pulse = 0.014 * math.exp(-9.5 * phase_b)
+            if pulse > 0.002:
+                s = 1.0 + pulse
+                M = np.array([[s, 0.0, (1.0 - s) * cx], [0.0, s, (1.0 - s) * cy]], dtype=np.float32)
+                cur = cv2.warpAffine(cur, M, (bw, bh), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT_101)
 
         # Optional radial bass shockwave ripple across first 0.42s
         if shockwave and t < 0.42:
@@ -516,17 +550,19 @@ def mix_real_song_jigsaw(
     total_dur_s: float,
     drop_s: float,
     dialogue_stereo: np.ndarray,
+    full_song_from_s: float | None = None,
     sr: int = 44100,
 ) -> np.ndarray:
-    """`@thisiszohair` (`7f2...`) Jigsaw Real-Song Amplitude & Pocket Mixer.
+    """`@thisiszohair` (`7f2...`) v2 Jigsaw Real-Song Amplitude, Vocal-Pocket & Presence Mixer.
 
     - Uses a REAL song sliced from `song_offset_s` for `total_dur_s`.
-    - Act 1 (`0 .. drop_s`): Splits song into Vocal-Mids (`290..5200 Hz`) vs Groove (`<290 Hz` + `>5200 Hz`).
-      Follows diagonal Premiere-style rubberband keyframes around every spoken phrase:
-        * During speech: ducks song mids to `-13 dB` and groove to `-7.5 dB` so cheeky punchlines are 100% clear.
-        * Inside EVERY pause/pocket between lines: swells the real song up to `-2.8 dB` full-frequency so the
-          clap/riff groove 'nods to the beat' without disrupting the song!
-    - Act 2 (`drop_s .. total_dur_s`): Unleashes 100% un-ducked studio amplitude (`0 dB`) right on the drop transient!
+    - Applies an intimate Vocal Presence EQ (`95 Hz` HPF + `1.8..4.5 kHz` clarity boost) to movie dialogue
+      so even soft romantic closet whispers cut effortlessly over the song's groove!
+    - Zone A/B (`0 .. full_song_from_s`): Splits song into Vocal-Mids (`280..5200 Hz`) vs Groove (`<280/>5200 Hz`).
+        * During speech: ducks song mids (`-14.5 dB`) while keeping warm bass/groove alive (`-5.2 dB`).
+        * Inside EVERY kiss/pause pocket: smoothly swells the real song up to `-2.1 dB` via `110ms` rubberbands!
+    - Zone C (`full_song_from_s .. total_dur_s`): Opens 100% un-ducked studio lossless song (`0.0 dB`) early
+      during silent pre-drop payoff bridges (e.g. solo vocal build -> chorus explosion)!
     """
     from scipy.signal import butter, sosfiltfilt
 
@@ -540,50 +576,60 @@ def mix_real_song_jigsaw(
     else:
         vox = dialogue_stereo[:n].copy()
 
-    act1_n = min(n, int(round(drop_s * sr)))
+    duck_until_s = drop_s if full_song_from_s is None else min(drop_s, max(0.0, float(full_song_from_s)))
+    act1_n = min(n, int(round(duck_until_s * sr)))
     if act1_n > int(0.15 * sr):
-        # Normalize active speech regions cleanly
-        vox_mono = np.mean(np.abs(vox[:act1_n]), axis=1)
-        active = vox_mono[vox_mono > 0.012]
-        if len(active) > 100:
-            target_scale = 0.24 / (float(np.sqrt(np.mean(active ** 2))) + 1e-6)
-            vox[:act1_n] = np.tanh(vox[:act1_n] * min(3.2, target_scale) * 1.12) * 0.88
+        # Intimate whisper & speech clarity EQ: 95Hz HPF + +3.6dB presence band (1.8k..4.6kHz)
+        v_seg = vox[:act1_n].astype(np.float64)
+        sos_hp = butter(2, 95.0 / (sr * 0.5), btype="high", output="sos")
+        sos_pres = butter(2, [1800.0 / (sr * 0.5), 4600.0 / (sr * 0.5)], btype="band", output="sos")
+        v_clean = sosfiltfilt(sos_hp, v_seg, axis=0)
+        v_clean = v_clean + 0.52 * sosfiltfilt(sos_pres, v_clean, axis=0)
 
-        # Build smooth Premiere-style rubberband envelope (`45ms` attack, `150ms` release)
+        vox_mono = np.mean(np.abs(v_clean), axis=1)
+        # Adaptive speech floor so whispered closet scenes normalize cleanly too!
+        p95 = float(np.percentile(vox_mono, 95)) if len(vox_mono) > 0 else 0.0
+        gate_floor = max(0.004, min(0.012, p95 * 0.18))
+        active = vox_mono[vox_mono > gate_floor]
+        if len(active) > 100:
+            target_scale = 0.25 / (float(np.sqrt(np.mean(active ** 2))) + 1e-6)
+            v_clean = np.tanh(v_clean * min(4.2, target_scale) * 1.14) * 0.88
+        vox[:act1_n] = v_clean.astype(np.float32)
+
+        # Build smooth Premiere-style rubberband envelope (~110ms diagonal keyframe glide)
         win_rms = max(64, int(0.025 * sr))
         env_raw = np.sqrt(
             np.convolve(np.mean(vox[:act1_n] ** 2, axis=1), np.ones(win_rms) / win_rms, mode="same") + 1e-12
         )
-        speech_gate = np.clip((env_raw - 0.018) / 0.055, 0.0, 1.0)
-        # Smooth rubberband ramps (~110ms window) so volume glides diagonally like Premiere keyframes
+        speech_gate = np.clip((env_raw - 0.015) / 0.050, 0.0, 1.0)
         k_smooth = max(64, int(0.11 * sr))
         rubber = np.convolve(speech_gate, np.hanning(k_smooth) / np.sum(np.hanning(k_smooth)), mode="same")
         rubber = np.clip(rubber, 0.0, 1.0)[:, None]
 
-        # Frequency-selective pocket carving on Act 1 song
-        sos_mid = butter(3, [290.0 / (sr * 0.5), 5200.0 / (sr * 0.5)], btype="band", output="sos")
+        # Frequency-selective pocket carving on song
+        sos_mid = butter(3, [280.0 / (sr * 0.5), 5200.0 / (sr * 0.5)], btype="band", output="sos")
         song_act1 = song[:act1_n].astype(np.float64)
         mids = sosfiltfilt(sos_mid, song_act1, axis=0)
-        groove = song_act1 - mids  # sub-bass + kick + crisp hi-hat/clap air
+        groove = song_act1 - mids  # warm funk bassline + kick + crisp hi-hat/clap air
 
-        # Speech active -> mids=0.20 (-14dB), groove=0.42 (-7.5dB)
-        # Pocket / pause -> mids=0.72 (-2.8dB), groove=0.76 (-2.4dB) -> song breathes & nods in every gap!
-        gain_mids = 0.72 * (1.0 - rubber) + 0.20 * rubber
-        gain_groove = 0.76 * (1.0 - rubber) + 0.42 * rubber
+        # Speech active -> mids=0.19 (-14.4dB), groove=0.55 (-5.2dB so song groove stays alive!)
+        # Kiss / smirk pocket -> mids=0.78 (-2.1dB), groove=0.82 (-1.7dB) -> song jumps forward!
+        gain_mids = 0.78 * (1.0 - rubber) + 0.19 * rubber
+        gain_groove = 0.82 * (1.0 - rubber) + 0.55 * rubber
         shaped_act1 = (mids * gain_mids + groove * gain_groove).astype(np.float32)
 
-        # Smooth 120ms ramp into full 1.00 studio drop right at `drop_s`!
-        ramp_n = min(act1_n, int(0.12 * sr))
+        # Smooth 130ms Premiere ramp into 1.00 full studio song at `duck_until_s`!
+        ramp_n = min(act1_n, int(0.13 * sr))
         if ramp_n > 16:
             r_up = np.linspace(0.0, 1.0, ramp_n, dtype=np.float32)[:, None]
             shaped_act1[-ramp_n:] = shaped_act1[-ramp_n:] * (1.0 - r_up) + song[act1_n - ramp_n:act1_n] * r_up
         song[:act1_n] = shaped_act1
 
-    # Gentle 0.12s fade-in at 0.0s & 0.65s fade-out at end
-    fi_n = min(n, int(0.12 * sr))
+    # Gentle 0.10s fade-in at 0.0s & 0.65s fade-out at end
+    fi_n = min(n, int(0.10 * sr))
     fo_n = min(n, int(0.65 * sr))
     if fi_n > 8:
-        song[:fi_n] *= np.linspace(0.25, 1.0, fi_n, dtype=np.float32)[:, None]
+        song[:fi_n] *= np.linspace(0.30, 1.0, fi_n, dtype=np.float32)[:, None]
     if fo_n > 8:
         song[-fo_n:] *= np.linspace(1.0, 0.0, fo_n, dtype=np.float32)[:, None]
 
@@ -729,13 +775,17 @@ def render_aura_edit(
 
             # On Drop Clip #0, place giant 3D Hero Title BEHIND the AI-rotoscoped actor!
             if m_idx == 0 and hero_drop_title:
-                graded_m = [_draw_roto_hero_text(f, hero_drop_title, segmenter) for f in graded_m]
+                graded_m = [_draw_roto_hero_text(f, hero_drop_title, segmenter, accent_hex=mc.get("hero_hex", "#FF2E4C")) for f in graded_m]
 
+            cur_clip_t0 = drop_s + (len(montage_boxes) / float(fps))
             shaken_m = _apply_impact_shake_and_flash(
                 graded_m,
                 shake_px=float(mc.get("shake_px", 24.0 if m_idx == 0 else 18.0)),
                 flash_peak=float(mc.get("flash_peak", 0.68 if m_idx == 0 else 0.44)),
                 shockwave=bool(mc.get("shockwave", m_idx in (0, 4))),
+                clip_start_s=cur_clip_t0,
+                drop_s=drop_s,
+                bpm=bpm,
             )
             montage_boxes.extend(shaken_m)
 
@@ -771,6 +821,20 @@ def render_aura_edit(
 
         # 4. Audio Engine: Prefer REAL Song Jigsaw Pocket & Amplitude Automation (`@thisiszohair` `7f2...` law!)
         dialogue_full = np.vstack(dialogue_chunks) if dialogue_chunks else np.zeros((0, 2), dtype=np.float32)
+        # Auto-detect trailing silent pre-drop bridge (e.g. Graduation Stage Kiss where full studio vocal takes over!)
+        full_song_from_s = drop_s
+        acc_s = 0.0
+        seg_timeline: list[tuple[float, float, bool]] = []
+        for seg_cfg, d_ch in zip(scene_segments, dialogue_chunks[:len(scene_segments)]):
+            d_s = len(d_ch) / float(sr)
+            seg_timeline.append((acc_s, acc_s + d_s, bool(seg_cfg.get("include_dialogue", True))))
+            acc_s += d_s
+        for st_s, en_s, inc_d in reversed(seg_timeline):
+            if not inc_d:
+                full_song_from_s = st_s
+            else:
+                break
+
         if song_path is not None and Path(song_path).exists():
             master_mix = mix_real_song_jigsaw(
                 song_path,
@@ -778,9 +842,10 @@ def render_aura_edit(
                 total_dur_s=total_dur_s,
                 drop_s=drop_s,
                 dialogue_stereo=dialogue_full,
+                full_song_from_s=full_song_from_s,
                 sr=sr,
             )
-            music_mode = f"real_song_jigsaw ({Path(song_path).name} @ {song_offset_s:.2f}s)"
+            music_mode = f"real_song_jigsaw_v2 ({Path(song_path).name} @ {song_offset_s:.2f}s, full_vocal_from={full_song_from_s:.2f}s)"
         else:
             music = synthesize_phonk_aura_soundtrack(total_dur_s, drop_s, bpm=bpm, sr=sr)
             total_samples = len(music)

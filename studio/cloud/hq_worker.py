@@ -37,6 +37,7 @@ from om_hybrid import (  # noqa: E402
     lut3d_filter_str,
     master_polish_video,
     plan_smart_camera,
+    render_aura_edit,
     render_ironman_style_edit,
     render_still_art_edit,
     render_subpixel_segments,
@@ -750,11 +751,55 @@ def run_vfx_edit(job: dict, out_dir: Path) -> dict:
     return report
 
 
+def run_aura_edit(job: dict, out_dir: Path) -> dict:
+    """Render a 2-Act `9:10` (`1080x1200` in `1080x1920`) Scene Setup -> Cross-Movie Actor Aura Drop edit."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    work = Path("/tmp/maker_aura_work")
+    work.mkdir(parents=True, exist_ok=True)
+
+    local_sources: dict[str, str] = {}
+    for alias, url in (job.get("sources") or {}).items():
+        dst_s = work / f"src_{alias}.mp4"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=240) as r, open(dst_s, "wb") as f:
+            f.write(r.read())
+        local_sources[alias] = str(dst_s)
+
+    out_name = job.get("out_name", "actor_aura_edit.mp4")
+    out_mp4 = out_dir / out_name
+    res = render_aura_edit(
+        str(out_mp4),
+        sources=local_sources,
+        scene_segments=job["scene_segments"],
+        scene_captions=job.get("scene_captions", []),
+        montage_clips=job["montage_clips"],
+        hero_drop_title=job.get("hero_drop_title", "GOSLING"),
+        bpm=float(job.get("bpm", 125.0)),
+        pre_drop_black_frames=int(job.get("pre_drop_black_frames", 4)),
+    )
+    qa = run_full_qa(
+        str(out_mp4),
+        expected_size=(1080, 1920),
+        min_dur=10.0,
+        max_dur=65.0,
+        sheet_out=str(out_dir / "qa_sheet.jpg"),
+    )
+    report = {
+        "mode": "aura_edit",
+        "runner_ram_gb": _ram_gb(),
+        "runner_cpus": multiprocessing.cpu_count(),
+        **res,
+        "qa": qa,
+    }
+    (out_dir / "cloud_report.json").write_text(json.dumps(report, indent=2))
+    return report
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument(
         "--mode",
-        choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit"],
+        choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit"],
         required=True,
     )
     ap.add_argument("--job-b64", default="")
@@ -780,11 +825,13 @@ def main() -> None:
         res = run_ironman_edit(job, out_dir)
     elif args.mode == "vfx_edit":
         res = run_vfx_edit(job, out_dir)
+    elif args.mode == "aura_edit":
+        res = run_aura_edit(job, out_dir)
     else:
         res = run_remotion(job, out_dir)
 
     print(json.dumps(res, indent=2))
-    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit") and not res.get("qa", {}).get("passed", False):
+    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit") and not res.get("qa", {}).get("passed", False):
         sys.exit(1)
 
 

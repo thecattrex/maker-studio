@@ -34,6 +34,7 @@ from .motion_director import (
     composite_motion_overlay,
 )
 from .ironman_edit import render_ironman_style_edit
+from .aura_edit import render_aura_edit, synthesize_phonk_aura_soundtrack
 from .viral_vfx import (
     PersonSegmenter,
     apply_vfx_pipeline,
@@ -74,6 +75,8 @@ __all__ = [
     "add_kinetic_motion_hud",
     "composite_motion_overlay",
     "render_ironman_style_edit",
+    "render_aura_edit",
+    "synthesize_phonk_aura_soundtrack",
     "PersonSegmenter",
     "segment_person_mask",
     "run_blob_tracking",

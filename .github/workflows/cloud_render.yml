@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "Render mode: smoke | t1_hq | remotion | hyperframes | earshot | real_sfx | master | ironman_edit | vfx_edit"
+        description: "Render mode: smoke | t1_hq | remotion | hyperframes | earshot | real_sfx | master | ironman_edit | vfx_edit | aura_edit"
         required: true
         default: "smoke"
       job_b64:
@@ -45,7 +45,7 @@ jobs:
             pip install --quiet soxr librosa pyloudnorm scikit-learn matplotlib transformers
             pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu
           fi
-          if [ "$RENDER_MODE" = "ironman_edit" ]; then
+          if [ "$RENDER_MODE" = "ironman_edit" ] || [ "$RENDER_MODE" = "aura_edit" ]; then
             pip install --quiet torch torchaudio --index-url https://download.pytorch.org/whl/cpu
           fi
 

@@ -73,6 +73,7 @@ Everything built and integrated from the moment we started inspecting external r
 | **Phase 9** | **`@technocraftss` Iron Man Engine + `HDemucs`** | `om_hybrid/ironman_edit.py` + Cloud `--mode ironman_edit` | `9:16_center_16:9` & `16:9` layouts, 3x-supersampled **`Blending Mode: DIFFERENCE` (`|255 - BaseRGB|`)** giant typography, `5f` `#000000` strobes, Farneback optical-flow `2.8x -> 0.38x` velocity cuts, **Meta `HDEMUCS_HIGH_MUSDB_PLUS` Neural Vocal Stem Isolation** (strips 100% of trailer theme music/clanks!), and Butterworth `125 BPM` dark synthwave generator |
 | **Phase 10** | **11 `Sample` Videos Master Breakdown** | `studio/SAMPLE_11_EDITING_BIBLE.md` | Frame-exact (`33 ms`) + Whisper ASR reverse-engineering of all 11 reference edits & pro creator breakdowns (`S01..S11`) |
 | **Phase 11** | **17-Weapon Viral VFX Arsenal + AI Roto + Skills** | `om_hybrid/viral_vfx.py`, `om_hybrid/models/selfie_segmenter.tflite`, `studio/skills/blob-tracking/`, `studio/skills/viral-edits/SKILL.md`, Cloud `--mode vfx_edit` | 30+ FPS XNNPACK human rotoscoping (`selfie_segmenter.tflite`), TouchDesigner `blob-tracker` (`k1sh0r/blob-tracker` MIT), 17 CLI/Python/Cloud VFX tools, and step-by-step reusable `SKILL.md` guides |
+| **Phase 12** | **2-Act `9:10` Scene -> Cross-Movie Actor Aura Drop Engine** | `om_hybrid/aura_edit.py` + Cloud `--mode aura_edit` | Exact `1080x1200` (`9:10` inside `1080x1920`) cinema box, 4K AE CC sharpen grade, `HDemucs` neural vocal isolation + `@Proxeditz07` glowing neon keyword captions in Act 1, and cross-movie Optical-Flow Velocity + `S_Shake` + `bass_shockwave` + AI-roto 3D hero title in Act 2 |
 
 ---
 
@@ -190,6 +191,7 @@ python3 /home/user/studio/gh_farm.py run --mode <MODE> [--job /tmp/job.json] --o
 7. **`real_sfx`** — Frame-exact Clipwing `Real-SFX` + live `Openverse` audio design.
 8. **`earshot`** — Standalone procedural SFX + PyTorch `CLAP + AST` audio-visual sync evaluation.
 9. **`smoke`** — Fast 45-second health check verifying runner RAM, CPUs, FFmpeg, LUTs, and QA.
+10. **`aura_edit`** — 2-Act `9:10` (`1080x1200` inside `1080x1920`) Scene Setup -> Cross-Movie Actor Aura Velocity Drop (`om_hybrid/aura_edit.py` + `HDemucs` vocal stem isolation + glowing keyword subs + multi-movie optical-flow velocity montage).
 
 ---
 

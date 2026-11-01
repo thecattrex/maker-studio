@@ -1,0 +1,7 @@
+{
+ "title": "airtel SPEC — 'Ek Dhaaga' (brand film)",
+ "requirement": "Airtel jaisi connectivity brand ke liye 9:16 spec brand film. Ek hi laal rang ka dhaaga frame me travel karta hai aur 6 baar shape badalta hai: signal -> highway -> rangoli -> network -> smile -> logo swoosh. Music-driven, no dialogue. Premium, clean, goosebumps.",
+ "must_have": ["single continuous red thread morphing", "kinetic Hindi supers", "brand-red palette", "beat-locked morphs", "logo lock-up end card"],
+ "language": "hindi",
+ "avoid": ["dialogue", "clutter", "stock footage", "synthesized music"]
+}

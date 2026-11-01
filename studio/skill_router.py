@@ -333,11 +333,20 @@ FLAG_WORDS = {
 }
 
 
+NEGATIONS = ("no dialogue", "without dialogue", "dialogue nahi", "no bgm",
+             "no music", "no footage", "no voice", "silent")
+
+
 def classify(brief: dict) -> dict:
-    text = " ".join(str(v) for v in brief.values()).lower()
+    text = " ".join(str(v) for k, v in brief.items()
+                    if k not in ("avoid", "must_avoid", "no")).lower()
+    for n in NEGATIONS:              # negated features flag nahi karte
+        text = text.replace(n, " ")
     flags = {}
     for k, words in FLAG_WORDS.items():
-        flags[k] = any(w in text for w in words)
+        # word-boundary match — "art" ko "airtel" ke andar na dhoondo
+        flags[k] = any(re.search(r"(?<![a-z])" + re.escape(w) + r"(?![a-z])", text)
+                       for w in words)
     types = []
     if flags["zero_footage"]:
         types.append("deity_no_footage")
@@ -532,6 +541,26 @@ def asr_listen(wav16: str, model_size="small") -> dict:
                                  rep < 0.5 and short < 0.45)}
 
 
+def loudness_ffmpeg(path: str) -> dict:
+    """EBU R128 via ffmpeg — single source of truth for delivery loudness."""
+    import re
+    r = subprocess.run([_ff(), "-hide_banner", "-nostats", "-i", path,
+                        "-af", "ebur128=peak=true", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    err = r.stderr
+    out = {}
+    m = re.findall(r"I:\s+(-?\d+\.\d+)\s+LUFS", err)
+    if m:
+        out["lufs"] = float(m[-1])
+    m = re.findall(r"Peak:\s+(-?\d+\.\d+)\s+dBFS", err)
+    if m:
+        out["true_peak_dbtp"] = float(m[-1])
+    m = re.findall(r"LRA:\s+(-?\d+\.\d+)\s+LU", err)
+    if m:
+        out["lra_lu"] = float(m[-1])
+    return out
+
+
 def audio_profile(wav: str) -> dict:
     """Gate G3/G5/G7 — earshot measure (objective) + music-vs-speech cues."""
     sys.path.insert(0, STUDIO)
@@ -543,8 +572,14 @@ def audio_profile(wav: str) -> dict:
                      ("lufs", "true_peak_dbtp", "lra_lu", "harmonic_ratio",
                       "noise_floor_dbfs", "centroid_hz", "onsets")})
         prof["onsets"] = len(prof.get("onsets") or [])
+        prof["loudness_source"] = "earshot.features.measure"
     except Exception as e:  # pragma: no cover
         prof["error"] = f"{type(e).__name__}: {e}"
+    # delivery loudness must come from ffmpeg ebur128 (same scale as the spec)
+    ff_l = loudness_ffmpeg(wav)
+    if ff_l:
+        prof.update(ff_l)
+        prof["loudness_source"] = "ffmpeg ebur128 (authoritative)"
     try:
         import numpy as np
         import librosa
@@ -580,6 +615,7 @@ def make_reference_profile(video_or_wav: str, name: str) -> dict:
                     "-ac", "1", "-ar", "16000", "-c:a", "pcm_s16le", wav],
                    check=True)
     prof = audio_profile(wav)
+    prof.update(loudness_ffmpeg(video_or_wav))   # authoritative, full-band
     out = {k: prof.get(k) for k in REF_KEYS}
     path = os.path.join(REF_DIR, f"{name}.json")
     json.dump(out, open(path, "w"), indent=1)
@@ -629,9 +665,14 @@ def motion_profile(video: str, workdir: str) -> dict:
         return {"frames": len(arrs)}
     diffs = [float(np.abs(arrs[i] - arrs[i - 1]).mean()) for i in range(1, len(arrs))]
     means = [float(a.mean()) for a in arrs]
+    stds = [float(a.std()) for a in arrs]
+    # a *dead* frame has no detail at all — a near-black DESIGN still has std>3
+    dead = [1 for m, sd in zip(means, stds) if m < 6.0 and sd < 3.0]
     return {"frames": len(arrs),
             "mean_frame_diff": round(float(np.mean(diffs)), 2),
             "static_ratio": round(sum(1 for d in diffs if d < 1.0) / len(diffs), 3),
+            "dead_frame_ratio": round(len(dead) / len(means), 3),
+            "mean_luma": round(float(np.mean(means)), 1),
             "black_ratio": round(sum(1 for m in means if m < 12) / len(means), 3)}
 
 
@@ -641,6 +682,8 @@ def audit(video: str, brief: Optional[dict] = None, do_asr=True,
     info = {"video": video, "spec": probe(video)}
     wav = extract_audio(video, os.path.join(work, "a16.wav"))
     info["audio"] = audio_profile(wav)
+    info["audio"].update(loudness_ffmpeg(video))  # full-band, authoritative
+    info["audio"]["loudness_source"] = "ffmpeg ebur128 on the delivered file"
     if do_asr:
         try:
             info["asr"] = asr_listen(wav, model_size)
@@ -691,8 +734,8 @@ def audit(video: str, brief: Optional[dict] = None, do_asr=True,
              warn=(speech_led and not heard_speech))
     else:
         gate("G1_speech_understanding", True,
-             f"brief song_driven — speech expected nahi (ASR words={asr.get('n_words')}): "
-             f"isi wajah se bhajan-type audio chalta hai")
+             f"brief music-led — speech expected nahi "
+             f"(ASR words={asr.get('n_words')}), isliye G1 dialogue gate N/A")
 
     gate("G5_real_music", (au.get("harmonic_ratio") or 0) > 0.10,
          f"harmonic_ratio={au.get('harmonic_ratio')}")
@@ -706,9 +749,10 @@ def audit(video: str, brief: Optional[dict] = None, do_asr=True,
          abs((au.get("lufs") or 0) + 14) <= 1.5 and (au.get("true_peak_dbtp") or 0) <= -1.0,
          f"LUFS={au.get('lufs')} TP={au.get('true_peak_dbtp')}")
     gate("G8_visual_qa",
-         mo.get("static_ratio", 0) < 0.5 and mo.get("black_ratio", 1) < 0.25,
-         f"static_ratio={mo.get('static_ratio')} black_ratio={mo.get('black_ratio')} "
-         f"mean_diff={mo.get('mean_frame_diff')}")
+         mo.get("static_ratio", 0) < 0.5 and mo.get("dead_frame_ratio", 1) < 0.05,
+         f"static_ratio={mo.get('static_ratio')} "
+         f"dead_frame_ratio={mo.get('dead_frame_ratio')} "
+         f"mean_luma={mo.get('mean_luma')} mean_diff={mo.get('mean_frame_diff')}")
     gate("G9_spec",
          sp["w"] == 1080 and sp["h"] == 1920 and abs(sp["fps"] - 30) < 0.2,
          f"{sp['w']}x{sp['h']} @{sp['fps']}fps {sp['vcodec']}/{sp['acodec']} "

@@ -1,0 +1,729 @@
+{
+ "generated_at": "2026-11-01T19:08:49",
+ "studio": "/home/user/studio",
+ "count": 49,
+ "skills": [
+  {
+   "id": "analyze.video_timeline",
+   "stage": "structure",
+   "path": "analyze.py",
+   "entry": "video_timeline()",
+   "tags": [
+    "video",
+    "scenes",
+    "beats",
+    "speech"
+   ],
+   "why": "Source ka scene/shots/audio-energy/speech timeline nikalta hai",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "pacing_audio.hook_candidates",
+   "stage": "structure",
+   "path": "om_hybrid/pacing_audio.py",
+   "entry": "score_hook_candidates()",
+   "tags": [
+    "audio",
+    "hook",
+    "structure"
+   ],
+   "why": "Kaunsa moment hook ban sakta hai, energy+silenсes se rank",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "templates.beat_grid",
+   "stage": "structure",
+   "path": "templates.py",
+   "entry": "beat_grid()",
+   "tags": [
+    "beat",
+    "sync",
+    "timing"
+   ],
+   "why": "Beat grid + snap to frames",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "templates.find_peak_scene",
+   "stage": "structure",
+   "path": "templates.py",
+   "entry": "find_peak_scene()",
+   "tags": [
+    "structure",
+    "climax"
+   ],
+   "why": "Peak/climax scene dhoondhta hai",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "clipsel.scan",
+   "stage": "source",
+   "path": "clipsel.py",
+   "entry": "scan()",
+   "tags": [
+    "source",
+    "selection",
+    "ranking"
+   ],
+   "why": "Candidate clips ko score karke fail/weak wale hataata hai",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "om_hybrid.clip_scout",
+   "stage": "source",
+   "path": "om_hybrid/clip_scout.py",
+   "entry": "extract_ign_1080p_mp4()",
+   "tags": [
+    "source",
+    "trailer",
+    "1080p"
+   ],
+   "why": "Trailer/1080p source fetch",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "srcget",
+   "stage": "source",
+   "path": "srcget.py",
+   "entry": "get()",
+   "tags": [
+    "source",
+    "stock",
+    "archive"
+   ],
+   "why": "Multi-source stock/archive fetch",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "stock_sources",
+   "stage": "source",
+   "path": "om_hybrid/stock_sources",
+   "entry": "all_sources()",
+   "tags": [
+    "source",
+    "stock",
+    "catalog"
+   ],
+   "why": "24 stock/archive adapters (pexels, archive.org, nasa, loc...)",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "earshot.measure",
+   "stage": "listen",
+   "path": "earshot/features.py",
+   "entry": "measure()",
+   "tags": [
+    "audio",
+    "listen",
+    "measure"
+   ],
+   "why": "LUFS/TP/bands/onsets/tonal — audio ka objective naksha",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "earshot.describe",
+   "stage": "listen",
+   "path": "earshot/describe.py",
+   "entry": "describe()",
+   "tags": [
+    "audio",
+    "listen",
+    "content"
+   ],
+   "why": "Audio me kya hai (speech/music/hits) — bina sunne maan lene se bachao",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "earshot.critique",
+   "stage": "listen",
+   "path": "earshot/critique.py",
+   "entry": "critique()",
+   "tags": [
+    "audio",
+    "listen",
+    "critique",
+    "quality"
+   ],
+   "why": "Mix ko grade karta hai + actionable fixes deta hai",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "earshot.realness",
+   "stage": "listen",
+   "path": "earshot",
+   "entry": "earshot.realness()",
+   "tags": [
+    "audio",
+    "realness",
+    "music"
+   ],
+   "why": "Kya ye 'real produced music' lagta hai ya synth/canned",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "earshot.timeline",
+   "stage": "listen",
+   "path": "earshot/timeline.py",
+   "entry": "timeline()",
+   "tags": [
+    "audio",
+    "cut_sync",
+    "video"
+   ],
+   "why": "Audio events vs video cuts ka sync map (cut_sync gate)",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "earshot.compare",
+   "stage": "listen",
+   "path": "earshot/compare.py",
+   "entry": "compare()",
+   "tags": [
+    "audio",
+    "reference",
+    "compare"
+   ],
+   "why": "Reference sample vs apna mix — A/B distance",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "asr.listen",
+   "stage": "listen",
+   "path": "transcribe.py",
+   "entry": "run()",
+   "tags": [
+    "audio",
+    "speech",
+    "listen",
+    "dialogue"
+   ],
+   "why": "Dialogue ko TEXT me sunna (Groq whisper-large-v3, word timings)",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "asr.faster_whisper",
+   "stage": "listen",
+   "path": "skill_router.py",
+   "entry": "asr_listen()",
+   "tags": [
+    "audio",
+    "speech",
+    "listen",
+    "dialogue",
+    "offline"
+   ],
+   "why": "Offline ASR (faster-whisper) — intelligibility + gibberish detect",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "real_sfx.listen_yamnet",
+   "stage": "listen",
+   "path": "real_sfx/scripts/listen.py",
+   "entry": "main()",
+   "tags": [
+    "audio",
+    "tagging",
+    "yamnet",
+    "speech"
+   ],
+   "why": "YAMNet se sound tags + voice command detection",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "real_sfx.masking",
+   "stage": "listen",
+   "path": "real_sfx/scripts/masking.py",
+   "entry": "speech_active()",
+   "tags": [
+    "audio",
+    "dialogue",
+    "masking",
+    "intelligibility"
+   ],
+   "why": "Kya dialogue music ke neeche dab raha hai (masked cues)",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "real_sfx.refstyle",
+   "stage": "listen",
+   "path": "real_sfx/scripts/refstyle.py",
+   "entry": "measure()",
+   "tags": [
+    "audio",
+    "reference",
+    "style"
+   ],
+   "why": "Reference edit ka audio style napna",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "real_sfx.unbake",
+   "stage": "listen",
+   "path": "real_sfx/scripts/unbake.py",
+   "entry": "unbake()",
+   "tags": [
+    "audio",
+    "stems",
+    "reverse_engineer"
+   ],
+   "why": "Reference ke layers (voice/bed/sfx) alag karke levels nikalna",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "viral_vfx.still_art",
+   "stage": "visuals",
+   "path": "om_hybrid/viral_vfx.py",
+   "entry": "render_still_art_edit()",
+   "tags": [
+    "visuals",
+    "still_art",
+    "poster",
+    "deity",
+    "no_footage"
+   ],
+   "why": "1 static art -> 15-20s beat-synced edit (kevamarts style)",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "printrev.page_system",
+   "stage": "visuals",
+   "path": "om_hybrid/printrev_edit.py",
+   "entry": "PrintRevealEdit",
+   "tags": [
+    "visuals",
+    "print",
+    "sketchbook",
+    "deity",
+    "no_footage"
+   ],
+   "why": "Sketchbook page / card reveal format (F0E2B6A9 sample)",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "cashworth.9piece",
+   "stage": "visuals",
+   "path": "om_hybrid/cashworth_edit.py",
+   "entry": "fit_16x9()",
+   "tags": [
+    "visuals",
+    "aesthetic",
+    "7f73e",
+    "text_behind_roto"
+   ],
+   "why": "@cashworthclipz 9-piece aesthetic engine",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "zohair.jigsaw",
+   "stage": "visuals",
+   "path": "om_hybrid/zohair_edit.py",
+   "entry": "render_zohair_jigsaw_edit()",
+   "tags": [
+    "visuals",
+    "jigsaw",
+    "style1",
+    "dialogue_pockets"
+   ],
+   "why": "@thisiszohair vocal-pocket rhythm edit",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "aura.viral",
+   "stage": "visuals",
+   "path": "om_hybrid/aura_edit.py",
+   "entry": "render_aura_edit()",
+   "tags": [
+    "visuals",
+    "style2",
+    "drop"
+   ],
+   "why": "Scene->drop Style 2 engine + 4K CC look",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "ironman.difference",
+   "stage": "visuals",
+   "path": "om_hybrid/ironman_edit.py",
+   "entry": "render_ironman_style_edit()",
+   "tags": [
+    "visuals",
+    "difference_text",
+    "hype"
+   ],
+   "why": "Difference-typography hype edit",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "viral_vfx.pipeline",
+   "stage": "visuals",
+   "path": "om_hybrid/viral_vfx.py",
+   "entry": "apply_vfx_pipeline()",
+   "tags": [
+    "visuals",
+    "vfx",
+    "risograph",
+    "dither",
+    "crt"
+   ],
+   "why": "17-effect VFX arsenal (riso/dither/crt/shockwave/roto)",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "skills.blob_tracking",
+   "stage": "visuals",
+   "path": "skills/blob-tracking/scripts/blobtrack.py",
+   "entry": "run()",
+   "tags": [
+    "visuals",
+    "tracking",
+    "hud"
+   ],
+   "why": "Object/blob track -> HUD labels",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "smart_camera",
+   "stage": "motion",
+   "path": "om_hybrid/smart_camera.py",
+   "entry": "plan_smart_camera()",
+   "tags": [
+    "motion",
+    "camera",
+    "reframe"
+   ],
+   "why": "Shot-wise subpixel camera moves / reframe",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "motion_director",
+   "stage": "motion",
+   "path": "om_hybrid/motion_director.py",
+   "entry": "choreograph_shots_table()",
+   "tags": [
+    "motion",
+    "choreography",
+    "hud"
+   ],
+   "why": "Shot table ke hisaab se motion plan",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "ironman.optical_flow",
+   "stage": "motion",
+   "path": "om_hybrid/ironman_edit.py",
+   "entry": "optical_flow_interp()",
+   "tags": [
+    "motion",
+    "interpolation",
+    "smooth"
+   ],
+   "why": "Optical-flow frame interpolation",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "textkit.ass",
+   "stage": "type",
+   "path": "textkit.py",
+   "entry": "ass_filter()",
+   "tags": [
+    "type",
+    "subtitles",
+    "ass"
+   ],
+   "why": "Styled ASS subtitles burn-in",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "viral_vfx.center_serif",
+   "stage": "type",
+   "path": "om_hybrid/viral_vfx.py",
+   "entry": "write_center_serif_ass()",
+   "tags": [
+    "type",
+    "serif",
+    "center"
+   ],
+   "why": "Center serif subs (Style 1 look)",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "printrev.rough_type",
+   "stage": "type",
+   "path": "om_hybrid/printrev_edit.py",
+   "entry": "rough_text_mask()",
+   "tags": [
+    "type",
+    "print",
+    "stamp",
+    "hindi"
+   ],
+   "why": "Rubber-stamp ink text (Devanagari-safe, chipped edges)",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "cinema_looks",
+   "stage": "grade",
+   "path": "om_hybrid/cinema_looks.py",
+   "entry": "apply_cinema_look()",
+   "tags": [
+    "grade",
+    "lut",
+    "cinema"
+   ],
+   "why": "Cube LUT based cinema looks",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "aura.4k_cc",
+   "stage": "grade",
+   "path": "om_hybrid/aura_edit.py",
+   "entry": "apply_viral_4k_quality_cc()",
+   "tags": [
+    "grade",
+    "4k",
+    "quality"
+   ],
+   "why": "5-layer 4K Quality CC (denoise->CLAHE->unsharp->blacks->vibrance)",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "cashworth.dream_grade",
+   "stage": "grade",
+   "path": "om_hybrid/cashworth_edit.py",
+   "entry": "apply_cashworth_dream_grade()",
+   "tags": [
+    "grade",
+    "dream",
+    "aesthetic"
+   ],
+   "why": "Dreamy aesthetic grade",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "sfx_sync",
+   "stage": "sfx",
+   "path": "om_hybrid/sfx_sync.py",
+   "entry": "render_synced_sfx()",
+   "tags": [
+    "sfx",
+    "sync"
+   ],
+   "why": "Beat-synced SFX cues",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "sfx.build",
+   "stage": "sfx",
+   "path": "sfx.py",
+   "entry": "build_sfx()",
+   "tags": [
+    "sfx",
+    "whoosh",
+    "impact"
+   ],
+   "why": "Whoosh/impact/riser/pop generation",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "real_sfx.mix",
+   "stage": "sfx",
+   "path": "real_sfx/scripts/mix.py",
+   "entry": "main()",
+   "tags": [
+    "sfx",
+    "mix",
+    "masking"
+   ],
+   "why": "SFX busses + masking-aware mix",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "openverse_realsfx",
+   "stage": "sfx",
+   "path": "om_hybrid/openverse_realsfx.py",
+   "entry": "auto_sound_design_video()",
+   "tags": [
+    "sfx",
+    "auto",
+    "openverse"
+   ],
+   "why": "Auto sound design (licensed assets)",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "zohair.multitrack",
+   "stage": "audio_mix",
+   "path": "om_hybrid/zohair_edit.py",
+   "entry": "mix_zohair_multitrack_audio()",
+   "tags": [
+    "audio",
+    "dialogue",
+    "pockets"
+   ],
+   "why": "Dialogue pockets me song ko chhota karke weave karna",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "aura.muffle_under_scene",
+   "stage": "audio_mix",
+   "path": "om_hybrid/aura_edit.py",
+   "entry": "mix_real_song_jigsaw()",
+   "tags": [
+    "audio",
+    "dialogue",
+    "ducking"
+   ],
+   "why": "Scene ke neeche -18.5dB LPF song, phir drop pe 0dB sweep",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "printrev.loudnorm",
+   "stage": "audio_mix",
+   "path": "om_hybrid/printrev_edit.py",
+   "entry": "mux_audio()",
+   "tags": [
+    "audio",
+    "loudness",
+    "master"
+   ],
+   "why": "2-pass loudnorm + true-peak safe mux",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "visual_qa",
+   "stage": "qa",
+   "path": "om_hybrid/visual_qa.py",
+   "entry": "run_full_qa()",
+   "tags": [
+    "qa",
+    "video",
+    "frames"
+   ],
+   "why": "Frame-level visual QA",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "slideshow_risk",
+   "stage": "qa",
+   "path": "om_hybrid/slideshow_risk.py",
+   "entry": "score_slideshow_risk()",
+   "tags": [
+    "qa",
+    "motion",
+    "liveness"
+   ],
+   "why": "Slideshow/dead-motion risk score",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "master_pipeline",
+   "stage": "qa",
+   "path": "om_hybrid/master_pipeline.py",
+   "entry": "master_polish_video()",
+   "tags": [
+    "qa",
+    "master",
+    "polish"
+   ],
+   "why": "Neural-ears master polish pass",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "earshot.scorecard",
+   "stage": "qa",
+   "path": "earshot/critique.py",
+   "entry": "scorecard()",
+   "tags": [
+    "qa",
+    "audio",
+    "scorecard"
+   ],
+   "why": "Audio scorecard (dialogue clarity, bed balance, sync)",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "id": "real_sfx.levels",
+   "stage": "qa",
+   "path": "real_sfx/scripts/levels.py",
+   "entry": "main()",
+   "tags": [
+    "qa",
+    "levels",
+    "balance"
+   ],
+   "why": "Levels/group balance report",
+   "verified": true,
+   "note": ""
+  }
+ ],
+ "verified_count": 49,
+ "stages": [
+  "source",
+  "listen",
+  "structure",
+  "visuals",
+  "type",
+  "motion",
+  "grade",
+  "sfx",
+  "audio_mix",
+  "qa"
+ ],
+ "anti_patterns": [
+  "Audio ko sirf RMS/spectrum se 'samajh' lena — ASR/describe/critique se sunna zaroori.",
+  "Reference sample ka audio transcribe kiye bina usko 'music-only' maan lena.",
+  "Song ko dialogue wale video me full-volume chalana (dialogue dab jaata hai).",
+  "Music Python se synthesize karna (real produced song hona chahiye).",
+  "Beat grid ko audio ka 'content' samajh lena — wahi sirf tempo hai.",
+  "Ek hi engine (jaise printrev) se sab kuch karna jab 40+ skills available hain."
+ ],
+ "python_modules_scanned": 289
+}

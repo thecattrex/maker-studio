@@ -1,0 +1,8 @@
+{
+  "title": "Krishna Updesh — Print Reveal (dialogue-led)",
+  "requirement": "Sample F0E2B6A9 jaisa print/sketchbook reveal format, Krishna Bhagwan par, Hindi me. Audio me pehle alag intro BGM, phir Krishna ka dialogue jo samjhate hue bol rahe hain — goosebumps vibe. Bhajan nahi.",
+  "must_have": ["separate intro BGM (first 2-3s)", "Krishna Hindi dialogue as hero", "music ducked -16 to -20 dB under dialogue", "goosebump swell + flash on key line", "Devanagari print typography", "1080x1920 15-20s"],
+  "reference_sample": "Drive Sample/F0E2B6A9-C229-4163-B56B-2B638E13A769.mov",
+  "language": "hindi",
+  "avoid": ["bhajan/kirtan as main audio", "full-volume song over dialogue", "synthesized music"]
+}

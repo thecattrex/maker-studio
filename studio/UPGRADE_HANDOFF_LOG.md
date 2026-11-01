@@ -135,4 +135,18 @@ Reverse-engineered the exact After Effects / Alight Motion mechanics behind the 
 - **Live Production Verification:** Rendered ***Avengers: Doomsday* (2026) — Robert Downey Jr. (Doctor Doom) Clean `9:16` Edit** (`avengers_doomsday_ironman_edit.mp4`, `1080x1920 @ 30fps`, centered `1080x608` `16:9` strip, `20.64s`, `7.19 MB`) on GitHub Actions Run `#41250549670` (`15.61 GB RAM / 4 vCPU`, `vocal_isolation: ["hdemucs_neural"]`, `-14.4 LUFS`, `-1.6 dBTP`, `qa.passed: true`, `0` errors/warnings).
 
 ---
-*(Subsequent changes in Phase 10+ will be appended directly below.)*
+### Phase 10 — Deep Reverse-Engineering of All 11 `Sample` Videos (`SAMPLE_11_EDITING_BIBLE.md` — `2026-11-01`)
+Performed full frame-by-frame (`33 ms`), word-level Whisper ASR, cut-cadence, color/shader, and audio-pocket analysis across all **11 reference & creator-breakdown videos** (`S01..S11`) in the user's `Sample` collection, and codified every story pattern + editing blueprint into `/home/user/studio/SAMPLE_11_EDITING_BIBLE.md` (linked in `START_HERE.md`):
+- **S01 (`@sumanth.mp4`):** Dual-font Red/White stacked typography + `-32°` Crimson B-Roll Ribbon sandwiched behind rotoscoped silhouette over B&W sky + `1-2f` katana luma-invert flash.
+- **S02 + S04 (`@thisiszohair` Sony-viral Spider-Man edit + 81.8s Premiere timeline breakdown):** *"Jigsaw Musical Gap-Filling"* (weaving character dialogue into song applause/instrumental pockets without fighting the groove) + `9:16` centered `16:9` + tiny `18pt` center serif subs + `3f` (`0.10s`, 10 cuts/sec) drum-roll match-cut bursts (`89 cuts` in `27.5s`).
+- **S03 (`@_.raajjjjjj_` *Oppenheimer × Bhagavad Gita*):** Cold blue strobe in `#000000` silence + 2-tone Indigo Risograph posterization + 1-bit Bayer dither silhouette (`VISHNU`) + curved CRT barrel lens + monumental full-screen crimson brutalist `DEATH / WORLDS` slam.
+- **S05 (`@cashworthclipz` Hawaii Surf):** Meta monitor reveal + Z-depth `HAWAII` behind roto silhouette + `3x3` bento grid + `3` freeze-frame roto clones on `#000000` + 3D planar wave-tracked text (`THEY CAN SMELL THE LEGACY`).
+- **S06 (`@marcelgrauu`):** 7 trending shader/OpenCV effects (`Datamosh`, `Blob Tracking` bounding-box web, `Flash Light` luma glow, `Receipt Ticket` thermal dither, `CRT` cyan phosphor, `1-Bit Dither`, `Pink Phosphor`) + asymmetric stacked CTA typography.
+- **S07 (`@technocraftss` Iron Man):** Giant `#FFFFFF` `Blending Mode: DIFFERENCE` typography + `5f` `#000000` strobe cuts + `0.45s` half-beat optical-flow velocity montage (implemented in `om_hybrid/ironman_edit.py`).
+- **S08 (`kevamarts` *"God's Wisdom"*):** Zero-footage still-drawing edit via `1f` Red/White polarity swap + continuous `wiggle(6,18)` + radial crown glow + `125%` zoomed-invert glitch bars + duotone box swap.
+- **S09 (`@willrvail`):** 12-effect music-video checklist (foreground frame wipe, bass shockwave ripple, beat-pop roto clones, **double-exposure inverted silhouette B-roll matte**, slow-mo breather w/ micro-flashes).
+- **S10 (`@astroospace`):** Center-locked `(cx, cy)` geometric match-cuts (`69 cuts` in `22s`, `2f` `15 cuts/s` bursts) + `B&W -> Full-Color` beat explosion + square macroblock datamosh ticks.
+- **S11 (`@ediday.5` *Fight Club* Shake):** 2-panel top/bottom split w/ edge-pinned Red/White condensed title + nose/eye **Match-Move Face-Locked Shake** (face stationary at center while background smears violently) + 35mm grain.
+
+---
+*(Subsequent changes in Phase 11+ will be appended directly below.)*

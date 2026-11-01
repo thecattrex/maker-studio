@@ -765,17 +765,27 @@ def run_aura_edit(job: dict, out_dir: Path) -> dict:
             f.write(r.read())
         local_sources[alias] = str(dst_s)
 
+    song_p: str | None = None
+    if job.get("song_url"):
+        dst_song = work / "real_song.mp3"
+        req_song = urllib.request.Request(job["song_url"], headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req_song, timeout=180) as r, open(dst_song, "wb") as f:
+            f.write(r.read())
+        song_p = str(dst_song)
+
     out_name = job.get("out_name", "actor_aura_edit.mp4")
     out_mp4 = out_dir / out_name
     res = render_aura_edit(
         str(out_mp4),
         sources=local_sources,
+        song_path=song_p,
+        song_offset_s=float(job.get("song_offset_s", 0.0)),
         scene_segments=job["scene_segments"],
         scene_captions=job.get("scene_captions", []),
         montage_clips=job["montage_clips"],
         hero_drop_title=job.get("hero_drop_title", "GOSLING"),
         bpm=float(job.get("bpm", 125.0)),
-        pre_drop_black_frames=int(job.get("pre_drop_black_frames", 4)),
+        pre_drop_black_frames=int(job.get("pre_drop_black_frames", 0)),
     )
     qa = run_full_qa(
         str(out_mp4),

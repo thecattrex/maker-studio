@@ -121,25 +121,32 @@ def _crop_9x10_smart(
     zoom_start: float = 1.0,
     zoom_end: float = 1.05,
     detect_fn: Any = None,
+    cx_override: float | None = None,
 ) -> list[np.ndarray]:
-    """Crop 16:9 frames cleanly into 1080x1200 (9:10) centered on detected face/action."""
+    """Crop 16:9 frames cleanly into 1080x1200 (9:10) centered on single face or two-shot midpoint."""
     if not frames_bgr:
         return []
     sh, sw = frames_bgr[0].shape[:2]
     target_aspect = box_w / float(box_h)  # 0.900
 
-    # Sample 3 frames to find median horizontal subject center
+    # Sample up to 5 frames to find median horizontal subject center (two-shot aware!)
     cx_norm = 0.5
-    if detect_fn is not None:
+    if cx_override is not None:
+        cx_norm = float(np.clip(cx_override, 0.22, 0.78))
+    elif detect_fn is not None:
         xs: list[float] = []
-        for idx in (0, len(frames_bgr) // 2, len(frames_bgr) - 1):
+        sample_idxs = sorted(set([0, len(frames_bgr) // 4, len(frames_bgr) // 2, (3 * len(frames_bgr)) // 4, len(frames_bgr) - 1]))
+        for idx in sample_idxs:
             faces = detect_fn(frames_bgr[idx])
             if faces:
-                # faces items are (cx, cy, bw, bh, score) normalized in [0..1]
-                best = max(faces, key=lambda b: b[2] * b[3])
-                xs.append(float(best[0]))
+                ranked = sorted(faces, key=lambda b: b[2] * b[3], reverse=True)
+                if len(ranked) >= 2 and abs(float(ranked[0][0]) - float(ranked[1][0])) <= 0.46:
+                    # Two-shot! Center cleanly between both actors
+                    xs.append(0.5 * (float(ranked[0][0]) + float(ranked[1][0])))
+                else:
+                    xs.append(float(ranked[0][0]))
         if xs:
-            cx_norm = float(np.clip(np.median(xs), 0.28, 0.72))
+            cx_norm = float(np.clip(np.median(xs), 0.24, 0.76))
 
     out: list[np.ndarray] = []
     n = max(1, len(frames_bgr) - 1)
@@ -502,17 +509,104 @@ def _slice_audio_segment(src_audio: str | Path, start_s: float, dur_s: float, sr
         wav_p.unlink(missing_ok=True)
 
 
+def mix_real_song_jigsaw(
+    song_path: str | Path,
+    *,
+    song_offset_s: float,
+    total_dur_s: float,
+    drop_s: float,
+    dialogue_stereo: np.ndarray,
+    sr: int = 44100,
+) -> np.ndarray:
+    """`@thisiszohair` (`7f2...`) Jigsaw Real-Song Amplitude & Pocket Mixer.
+
+    - Uses a REAL song sliced from `song_offset_s` for `total_dur_s`.
+    - Act 1 (`0 .. drop_s`): Splits song into Vocal-Mids (`290..5200 Hz`) vs Groove (`<290 Hz` + `>5200 Hz`).
+      Follows diagonal Premiere-style rubberband keyframes around every spoken phrase:
+        * During speech: ducks song mids to `-13 dB` and groove to `-7.5 dB` so cheeky punchlines are 100% clear.
+        * Inside EVERY pause/pocket between lines: swells the real song up to `-2.8 dB` full-frequency so the
+          clap/riff groove 'nods to the beat' without disrupting the song!
+    - Act 2 (`drop_s .. total_dur_s`): Unleashes 100% un-ducked studio amplitude (`0 dB`) right on the drop transient!
+    """
+    from scipy.signal import butter, sosfiltfilt
+
+    song = _slice_audio_segment(song_path, song_offset_s, total_dur_s, sr=sr)
+    n = len(song)
+    peak_s = float(np.max(np.abs(song))) + 1e-8
+    song = song * (0.88 / peak_s)
+
+    if len(dialogue_stereo) < n:
+        vox = np.vstack([dialogue_stereo, np.zeros((n - len(dialogue_stereo), 2), dtype=np.float32)])
+    else:
+        vox = dialogue_stereo[:n].copy()
+
+    act1_n = min(n, int(round(drop_s * sr)))
+    if act1_n > int(0.15 * sr):
+        # Normalize active speech regions cleanly
+        vox_mono = np.mean(np.abs(vox[:act1_n]), axis=1)
+        active = vox_mono[vox_mono > 0.012]
+        if len(active) > 100:
+            target_scale = 0.24 / (float(np.sqrt(np.mean(active ** 2))) + 1e-6)
+            vox[:act1_n] = np.tanh(vox[:act1_n] * min(3.2, target_scale) * 1.12) * 0.88
+
+        # Build smooth Premiere-style rubberband envelope (`45ms` attack, `150ms` release)
+        win_rms = max(64, int(0.025 * sr))
+        env_raw = np.sqrt(
+            np.convolve(np.mean(vox[:act1_n] ** 2, axis=1), np.ones(win_rms) / win_rms, mode="same") + 1e-12
+        )
+        speech_gate = np.clip((env_raw - 0.018) / 0.055, 0.0, 1.0)
+        # Smooth rubberband ramps (~110ms window) so volume glides diagonally like Premiere keyframes
+        k_smooth = max(64, int(0.11 * sr))
+        rubber = np.convolve(speech_gate, np.hanning(k_smooth) / np.sum(np.hanning(k_smooth)), mode="same")
+        rubber = np.clip(rubber, 0.0, 1.0)[:, None]
+
+        # Frequency-selective pocket carving on Act 1 song
+        sos_mid = butter(3, [290.0 / (sr * 0.5), 5200.0 / (sr * 0.5)], btype="band", output="sos")
+        song_act1 = song[:act1_n].astype(np.float64)
+        mids = sosfiltfilt(sos_mid, song_act1, axis=0)
+        groove = song_act1 - mids  # sub-bass + kick + crisp hi-hat/clap air
+
+        # Speech active -> mids=0.20 (-14dB), groove=0.42 (-7.5dB)
+        # Pocket / pause -> mids=0.72 (-2.8dB), groove=0.76 (-2.4dB) -> song breathes & nods in every gap!
+        gain_mids = 0.72 * (1.0 - rubber) + 0.20 * rubber
+        gain_groove = 0.76 * (1.0 - rubber) + 0.42 * rubber
+        shaped_act1 = (mids * gain_mids + groove * gain_groove).astype(np.float32)
+
+        # Smooth 120ms ramp into full 1.00 studio drop right at `drop_s`!
+        ramp_n = min(act1_n, int(0.12 * sr))
+        if ramp_n > 16:
+            r_up = np.linspace(0.0, 1.0, ramp_n, dtype=np.float32)[:, None]
+            shaped_act1[-ramp_n:] = shaped_act1[-ramp_n:] * (1.0 - r_up) + song[act1_n - ramp_n:act1_n] * r_up
+        song[:act1_n] = shaped_act1
+
+    # Gentle 0.12s fade-in at 0.0s & 0.65s fade-out at end
+    fi_n = min(n, int(0.12 * sr))
+    fo_n = min(n, int(0.65 * sr))
+    if fi_n > 8:
+        song[:fi_n] *= np.linspace(0.25, 1.0, fi_n, dtype=np.float32)[:, None]
+    if fo_n > 8:
+        song[-fo_n:] *= np.linspace(1.0, 0.0, fo_n, dtype=np.float32)[:, None]
+
+    mix = vox + song
+    pk = float(np.max(np.abs(mix))) + 1e-8
+    if pk > 0.95:
+        mix *= 0.95 / pk
+    return mix.astype(np.float32)
+
+
 def render_aura_edit(
     out_mp4: str | Path,
     *,
     sources: dict[str, str | Path],
     vocal_sources: dict[str, str | Path] | None = None,
+    song_path: str | Path | None = None,
+    song_offset_s: float = 0.0,
     scene_segments: list[dict[str, Any]],
     scene_captions: list[dict[str, Any]],
     montage_clips: list[dict[str, Any]],
     hero_drop_title: str = "GOSLING",
     bpm: float = 125.0,
-    pre_drop_black_frames: int = 4,
+    pre_drop_black_frames: int = 0,
 ) -> dict[str, Any]:
     """Render a full 2-Act `1080x1920` (`9:10` `1080x1200` center viewport) Scene -> Aura Montage edit."""
     ff = get_ffmpeg()
@@ -542,36 +636,47 @@ def render_aura_edit(
             sk = seg["src"]
             s0 = float(seg["start_s"])
             dur = float(seg["dur_s"])
-            raw_frames = _slice_clip_frames_30fps(sources[sk], s0, dur, tmp_dir, f"sc_{idx}")
+            src_dur = float(seg.get("src_dur_s", dur))
+            raw_frames = _slice_clip_frames_30fps(sources[sk], s0, src_dur, tmp_dir, f"sc_{idx}")
             target_f = max(1, int(round(dur * fps)))
-            while len(raw_frames) < target_f and raw_frames:
-                raw_frames.append(raw_frames[-1].copy())
-            raw_frames = raw_frames[:target_f]
-
             cropped = _crop_9x10_smart(
                 raw_frames, box_w, box_h,
                 zoom_start=float(seg.get("zoom_start", 1.0)),
                 zoom_end=float(seg.get("zoom_end", 1.05)),
                 detect_fn=detect_fn,
+                cx_override=seg.get("cx_override"),
             )
-            graded = [_apply_4k_cc_grade(f, warm_boost=1.0, sat_mult=1.06) for f in cropped]
+            if abs(src_dur - dur) > 0.06 and len(cropped) >= 2:
+                # Smooth optical-flow slow-mo for silent reaction/kiss payoff clips!
+                cropped = _velocity_resample_optical(cropped, target_f)
+            else:
+                while len(cropped) < target_f and cropped:
+                    cropped.append(cropped[-1].copy())
+                cropped = cropped[:target_f]
+
+            graded = [_apply_4k_cc_grade(f, warm_boost=1.05, sat_mult=1.08) for f in cropped]
             scene_boxes.extend(graded)
 
             seg_dur_actual = len(graded) / float(fps)
-            if sk in vocal_sources:
+            target_n = int(round(seg_dur_actual * sr))
+            if not seg.get("include_dialogue", True):
+                # Silent visual reaction/makeout pocket — let the real song swell cleanly!
+                dialogue_chunks.append(np.zeros((target_n, 2), dtype=np.float32))
+                v_methods.append("music_pocket_swell")
+            elif sk in vocal_sources:
                 v_chunk = _slice_audio_segment(vocal_sources[sk], s0, seg_dur_actual, sr=sr)
                 v_methods.append("provided_vocal")
+                dialogue_chunks.append(v_chunk)
             else:
                 vox_wav = tmp_dir / f"vox_{idx}.wav"
                 m_used = isolate_clean_vocal_slice(str(sources[sk]), s0, s0 + seg_dur_actual, str(vox_wav), sr=sr)
                 v_methods.append(m_used)
                 v_chunk, _ = sf.read(str(vox_wav), dtype="float32", always_2d=True)
-                target_n = int(round(seg_dur_actual * sr))
                 if len(v_chunk) < target_n:
                     v_chunk = np.vstack([v_chunk, np.zeros((target_n - len(v_chunk), 2), dtype=np.float32)])
                 else:
                     v_chunk = v_chunk[:target_n]
-            dialogue_chunks.append(v_chunk)
+                dialogue_chunks.append(v_chunk)
 
         # Overlay @Proxeditz07 neon keyword captions onto Act 1 scene_boxes
         for fi in range(len(scene_boxes)):
@@ -605,14 +710,18 @@ def render_aura_edit(
             sk = mc["src"]
             s0 = float(mc["start_s"])
             src_dur = float(mc.get("src_dur_s", 1.35))
-            beats = float(mc.get("beats", 2.0))
-            out_frames_n = max(12, int(round(beats * beat_s * fps)))  # 29 frames (~0.967s)
+            if "dur_s" in mc:
+                out_frames_n = max(10, int(round(float(mc["dur_s"]) * fps)))
+            else:
+                beats = float(mc.get("beats", 2.0))
+                out_frames_n = max(12, int(round(beats * beat_s * fps)))
 
             raw_m = _slice_clip_frames_30fps(sources[sk], s0, src_dur, tmp_dir, f"mc_{m_idx}")
             cropped_m = _crop_9x10_smart(
                 raw_m, box_w, box_h,
                 zoom_start=1.02, zoom_end=1.08,
                 detect_fn=detect_fn,
+                cx_override=mc.get("cx_override"),
             )
             # Farneback Optical-Flow Velocity Curve (2.7x fast whip -> 0.38x ultra-smooth slow-mo)
             vel_frames = _velocity_resample_optical(cropped_m, out_frames_n)
@@ -660,58 +769,35 @@ def render_aura_edit(
         enc.stdin.close()
         enc.wait()
 
-        # 4. Synthesize Slowed Phonk / Hypnotic Soundtrack + Mix Clean Dialogue + Earshot Impact SFX
-        music = synthesize_phonk_aura_soundtrack(total_dur_s, drop_s, bpm=bpm, sr=sr)
-        total_samples = len(music)
+        # 4. Audio Engine: Prefer REAL Song Jigsaw Pocket & Amplitude Automation (`@thisiszohair` `7f2...` law!)
         dialogue_full = np.vstack(dialogue_chunks) if dialogue_chunks else np.zeros((0, 2), dtype=np.float32)
-        if len(dialogue_full) < total_samples:
-            dialogue_pad = np.vstack([dialogue_full, np.zeros((total_samples - len(dialogue_full), 2), dtype=np.float32)])
+        if song_path is not None and Path(song_path).exists():
+            master_mix = mix_real_song_jigsaw(
+                song_path,
+                song_offset_s=song_offset_s,
+                total_dur_s=total_dur_s,
+                drop_s=drop_s,
+                dialogue_stereo=dialogue_full,
+                sr=sr,
+            )
+            music_mode = f"real_song_jigsaw ({Path(song_path).name} @ {song_offset_s:.2f}s)"
         else:
-            dialogue_pad = dialogue_full[:total_samples]
+            music = synthesize_phonk_aura_soundtrack(total_dur_s, drop_s, bpm=bpm, sr=sr)
+            total_samples = len(music)
+            if len(dialogue_full) < total_samples:
+                dialogue_pad = np.vstack([dialogue_full, np.zeros((total_samples - len(dialogue_full), 2), dtype=np.float32)])
+            else:
+                dialogue_pad = dialogue_full[:total_samples]
+            act1_n = min(total_samples, int(round(drop_s * sr)))
+            if act1_n > 0:
+                d_rms = float(np.sqrt(np.mean(dialogue_pad[:act1_n] ** 2))) + 1e-6
+                dialogue_pad[:act1_n] = np.tanh((dialogue_pad[:act1_n] * (0.20 / d_rms)) * 1.15) * 0.86
+            master_mix = dialogue_pad + music
+            pk = float(np.max(np.abs(master_mix))) + 1e-8
+            if pk > 0.94:
+                master_mix *= 0.94 / pk
+            music_mode = "synth_fallback"
 
-        # Normalize Act 1 dialogue cleanly so every word cuts right through
-        act1_n = min(total_samples, int(round(drop_s * sr)))
-        if act1_n > 0:
-            d_rms = float(np.sqrt(np.mean(dialogue_pad[:act1_n] ** 2))) + 1e-6
-            dialogue_pad[:act1_n] = np.tanh((dialogue_pad[:act1_n] * (0.20 / d_rms)) * 1.15) * 0.86
-
-        # Layer procedural Earshot whoosh/hit accents at the drop & montage cuts if available
-        sfx_bus = np.zeros_like(music)
-        earshot_dir = _STUDIO_ROOT / "earshot"
-        if not earshot_dir.exists():
-            earshot_dir = Path("/home/user/studio/earshot")
-        try:
-            import sys as _sys
-            if str(earshot_dir.parent) not in _sys.path:
-                _sys.path.insert(0, str(earshot_dir.parent))
-            from earshot.procedural import generate as gen_sfx
-
-            def _place_sfx(preset: str, t_sec: float, gain: float) -> None:
-                arr, sfx_sr = gen_sfx(preset, seed=17)
-                if sfx_sr != sr:
-                    # Simple linear resample
-                    idx_old = np.linspace(0, len(arr) - 1, int(round(len(arr) * sr / sfx_sr)))
-                    arr = np.interp(idx_old, np.arange(len(arr)), arr)
-                i0 = max(0, int(round(t_sec * sr)))
-                i1 = min(total_samples, i0 + len(arr))
-                if i1 > i0:
-                    seg_a = (arr[:i1 - i0] * gain).astype(np.float32)
-                    sfx_bus[i0:i1, 0] += seg_a
-                    sfx_bus[i0:i1, 1] += seg_a
-
-            _place_sfx("pro_riser", max(0.0, drop_s - 1.45), 0.22)
-            _place_sfx("pro_sub_drop", drop_s, 0.38)
-            cur_cut = drop_s
-            for m_i, mc in enumerate(montage_clips):
-                _place_sfx("swish" if m_i % 2 == 1 else "pro_whoosh_big", max(0.0, cur_cut - 0.05), 0.18)
-                cur_cut += float(mc.get("beats", 2.0)) * beat_s
-        except Exception:
-            pass
-
-        master_mix = dialogue_pad + music + sfx_bus
-        peak = float(np.max(np.abs(master_mix))) + 1e-8
-        if peak > 0.94:
-            master_mix *= 0.94 / peak
         sf.write(str(mix_wav), master_mix, sr, subtype="PCM_16")
 
         # 5. Final mux + 2-stage EBUR128 / loudnorm (`-14.5 LUFS`, `level=false` true-peak limiter)
@@ -739,5 +825,6 @@ def render_aura_edit(
         "scene_clips": len(scene_segments),
         "montage_clips": len(montage_clips),
         "vocal_isolation": sorted(set(v_methods)),
+        "music_mode": music_mode,
         "size_mb": round(out_mp4.stat().st_size / (1024 * 1024), 2),
     }

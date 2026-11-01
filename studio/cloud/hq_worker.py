@@ -823,9 +823,11 @@ def run_aura_edit(job: dict, out_dir: Path) -> dict:
         scene_segments=job["scene_segments"],
         scene_captions=job.get("scene_captions", []),
         montage_clips=job["montage_clips"],
-        hero_drop_title=job.get("hero_drop_title", "GOSLING"),
+        sfx_events=job.get("sfx_events", []),
+        hero_drop_title=job.get("hero_drop_title", "WOLVERINE"),
         bpm=float(job.get("bpm", 125.0)),
         pre_drop_black_frames=int(job.get("pre_drop_black_frames", 0)),
+        muffle_under_scene=bool(job.get("muffle_under_scene", True)),
     )
     qa = run_full_qa(
         str(out_mp4),

@@ -118,14 +118,16 @@ class PersonSegmenter:
         """Return soft float32 foreground alpha in `[0.0 .. 1.0]` of shape `(H, W, 1)`."""
         h, w = frame_bgr.shape[:2]
         if self._seg is not None:
-            rgb = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
-            mp_img = self._mp.Image(image_format=self._mp.ImageFormat.SRGB, data=rgb)
+            rgb_small = np.ascontiguousarray(
+                cv2.cvtColor(cv2.resize(frame_bgr, (256, 256), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2RGB)
+            )
+            mp_img = self._mp.Image(image_format=self._mp.ImageFormat.SRGB, data=rgb_small)
             res = self._seg.segment(mp_img)
-            m = res.confidence_masks[0].numpy_view().astype(np.float32)
-            if m.ndim == 3:
-                m = m[..., 0]
-            if m.shape != (h, w):
-                m = cv2.resize(m, (w, h), interpolation=cv2.INTER_LINEAR)
+            m_small = res.confidence_masks[0].numpy_view().copy().astype(np.float32)
+            del res, mp_img
+            if m_small.ndim == 3:
+                m_small = m_small[..., 0]
+            m = cv2.resize(m_small, (w, h), interpolation=cv2.INTER_LINEAR)
         else:
             # Fallback center-weighted contrast mask if mediapipe is unavailable
             gray = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2GRAY).astype(np.float32) / 255.0

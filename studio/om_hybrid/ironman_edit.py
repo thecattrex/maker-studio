@@ -115,6 +115,9 @@ def apply_difference_text(
     return np.clip(out, 0.0, 255.0).astype(np.uint8)
 
 
+_FLOW_GRID_CACHE: dict[tuple[int, int], tuple[np.ndarray, np.ndarray]] = {}
+
+
 def optical_flow_interp(f0: np.ndarray, f1: np.ndarray, frac: float) -> np.ndarray:
     """Bidirectional Farneback optical-flow frame morphing for silky 0.38x velocity slow-mo."""
     if frac <= 0.02:
@@ -122,20 +125,20 @@ def optical_flow_interp(f0: np.ndarray, f1: np.ndarray, frac: float) -> np.ndarr
     if frac >= 0.98:
         return f1
     h, w = f0.shape[:2]
-    hw, hh = max(64, w // 2), max(64, h // 2)
+    hw, hh = max(64, w // 3), max(64, h // 3)
     g0 = cv2.resize(cv2.cvtColor(f0, cv2.COLOR_BGR2GRAY), (hw, hh))
     g1 = cv2.resize(cv2.cvtColor(f1, cv2.COLOR_BGR2GRAY), (hw, hh))
-    flow01 = cv2.calcOpticalFlowFarneback(g0, g1, None, 0.5, 3, 15, 3, 5, 1.2, 0)
-    flow01 = cv2.resize(flow01, (w, h), interpolation=cv2.INTER_LINEAR) * 2.0
+    flow01 = cv2.calcOpticalFlowFarneback(g0, g1, None, 0.5, 2, 13, 2, 5, 1.1, 0)
+    flow_x = cv2.resize(flow01[..., 0], (w, h), interpolation=cv2.INTER_LINEAR) * (w / float(hw))
+    flow_y = cv2.resize(flow01[..., 1], (w, h), interpolation=cv2.INTER_LINEAR) * (h / float(hh))
 
-    grid_x, grid_y = np.meshgrid(np.arange(w, dtype=np.float32), np.arange(h, dtype=np.float32))
-    map0_x = grid_x - flow01[..., 0] * frac
-    map0_y = grid_y - flow01[..., 1] * frac
-    map1_x = grid_x + flow01[..., 0] * (1.0 - frac)
-    map1_y = grid_y + flow01[..., 1] * (1.0 - frac)
+    key = (h, w)
+    if key not in _FLOW_GRID_CACHE:
+        _FLOW_GRID_CACHE[key] = np.meshgrid(np.arange(w, dtype=np.float32), np.arange(h, dtype=np.float32))
+    grid_x, grid_y = _FLOW_GRID_CACHE[key]
 
-    w0 = cv2.remap(f0, map0_x, map0_y, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT101)
-    w1 = cv2.remap(f1, map1_x, map1_y, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT101)
+    w0 = cv2.remap(f0, grid_x - flow_x * frac, grid_y - flow_y * frac, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT101)
+    w1 = cv2.remap(f1, grid_x + flow_x * (1.0 - frac), grid_y + flow_y * (1.0 - frac), interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT101)
     return cv2.addWeighted(w0, 1.0 - frac, w1, frac, 0.0)
 
 

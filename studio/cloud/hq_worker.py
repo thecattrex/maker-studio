@@ -807,11 +807,69 @@ def run_aura_edit(job: dict, out_dir: Path) -> dict:
     return report
 
 
+def run_zohair_edit(job: dict, out_dir: Path) -> dict:
+    """Render Style 1 (`@thisiszohair` `S02` + `S04`) Full-Song Jigsaw Rhythm Edit on the 16 GB Cloud Runner."""
+    import shutil
+    import urllib.request
+    from om_hybrid.visual_qa import run_full_qa
+    from om_hybrid.zohair_edit import render_zohair_jigsaw_edit
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    work = Path("/tmp/zohair_edit_work")
+    if work.exists():
+        shutil.rmtree(work)
+    work.mkdir(parents=True, exist_ok=True)
+
+    local_sources: dict[str, str] = {}
+    for alias, url in (job.get("sources") or {}).items():
+        dst_s = work / f"src_{alias}.mp4"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=240) as r, open(dst_s, "wb") as f:
+            f.write(r.read())
+        local_sources[alias] = str(dst_s)
+
+    s_url = str(job["song_url"])
+    s_ext = ".flac" if ".flac" in s_url.lower() else (".wav" if ".wav" in s_url.lower() else ".mp3")
+    dst_song = work / f"real_song{s_ext}"
+    req_song = urllib.request.Request(s_url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req_song, timeout=180) as r, open(dst_song, "wb") as f:
+        f.write(r.read())
+
+    out_name = job.get("out_name", "zohair_jigsaw_edit.mp4")
+    out_mp4 = out_dir / out_name
+    res = render_zohair_jigsaw_edit(
+        str(out_mp4),
+        sources=local_sources,
+        song_path=str(dst_song),
+        song_offset_s=float(job.get("song_offset_s", 0.0)),
+        visual_cuts=job["visual_cuts"],
+        dialogue_events=job.get("dialogue_events", []),
+        sfx_events=job.get("sfx_events", []),
+        outro_black_s=float(job.get("outro_black_s", 0.75)),
+    )
+    qa = run_full_qa(
+        str(out_mp4),
+        expected_size=(1080, 1920),
+        min_dur=10.0,
+        max_dur=65.0,
+        sheet_out=str(out_dir / "qa_sheet.jpg"),
+    )
+    report = {
+        "mode": "zohair_edit",
+        "runner_ram_gb": _ram_gb(),
+        "runner_cpus": multiprocessing.cpu_count(),
+        **res,
+        "qa": qa,
+    }
+    (out_dir / "cloud_report.json").write_text(json.dumps(report, indent=2))
+    return report
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument(
         "--mode",
-        choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit"],
+        choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit", "zohair_edit"],
         required=True,
     )
     ap.add_argument("--job-b64", default="")
@@ -839,11 +897,13 @@ def main() -> None:
         res = run_vfx_edit(job, out_dir)
     elif args.mode == "aura_edit":
         res = run_aura_edit(job, out_dir)
+    elif args.mode == "zohair_edit":
+        res = run_zohair_edit(job, out_dir)
     else:
         res = run_remotion(job, out_dir)
 
     print(json.dumps(res, indent=2))
-    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit") and not res.get("qa", {}).get("passed", False):
+    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit", "zohair_edit") and not res.get("qa", {}).get("passed", False):
         sys.exit(1)
 
 

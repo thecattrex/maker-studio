@@ -35,6 +35,7 @@ from .motion_director import (
 )
 from .ironman_edit import render_ironman_style_edit
 from .aura_edit import mix_real_song_jigsaw, render_aura_edit, synthesize_phonk_aura_soundtrack
+from .zohair_edit import mix_zohair_multitrack_audio, render_zohair_jigsaw_edit
 from .viral_vfx import (
     PersonSegmenter,
     apply_vfx_pipeline,
@@ -77,6 +78,8 @@ __all__ = [
     "render_ironman_style_edit",
     "render_aura_edit",
     "mix_real_song_jigsaw",
+    "render_zohair_jigsaw_edit",
+    "mix_zohair_multitrack_audio",
     "synthesize_phonk_aura_soundtrack",
     "PersonSegmenter",
     "segment_person_mask",

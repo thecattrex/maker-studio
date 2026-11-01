@@ -733,6 +733,8 @@ def run_vfx_edit(job: dict, out_dir: Path) -> dict:
             res = apply_vfx_pipeline(cur_in, nxt_out, effect=step["effect"], params=p, windows=step.get("windows"))
             cur_in = nxt_out
 
+    import cv2
+
     cap = cv2.VideoCapture(str(out_mp4))
     w, h = int(cap.get(3)), int(cap.get(4))
     cap.release()

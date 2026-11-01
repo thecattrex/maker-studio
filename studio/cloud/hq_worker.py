@@ -31,12 +31,14 @@ if str(STUDIO) not in sys.path:
 import textkit  # noqa: E402
 from om_hybrid import (  # noqa: E402
     add_kinetic_motion_hud,
+    apply_vfx_pipeline,
     auto_sound_design_video,
     choreograph_shots_table,
     lut3d_filter_str,
     master_polish_video,
     plan_smart_camera,
     render_ironman_style_edit,
+    render_still_art_edit,
     render_subpixel_segments,
     run_full_qa,
     score_hook_candidates,
@@ -686,11 +688,71 @@ def run_ironman_edit(job: dict, out_dir: Path) -> dict:
     return report
 
 
+def run_vfx_edit(job: dict, out_dir: Path) -> dict:
+    """Execute one or more chained `viral_vfx` effects (or `still_art_edit`) on 16 GB Cloud."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    work = Path("/tmp/maker_vfx_work")
+    work.mkdir(parents=True, exist_ok=True)
+
+    out_name = job.get("out_name", "vfx_edit.mp4")
+    out_mp4 = out_dir / out_name
+
+    if job.get("image_url"):
+        img_p = work / "src_img.jpg"
+        req = urllib.request.Request(job["image_url"], headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=120) as r, open(img_p, "wb") as f:
+            f.write(r.read())
+        res = render_still_art_edit(
+            str(img_p),
+            str(out_mp4),
+            title_top=job.get("title_top", "GOD'S"),
+            title_main=job.get("title_main", "WISDOM"),
+            dur_s=float(job.get("dur_s", 15.4)),
+            layout=job.get("layout", "9:16_center_16:9"),
+        )
+    else:
+        src_p = work / "src_in.mp4"
+        req = urllib.request.Request(job["src_url"], headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=180) as r, open(src_p, "wb") as f:
+            f.write(r.read())
+        broll_p = None
+        if job.get("broll_url"):
+            broll_p = work / "broll_in.mp4"
+            req2 = urllib.request.Request(job["broll_url"], headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req2, timeout=180) as r, open(broll_p, "wb") as f:
+                f.write(r.read())
+
+        chain = job.get("chain") or [{"effect": job["effect"], "params": job.get("params", {}), "windows": job.get("windows")}]
+        cur_in = str(src_p)
+        res = {}
+        for idx, step in enumerate(chain):
+            nxt_out = str(out_mp4) if idx == len(chain) - 1 else str(work / f"step_{idx:02d}.mp4")
+            p = dict(step.get("params") or {})
+            if broll_p is not None and "broll_mp4" not in p:
+                p["broll_mp4"] = str(broll_p)
+            res = apply_vfx_pipeline(cur_in, nxt_out, effect=step["effect"], params=p, windows=step.get("windows"))
+            cur_in = nxt_out
+
+    cap = cv2.VideoCapture(str(out_mp4))
+    w, h = int(cap.get(3)), int(cap.get(4))
+    cap.release()
+    qa = run_full_qa(str(out_mp4), expected_size=(w, h), min_dur=2.0, max_dur=120.0, sheet_out=str(out_dir / "qa_sheet.jpg"))
+    report = {
+        "mode": "vfx_edit",
+        "runner_ram_gb": _ram_gb(),
+        "runner_cpus": multiprocessing.cpu_count(),
+        **res,
+        "qa": qa,
+    }
+    (out_dir / "cloud_report.json").write_text(json.dumps(report, indent=2))
+    return report
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument(
         "--mode",
-        choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit"],
+        choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit"],
         required=True,
     )
     ap.add_argument("--job-b64", default="")
@@ -714,11 +776,13 @@ def main() -> None:
         res = run_master(job, out_dir)
     elif args.mode == "ironman_edit":
         res = run_ironman_edit(job, out_dir)
+    elif args.mode == "vfx_edit":
+        res = run_vfx_edit(job, out_dir)
     else:
         res = run_remotion(job, out_dir)
 
     print(json.dumps(res, indent=2))
-    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit") and not res.get("qa", {}).get("passed", False):
+    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit") and not res.get("qa", {}).get("passed", False):
         sys.exit(1)
 
 

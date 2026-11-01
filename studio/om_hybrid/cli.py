@@ -21,6 +21,7 @@ if STUDIO not in sys.path:
 from om_hybrid import (  # noqa: E402
     analyze_energy,
     apply_cinema_look,
+    apply_vfx_pipeline,
     auto_sound_design_video,
     composite_motion_overlay,
     detect_silences,
@@ -29,8 +30,11 @@ from om_hybrid import (  # noqa: E402
     list_cinema_looks,
     list_sfx_bank,
     list_sources,
+    list_viral_vfx,
     master_polish_video,
+    plan_jigsaw_music_pockets,
     plan_smart_camera,
+    render_still_art_edit,
     render_synced_sfx,
     run_full_qa,
     search_openverse_audio,
@@ -116,6 +120,27 @@ def main() -> None:
     p_ovl.add_argument("--at", type=float, default=0.0)
     p_ovl.add_argument("--mode", choices=["screen", "colorkey", "alpha"], default="screen")
 
+    sub.add_parser("vfx-list", help="List all 17 S01..S11 viral edit tools & blueprints")
+
+    p_vfx = sub.add_parser("vfx", help="Apply any S01..S11 viral VFX shader/roto/shake to a video")
+    p_vfx.add_argument("video")
+    p_vfx.add_argument("--effect", required=True, help="e.g. blob_tracking | red_ribbon_roto | text_behind_subject | fight_club_shake | risograph_2tone | dither_1bit | receipt_ticket | crt_phosphor | datamosh_optical | silhouette_double_exp | roto_clone_pop | flashlight_glow | bass_shockwave | center_match_strobe")
+    p_vfx.add_argument("--out", required=True)
+    p_vfx.add_argument("--params-json", default="{}", help="JSON dict of effect parameters")
+    p_vfx.add_argument("--windows-json", default="", help="Optional JSON [[t0,t1], ...] active time windows")
+
+    p_art = sub.add_parser("still-art", help="Turn 1 static image/drawing into a kevamarts S08 motion edit")
+    p_art.add_argument("image")
+    p_art.add_argument("--out", required=True)
+    p_art.add_argument("--title-top", default="GOD'S")
+    p_art.add_argument("--title-main", default="WISDOM")
+    p_art.add_argument("--dur", type=float, default=15.4)
+    p_art.add_argument("--layout", choices=["9:16_center_16:9", "16:9"], default="9:16_center_16:9")
+
+    p_pkt = sub.add_parser("music-pockets", help="Find low-energy instrumental pockets in a song for dialogue (S04 rule)")
+    p_pkt.add_argument("music")
+    p_pkt.add_argument("--min-gap", type=float, default=0.50)
+
     args = ap.parse_args()
 
     if args.cmd == "sources":
@@ -178,6 +203,18 @@ def main() -> None:
         )
     elif args.cmd == "overlay":
         print(json.dumps(composite_motion_overlay(args.base_mp4, args.overlay_mp4, args.out, at_s=args.at, mode=args.mode), indent=2))
+    elif args.cmd == "vfx-list":
+        items = list_viral_vfx()
+        print(json.dumps({"count": len(items), "effects": items}, indent=2))
+    elif args.cmd == "vfx":
+        params = json.loads(args.params_json) if args.params_json else {}
+        wins = json.loads(args.windows_json) if args.windows_json else None
+        print(json.dumps(apply_vfx_pipeline(args.video, args.out, effect=args.effect, params=params, windows=wins), indent=2))
+    elif args.cmd == "still-art":
+        print(json.dumps(render_still_art_edit(args.image, args.out, title_top=args.title_top, title_main=args.title_main, dur_s=args.dur, layout=args.layout), indent=2))
+    elif args.cmd == "music-pockets":
+        pockets = plan_jigsaw_music_pockets(args.music, min_gap_s=args.min_gap)
+        print(json.dumps({"count": len(pockets), "pockets": pockets}, indent=2))
 
 
 if __name__ == "__main__":

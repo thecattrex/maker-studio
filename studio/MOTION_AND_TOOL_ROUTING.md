@@ -37,6 +37,10 @@ This playbook defines **how the agent must actively combine every integrated rep
 4. **Viral AE/Alight-Motion Signature Edits (`om_hybrid.ironman_edit.render_ironman_style_edit` / Cloud `--mode ironman_edit`):**
    - **Act 1 (`0..drop_s`):** Supersampled `ArchivoBlack` `#FFFFFF` typography composited via true **`Blending Mode: DIFFERENCE` (`|255 - BaseRGB|`)** so warm glows auto-invert to cobalt/cyan, cyan/blue lightning auto-inverts to copper/amber, and dark armor/silhouettes auto-turn pure `#FFFFFF` — punctuated by `5–8f` `#000000` strobe cuts, 2-line left-aligned pre-drop slam, and pre-drop blackout tension gap.
    - **Act 2 (`drop_s..end`):** Half-beat (`0.48s` @ `125 BPM`) Farneback optical-flow velocity speed-ramp montage (`2.8x` fast entry -> `0.38x` motion-interpolated slow-mo settle + subtle camera shake + radial edge vignette + cut-flash pops) paired with dark cinema-phonk 808 Reese bass & `earshot` 252 metallic hits (`-14.6 LUFS`).
+5. **17-Weapon Viral Edit Arsenal (`om_hybrid.viral_vfx` / `cli.py vfx` / Cloud `--mode vfx_edit` / `studio/skills/viral-edits/SKILL.md`):**
+   - **AI Human Rotoscoping (`selfie_segmenter.tflite`):** `text_behind_subject` (3D Z-depth text behind person), `red_ribbon_roto` (`-32°` crimson B-roll strip behind silhouette + katana invert flash), `silhouette_double_exp` (B-roll inside silhouette), `roto_clone_pop` (`offset_live` & `freeze_black`), `flashlight_glow`.
+   - **TouchDesigner, Print & Glitch Shaders:** `blob_tracking` (`k1sh0r/blob-tracker` MIT), `risograph_2tone`, `dither_1bit`, `receipt_ticket`, `crt_phosphor` (`cyan` | `pink` | `indigo_tv` barrel lens), `datamosh_optical`, `bass_shockwave`.
+   - **Camera Physics, Rhythm & Still Art:** `fight_club_shake` (nose/eye Match-Move face-locked shake + 35mm grain), `center_match_strobe` (`B&W -> Color` beat drop), `plan_jigsaw_music_pockets` + `write_center_serif_ass`, and `render_still_art_edit` (1-image motion edit).
 
 ---
 

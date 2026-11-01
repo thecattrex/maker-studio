@@ -34,6 +34,16 @@ from .motion_director import (
     composite_motion_overlay,
 )
 from .ironman_edit import render_ironman_style_edit
+from .viral_vfx import (
+    PersonSegmenter,
+    apply_vfx_pipeline,
+    list_viral_vfx,
+    plan_jigsaw_music_pockets,
+    render_still_art_edit,
+    run_blob_tracking,
+    segment_person_mask,
+    write_center_serif_ass,
+)
 
 __all__ = [
     "score_slideshow_risk",
@@ -64,4 +74,12 @@ __all__ = [
     "add_kinetic_motion_hud",
     "composite_motion_overlay",
     "render_ironman_style_edit",
+    "PersonSegmenter",
+    "segment_person_mask",
+    "run_blob_tracking",
+    "apply_vfx_pipeline",
+    "plan_jigsaw_music_pockets",
+    "write_center_serif_ass",
+    "render_still_art_edit",
+    "list_viral_vfx",
 ]

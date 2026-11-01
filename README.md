@@ -12,6 +12,7 @@ Every video format (**Type 1** movie/podcast clips, **Type 2** compilations/reac
 | **4. Real Open-License Media (5M+)** | `studio/om_hybrid/openverse_realsfx.py` (`Openverse`) | Searches & downloads CC0 / CC-BY real recorded audio (`5M+` tracks) and images (`800M+`) via `api.openverse.org/v1/` with automatic Wikimedia + Internet Archive CC fallback |
 | **5. Frame-Exact Sound Design** | `studio/real_sfx/` (`Clipwing Real-SFX` + `78` CC0 `uisfx`) | Auto-detects cuts/motion (`find_moments.py`) or HyperFrames elements (`from_hyperframes.py`), places cues (`<= 5 / 10s`), ducks under speech (`--voice-safe --duck`), guards mono phase & AAC true-peak (`-14.8 LUFS`, `<= -1.5 dBTP`), exports `*_sfx_track.wav` stem |
 | **6. Visual QA + Neural AI Ears** | `visual_qa.py` + `earshot` (`CLAP + AST`) | Bitstream decode check, face-vs-caption collision check, EBUR128 loudness gate, 4x4 visual contact sheet, plus Cloud `CLAP + AST` spectrogram/sync critique (`earshot_sheet.png` + `earshot_critique.json`) |
+| **7. 17-Weapon Viral Edit Arsenal & Skills** | `studio/om_hybrid/viral_vfx.py` + `ironman_edit.py` + `studio/skills/` | MediaPipe XNNPACK AI Human Rotoscoping (`selfie_segmenter.tflite`), TouchDesigner `blob-tracking` (`k1sh0r/blob-tracker` MIT), Difference Typography + Optical-Flow Velocity, Red B-Roll Ribbon behind Roto, 3D Text-Behind-Person, Double-Exposure Silhouette, Roto Clones, Fight Club Face-Locked Shake, Risograph 2-Tone, 1-Bit Bayer Dither, Thermal Receipt, CRT/Pink Phosphor, Optical Datamosh, Still-Art Motion, HDemucs Vocal Isolation, and Jigsaw Music-Pocket Planner (`studio/skills/viral-edits/SKILL.md`) |
 
 ---
 
@@ -37,7 +38,12 @@ python3 studio/gh_farm.py run --mode master --out-dir /tmp/cloud_out
 # HQ Movie/Clip Short (faster-whisper medium.en + BlazeFace + 2-pass loudnorm + Voice-Safe Real-SFX)
 python3 studio/gh_farm.py run --mode t1_hq --job job.json --out-dir /tmp/cloud_out
 
-# Dedicated modes also available: smoke | hyperframes | earshot | real_sfx | remotion
+# Dedicated modes also available: smoke | hyperframes | earshot | real_sfx | remotion | ironman_edit | vfx_edit
 ```
 
-See **`START_HERE.md`** for studio rules and **`studio/UPGRADE_HANDOFF_LOG.md`** for the complete chronological changelog (Phases 1–7).
+### Reusable Agent Skills (`studio/skills/`)
+- **`studio/skills/viral-edits/SKILL.md`** — Master guide & CLI/Cloud recipes for applying all 17 viral edit effects (`vfx-list`, `vfx`, `still-art`, `music-pockets`, `ironman_edit`, `vfx_edit`) across Type 1, Type 2, Type 3, and standalone edits.
+- **`studio/skills/blob-tracking/SKILL.md`** — TouchDesigner-style OpenCV blob-tracking skill (`k1sh0r/blob-tracker`, `MIT`).
+- **`studio/real_sfx/SKILL.md`** — Frame-exact voice-safe sound design skill (`Clipwing/skills`, `MIT`).
+
+See **`START_HERE.md`** for studio rules, **`studio/SAMPLE_11_EDITING_BIBLE.md`** for all 11 reverse-engineered reference styles, and **`studio/UPGRADE_HANDOFF_LOG.md`** for the complete chronological changelog (Phases 1–11).

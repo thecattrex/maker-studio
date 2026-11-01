@@ -10,7 +10,7 @@ This is a portable copy of the reusable video-maker workspace and its operating 
 ## First actions in a new chat
 
 1. Read this `START_HERE.md` completely.
-2. Inspect `studio/SPEC.md`, `studio/MOTION_AND_TOOL_ROUTING.md`, `studio/SAMPLE_11_EDITING_BIBLE.md`, `studio/TYPE2_SPEC.md` (inside `studio/type2/`), `studio/type2/README.md`, `studio/type2/LEARNINGS.md`, and the relevant engine files before making changes.
+2. Inspect `studio/SPEC.md`, `studio/MOTION_AND_TOOL_ROUTING.md`, `studio/SAMPLE_11_EDITING_BIBLE.md`, `studio/skills/viral-edits/SKILL.md`, `studio/TYPE2_SPEC.md` (inside `studio/type2/`), `studio/type2/README.md`, `studio/type2/LEARNINGS.md`, and the relevant engine files before making changes.
 3. If code/assets are needed, unpack/copy the bundled `studio/` and `assets/fonts/` into the new workspace while preserving the paths. The archive omits generated caches and source-video downloads by design; create only the assets needed for the new task.
 4. Do not automatically start a pending or cancelled job. Check the **Current status** section below.
 5. Work in Hinglish unless the user requests another language. Do not make the user restate these rules.

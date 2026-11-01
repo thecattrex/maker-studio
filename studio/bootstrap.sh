@@ -18,13 +18,16 @@ ln -sf /tmp/vidtools/ffprobe /home/user/bin/ffprobe
 /tmp/vidtools/ffmpeg -version | head -1
 /tmp/vidtools/ffprobe -version | head -1
 
+echo "== core media + AI segmenter =="
+python3 -c "import mediapipe" 2>/dev/null || pip3 install -q mediapipe soundfile scipy Pillow
+
 echo "== yt-dlp =="
 python3 -c "import yt_dlp" 2>/dev/null || pip3 install -q -U yt-dlp
 python3 -c "import yt_dlp; print('yt-dlp', yt_dlp.version.__version__)"
 
 if [ "${1:-}" = "full" ] || [ "${1:-}" = "all" ]; then
   echo "== full stack =="
-  pip3 install -q "av==16.0.1" faster-whisper "opencv-python-headless==4.12.0.88" numpy librosa
+  pip3 install -q "av==16.0.1" faster-whisper "opencv-python-headless==4.12.0.88" numpy librosa mediapipe soundfile scipy Pillow
 fi
 
 if [ "${1:-}" = "browser" ] || [ "${1:-}" = "all" ]; then

@@ -149,4 +149,19 @@ Performed full frame-by-frame (`33 ms`), word-level Whisper ASR, cut-cadence, co
 - **S11 (`@ediday.5` *Fight Club* Shake):** 2-panel top/bottom split w/ edge-pinned Red/White condensed title + nose/eye **Match-Move Face-Locked Shake** (face stationary at center while background smears violently) + 35mm grain.
 
 ---
-*(Subsequent changes in Phase 11+ will be appended directly below.)*
+### Phase 11 — 17-Weapon Viral Edit Arsenal + AI Human Rotoscoping + `viral-edits` Skill (`2026-11-01`)
+Audited all missing tools needed to execute every single visual/audio effect from `S01..S11` on **any** video, sourced & integrated official open-source models/packages, built a universal streaming VFX engine, and packaged step-by-step agent skills in `thecattrex/maker-studio`:
+- **Open-Source Engines & AI Models Added:**
+  - `/home/user/studio/om_hybrid/models/selfie_segmenter.tflite` (`244 KB`, Google MediaPipe `Apache-2.0`) — 30+ FPS XNNPACK CPU AI human foreground rotoscoping (`PersonSegmenter` in `viral_vfx.py`; auto-provisioned in `studio/bootstrap.sh`).
+  - `/home/user/studio/skills/blob-tracking/` (`k1sh0r/blob-tracker`, `MIT`) — Authentic TouchDesigner-style OpenCV blob tracker (white boxes, connecting web lines, `JetBrainsMono` numeric chips, inverted windows, corner markers) + `SKILL.md`.
+- **Universal Viral VFX Engine (`/home/user/studio/om_hybrid/viral_vfx.py`):**
+  - **AI Roto & Layering:** `text_behind_subject` (3D solid/video-textured text behind person), `red_ribbon_roto` (B&W sky + angled crimson B-roll strip behind silhouette + katana luma-invert flash), `silhouette_double_exp` (B-roll inside human silhouette), `roto_clone_pop` (`offset_live` & `freeze_black` 3-cutout trail), `flashlight_glow`.
+  - **Shaders & Glitch FX:** `run_blob_tracking`, `datamosh_optical` (Farneback optical-flow P-frame melt + 16x16 macroblocks), `dither_1bit` (`8x8` Ordered Bayer + accent label), `risograph_2tone` (Indigo print + crimson serif bars), `receipt_ticket` (thermal receipt paper + barcode), `crt_phosphor` (`cyan` | `pink` | `indigo_tv` curved barrel lens), `bass_shockwave`.
+  - **Camera Physics, Rhythm & Still Art:** `fight_club_shake` (nose/eye Match-Move face-locked shake + motion-smeared room + 35mm grain), `center_match_strobe` (`B&W -> 145% Color` beat drop), `plan_jigsaw_music_pockets` + `write_center_serif_ass`, and `render_still_art_edit` (1-image motion edit).
+- **CLI + 16 GB Cloud Farm + Master Agent Skill:**
+  - Added `vfx-list`, `vfx`, `still-art`, and `music-pockets` to `studio/om_hybrid/cli.py`.
+  - Added **`--mode vfx_edit`** (supporting multi-step `chain` pipelines & `still_art_edit`) across `.github/workflows/cloud_render.yml`, `studio/cloud/hq_worker.py`, and `studio/gh_farm.py`.
+  - Created **`/home/user/studio/skills/viral-edits/SKILL.md`** (linked in `START_HERE.md`, `README.md`, and `MOTION_AND_TOOL_ROUTING.md`) so any session/user can apply all 17 cool edits to any video format.
+
+---
+*(Subsequent changes in Phase 12+ will be appended directly below.)*

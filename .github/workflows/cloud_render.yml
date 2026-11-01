@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "Render mode: smoke | t1_hq | remotion | hyperframes | earshot | real_sfx | master | ironman_edit"
+        description: "Render mode: smoke | t1_hq | remotion | hyperframes | earshot | real_sfx | master | ironman_edit | vfx_edit"
         required: true
         default: "smoke"
       job_b64:

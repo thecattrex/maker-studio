@@ -751,8 +751,50 @@ def run_vfx_edit(job: dict, out_dir: Path) -> dict:
     return report
 
 
+def _fetch_url_resilient(url: str, dst: Path, fallback_url: str | None = None) -> None:
+    """Download `url` to `dst` with retries + automatic Archive.org d2/d1 secondary mirror failover."""
+    import time
+    import urllib.request
+
+    candidates = [url]
+    if "archive.org/download/" in url:
+        try:
+            tail = url.split("archive.org/download/", 1)[1]
+            item_id, rel_path = tail.split("/", 1)
+            meta_req = urllib.request.Request(f"https://archive.org/metadata/{item_id}", headers={"User-Agent": "Mozilla/5.0"})
+            meta = json.loads(urllib.request.urlopen(meta_req, timeout=15).read().decode("utf-8", "ignore"))
+            mdir = meta.get("dir", "")
+            for srv in [meta.get("d2"), meta.get("d1")]:
+                if srv and mdir:
+                    candidates.append(f"https://{srv}{mdir}/{rel_path}")
+        except Exception:
+            pass
+    if fallback_url:
+        candidates.append(fallback_url)
+
+    last_err: Exception | None = None
+    for cand in candidates:
+        for attempt in range(3):
+            try:
+                r_proc = subprocess.run(
+                    ["curl", "-fsSL", "--retry", "2", "--retry-delay", "2", "--max-time", "210", "-A", "Mozilla/5.0", cand, "-o", str(dst)],
+                    capture_output=True,
+                    text=True,
+                )
+                if r_proc.returncode == 0 and dst.exists() and dst.stat().st_size > 4096:
+                    return
+                last_err = RuntimeError(f"curl failed ({r_proc.returncode}) on {cand}: {r_proc.stderr[:200]}")
+            except Exception as exc:
+                last_err = exc
+            time.sleep(1.5 * (attempt + 1))
+    raise RuntimeError(f"All download attempts failed for {url}: {last_err}")
+
+
 def run_aura_edit(job: dict, out_dir: Path) -> dict:
     """Render a 2-Act `9:10` (`1080x1200` in `1080x1920`) Scene Setup -> Cross-Movie Actor Aura Drop edit."""
+    from om_hybrid.aura_edit import render_aura_edit
+    from om_hybrid.visual_qa import run_full_qa
+
     out_dir.mkdir(parents=True, exist_ok=True)
     work = Path("/tmp/maker_aura_work")
     work.mkdir(parents=True, exist_ok=True)
@@ -760,9 +802,7 @@ def run_aura_edit(job: dict, out_dir: Path) -> dict:
     local_sources: dict[str, str] = {}
     for alias, url in (job.get("sources") or {}).items():
         dst_s = work / f"src_{alias}.mp4"
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=240) as r, open(dst_s, "wb") as f:
-            f.write(r.read())
+        _fetch_url_resilient(url, dst_s)
         local_sources[alias] = str(dst_s)
 
     song_p: str | None = None
@@ -770,9 +810,7 @@ def run_aura_edit(job: dict, out_dir: Path) -> dict:
         s_url = str(job["song_url"])
         s_ext = ".flac" if ".flac" in s_url.lower() else (".wav" if ".wav" in s_url.lower() else ".mp3")
         dst_song = work / f"real_song{s_ext}"
-        req_song = urllib.request.Request(s_url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req_song, timeout=180) as r, open(dst_song, "wb") as f:
-            f.write(r.read())
+        _fetch_url_resilient(s_url, dst_song, fallback_url=job.get("song_fallback_url"))
         song_p = str(dst_song)
 
     out_name = job.get("out_name", "actor_aura_edit.mp4")
@@ -823,17 +861,13 @@ def run_zohair_edit(job: dict, out_dir: Path) -> dict:
     local_sources: dict[str, str] = {}
     for alias, url in (job.get("sources") or {}).items():
         dst_s = work / f"src_{alias}.mp4"
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=240) as r, open(dst_s, "wb") as f:
-            f.write(r.read())
+        _fetch_url_resilient(url, dst_s)
         local_sources[alias] = str(dst_s)
 
     s_url = str(job["song_url"])
     s_ext = ".flac" if ".flac" in s_url.lower() else (".wav" if ".wav" in s_url.lower() else ".mp3")
     dst_song = work / f"real_song{s_ext}"
-    req_song = urllib.request.Request(s_url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req_song, timeout=180) as r, open(dst_song, "wb") as f:
-        f.write(r.read())
+    _fetch_url_resilient(s_url, dst_song, fallback_url=job.get("song_fallback_url"))
 
     out_name = job.get("out_name", "zohair_jigsaw_edit.mp4")
     out_mp4 = out_dir / out_name

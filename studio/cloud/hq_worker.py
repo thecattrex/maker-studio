@@ -773,16 +773,33 @@ def _fetch_url_resilient(url: str, dst: Path, fallback_url: str | None = None) -
         candidates.append(fallback_url)
 
     last_err: Exception | None = None
+    previous_cand: str | None = None
     for cand in candidates:
+        # A fallback may be a different encoding/size. Never splice its bytes
+        # onto a partial file left by another candidate.
+        if cand != previous_cand:
+            dst.unlink(missing_ok=True)
+            previous_cand = cand
         for attempt in range(3):
             try:
+                # Large mezzanine sources can legitimately exceed the old 210 s
+                # hard limit (for example a 1.75 GB 4K trailer at ~8 MB/s).
+                # Resume partial downloads between attempts instead of restarting
+                # from byte zero; a stalled connection still fails promptly.
                 r_proc = subprocess.run(
-                    ["curl", "-fsSL", "--retry", "2", "--retry-delay", "2", "--max-time", "210", "-A", "Mozilla/5.0", cand, "-o", str(dst)],
+                    [
+                        "curl", "-fsSL", "--retry", "2", "--retry-delay", "2",
+                        "--connect-timeout", "20", "--max-time", "1800",
+                        "--speed-limit", "1024", "--speed-time", "60",
+                        "-C", "-", "-A", "Mozilla/5.0", cand, "-o", str(dst),
+                    ],
                     capture_output=True,
                     text=True,
                 )
                 if r_proc.returncode == 0 and dst.exists() and dst.stat().st_size > 4096:
                     return
+                if r_proc.returncode == 33:  # HTTP range/resume unsupported
+                    dst.unlink(missing_ok=True)
                 last_err = RuntimeError(f"curl failed ({r_proc.returncode}) on {cand}: {r_proc.stderr[:200]}")
             except Exception as exc:
                 last_err = exc

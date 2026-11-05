@@ -8,6 +8,16 @@
 
 The workflow is **manual-only** (`workflow_dispatch`). Editing code or saving a rule does not automatically render a video.
 
+## Global scope + strict style/type isolation
+
+This 5/90/5 setup is for **every style and every type**, not only Style A. Style A was simply the first verified plan adapter.
+
+- **One run = one style/type = one engine = that pipeline's own plan, rules, corrections and QA.**
+- Shared infrastructure is allowed: GitHub Actions, download/cache handling, FFmpeg, artifact handling and Drive delivery.
+- Creative decisions are **not shared or mixed**: no cross-style engine defaults, borrowed look/grammar, dialogue rules, captions, filters, pacing rules or correction rules.
+- A change to Style A must not disturb Style B, Type 1, Type 2, Type 3, Type 4 or any other pipeline; the same isolation applies in every direction.
+- Each style/type keeps its own correction history and regression checks. Infrastructure changes must leave every other mode's creative behavior unchanged.
+
 ## One-time no-video setup verification
 
 ```bash

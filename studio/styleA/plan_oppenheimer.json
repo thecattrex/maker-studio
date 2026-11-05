@@ -1,0 +1,322 @@
+{
+ "name": "styleA_oppenheimer_canyouhear",
+ "engine": "zohair_jigsaw",
+ "song_path": "/var/tmp/opp/song.flac",
+ "song_offset_s": 47.868,
+ "drop_song_t": 82.9,
+ "total_s": 41.68,
+ "drop_s": 35.032,
+ "beat_s": 0.604,
+ "sources": {
+  "dlg_d1": "/var/tmp/opp/dlgf/d1.wav",
+  "dlg_d2": "/var/tmp/opp/dlgf/d2.wav",
+  "dlg_d3": "/var/tmp/opp/dlgf/d3.wav",
+  "dlg_d4": "/var/tmp/opp/dlgf/d4.wav",
+  "s03_tent": "/var/tmp/opp/sl/s03_tent.mp4",
+  "s23_ball2": "/var/tmp/opp/sl/s23_ball2.mp4",
+  "s10_places": "/var/tmp/opp/sl/s10_places.mp4",
+  "s05_kitty": "/var/tmp/opp/sl/s05_kitty.mp4",
+  "s22_rise": "/var/tmp/opp/sl/s22_rise.mp4",
+  "s14_col": "/var/tmp/opp/sl/s14_col.mp4",
+  "s01_desert": "/var/tmp/opp/sl/s01_desert.mp4",
+  "s16_eyes": "/var/tmp/opp/sl/s16_eyes.mp4",
+  "s18_crowd": "/var/tmp/opp/sl/s18_crowd.mp4",
+  "s08_climb": "/var/tmp/opp/sl/s08_climb.mp4",
+  "s19_cheer": "/var/tmp/opp/sl/s19_cheer.mp4",
+  "s09_wind": "/var/tmp/opp/sl/s09_wind.mp4",
+  "s20_wide": "/var/tmp/opp/sl/s20_wide.mp4",
+  "s15_face": "/var/tmp/opp/sl/s15_face.mp4",
+  "s21_ball": "/var/tmp/opp/sl/s21_ball.mp4",
+  "s07_oppeq": "/var/tmp/opp/sl/s07_oppeq.mp4",
+  "s04_tower": "/var/tmp/opp/sl/s04_tower.mp4",
+  "s12_flash": "/var/tmp/opp/sl/s12_flash.mp4",
+  "s06_equip": "/var/tmp/opp/sl/s06_equip.mp4",
+  "s02_opp": "/var/tmp/opp/sl/s02_opp.mp4"
+ },
+ "visual_cuts": [
+  {
+   "src": "s02_opp",
+   "start_s": 0.3,
+   "dur_s": 2.416,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s10_places",
+   "start_s": 0.3,
+   "dur_s": 2.416,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s19_cheer",
+   "start_s": 0.3,
+   "dur_s": 1.812,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s01_desert",
+   "start_s": 0.3,
+   "dur_s": 1.812,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s03_tent",
+   "start_s": 0.3,
+   "dur_s": 2.416,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s05_kitty",
+   "start_s": 0.3,
+   "dur_s": 1.812,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s08_climb",
+   "start_s": 0.1,
+   "dur_s": 2.416,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s20_wide",
+   "start_s": 0.3,
+   "dur_s": 1.812,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s18_crowd",
+   "start_s": 0.3,
+   "dur_s": 2.416,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s04_tower",
+   "start_s": 0.3,
+   "dur_s": 2.416,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s07_oppeq",
+   "start_s": 0.3,
+   "dur_s": 1.812,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s19_cheer",
+   "start_s": 1.3,
+   "dur_s": 2.416,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s06_equip",
+   "start_s": 0.6,
+   "dur_s": 2.416,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s04_tower",
+   "start_s": 1.2,
+   "dur_s": 1.812,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s09_wind",
+   "start_s": 0.2,
+   "dur_s": 2.416,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s08_climb",
+   "start_s": 1.1,
+   "dur_s": 2.416,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "transition_in": "none",
+   "note": ""
+  },
+  {
+   "src": "s12_flash",
+   "start_s": 0.0,
+   "dur_s": 0.604,
+   "src_dur_s": 0.704,
+   "zoom_start": 1.02,
+   "zoom_end": 1.09,
+   "transition_in": "flash_white",
+   "note": "first flash"
+  },
+  {
+   "src": "s21_ball",
+   "start_s": 0.1,
+   "dur_s": 0.604,
+   "src_dur_s": 0.804,
+   "zoom_start": 1.02,
+   "zoom_end": 1.09,
+   "transition_in": "none",
+   "note": "fireball"
+  },
+  {
+   "src": "s15_face",
+   "start_s": 0.1,
+   "dur_s": 0.604,
+   "src_dur_s": 0.804,
+   "zoom_start": 1.02,
+   "zoom_end": 1.09,
+   "transition_in": "none",
+   "note": "face lit orange"
+  },
+  {
+   "src": "s22_rise",
+   "start_s": 0.1,
+   "dur_s": 0.604,
+   "src_dur_s": 0.804,
+   "zoom_start": 1.02,
+   "zoom_end": 1.09,
+   "transition_in": "flash_white",
+   "note": "cloud rising"
+  },
+  {
+   "src": "s14_col",
+   "start_s": 0.6,
+   "dur_s": 0.604,
+   "src_dur_s": 1.304,
+   "zoom_start": 1.02,
+   "zoom_end": 1.09,
+   "transition_in": "none",
+   "note": "fire column (bright)"
+  },
+  {
+   "src": "s14_col",
+   "start_s": 0.1,
+   "dur_s": 1.208,
+   "src_dur_s": 1.408,
+   "zoom_start": 1.02,
+   "zoom_end": 1.09,
+   "transition_in": "none",
+   "note": "fire column"
+  },
+  {
+   "src": "s16_eyes",
+   "start_s": 0.1,
+   "dur_s": 0.604,
+   "src_dur_s": 0.804,
+   "zoom_start": 1.02,
+   "zoom_end": 1.09,
+   "transition_in": "flash_white",
+   "note": "eyes behind glass"
+  },
+  {
+   "src": "s19_cheer",
+   "start_s": 0.6,
+   "dur_s": 0.604,
+   "src_dur_s": 1.304,
+   "zoom_start": 1.02,
+   "zoom_end": 1.09,
+   "transition_in": "none",
+   "note": "cheering"
+  },
+  {
+   "src": "s23_ball2",
+   "start_s": 0.1,
+   "dur_s": 0.604,
+   "src_dur_s": 0.804,
+   "zoom_start": 1.02,
+   "zoom_end": 1.09,
+   "transition_in": "none",
+   "note": "fireball two"
+  },
+  {
+   "src": "s22_rise",
+   "start_s": 1.6,
+   "dur_s": 0.604,
+   "src_dur_s": 2.304,
+   "zoom_start": 1.02,
+   "zoom_end": 1.09,
+   "transition_in": "flash_white",
+   "note": "cloud rising (end hold)"
+  }
+ ],
+ "dialogue_events": [
+  {
+   "src": "dlg_d1",
+   "start_s": 0.0,
+   "dur_s": 4.0,
+   "timeline_s": 4.85,
+   "subtitle": "Theory will get you only so far.",
+   "sub_t0": 4.8,
+   "sub_t1": 7.4
+  },
+  {
+   "src": "dlg_d2",
+   "start_s": 0.0,
+   "dur_s": 4.0,
+   "timeline_s": 8.95,
+   "subtitle": "Setting fire to the atmosphere.",
+   "sub_t0": 8.9,
+   "sub_t1": 11.5
+  },
+  {
+   "src": "dlg_d3",
+   "start_s": 0.0,
+   "dur_s": 4.0,
+   "timeline_s": 14.45,
+   "subtitle": "And we destroy the world?",
+   "sub_t0": 14.4,
+   "sub_t1": 17.0
+  },
+  {
+   "src": "dlg_d4",
+   "start_s": 0.0,
+   "dur_s": 4.0,
+   "timeline_s": 32.2,
+   "subtitle": "And we have won.",
+   "sub_t0": 32.15,
+   "sub_t1": 34.75
+  }
+ ],
+ "sfx_events": [],
+ "outro_black_s": 0.0
+}

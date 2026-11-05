@@ -7,6 +7,8 @@ Usage:
   python3 /home/user/studio/gh_farm.py status
   python3 /home/user/studio/gh_farm.py run --mode smoke --out-dir /home/user/studio/samples/cloud_test
   python3 /home/user/studio/gh_farm.py run --mode t1_hq --job-file job.json --out-dir /home/user/studio/samples
+  python3 /home/user/studio/gh_farm.py run --mode setup_check --out-dir /home/user/studio/samples/setup_check
+  python3 /home/user/studio/gh_farm.py run --mode stylea_plan --job-file job.json --cache-key my-project
 """
 from __future__ import annotations
 
@@ -87,7 +89,8 @@ def dispatch_and_wait(
     out_dir: str | None,
     repo: str = DEFAULT_REPO,
     ref: str = "main",
-    timeout_s: int = 900,
+    timeout_s: int = 7500,
+    cache_key: str = "stylea-default",
 ) -> dict:
     job_b64 = (
         base64.b64encode(json.dumps(job_dict).encode("utf-8")).decode("ascii")
@@ -101,7 +104,7 @@ def dispatch_and_wait(
     _api(
         "POST",
         f"/actions/workflows/{WORKFLOW_FILE}/dispatches",
-        payload={"ref": ref, "inputs": {"mode": mode, "job_b64": job_b64}},
+        payload={"ref": ref, "inputs": {"mode": mode, "job_b64": job_b64, "cache_key": cache_key}},
         repo=repo,
     )
     print(f"Dispatched '{mode}' to {repo} ({WORKFLOW_FILE})...")
@@ -188,16 +191,18 @@ def main() -> None:
 
     p_run = sub.add_parser("run")
     p_run.add_argument("--repo", default=DEFAULT_REPO)
-    p_run.add_argument("--mode", choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit", "zohair_edit"], default="smoke")
+    p_run.add_argument("--mode", choices=["setup_check", "smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit", "zohair_edit", "stylea_plan"], default="smoke")
     p_run.add_argument("--job-file", "--job", dest="job_file", default=None)
     p_run.add_argument("--out-dir", default=None)
+    p_run.add_argument("--cache-key", default="stylea-default", help="Style A project cache namespace; reuse it for corrections")
+    p_run.add_argument("--timeout-s", type=int, default=7500, help="Maximum dispatch/queue/render wait (default: 7500)")
 
     args = ap.parse_args()
     if args.cmd == "status":
         cmd_status(args.repo)
     elif args.cmd == "run":
         job = json.loads(Path(args.job_file).read_text()) if args.job_file else None
-        res = dispatch_and_wait(args.mode, job, args.out_dir, repo=args.repo)
+        res = dispatch_and_wait(args.mode, job, args.out_dir, repo=args.repo, timeout_s=args.timeout_s, cache_key=args.cache_key)
         print(json.dumps(res, indent=2))
 
 

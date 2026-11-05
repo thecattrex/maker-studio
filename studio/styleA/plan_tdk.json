@@ -1,0 +1,391 @@
+{
+ "name": "styleA_tdk_joker_v1",
+ "engine": "zohair_jigsaw",
+ "song_path": "/var/tmp/tdk/song.wav",
+ "song_offset_s": 643.311,
+ "total_s": 43.89,
+ "drop_s": 35.109,
+ "beat_s": 0.62694,
+ "sources": {
+  "a01_bus": "/var/tmp/tdk/sl/a01_bus.mp4",
+  "a02_cont": "/var/tmp/tdk/sl/a02_cont.mp4",
+  "a03_jstreet": "/var/tmp/tdk/sl/a03_jstreet.mp4",
+  "a04_mob": "/var/tmp/tdk/sl/a04_mob.mp4",
+  "a05_heist": "/var/tmp/tdk/sl/a05_heist.mp4",
+  "d1_dawn": "/var/tmp/tdk/sl/d1_dawn.mp4",
+  "a06_podium": "/var/tmp/tdk/sl/a06_podium.mp4",
+  "a07_crowd": "/var/tmp/tdk/sl/a07_crowd.mp4",
+  "d2_tvwarn": "/var/tmp/tdk/sl/d2_tvwarn.mp4",
+  "a08_gala": "/var/tmp/tdk/sl/a08_gala.mp4",
+  "a09_gala2": "/var/tmp/tdk/sl/a09_gala2.mp4",
+  "d3_idont": "/var/tmp/tdk/sl/d3_idont.mp4",
+  "a10_fight1": "/var/tmp/tdk/sl/a10_fight1.mp4",
+  "a11_fight2": "/var/tmp/tdk/sl/a11_fight2.mp4",
+  "a12_fight3": "/var/tmp/tdk/sl/a12_fight3.mp4",
+  "a13_chase": "/var/tmp/tdk/sl/a13_chase.mp4",
+  "a14_ambush": "/var/tmp/tdk/sl/a14_ambush.mp4",
+  "a15_mob2": "/var/tmp/tdk/sl/a15_mob2.mp4",
+  "b01_blast": "/var/tmp/tdk/sl/b01_blast.mp4",
+  "b02_flip": "/var/tmp/tdk/sl/b02_flip.mp4",
+  "b03_blast2": "/var/tmp/tdk/sl/b03_blast2.mp4",
+  "b04_crash": "/var/tmp/tdk/sl/b04_crash.mp4",
+  "b05_crane": "/var/tmp/tdk/sl/b05_crane.mp4",
+  "b06_truck": "/var/tmp/tdk/sl/b06_truck.mp4",
+  "b07_boom": "/var/tmp/tdk/sl/b07_boom.mp4",
+  "b08_slam": "/var/tmp/tdk/sl/b08_slam.mp4",
+  "b09_ram": "/var/tmp/tdk/sl/b09_ram.mp4",
+  "b10_hit": "/var/tmp/tdk/sl/b10_hit.mp4",
+  "b11_tumble": "/var/tmp/tdk/sl/b11_tumble.mp4",
+  "b12_dust": "/var/tmp/tdk/sl/b12_dust.mp4",
+  "b13_end": "/var/tmp/tdk/sl/b13_end.mp4",
+  "vox_d1_dawn": "/var/tmp/tdk/dlg/d1_dawn.wav",
+  "vox_d2_tvwarn": "/var/tmp/tdk/dlg/d2_tvwarn.wav",
+  "vox_d3_idont": "/var/tmp/tdk/dlg/d3_idont.wav"
+ },
+ "visual_cuts": [
+  {
+   "src": "a01_bus",
+   "start_s": 0.4,
+   "dur_s": 1.881,
+   "src_dur_s": 2.631,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 7.093,
+   "transition_in": "none"
+  },
+  {
+   "src": "a02_cont",
+   "start_s": 0.4,
+   "dur_s": 1.254,
+   "src_dur_s": 2.004,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 7.167,
+   "transition_in": "none"
+  },
+  {
+   "src": "a03_jstreet",
+   "start_s": 0.4,
+   "dur_s": 1.254,
+   "src_dur_s": 2.004,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 12.325,
+   "transition_in": "none"
+  },
+  {
+   "src": "a04_mob",
+   "start_s": 0.4,
+   "dur_s": 1.254,
+   "src_dur_s": 2.004,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 8.463,
+   "transition_in": "none"
+  },
+  {
+   "src": "a05_heist",
+   "start_s": 0.4,
+   "dur_s": 1.254,
+   "src_dur_s": 2.004,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 4.2,
+   "transition_in": "none"
+  },
+  {
+   "src": "d1_dawn",
+   "start_s": 0.9,
+   "dur_s": 4.389,
+   "src_dur_s": 5.639,
+   "zoom_start": 1.05,
+   "zoom_end": 1.16,
+   "src_motion": 0.963,
+   "transition_in": "none"
+  },
+  {
+   "src": "a06_podium",
+   "start_s": 0.4,
+   "dur_s": 1.254,
+   "src_dur_s": 2.004,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 4.328,
+   "transition_in": "none"
+  },
+  {
+   "src": "a07_crowd",
+   "start_s": 0.4,
+   "dur_s": 1.254,
+   "src_dur_s": 2.004,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 8.656,
+   "transition_in": "none"
+  },
+  {
+   "src": "d2_tvwarn",
+   "start_s": 0.9,
+   "dur_s": 5.642,
+   "src_dur_s": 6.892,
+   "zoom_start": 1.02,
+   "zoom_end": 1.12,
+   "src_motion": 8.546,
+   "transition_in": "none"
+  },
+  {
+   "src": "a08_gala",
+   "start_s": 0.4,
+   "dur_s": 1.254,
+   "src_dur_s": 2.004,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 2.791,
+   "transition_in": "none"
+  },
+  {
+   "src": "a09_gala2",
+   "start_s": 0.4,
+   "dur_s": 1.254,
+   "src_dur_s": 2.004,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 6.57,
+   "transition_in": "none"
+  },
+  {
+   "src": "d3_idont",
+   "start_s": 0.9,
+   "dur_s": 3.762,
+   "src_dur_s": 5.012,
+   "zoom_start": 1.02,
+   "zoom_end": 1.12,
+   "src_motion": 6.611,
+   "transition_in": "none"
+  },
+  {
+   "src": "a10_fight1",
+   "start_s": 0.4,
+   "dur_s": 1.254,
+   "src_dur_s": 2.004,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 3.129,
+   "transition_in": "none"
+  },
+  {
+   "src": "a11_fight2",
+   "start_s": 0.4,
+   "dur_s": 1.881,
+   "src_dur_s": 2.631,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 17.534,
+   "transition_in": "none"
+  },
+  {
+   "src": "a12_fight3",
+   "start_s": 0.4,
+   "dur_s": 1.254,
+   "src_dur_s": 2.004,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 15.047,
+   "transition_in": "none"
+  },
+  {
+   "src": "a13_chase",
+   "start_s": 0.4,
+   "dur_s": 1.881,
+   "src_dur_s": 2.631,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 31.864,
+   "transition_in": "none"
+  },
+  {
+   "src": "a14_ambush",
+   "start_s": 0.4,
+   "dur_s": 1.881,
+   "src_dur_s": 2.631,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 20.748,
+   "transition_in": "none"
+  },
+  {
+   "src": "a15_mob2",
+   "start_s": 0.4,
+   "dur_s": 1.254,
+   "src_dur_s": 2.004,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 9.347,
+   "transition_in": "none"
+  },
+  {
+   "src": "b01_blast",
+   "start_s": 0.4,
+   "dur_s": 0.627,
+   "src_dur_s": 1.147,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 23.751,
+   "transition_in": "flash_white"
+  },
+  {
+   "src": "b02_flip",
+   "start_s": 0.4,
+   "dur_s": 0.627,
+   "src_dur_s": 1.147,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 29.154,
+   "transition_in": "flash_white"
+  },
+  {
+   "src": "b03_blast2",
+   "start_s": 0.4,
+   "dur_s": 0.627,
+   "src_dur_s": 1.147,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 15.706,
+   "transition_in": "none"
+  },
+  {
+   "src": "b04_crash",
+   "start_s": 0.4,
+   "dur_s": 0.627,
+   "src_dur_s": 1.147,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 7.188,
+   "transition_in": "none"
+  },
+  {
+   "src": "b05_crane",
+   "start_s": 0.4,
+   "dur_s": 0.627,
+   "src_dur_s": 1.147,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 36.925,
+   "transition_in": "none"
+  },
+  {
+   "src": "b06_truck",
+   "start_s": 0.4,
+   "dur_s": 0.627,
+   "src_dur_s": 1.147,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 38.43,
+   "transition_in": "none"
+  },
+  {
+   "src": "b07_boom",
+   "start_s": 0.4,
+   "dur_s": 0.627,
+   "src_dur_s": 1.147,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 21.344,
+   "transition_in": "none"
+  },
+  {
+   "src": "b08_slam",
+   "start_s": 0.4,
+   "dur_s": 0.627,
+   "src_dur_s": 1.147,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 34.706,
+   "transition_in": "none"
+  },
+  {
+   "src": "b09_ram",
+   "start_s": 0.4,
+   "dur_s": 0.627,
+   "src_dur_s": 1.147,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 39.192,
+   "transition_in": "none"
+  },
+  {
+   "src": "b10_hit",
+   "start_s": 0.4,
+   "dur_s": 0.627,
+   "src_dur_s": 1.147,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 29.995,
+   "transition_in": "none"
+  },
+  {
+   "src": "b11_tumble",
+   "start_s": 0.4,
+   "dur_s": 0.627,
+   "src_dur_s": 1.147,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 39.886,
+   "transition_in": "none"
+  },
+  {
+   "src": "b12_dust",
+   "start_s": 0.4,
+   "dur_s": 0.627,
+   "src_dur_s": 1.147,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 52.344,
+   "transition_in": "none"
+  },
+  {
+   "src": "b13_end",
+   "start_s": 0.4,
+   "dur_s": 1.254,
+   "src_dur_s": 2.004,
+   "zoom_start": 1.01,
+   "zoom_end": 1.06,
+   "src_motion": 5.937,
+   "transition_in": "none"
+  }
+ ],
+ "dialogue_events": [
+  {
+   "src": "vox_d1_dawn",
+   "start_s": 0.0,
+   "dur_s": 3.65,
+   "timeline_s": 7.397,
+   "subtitle": "The night is darkest just before the dawn.",
+   "sub_t0": 7.47,
+   "sub_t1": 11.2,
+   "gain": 1.8
+  },
+  {
+   "src": "vox_d2_tvwarn",
+   "start_s": 0.0,
+   "dur_s": 4.5,
+   "timeline_s": 14.294,
+   "subtitle": "People will die. Starting tonight.",
+   "sub_t0": 14.36,
+   "sub_t1": 18.94,
+   "gain": 1.6
+  },
+  {
+   "src": "vox_d3_idont",
+   "start_s": 0.0,
+   "dur_s": 2.5,
+   "timeline_s": 22.444,
+   "subtitle": "I don't want to kill you.",
+   "sub_t0": 22.51,
+   "sub_t1": 25.09,
+   "gain": 1.1
+  }
+ ],
+ "sfx_events": [],
+ "outro_black_s": 0.0
+}

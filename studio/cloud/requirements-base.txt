@@ -1,0 +1,8 @@
+numpy
+scipy
+soundfile
+opencv-python-headless
+Pillow
+requests
+pyyaml
+mediapipe

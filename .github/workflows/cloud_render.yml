@@ -4,18 +4,44 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "Render mode: smoke | t1_hq | remotion | hyperframes | earshot | real_sfx | master | ironman_edit | vfx_edit | aura_edit | zohair_edit"
+        description: "Render/setup mode"
         required: true
-        default: "smoke"
+        default: "setup_check"
+        type: choice
+        options:
+          - setup_check
+          - smoke
+          - t1_hq
+          - remotion
+          - hyperframes
+          - earshot
+          - real_sfx
+          - master
+          - ironman_edit
+          - vfx_edit
+          - aura_edit
+          - zohair_edit
+          - stylea_plan
       job_b64:
-        description: "Base64-encoded JSON job payload (optional for smoke / hyperframes starter)"
+        description: "Base64-encoded JSON job payload (not needed for setup_check)"
         required: false
         default: ""
+      cache_key:
+        description: "Style A project cache namespace; reuse it for corrections"
+        required: false
+        default: "stylea-default"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: maker-studio-render-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 120
     steps:
       - name: Checkout Maker Studio
         uses: actions/checkout@v4
@@ -30,14 +56,14 @@ jobs:
         with:
           python-version: "3.11"
           cache: "pip"
-          cache-dependency-path: .github/workflows/cloud_render.yml
+          cache-dependency-path: studio/cloud/requirements-base.txt
 
       - name: Install Python Media + MediaPipe + Whisper Stack
         env:
           RENDER_MODE: ${{ inputs.mode }}
         run: |
           pip install --quiet --upgrade pip
-          pip install --quiet numpy scipy soundfile opencv-python-headless Pillow requests pyyaml mediapipe
+          pip install --quiet -r studio/cloud/requirements-base.txt
           if [ "$RENDER_MODE" = "t1_hq" ]; then
             pip install --quiet faster-whisper
           fi
@@ -45,7 +71,7 @@ jobs:
             pip install --quiet soxr librosa pyloudnorm scikit-learn matplotlib transformers
             pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu
           fi
-          if [ "$RENDER_MODE" = "ironman_edit" ] || [ "$RENDER_MODE" = "aura_edit" ] || [ "$RENDER_MODE" = "zohair_edit" ]; then
+          if [ "$RENDER_MODE" = "ironman_edit" ] || [ "$RENDER_MODE" = "aura_edit" ] || [ "$RENDER_MODE" = "zohair_edit" ] || [ "$RENDER_MODE" = "stylea_plan" ]; then
             pip install --quiet torch torchaudio --index-url https://download.pytorch.org/whl/cpu
           fi
 
@@ -77,12 +103,33 @@ jobs:
           npm install -g hyperframes --no-audit --no-fund
           hyperframes browser ensure
 
-      - name: Execute 16GB Cloud Render Worker
+      - name: Restore Style A source/song cache
+        if: ${{ inputs.mode == 'stylea_plan' }}
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/maker_stylea_cache
+          key: stylea-${{ inputs.cache_key }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            stylea-${{ inputs.cache_key }}-
+
+      - name: Execute no-video setup check or cloud render worker
         env:
           RENDER_MODE: ${{ inputs.mode }}
           JOB_B64: ${{ inputs.job_b64 }}
+          MAKER_ASSET_CACHE: /tmp/maker_stylea_cache
         run: |
-          python3 studio/cloud/hq_worker.py --mode "$RENDER_MODE" --job-b64 "$JOB_B64" --out-dir studio/cloud_out
+          if [ "$RENDER_MODE" = "setup_check" ]; then
+            python3 studio/cloud/setup_check.py --out-dir studio/cloud_out
+          else
+            python3 studio/cloud/hq_worker.py --mode "$RENDER_MODE" --job-b64 "$JOB_B64" --out-dir studio/cloud_out
+          fi
+
+      - name: Save Style A source/song cache
+        if: ${{ success() && inputs.mode == 'stylea_plan' }}
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/maker_stylea_cache
+          key: stylea-${{ inputs.cache_key }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Upload Rendered Video & QA Report Artifact
         if: always()

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "style": "A",
+  "reference": "TDK v1 shot-first rule",
+  "rules": [
+    {
+      "id": "one_real_song_continuous",
+      "enforcement": "plan_validator",
+      "description": "Use one real produced song continuously; never synthesize music or add a second song."
+    },
+    {
+      "id": "shot_first_edit",
+      "enforcement": "plan_review",
+      "description": "Choose moving, relevant shots first; fit the beat grid and dialogue to them rather than filling a cut target with repeated shots."
+    },
+    {
+      "id": "speaker_visible_for_dialogue",
+      "enforcement": "dialogue_mapping_and_contact_sheet",
+      "description": "For a dialogue pocket, show the actual speaker on camera with visible natural mouth movement; no muted talking face."
+    },
+    {
+      "id": "zero_freeze_and_motion_in_every_shot",
+      "enforcement": "render_qa_and_contact_sheet",
+      "description": "No frozen or repeated-frame runs; every shot must contain visible motion."
+    },
+    {
+      "id": "tight_audio_visual_sync",
+      "enforcement": "render_qa_and_earshot",
+      "description": "Dialogue must remain natural and tightly synchronized; verify with audio and frames, not graphs alone."
+    },
+    {
+      "id": "musical_cuts_and_answer",
+      "enforcement": "audio_qa",
+      "description": "Cuts belong on the song's real musical beats; intense lines need a musical answer and the song must not stay flat."
+    },
+    {
+      "id": "zero_credits_or_source_names",
+      "enforcement": "source_review_and_frame_qa",
+      "description": "No credit rolls, source watermarks, burned source names, or countdown artifacts from the source footage."
+    },
+    {
+      "id": "designed_ending",
+      "enforcement": "plan_review_and_frame_qa",
+      "description": "The ending must feel deliberate and smooth, not an abrupt direct stop."
+    }
+  ]
+}

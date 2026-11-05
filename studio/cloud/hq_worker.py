@@ -905,7 +905,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument(
         "--mode",
-        choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit", "zohair_edit"],
+        choices=["smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit", "zohair_edit", "stylea_plan"],
         required=True,
     )
     ap.add_argument("--job-b64", default="")
@@ -935,11 +935,14 @@ def main() -> None:
         res = run_aura_edit(job, out_dir)
     elif args.mode == "zohair_edit":
         res = run_zohair_edit(job, out_dir)
+    elif args.mode == "stylea_plan":
+        from cloud.stylea_worker import run_stylea_plan
+        res = run_stylea_plan(job, out_dir)
     else:
         res = run_remotion(job, out_dir)
 
     print(json.dumps(res, indent=2))
-    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit", "zohair_edit") and not res.get("qa", {}).get("passed", False):
+    if args.mode in ("smoke", "t1_hq", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit", "zohair_edit", "stylea_plan") and not res.get("qa", {}).get("passed", False):
         sys.exit(1)
 
 

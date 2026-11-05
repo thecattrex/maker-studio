@@ -41,6 +41,8 @@ python3 studio/gh_farm.py run --mode t1_hq --job job.json --out-dir /tmp/cloud_o
 # Dedicated modes also available: smoke | hyperframes | earshot | real_sfx | remotion | ironman_edit | vfx_edit
 ```
 
+**5/90/5 workflow, no-video setup check, Style A plan runner, asset cache and permanent correction rules:** see **`studio/CLOUD_WORKFLOW.md`**.
+
 ### Reusable Agent Skills (`studio/skills/`)
 - **`studio/skills/viral-edits/SKILL.md`** — Master guide & CLI/Cloud recipes for applying all 17 viral edit effects (`vfx-list`, `vfx`, `still-art`, `music-pockets`, `ironman_edit`, `vfx_edit`) across Type 1, Type 2, Type 3, and standalone edits.
 - **`studio/skills/blob-tracking/SKILL.md`** — TouchDesigner-style OpenCV blob-tracking skill (`k1sh0r/blob-tracker`, `MIT`).

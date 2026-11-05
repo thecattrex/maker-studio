@@ -25,7 +25,9 @@ with the full arsenal of non-plain visual effects from the Drive `Sample` collec
 """
 from __future__ import annotations
 
+import gc
 import math
+import os
 import subprocess
 import tempfile
 from pathlib import Path
@@ -471,23 +473,42 @@ def mix_zohair_multitrack_audio(
     vox_bus = np.zeros((n_total, 2), dtype=np.float32)
     sfx_bus = np.zeros((n_total, 2), dtype=np.float32)
 
-    sos_hp_vox = butter(2, 100.0 / (sr * 0.5), btype="high", output="sos")
+    _vox_hp = float(os.environ.get("ZX_VOX_HP", "100"))
+    _vox_pres = float(os.environ.get("ZX_VOX_PRES", "0.65"))
+    _vox_sat = float(os.environ.get("ZX_VOX_SAT", "1.15"))
+    sos_hp_vox = butter(2, _vox_hp / (sr * 0.5), btype="high", output="sos")
     sos_pres = butter(2, [1850.0 / (sr * 0.5), 4600.0 / (sr * 0.5)], btype="band", output="sos")
     sos_hp_sfx = butter(2, 65.0 / (sr * 0.5), btype="high", output="sos")
 
-    for t_start, raw_v in dialogue_tracks:
+    for _dt in dialogue_tracks:
+        t_start, raw_v = _dt[0], _dt[1]
+        _dg = float(_dt[2]) if len(_dt) > 2 else 1.0
         if len(raw_v) < 64:
             continue
         v64 = raw_v.astype(np.float64)
         v_clean = sosfiltfilt(sos_hp_vox, v64, axis=0)
-        v_clean = v_clean + 0.65 * sosfiltfilt(sos_pres, v_clean, axis=0)
+        if _vox_pres > 0.0:
+            v_clean = v_clean + _vox_pres * sosfiltfilt(sos_pres, v_clean, axis=0)
         mono = np.mean(np.abs(v_clean), axis=1)
         p95 = float(np.percentile(mono, 95))
         floor = max(0.005, min(0.015, p95 * 0.20))
         act = mono[mono > floor]
         if len(act) > 40:
-            scale = 0.35 / (float(np.sqrt(np.mean(act ** 2))) + 1e-6)
-            v_clean = np.tanh(v_clean * min(4.6, scale) * 1.15) * 0.90
+            scale = float(os.environ.get("ZX_VOX", "0.40")) / (float(np.sqrt(np.mean(act ** 2))) + 1e-6)
+            if _vox_sat > 0.0:
+                v_clean = np.tanh(v_clean * min(4.6, scale) * _vox_sat) * 0.90
+            else:
+                v_clean = np.clip(v_clean * min(6.0, scale), -0.97, 0.97)
+        if _dg != 1.0:
+            # per-line loudness trim (uneven source mixes): linear below the knee,
+            # smooth tanh limiting above it -> no hard-clip colouring of the voice
+            _v = v_clean * _dg
+            _knee, _head = 0.62, 0.95
+            _ov = np.abs(_v) > _knee
+            if _ov.any():
+                _v[_ov] = np.sign(_v[_ov]) * (_knee + (_head - _knee) *
+                                              np.tanh((np.abs(_v[_ov]) - _knee) / (_head - _knee)))
+            v_clean = _v
         fn = min(len(v_clean) // 4, int(0.025 * sr))
         if fn > 4:
             ramp = np.linspace(0.0, 1.0, fn)[:, None]
@@ -531,8 +552,10 @@ def mix_zohair_multitrack_audio(
 
     # Outside the 3 sparse pockets, rubber == 0 -> 100.0% UNTOUCHED 0 dB STUDIO VOCAL SONG!
     # Inside a pocket -> mids=0.20 (-14 dB) while warm low/high groove stays smooth at 0.38 (-8.4 dB)!
-    g_mid = 1.00 * (1.0 - rubber) + 0.20 * rubber
-    g_gro = 1.00 * (1.0 - rubber) + 0.38 * rubber
+    _mid = float(os.environ.get("ZX_MID", "0.14"))
+    _gro = float(os.environ.get("ZX_GRO", "0.30"))
+    g_mid = 1.00 * (1.0 - rubber) + _mid * rubber
+    g_gro = 1.00 * (1.0 - rubber) + _gro * rubber
     shaped_song = (mids * g_mid + lows_highs * g_gro).astype(np.float32)
     sfx_bus *= (1.0 - 0.75 * rubber).astype(np.float32)
 
@@ -570,15 +593,22 @@ def render_zohair_jigsaw_edit(
 
     fps = 30
     sr = 44100
-    canvas_w, canvas_h = 1080, 1920
-    card_w, card_h = 1036, 584
+    # Low-memory mode: ZX_SCALE=0.4 -> 432x768 canvas (upscale baad me).
+    _sc = float(os.environ.get("ZX_SCALE", "1.0") or 1.0)
+    canvas_w = int(round(1080 * _sc / 2) * 2)
+    canvas_h = int(round(1920 * _sc / 2) * 2)
+    card_w = int(round(1036 * _sc / 2) * 2)
+    card_h = int(round(584 * _sc / 2) * 2)
     card_x = (canvas_w - card_w) // 2
     card_y = (canvas_h - card_h) // 2
 
     round_mask = _build_rounded_mask_3ch(card_w, card_h, radius=24)
-    serif_font = _load_font(SERIF_FONT_CANDIDATES, 29)
-    timer_font = _load_font(SANS_FONT_CANDIDATES, 23)
-    segmenter = PersonSegmenter()
+    serif_font = _load_font(SERIF_FONT_CANDIDATES, max(13, int(round(29 * _sc))))
+    timer_font = _load_font(SANS_FONT_CANDIDATES, max(11, int(round(23 * _sc))))
+    # Roto segmenter sirf tab banao jab koi cut use kare (RAM bachao)
+    _need_roto = any(str(c.get('vfx','')) in ('masking_hook_flash','z_depth_text','roto_clones')
+                     for c in visual_cuts)
+    segmenter = PersonSegmenter() if _need_roto else None
 
     vfx_used: list[str] = []
 
@@ -587,26 +617,101 @@ def render_zohair_jigsaw_edit(
         raw_vid = tmp_dir / "video_raw.mp4"
         mix_wav = tmp_dir / "audio_mix.wav"
 
-        active_cards: list[np.ndarray] = []
+        # ---- frame counts (streaming; poori timeline RAM me nahi rakhte) ----
+        cut_frames: list[int] = []
+        for vc in visual_cuts:
+            cut_frames.append(max(2, int(round(float(vc["dur_s"]) * fps))))
+        active_frames_n = int(sum(cut_frames))
+        active_dur_s = active_frames_n / float(fps)
+        outro_frames_n = max(0, int(round(outro_black_s * fps)))
+        total_frames_n = active_frames_n + outro_frames_n
+        total_dur_s = total_frames_n / float(fps)
+
+        # Isolate sparse natural-pocket dialogue via HDemucs
+        dialogue_tracks: list[tuple[float, np.ndarray]] = []
+        sub_windows: list[tuple[float, float, str]] = []
+        v_methods: list[str] = []
+        for d_idx, de in enumerate(dialogue_events):
+            sk = de["src"]
+            s0 = float(de["start_s"])
+            dur = float(de["dur_s"])
+            tl_s = float(de["timeline_s"])
+            vox_wav = tmp_dir / f"dvox_{d_idx}.wav"
+            if os.environ.get("ZX_VOX_BYPASS") == "1":
+                import shutil as _sh
+                _sh.copyfile(str(sources[sk]), str(vox_wav))
+                m_used = "prebaked"
+            else:
+                m_used = isolate_clean_vocal_slice(str(sources[sk]), s0, s0 + dur, str(vox_wav), sr=sr)
+            v_methods.append(m_used)
+            v_arr, _ = sf.read(str(vox_wav), dtype="float32", always_2d=True)
+            dialogue_tracks.append((tl_s, v_arr, float(de.get("gain", 1.0))))
+            if de.get("subtitle"):
+                sub_t0 = float(de.get("sub_t0", tl_s))
+                sub_t1 = float(de.get("sub_t1", tl_s + dur))
+                sub_windows.append((sub_t0, sub_t1, str(de["subtitle"])))
+
+        sfx_tracks: list[tuple[float, np.ndarray, float]] = []
+        for s_ev in sfx_events:
+            s_arr = _slice_audio_segment(sources[s_ev["src"]], float(s_ev["start_s"]), float(s_ev["dur_s"]), sr=sr)
+            sfx_tracks.append((float(s_ev["timeline_s"]), s_arr, float(s_ev.get("gain", 0.26))))
+
+        enc = subprocess.Popen(
+            [
+                ff, "-y",
+                "-f", "rawvideo", "-pix_fmt", "bgr24",
+                "-s", f"{canvas_w}x{canvas_h}", "-r", str(fps), "-i", "-",
+                "-an", "-c:v", "libx264", "-preset", "ultrafast", "-crf", "13",
+                "-x264-params", "rc-lookahead=0:sync-lookahead=0:bframes=0",
+                "-pix_fmt", "yuv420p", "-threads", "2",
+                str(raw_vid),
+            ],
+            stdin=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+        )
+        assert enc.stdin is not None
+        canvas = np.zeros((canvas_h, canvas_w, 3), dtype=np.uint8)
+        global_fi = 0
+
+        def _emit(frames: list[np.ndarray]) -> None:
+            nonlocal global_fi
+            for fr in frames:
+                t_cur = global_fi / float(fps)
+                rem_sec = max(0, int(math.ceil(active_dur_s - t_cur)))
+                canvas.fill(0)
+                sub_txt: str | None = None
+                for st0, st1, stxt in sub_windows:
+                    if st0 <= t_cur <= st1:
+                        sub_txt = stxt
+                        break
+                card_hud = _overlay_zohair_card_hud(
+                    fr, rem_sec=rem_sec, subtitle=sub_txt,
+                    serif_font=serif_font, timer_font=timer_font,
+                )
+                rounded_card = (card_hud.astype(np.float32) * round_mask).astype(np.uint8)
+                canvas[card_y:card_y + card_h, card_x:card_x + card_w] = rounded_card
+                enc.stdin.write(canvas.tobytes())
+                global_fi += 1
+
         for c_idx, vc in enumerate(visual_cuts):
             sk = vc["src"]
             s0 = float(vc["start_s"])
             dur = float(vc["dur_s"])
-            target_f = max(2, int(round(dur * fps)))
+            target_f = cut_frames[c_idx]
             use_vel = bool(vc.get("vel_curve", False))
             src_dur = float(vc.get("src_dur_s", dur * 1.45 if use_vel else max(dur + 0.06, 0.18)))
 
             raw_frames = _slice_clip_frames_30fps(sources[sk], s0, src_dur, tmp_dir, f"vc_{c_idx}")
             fitted = _trim_and_fit_16x9_card(
                 raw_frames,
-                card_w=card_w,
-                card_h=card_h,
+                card_w=card_w, card_h=card_h,
                 zoom_start=float(vc.get("zoom_start", 1.01)),
                 zoom_end=float(vc.get("zoom_end", 1.07)),
                 cy_bias=float(vc.get("cy_bias", 0.50)),
                 dark_lift=bool(vc.get("dark_lift", True)),
                 sat_mult=float(vc.get("sat_mult", 1.14)),
             )
+            del raw_frames
 
             if use_vel and len(fitted) >= 3:
                 fitted = _velocity_resample_optical(fitted, target_f)
@@ -616,7 +721,6 @@ def render_zohair_jigsaw_edit(
                     fitted.append(fitted[-1].copy())
                 fitted = fitted[:target_f]
 
-            # Optional 3x3 Bento Grid tiles
             vfx_name = str(vc.get("vfx", "none"))
             bento_tiles: list[list[np.ndarray]] | None = None
             if vfx_name == "bento_3x3" and vc.get("grid_clips"):
@@ -635,72 +739,13 @@ def render_zohair_jigsaw_edit(
                 fitted = _apply_entry_transition(fitted, tr_in)
                 vfx_used.append(f"tr:{tr_in}")
 
-            active_cards.extend(fitted)
+            _emit(fitted)
+            del fitted
+            if c_idx % 3 == 0:
+                __import__('gc').collect()
 
-        active_frames_n = len(active_cards)
-        active_dur_s = active_frames_n / float(fps)
-        outro_frames_n = max(0, int(round(outro_black_s * fps)))
-        total_frames_n = active_frames_n + outro_frames_n
-        total_dur_s = total_frames_n / float(fps)
-
-        # Isolate sparse natural-pocket dialogue via HDemucs
-        dialogue_tracks: list[tuple[float, np.ndarray]] = []
-        sub_windows: list[tuple[float, float, str]] = []
-        v_methods: list[str] = []
-        for d_idx, de in enumerate(dialogue_events):
-            sk = de["src"]
-            s0 = float(de["start_s"])
-            dur = float(de["dur_s"])
-            tl_s = float(de["timeline_s"])
-            vox_wav = tmp_dir / f"dvox_{d_idx}.wav"
-            m_used = isolate_clean_vocal_slice(str(sources[sk]), s0, s0 + dur, str(vox_wav), sr=sr)
-            v_methods.append(m_used)
-            v_arr, _ = sf.read(str(vox_wav), dtype="float32", always_2d=True)
-            dialogue_tracks.append((tl_s, v_arr))
-            if de.get("subtitle"):
-                sub_t0 = float(de.get("sub_t0", tl_s))
-                sub_t1 = float(de.get("sub_t1", tl_s + dur))
-                sub_windows.append((sub_t0, sub_t1, str(de["subtitle"])))
-
-        sfx_tracks: list[tuple[float, np.ndarray, float]] = []
-        for s_ev in sfx_events:
-            s_arr = _slice_audio_segment(sources[s_ev["src"]], float(s_ev["start_s"]), float(s_ev["dur_s"]), sr=sr)
-            sfx_tracks.append((float(s_ev["timeline_s"]), s_arr, float(s_ev.get("gain", 0.26))))
-
-        enc = subprocess.Popen(
-            [
-                ff, "-y",
-                "-f", "rawvideo", "-pix_fmt", "bgr24",
-                "-s", f"{canvas_w}x{canvas_h}", "-r", str(fps), "-i", "-",
-                "-an", "-c:v", "libx264", "-preset", "fast", "-crf", "17",
-                "-pix_fmt", "yuv420p",
-                str(raw_vid),
-            ],
-            stdin=subprocess.PIPE,
-            stderr=subprocess.DEVNULL,
-        )
-        assert enc.stdin is not None
-        canvas = np.zeros((canvas_h, canvas_w, 3), dtype=np.uint8)
-
-        for fi in range(total_frames_n):
-            t_cur = fi / float(fps)
-            rem_sec = max(0, int(math.ceil(active_dur_s - t_cur)))
+        for _ in range(outro_frames_n):
             canvas.fill(0)
-            if fi < active_frames_n:
-                sub_txt: str | None = None
-                for st0, st1, stxt in sub_windows:
-                    if st0 <= t_cur <= st1:
-                        sub_txt = stxt
-                        break
-                card_hud = _overlay_zohair_card_hud(
-                    active_cards[fi],
-                    rem_sec=rem_sec,
-                    subtitle=sub_txt,
-                    serif_font=serif_font,
-                    timer_font=timer_font,
-                )
-                rounded_card = (card_hud.astype(np.float32) * round_mask).astype(np.uint8)
-                canvas[card_y:card_y + card_h, card_x:card_x + card_w] = rounded_card
             enc.stdin.write(canvas.tobytes())
         enc.stdin.close()
         enc.wait()
@@ -730,7 +775,8 @@ def render_zohair_jigsaw_edit(
             stderr=subprocess.DEVNULL,
         )
 
-    segmenter.close()
+    if segmenter is not None:
+        segmenter.close()
     return {
         "out_mp4": str(out_mp4),
         "style": "zohair_jigsaw_style1_pro_vfx_v2",

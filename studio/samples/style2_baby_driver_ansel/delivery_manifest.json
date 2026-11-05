@@ -1,0 +1,27 @@
+{
+  "deliverable": "Baby_Driver_Ansel_Elgort_Style2_ChaseMe_9x16.mp4",
+  "drive_file_id": "1vU_eRcj-dOXePY759x0IcDzYFECkmeZd",
+  "drive_folder_id": "1vehwtuYIsqcrbzM9eQfZDFGanW67XmyB",
+  "drive_web_view_link": "https://drive.google.com/file/d/1vU_eRcj-dOXePY759x0IcDzYFECkmeZd/view?usp=drivesdk",
+  "actions_run_id": 42114522892,
+  "plan_commit": "f9e40f1",
+  "size_bytes": 28270364,
+  "md5": "4a6d96db169dd54b4d77a56ed0396d7e",
+  "sha256": "9275d0b911d8ab6d12ec40c76e6cd9565d6091d0a055253235300922a696b5ab",
+  "duration_s": 27.633333,
+  "frames": 829,
+  "fps": 30,
+  "resolution": "1080x1920",
+  "active_box": "1080x1200 centered at y=360",
+  "drop_s": 8.3,
+  "integrated_lufs": -14.0,
+  "true_peak_dbfs": -2.2,
+  "encoded_full_decode": "passed",
+  "encoded_act1_asr": "3/3 clean lines; no fourth partial line",
+  "montage_motion_and_black_frame_qa": "passed",
+  "corrections": [
+    "Cloud audio received -1.4 dB audio-only trim; video stream copied.",
+    "First-drop ANSEL ELGORT roto title moved to top-safe y=-40 for close-up visibility; normalized audio stream copied."
+  ],
+  "credit_line": "Spec edit / not for sale. Footage: Baby Driver, West Side Story, Tokyo Vice, The Goldfinch. Music: Chase Me — Danger Mouse feat. Run The Jewels & Big Boi. Not affiliated with the filmmakers/studio; all rights remain with their respective owners."
+}

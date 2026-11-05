@@ -1,0 +1,246 @@
+{
+  "passed": true,
+  "method": "faster-whisper small.en; no prompt; condition_on_previous_text=false; vad_filter=false",
+  "act1_duration_s": 8.2,
+  "act1_segments": [
+    {
+      "start": 0.0,
+      "end": 1.72,
+      "text": "They call, I go, you know.",
+      "avg_logprob": -0.4601504021677478,
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.48,
+          "word": " They",
+          "probability": 0.7760081887245178
+        },
+        {
+          "start": 0.48,
+          "end": 0.7,
+          "word": " call,",
+          "probability": 0.9893652200698853
+        },
+        {
+          "start": 0.8,
+          "end": 0.84,
+          "word": " I",
+          "probability": 0.8221437931060791
+        },
+        {
+          "start": 0.84,
+          "end": 1.08,
+          "word": " go,",
+          "probability": 0.9781382083892822
+        },
+        {
+          "start": 1.12,
+          "end": 1.42,
+          "word": " you",
+          "probability": 0.964615523815155
+        },
+        {
+          "start": 1.42,
+          "end": 1.72,
+          "word": " know.",
+          "probability": 0.9993233680725098
+        }
+      ]
+    },
+    {
+      "start": 4.36,
+      "end": 5.92,
+      "text": "So, what is it you do?",
+      "avg_logprob": -0.4601504021677478,
+      "words": [
+        {
+          "start": 4.36,
+          "end": 4.76,
+          "word": " So,",
+          "probability": 0.7457458972930908
+        },
+        {
+          "start": 4.82,
+          "end": 5.1,
+          "word": " what",
+          "probability": 0.9972116351127625
+        },
+        {
+          "start": 5.1,
+          "end": 5.3,
+          "word": " is",
+          "probability": 0.9965581297874451
+        },
+        {
+          "start": 5.3,
+          "end": 5.4,
+          "word": " it",
+          "probability": 0.9949603080749512
+        },
+        {
+          "start": 5.4,
+          "end": 5.6,
+          "word": " you",
+          "probability": 0.9480680227279663
+        },
+        {
+          "start": 5.6,
+          "end": 5.92,
+          "word": " do?",
+          "probability": 0.9986971020698547
+        }
+      ]
+    },
+    {
+      "start": 7.52,
+      "end": 8.02,
+      "text": "I'm a driver.",
+      "avg_logprob": -0.4601504021677478,
+      "words": [
+        {
+          "start": 7.52,
+          "end": 7.72,
+          "word": " I'm",
+          "probability": 0.9904277622699738
+        },
+        {
+          "start": 7.72,
+          "end": 7.8,
+          "word": " a",
+          "probability": 0.9670867323875427
+        },
+        {
+          "start": 7.8,
+          "end": 8.02,
+          "word": " driver.",
+          "probability": 0.9946708083152771
+        }
+      ]
+    }
+  ],
+  "act1_normalized_text": "they call i go you know so what is it you do im a driver",
+  "checks": {
+    "they_call_i_go": true,
+    "so_what_is_it_you_do": true,
+    "im_a_driver": true,
+    "no_partial_fourth_line": true
+  },
+  "expected_clean_lines": 3,
+  "full_master_segments": [
+    {
+      "start": 0.0,
+      "end": 1.7,
+      "text": "They call, I go, you know.",
+      "avg_logprob": -0.4532081749704149,
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.48,
+          "word": " They",
+          "probability": 0.7582979202270508
+        },
+        {
+          "start": 0.48,
+          "end": 0.7,
+          "word": " call,",
+          "probability": 0.9908998012542725
+        },
+        {
+          "start": 0.78,
+          "end": 0.84,
+          "word": " I",
+          "probability": 0.7423714995384216
+        },
+        {
+          "start": 0.84,
+          "end": 1.08,
+          "word": " go,",
+          "probability": 0.9718377590179443
+        },
+        {
+          "start": 1.12,
+          "end": 1.42,
+          "word": " you",
+          "probability": 0.955981433391571
+        },
+        {
+          "start": 1.42,
+          "end": 1.7,
+          "word": " know.",
+          "probability": 0.9991875290870667
+        }
+      ]
+    },
+    {
+      "start": 4.28,
+      "end": 5.94,
+      "text": "So what is it you do?",
+      "avg_logprob": -0.4532081749704149,
+      "words": [
+        {
+          "start": 4.28,
+          "end": 4.76,
+          "word": " So",
+          "probability": 0.7317527532577515
+        },
+        {
+          "start": 4.76,
+          "end": 5.1,
+          "word": " what",
+          "probability": 0.5954455137252808
+        },
+        {
+          "start": 5.1,
+          "end": 5.28,
+          "word": " is",
+          "probability": 0.9956178665161133
+        },
+        {
+          "start": 5.28,
+          "end": 5.42,
+          "word": " it",
+          "probability": 0.9965236783027649
+        },
+        {
+          "start": 5.42,
+          "end": 5.6,
+          "word": " you",
+          "probability": 0.9484296441078186
+        },
+        {
+          "start": 5.6,
+          "end": 5.94,
+          "word": " do?",
+          "probability": 0.9985285997390747
+        }
+      ]
+    },
+    {
+      "start": 7.56,
+      "end": 8.08,
+      "text": "I'm a driver",
+      "avg_logprob": -0.4532081749704149,
+      "words": [
+        {
+          "start": 7.56,
+          "end": 7.72,
+          "word": " I'm",
+          "probability": 0.9872151911258698
+        },
+        {
+          "start": 7.72,
+          "end": 7.82,
+          "word": " a",
+          "probability": 0.7170664668083191
+        },
+        {
+          "start": 7.82,
+          "end": 8.08,
+          "word": " driver",
+          "probability": 0.9864192605018616
+        }
+      ]
+    }
+  ],
+  "post_drop_note": "Any post-drop words are the continuous real song. The renderer does not include source-film dialogue/audio in Act 2."
+}

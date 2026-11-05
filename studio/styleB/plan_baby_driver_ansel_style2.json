@@ -8,7 +8,7 @@
     "gold": "/var/tmp/style2_baby_driver/sources/goldfinch_ign_1080p.mp4"
   },
   "song_path": "/var/tmp/style2_baby_driver/sources/chase_me_danger_mouse.mp3",
-  "song_offset_s": 9.450884353741497,
+  "song_offset_s": 9.950884353741497,
   "bpm": 161.4990234375,
   "hero_drop_title": "ANSEL ELGORT",
   "hero_hex": "#FF2E63",
@@ -18,8 +18,8 @@
     {
       "src": "movie",
       "start_s": 1114.0,
-      "dur_s": 8.7,
-      "src_dur_s": 8.7,
+      "dur_s": 8.2,
+      "src_dur_s": 8.2,
       "zoom_start": 1.01,
       "zoom_end": 1.04,
       "cx_override": 0.5,
@@ -29,8 +29,8 @@
   ],
   "scene_captions": [
     {
-      "t0": 0.25,
-      "t1": 1.8,
+      "t0": 0.0,
+      "t1": 1.9,
       "prefix": "THEY CALL;",
       "highlight": "I GO.",
       "suffix": "",
@@ -46,7 +46,7 @@
     },
     {
       "t0": 7.25,
-      "t1": 8.45,
+      "t1": 8.15,
       "prefix": "I'M A",
       "highlight": "DRIVER.",
       "suffix": "",
@@ -206,11 +206,11 @@
   "credit_line": "Spec fan edit; not for sale. Not affiliated with the filmmakers/studios. Footage: Baby Driver, West Side Story, The Goldfinch, Tokyo Vice. Music: Chase Me \u2014 Danger Mouse feat. Run the Jewels & Big Boi.",
   "measured": {
     "song_drop_source_s": 18.250884353741498,
-    "edit_drop_s": 8.8,
+    "edit_drop_s": 8.3,
     "song_duration_s": 224.52244897959184,
     "act1_source_range_s": [
       1114.0,
-      1122.7
+      1122.2
     ],
     "dialogue_lines": 3,
     "cross_film_sources": 4

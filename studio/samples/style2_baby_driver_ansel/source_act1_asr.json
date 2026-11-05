@@ -1,0 +1,122 @@
+{
+  "source_start_s": 1114.0,
+  "duration_s": 8.2,
+  "prompt": null,
+  "model": "small.en",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 1.72,
+      "text": "They call, I go, you know.",
+      "avg_logprob": -0.3660300001502037,
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.46,
+          "word": " They",
+          "probability": 0.559110164642334
+        },
+        {
+          "start": 0.46,
+          "end": 0.68,
+          "word": " call,",
+          "probability": 0.9914229512214661
+        },
+        {
+          "start": 0.8,
+          "end": 0.82,
+          "word": " I",
+          "probability": 0.8078017830848694
+        },
+        {
+          "start": 0.82,
+          "end": 1.08,
+          "word": " go,",
+          "probability": 0.9690976142883301
+        },
+        {
+          "start": 1.08,
+          "end": 1.4,
+          "word": " you",
+          "probability": 0.9745502471923828
+        },
+        {
+          "start": 1.4,
+          "end": 1.72,
+          "word": " know.",
+          "probability": 0.9991471767425537
+        }
+      ]
+    },
+    {
+      "start": 4.74,
+      "end": 5.94,
+      "text": "So what is it you do?",
+      "avg_logprob": -0.3660300001502037,
+      "words": [
+        {
+          "start": 4.74,
+          "end": 4.76,
+          "word": " So",
+          "probability": 0.5737380385398865
+        },
+        {
+          "start": 4.76,
+          "end": 5.1,
+          "word": " what",
+          "probability": 0.6983301639556885
+        },
+        {
+          "start": 5.1,
+          "end": 5.28,
+          "word": " is",
+          "probability": 0.9947324991226196
+        },
+        {
+          "start": 5.28,
+          "end": 5.4,
+          "word": " it",
+          "probability": 0.9963058233261108
+        },
+        {
+          "start": 5.4,
+          "end": 5.6,
+          "word": " you",
+          "probability": 0.9527246356010437
+        },
+        {
+          "start": 5.6,
+          "end": 5.94,
+          "word": " do?",
+          "probability": 0.9979526996612549
+        }
+      ]
+    },
+    {
+      "start": 7.5,
+      "end": 8.04,
+      "text": "I'm a driver.",
+      "avg_logprob": -0.3660300001502037,
+      "words": [
+        {
+          "start": 7.5,
+          "end": 7.7,
+          "word": " I'm",
+          "probability": 0.988627701997757
+        },
+        {
+          "start": 7.7,
+          "end": 7.78,
+          "word": " a",
+          "probability": 0.9786694049835205
+        },
+        {
+          "start": 7.78,
+          "end": 8.04,
+          "word": " driver.",
+          "probability": 0.9949244260787964
+        }
+      ]
+    }
+  ]
+}

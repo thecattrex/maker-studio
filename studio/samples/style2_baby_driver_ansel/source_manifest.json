@@ -53,14 +53,14 @@
     "codec": "MP3 320 kb/s, 44.1 kHz stereo",
     "bpm_measured": 161.4990234375,
     "major_drop_source_s": 18.250884353741498,
-    "song_offset_s": 9.450884353741497,
+    "song_offset_s": 9.950884353741497,
     "size_bytes": 8983031,
     "sha256": "8e5d84b5e668d5534ff9f3bb7b3a64da3c4cf232739ca41cf9511f40282cb901"
   },
   "act1": {
     "source_range_s": [
       1114.0,
-      1122.7
+      1122.2
     ],
     "continuous_scene": true,
     "clean_raw_audio": true,
@@ -85,12 +85,12 @@
   },
   "timeline": {
     "fps": 30,
-    "act1_frames": 261,
+    "act1_frames": 246,
     "pre_drop_black_frames": 3,
-    "edit_drop_s": 8.8,
+    "edit_drop_s": 8.3,
     "act2_frames": 580,
-    "total_frames": 844,
-    "expected_duration_s": 28.1333333333,
+    "total_frames": 829,
+    "expected_duration_s": 27.6333333333,
     "montage_clips": 12,
     "special_vfx_accents": [
       "z_depth_text",

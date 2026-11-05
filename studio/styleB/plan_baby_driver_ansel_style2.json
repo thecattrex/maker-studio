@@ -1,0 +1,218 @@
+{
+  "name": "BabyDriver_AnselElgort_Style2_ChaseMe_9x16",
+  "style_id": "style2_scene_to_drop_4k_cc_v3",
+  "sources": {
+    "movie": "/var/tmp/style2_baby_driver/sources/baby_driver_movie_1920x800.mp4",
+    "tokyo": "/var/tmp/style2_baby_driver/sources/tokyo_vice_ign_1080p.mp4",
+    "west": "/var/tmp/style2_baby_driver/sources/west_side_ign_1080p.mp4",
+    "gold": "/var/tmp/style2_baby_driver/sources/goldfinch_ign_1080p.mp4"
+  },
+  "song_path": "/var/tmp/style2_baby_driver/sources/chase_me_danger_mouse.mp3",
+  "song_offset_s": 9.450884353741497,
+  "bpm": 161.4990234375,
+  "hero_drop_title": "ANSEL ELGORT",
+  "hero_hex": "#FF2E63",
+  "pre_drop_black_frames": 3,
+  "muffle_under_scene": true,
+  "scene_segments": [
+    {
+      "src": "movie",
+      "start_s": 1114.0,
+      "dur_s": 8.7,
+      "src_dur_s": 8.7,
+      "zoom_start": 1.01,
+      "zoom_end": 1.04,
+      "cx_override": 0.5,
+      "include_dialogue": true,
+      "clean_raw_audio": true
+    }
+  ],
+  "scene_captions": [
+    {
+      "t0": 0.25,
+      "t1": 1.8,
+      "prefix": "THEY CALL;",
+      "highlight": "I GO.",
+      "suffix": "",
+      "accent_hex": "#FF2E63"
+    },
+    {
+      "t0": 4.45,
+      "t1": 6.1,
+      "prefix": "SO WHAT IS IT",
+      "highlight": "YOU DO?",
+      "suffix": "",
+      "accent_hex": "#FF2E63"
+    },
+    {
+      "t0": 7.25,
+      "t1": 8.45,
+      "prefix": "I'M A",
+      "highlight": "DRIVER.",
+      "suffix": "",
+      "accent_hex": "#FF2E63"
+    }
+  ],
+  "montage_clips": [
+    {
+      "src": "tokyo",
+      "start_s": 76.0,
+      "src_dur_s": 1.7,
+      "beats": 6,
+      "cx_override": 0.43,
+      "vfx": "z_depth_text",
+      "shake_px": 24,
+      "flash_peak": 0.65,
+      "shockwave": true,
+      "whip_dir": "none",
+      "vfx_text": "ANSEL ELGORT",
+      "hero_hex": "#FF2E63"
+    },
+    {
+      "src": "movie",
+      "start_s": 110.9,
+      "src_dur_s": 0.9,
+      "beats": 4,
+      "cx_override": 0.55,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "west",
+      "start_s": 95.0,
+      "src_dur_s": 1.1,
+      "beats": 4,
+      "cx_override": 0.43,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "gold",
+      "start_s": 102.0,
+      "src_dur_s": 0.45,
+      "beats": 2,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 12,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "tokyo",
+      "start_s": 40.0,
+      "src_dur_s": 0.45,
+      "beats": 2,
+      "cx_override": 0.42,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "west",
+      "start_s": 112.0,
+      "src_dur_s": 1.7,
+      "beats": 5,
+      "cx_override": 0.52,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "left"
+    },
+    {
+      "src": "movie",
+      "start_s": 613.0,
+      "src_dur_s": 1.4,
+      "beats": 6,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "gold",
+      "start_s": 88.0,
+      "src_dur_s": 0.5,
+      "beats": 2,
+      "cx_override": 0.38,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "tokyo",
+      "start_s": 135.6,
+      "src_dur_s": 0.65,
+      "beats": 2,
+      "cx_override": 0.43,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "right"
+    },
+    {
+      "src": "movie",
+      "start_s": 105.0,
+      "src_dur_s": 2.0,
+      "beats": 7,
+      "cx_override": 0.4,
+      "vfx": "invert_2f",
+      "shake_px": 12,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "west",
+      "start_s": 63.0,
+      "src_dur_s": 1.7,
+      "beats": 6,
+      "cx_override": 0.47,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "gold",
+      "start_s": 118.0,
+      "src_dur_s": 1.6,
+      "beats": 6,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 6,
+      "flash_peak": 0.08,
+      "shockwave": false,
+      "whip_dir": "none"
+    }
+  ],
+  "sfx_events": [],
+  "out_dir": "/var/tmp/style2_baby_driver/out",
+  "credit_line": "Spec fan edit; not for sale. Not affiliated with the filmmakers/studios. Footage: Baby Driver, West Side Story, The Goldfinch, Tokyo Vice. Music: Chase Me \u2014 Danger Mouse feat. Run the Jewels & Big Boi.",
+  "measured": {
+    "song_drop_source_s": 18.250884353741498,
+    "edit_drop_s": 8.8,
+    "song_duration_s": 224.52244897959184,
+    "act1_source_range_s": [
+      1114.0,
+      1122.7
+    ],
+    "dialogue_lines": 3,
+    "cross_film_sources": 4
+  }
+}

@@ -22,12 +22,13 @@ on:
           - aura_edit
           - zohair_edit
           - stylea_plan
+          - style3_maverick
       job_b64:
         description: "Base64-encoded JSON job payload (not needed for setup_check)"
         required: false
         default: ""
       cache_key:
-        description: "Style A project cache namespace; reuse it for corrections"
+        description: "Project cache namespace; reuse it for corrections"
         required: false
         default: "stylea-default"
 
@@ -64,7 +65,7 @@ jobs:
         run: |
           pip install --quiet --upgrade pip
           pip install --quiet -r studio/cloud/requirements-base.txt
-          if [ "$RENDER_MODE" = "t1_hq" ]; then
+          if [ "$RENDER_MODE" = "t1_hq" ] || [ "$RENDER_MODE" = "style3_maverick" ]; then
             pip install --quiet faster-whisper
           fi
           if [ "$RENDER_MODE" = "earshot" ] || [ "$RENDER_MODE" = "master" ]; then
@@ -112,14 +113,26 @@ jobs:
           restore-keys: |
             stylea-${{ inputs.cache_key }}-
 
+      - name: Restore Style 3 source/song cache
+        if: ${{ inputs.mode == 'style3_maverick' }}
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/maker_style3_cache
+          key: style3-${{ inputs.cache_key }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            style3-${{ inputs.cache_key }}-
+
       - name: Execute no-video setup check or cloud render worker
         env:
           RENDER_MODE: ${{ inputs.mode }}
           JOB_B64: ${{ inputs.job_b64 }}
           MAKER_ASSET_CACHE: /tmp/maker_stylea_cache
+          MAKER_STYLE3_CACHE: /tmp/maker_style3_cache
         run: |
           if [ "$RENDER_MODE" = "setup_check" ]; then
             python3 studio/cloud/setup_check.py --out-dir studio/cloud_out
+          elif [ "$RENDER_MODE" = "style3_maverick" ]; then
+            python3 studio/cloud/style3_worker.py --job-b64 "$JOB_B64" --out-dir studio/cloud_out
           else
             python3 studio/cloud/hq_worker.py --mode "$RENDER_MODE" --job-b64 "$JOB_B64" --out-dir studio/cloud_out
           fi
@@ -130,6 +143,13 @@ jobs:
         with:
           path: /tmp/maker_stylea_cache
           key: stylea-${{ inputs.cache_key }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Save Style 3 source/song cache
+        if: ${{ success() && inputs.mode == 'style3_maverick' }}
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/maker_style3_cache
+          key: style3-${{ inputs.cache_key }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Upload Rendered Video & QA Report Artifact
         if: always()

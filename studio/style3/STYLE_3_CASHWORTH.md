@@ -4,7 +4,8 @@
 
 - **Public name:** `Style 3`
 - **Format family:** Cashworth / `7f73e` aesthetic kinetic storytelling
-- **Engine implementation:** `studio/om_hybrid/cashworth_edit.py`
+- **Isolated Maverick implementation:** `studio/style3/render_maverick.py` + `studio/cloud/style3_worker.py`
+- **Legacy helper reference:** `studio/om_hybrid/cashworth_edit.py` (not imported by the isolated Maverick render)
 
 ## The TWO primary references
 
@@ -22,6 +23,7 @@ Style 3 has exactly two primary references, with different purposes:
 
 - File: `F1_Brad_Pitt_MidnightCity_7f73e_Aesthetic_Edit_9x16.mp4`
 - Drive file ID: `1igtRA1XoAl8pz_-vvWOz5RThbdwhOLqA`
+- Measured: 24.4 seconds, 1080x1920, 30 fps
 - Purpose: the approved example of how Style 3 should look and feel when applied to a real movie.
 - This is the primary movie-side quality/pacing reference for future Style 3 edits.
 

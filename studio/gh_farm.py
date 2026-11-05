@@ -9,6 +9,7 @@ Usage:
   python3 /home/user/studio/gh_farm.py run --mode t1_hq --job-file job.json --out-dir /home/user/studio/samples
   python3 /home/user/studio/gh_farm.py run --mode setup_check --out-dir /home/user/studio/samples/setup_check
   python3 /home/user/studio/gh_farm.py run --mode stylea_plan --job-file job.json --cache-key my-project
+  python3 /home/user/studio/gh_farm.py run --mode style3_maverick --job-file studio/style3/maverick_job.json --cache-key style3-maverick
 """
 from __future__ import annotations
 
@@ -191,7 +192,7 @@ def main() -> None:
 
     p_run = sub.add_parser("run")
     p_run.add_argument("--repo", default=DEFAULT_REPO)
-    p_run.add_argument("--mode", choices=["setup_check", "smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit", "zohair_edit", "stylea_plan"], default="smoke")
+    p_run.add_argument("--mode", choices=["setup_check", "smoke", "t1_hq", "remotion", "hyperframes", "earshot", "real_sfx", "master", "ironman_edit", "vfx_edit", "aura_edit", "zohair_edit", "stylea_plan", "style3_maverick"], default="smoke")
     p_run.add_argument("--job-file", "--job", dest="job_file", default=None)
     p_run.add_argument("--out-dir", default=None)
     p_run.add_argument("--cache-key", default="stylea-default", help="Style A project cache namespace; reuse it for corrections")

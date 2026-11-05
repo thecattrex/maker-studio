@@ -1,0 +1,441 @@
+{
+  "schema": "style3.maverick.v1",
+  "style": "Style 3 \u2014 Cashworth",
+  "movie": "Top Gun: Maverick",
+  "references": {
+    "format": "1BPiQKYdKvm4XP12drauSNr0jfmYuIhos",
+    "movie_adaptation": "1igtRA1XoAl8pz_-vvWOz5RThbdwhOLqA"
+  },
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration": 24.8,
+    "name": "TopGun_Maverick_Style3_DangerZone_9x16.mp4"
+  },
+  "music": {
+    "title": "Danger Zone",
+    "artist": "Kenny Loggins",
+    "start": 50.20154195011338,
+    "duration": 24.8,
+    "beats": [
+      0.0,
+      0.372,
+      0.766,
+      1.138,
+      1.533,
+      1.904,
+      2.276,
+      2.67,
+      3.042,
+      3.437,
+      3.808,
+      4.18,
+      4.574,
+      4.946,
+      5.341,
+      5.712,
+      6.107,
+      6.478,
+      6.873,
+      7.245,
+      7.616,
+      8.011,
+      8.382,
+      8.754,
+      9.149,
+      9.52,
+      9.915,
+      10.286,
+      10.681,
+      11.053,
+      11.424,
+      11.819,
+      12.19,
+      12.585,
+      12.957,
+      13.351,
+      13.723,
+      14.095,
+      14.489,
+      14.861,
+      15.256,
+      15.627,
+      16.022,
+      16.393,
+      16.788,
+      17.16,
+      17.531,
+      17.926,
+      18.297,
+      18.692,
+      19.064,
+      19.435,
+      19.83,
+      20.201,
+      20.573,
+      20.968,
+      21.339,
+      21.734,
+      22.105,
+      22.5,
+      22.872,
+      23.266,
+      23.638,
+      24.009,
+      24.404,
+      24.776
+    ],
+    "url": "https://archive.org/download/01-danger-zone/01%20Danger%20Zone.mp3",
+    "size": 3427216,
+    "cache_name": "danger_zone.mp3"
+  },
+  "sources": {
+    "fixed": {
+      "url": "https://archive.org/download/top-gun-maverick-2022-fixed-trailer/Top%20Gun%20Maverick%20-%20Official%20Trailer%20%282022%29%20FIXED%20-%20Paramount%20Pictures_1080p.mp4",
+      "size": 170994891,
+      "cache_name": "maverick_fixed_1080p.mp4",
+      "crop": [
+        0,
+        0,
+        1920,
+        800
+      ]
+    },
+    "bestof": {
+      "url": "https://archive.org/download/BestOf2022/Top%20Gun_%20Maverick.mp4",
+      "size": 30065416,
+      "cache_name": "maverick_bestof_1080p.mp4",
+      "crop": [
+        0,
+        140,
+        1920,
+        800
+      ]
+    }
+  },
+  "segments": [
+    {
+      "id": "deck",
+      "layout": "strip",
+      "text": {
+        "value": "OFF THE DECK",
+        "kind": "bold",
+        "position": "top_left"
+      },
+      "shots": [
+        {
+          "source": "fixed",
+          "start": 34.45,
+          "source_end": 37.7,
+          "focus": 0.5
+        }
+      ],
+      "start": 0.0,
+      "end": 1.904
+    },
+    {
+      "id": "deck_bento",
+      "layout": "bento",
+      "shots": [
+        {
+          "source": "fixed",
+          "start": 58.14,
+          "source_end": 59.98,
+          "focus": 0.46
+        },
+        {
+          "source": "bestof",
+          "start": 83.83,
+          "source_end": 86.0,
+          "focus": 0.5
+        },
+        {
+          "source": "bestof",
+          "start": 53.47,
+          "source_end": 56.47,
+          "focus": 0.5
+        },
+        {
+          "source": "fixed",
+          "start": 95.01,
+          "source_end": 96.85,
+          "focus": 0.5
+        },
+        {
+          "source": "bestof",
+          "start": 75.66,
+          "source_end": 77.58,
+          "focus": 0.5
+        },
+        {
+          "source": "fixed",
+          "start": 99.52,
+          "source_end": 102.19,
+          "focus": 0.5
+        },
+        {
+          "source": "bestof",
+          "start": 115.2,
+          "source_end": 118.28,
+          "focus": 0.5
+        },
+        {
+          "source": "fixed",
+          "start": 30.45,
+          "source_end": 32.37,
+          "focus": 0.5
+        },
+        {
+          "source": "bestof",
+          "start": 66.73,
+          "source_end": 68.32,
+          "focus": 0.5
+        }
+      ],
+      "start": 1.904,
+      "end": 3.042
+    },
+    {
+      "id": "overdrive",
+      "layout": "strip",
+      "text": {
+        "value": "OVERDRIVE",
+        "kind": "serif",
+        "position": "center"
+      },
+      "shots": [
+        {
+          "source": "fixed",
+          "start": 76.66,
+          "source_end": 79.33,
+          "focus": 0.5
+        }
+      ],
+      "start": 3.042,
+      "end": 4.946
+    },
+    {
+      "id": "cockpit_triptych",
+      "layout": "triptych",
+      "shots": [
+        {
+          "source": "fixed",
+          "start": 58.14,
+          "source_end": 59.98,
+          "focus": 0.44
+        },
+        {
+          "source": "bestof",
+          "start": 75.66,
+          "source_end": 77.58,
+          "focus": 0.5
+        },
+        {
+          "source": "fixed",
+          "start": 95.01,
+          "source_end": 96.85,
+          "focus": 0.5
+        }
+      ],
+      "start": 4.946,
+      "end": 6.478
+    },
+    {
+      "id": "formation_postcard",
+      "layout": "square",
+      "shots": [
+        {
+          "source": "bestof",
+          "start": 53.47,
+          "source_end": 56.47,
+          "focus": 0.5
+        }
+      ],
+      "start": 6.478,
+      "end": 7.616
+    },
+    {
+      "id": "highway",
+      "layout": "strip",
+      "text": {
+        "value": "HIGHWAY TO THE",
+        "kind": "bold",
+        "position": "top_left"
+      },
+      "shots": [
+        {
+          "source": "fixed",
+          "start": 124.04,
+          "source_end": 127.29,
+          "focus": 0.5
+        }
+      ],
+      "start": 7.616,
+      "end": 9.915
+    },
+    {
+      "id": "danger_video_type",
+      "layout": "video_text",
+      "text": {
+        "value": "DANGER ZONE",
+        "kind": "video",
+        "position": "center"
+      },
+      "shots": [
+        {
+          "source": "bestof",
+          "start": 119.62,
+          "source_end": 123.37,
+          "focus": 0.54
+        }
+      ],
+      "start": 9.915,
+      "end": 13.351
+    },
+    {
+      "id": "chorus_grid",
+      "layout": "bento2",
+      "shots": [
+        {
+          "source": "fixed",
+          "start": 9.2,
+          "source_end": 16.1,
+          "focus": 0.5
+        },
+        {
+          "source": "fixed",
+          "start": 19.6,
+          "source_end": 26.19,
+          "focus": 0.5
+        },
+        {
+          "source": "fixed",
+          "start": 34.2,
+          "source_end": 37.7,
+          "focus": 0.5
+        },
+        {
+          "source": "bestof",
+          "start": 42.46,
+          "source_end": 44.54,
+          "focus": 0.5
+        },
+        {
+          "source": "bestof",
+          "start": 53.47,
+          "source_end": 56.47,
+          "focus": 0.5
+        },
+        {
+          "source": "bestof",
+          "start": 115.2,
+          "source_end": 118.28,
+          "focus": 0.5
+        }
+      ],
+      "start": 13.351,
+      "end": 15.256
+    },
+    {
+      "id": "right_into",
+      "layout": "strip",
+      "text": {
+        "value": "RIGHT INTO THE",
+        "kind": "bold",
+        "position": "top_left"
+      },
+      "shots": [
+        {
+          "source": "fixed",
+          "start": 30.45,
+          "source_end": 32.37,
+          "focus": 0.5
+        }
+      ],
+      "start": 15.256,
+      "end": 17.16
+    },
+    {
+      "id": "danger_split",
+      "layout": "split",
+      "text": {
+        "value": "DANGER ZONE",
+        "kind": "bold",
+        "position": "center"
+      },
+      "shots": [
+        {
+          "source": "fixed",
+          "start": 112.36,
+          "source_end": 118.53,
+          "focus": 0.25
+        },
+        {
+          "source": "bestof",
+          "start": 100.43,
+          "source_end": 102.94,
+          "focus": 0.56
+        }
+      ],
+      "start": 17.16,
+      "end": 19.435
+    },
+    {
+      "id": "explosion",
+      "layout": "strip",
+      "shots": [
+        {
+          "source": "bestof",
+          "start": 123.37,
+          "source_end": 125.21,
+          "focus": 0.5
+        }
+      ],
+      "start": 19.435,
+      "end": 20.968
+    },
+    {
+      "id": "canyon_run",
+      "layout": "strip",
+      "shots": [
+        {
+          "source": "fixed",
+          "start": 103.02,
+          "source_end": 105.52,
+          "focus": 0.5
+        }
+      ],
+      "start": 20.968,
+      "end": 22.5
+    },
+    {
+      "id": "deck_horizon",
+      "layout": "banner",
+      "shots": [
+        {
+          "source": "fixed",
+          "start": 107.11,
+          "source_end": 112.36,
+          "focus": 0.5
+        }
+      ],
+      "start": 22.5,
+      "end": 24.009
+    },
+    {
+      "id": "final_flight",
+      "layout": "strip",
+      "shots": [
+        {
+          "source": "fixed",
+          "start": 105.52,
+          "source_end": 107.11,
+          "focus": 0.5
+        }
+      ],
+      "start": 24.009,
+      "end": 24.8
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "source_start_s": 1111.6,
+  "duration_s": 10.8,
+  "prompt": null,
+  "model": "small.en",
+  "note": "ASR first segment contains two short Baby lines; trailing 1.4 s reaction bridge intentionally excludes offscreen Deborah dialogue.",
+  "segments": [
+    {
+      "start": 0.8799999999999988,
+      "end": 3.96,
+      "text": "I don't know if I ever get off. They call, I go, you know.",
+      "words": [
+        {
+          "start": 0.8799999999999988,
+          "end": 1.24,
+          "word": " I",
+          "probability": 0.4025762379169464
+        },
+        {
+          "start": 1.24,
+          "end": 1.42,
+          "word": " don't",
+          "probability": 0.9448041319847107
+        },
+        {
+          "start": 1.42,
+          "end": 1.56,
+          "word": " know",
+          "probability": 0.9814348220825195
+        },
+        {
+          "start": 1.56,
+          "end": 1.68,
+          "word": " if",
+          "probability": 0.9439282417297363
+        },
+        {
+          "start": 1.68,
+          "end": 1.78,
+          "word": " I",
+          "probability": 0.8941423296928406
+        },
+        {
+          "start": 1.78,
+          "end": 1.92,
+          "word": " ever",
+          "probability": 0.982587993144989
+        },
+        {
+          "start": 1.92,
+          "end": 2.08,
+          "word": " get",
+          "probability": 0.9988207221031189
+        },
+        {
+          "start": 2.08,
+          "end": 2.4,
+          "word": " off.",
+          "probability": 0.9974628686904907
+        },
+        {
+          "start": 2.78,
+          "end": 2.86,
+          "word": " They",
+          "probability": 0.9660589694976807
+        },
+        {
+          "start": 2.86,
+          "end": 3.08,
+          "word": " call,",
+          "probability": 0.994665265083313
+        },
+        {
+          "start": 3.22,
+          "end": 3.24,
+          "word": " I",
+          "probability": 0.8154816031455994
+        },
+        {
+          "start": 3.24,
+          "end": 3.48,
+          "word": " go,",
+          "probability": 0.9890453815460205
+        },
+        {
+          "start": 3.56,
+          "end": 3.8,
+          "word": " you",
+          "probability": 0.9784638285636902
+        },
+        {
+          "start": 3.8,
+          "end": 3.96,
+          "word": " know.",
+          "probability": 0.9995115995407104
+        }
+      ]
+    },
+    {
+      "start": 6.82,
+      "end": 8.34,
+      "text": "So what is it you do?",
+      "words": [
+        {
+          "start": 6.82,
+          "end": 7.14,
+          "word": " So",
+          "probability": 0.5918889045715332
+        },
+        {
+          "start": 7.14,
+          "end": 7.5,
+          "word": " what",
+          "probability": 0.5659316778182983
+        },
+        {
+          "start": 7.5,
+          "end": 7.68,
+          "word": " is",
+          "probability": 0.996364414691925
+        },
+        {
+          "start": 7.68,
+          "end": 7.8,
+          "word": " it",
+          "probability": 0.9979197382926941
+        },
+        {
+          "start": 7.8,
+          "end": 7.98,
+          "word": " you",
+          "probability": 0.9738152027130127
+        },
+        {
+          "start": 7.98,
+          "end": 8.34,
+          "word": " do?",
+          "probability": 0.999497652053833
+        }
+      ]
+    },
+    {
+      "start": 9.78,
+      "end": 10.44,
+      "text": "I'm a driver.",
+      "words": [
+        {
+          "start": 9.78,
+          "end": 10.1,
+          "word": " I'm",
+          "probability": 0.9914204180240631
+        },
+        {
+          "start": 10.1,
+          "end": 10.18,
+          "word": " a",
+          "probability": 0.9806416630744934
+        },
+        {
+          "start": 10.18,
+          "end": 10.44,
+          "word": " driver.",
+          "probability": 0.9982390403747559
+        }
+      ]
+    }
+  ]
+}

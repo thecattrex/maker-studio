@@ -1,0 +1,243 @@
+{
+  "project": "Baby Driver — Style 2 movie-focus v2",
+  "style_id": "style2_scene_to_drop_4k_cc_v3",
+  "credit_line": "Spec fan edit; not for sale. Not affiliated with the filmmakers/studios. Footage: Baby Driver, The Goldfinch, Tokyo Vice. Music: Chase Me — Danger Mouse feat. Run the Jewels & Big Boi.",
+  "sources": [
+    {
+      "alias": "movie",
+      "title": "Baby Driver (2017)",
+      "direct_url": "https://archive.org/download/baby-driver-full-movie-free/Baby%20Driver%20-%20Full%20Movie%20-%20Free.ia.mp4",
+      "video": "1920x800, 23.976 fps",
+      "size_bytes": 1192631592,
+      "sha256": "b706df9b12349d4a0068680ceea0c1d3ac2c5a723da0dfa26355675f3c818354",
+      "visual_quality_review": "passed: cut-free selected intervals; centered 9:10 crop inspected"
+    },
+    {
+      "alias": "gold",
+      "title": "The Goldfinch — Official Trailer 1",
+      "direct_url": "https://assets14.ign.com/videos/zencoder/2019/05/30/1920/a5237a943c7262ce0e439d4aa8e05578-3906000-1559238796.mp4",
+      "video": "1920x1080, 23.976 fps",
+      "size_bytes": 73845846,
+      "sha256": "9e307dc9e05c0e34a48c8149fffebf4551f09a771edfa0f5324d866a1e31af55",
+      "visual_quality_review": "passed: cut-free selected intervals; centered 9:10 crop inspected"
+    },
+    {
+      "alias": "tokyo",
+      "title": "Tokyo Vice — Official Trailer",
+      "direct_url": "https://assets14.ign.com/videos/zencoder/2022/03/14/1920/eaedd12c5992a4f6eedc22d198bb4a23-3906000-1647295166.mp4",
+      "video": "1920x1080, 23.976 fps",
+      "size_bytes": 73127144,
+      "sha256": "65dee6a5f6275521bcab6a4a6470ea20bfaa6fbe04eb5945996e291fe231a4b6",
+      "visual_quality_review": "passed: cut-free selected intervals; centered 9:10 crop inspected"
+    }
+  ],
+  "song": {
+    "title": "Chase Me",
+    "artists": "Danger Mouse feat. Run the Jewels & Big Boi",
+    "direct_url": "https://cs1.mp3.pm/download/80136086/cXBqc3ZHalJyZEZ4Wlo2M3d1NndsbXF3RUVFSWJwcUVHbVB5V3hFcitiWkFQVUNzVStjQlZjUEE3ZHYxZjhLeFUvc0hZSy9tOWRSTk10NDdoZVoyTjhMQmJBRmdpb3dFOHAvY3B6QVBTRzJRWmlMVDNDVE1WNURabTlSYVd0MG4/Danger_Mouse_feat_Run_The_Jewels_Big_Boi_-_Chase_Me_(mp3.pm).mp3",
+    "duration_s": 224.52244897959184,
+    "bpm_measured": 161.4990234375,
+    "major_drop_source_s": 18.250884353741498,
+    "song_offset_s": 6.050884353741498,
+    "size_bytes": 8983031,
+    "sha256": "8e5d84b5e668d5534ff9f3bb7b3a64da3c4cf232739ca41cf9511f40282cb901"
+  },
+  "act1": {
+    "source_range_s": [
+      1111.6,
+      1123.8
+    ],
+    "dialogue_source_range_s": [
+      1111.6,
+      1122.4
+    ],
+    "reaction_bridge_source_range_s": [
+      1122.4,
+      1123.8
+    ],
+    "continuous_scene": true,
+    "dialogue_lines": 4,
+    "reaction_bridge": "Baby remains on camera; offscreen Deborah audio excluded; real song opens for 1.4 s pickup",
+    "asr": "faster-whisper small.en; no prompt; source audio"
+  },
+  "timeline": {
+    "fps": 30,
+    "act1_dialogue_frames": 324,
+    "reaction_bridge_frames": 42,
+    "act1_frames": 366,
+    "pre_drop_black_frames": 0,
+    "music_pickup_s": 10.8,
+    "edit_drop_s": 12.2,
+    "act2_frames": 534,
+    "total_frames": 900,
+    "expected_duration_s": 30.0,
+    "montage_clips": 12,
+    "baby_driver_montage_shots": 10,
+    "cross_film_montage_shots": 2,
+    "minimum_montage_shot_s": 1.1,
+    "special_vfx_accents": [
+      "z_depth_text",
+      "invert_2f"
+    ]
+  },
+  "shots": [
+    {
+      "src": "movie",
+      "start_s": 300.0,
+      "src_dur_s": 1.0,
+      "beats": 6,
+      "cx_override": 0.5,
+      "vfx": "z_depth_text",
+      "shake_px": 16,
+      "flash_peak": 0.35,
+      "shockwave": true,
+      "whip_dir": "none",
+      "vfx_text": "BABY DRIVER",
+      "hero_hex": "#FF2E63",
+      "output_frames": 67
+    },
+    {
+      "src": "movie",
+      "start_s": 110.9,
+      "src_dur_s": 1.4,
+      "beats": 5,
+      "cx_override": 0.55,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none",
+      "output_frames": 56
+    },
+    {
+      "src": "movie",
+      "start_s": 190.0,
+      "src_dur_s": 0.4,
+      "beats": 3,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none",
+      "output_frames": 33
+    },
+    {
+      "src": "movie",
+      "start_s": 210.0,
+      "src_dur_s": 0.5,
+      "beats": 3,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none",
+      "output_frames": 33
+    },
+    {
+      "src": "movie",
+      "start_s": 235.0,
+      "src_dur_s": 0.55,
+      "beats": 3,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none",
+      "output_frames": 33
+    },
+    {
+      "src": "movie",
+      "start_s": 400.0,
+      "src_dur_s": 1.5,
+      "beats": 4,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none",
+      "output_frames": 45
+    },
+    {
+      "src": "gold",
+      "start_s": 102.0,
+      "src_dur_s": 0.45,
+      "beats": 3,
+      "cx_override": 0.5,
+      "vfx": "invert_2f",
+      "shake_px": 12,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none",
+      "output_frames": 33
+    },
+    {
+      "src": "movie",
+      "start_s": 440.0,
+      "src_dur_s": 1.7,
+      "beats": 4,
+      "cx_override": 0.55,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "left",
+      "output_frames": 45
+    },
+    {
+      "src": "movie",
+      "start_s": 5010.6,
+      "src_dur_s": 1.0,
+      "beats": 5,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 12,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none",
+      "output_frames": 56
+    },
+    {
+      "src": "tokyo",
+      "start_s": 76.0,
+      "src_dur_s": 0.65,
+      "beats": 3,
+      "cx_override": 0.43,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "right",
+      "output_frames": 33
+    },
+    {
+      "src": "movie",
+      "start_s": 5340.0,
+      "src_dur_s": 0.5,
+      "beats": 3,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none",
+      "output_frames": 33
+    },
+    {
+      "src": "movie",
+      "start_s": 320.0,
+      "src_dur_s": 1.6,
+      "beats": 6,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 6,
+      "flash_peak": 0.08,
+      "shockwave": false,
+      "whip_dir": "none",
+      "output_frames": 67
+    }
+  ]
+}

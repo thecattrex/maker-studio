@@ -1,0 +1,246 @@
+{
+  "name": "BabyDriver_Style2_MovieFocus_ChaseMe_9x16",
+  "style_id": "style2_scene_to_drop_4k_cc_v3",
+  "sources": {
+    "movie": "https://archive.org/download/baby-driver-full-movie-free/Baby%20Driver%20-%20Full%20Movie%20-%20Free.ia.mp4",
+    "gold": "https://assets14.ign.com/videos/zencoder/2019/05/30/1920/a5237a943c7262ce0e439d4aa8e05578-3906000-1559238796.mp4",
+    "tokyo": "https://assets14.ign.com/videos/zencoder/2022/03/14/1920/eaedd12c5992a4f6eedc22d198bb4a23-3906000-1647295166.mp4"
+  },
+  "song_offset_s": 6.050884353741498,
+  "bpm": 161.4990234375,
+  "hero_drop_title": "BABY DRIVER",
+  "hero_hex": "#FF2E63",
+  "pre_drop_black_frames": 0,
+  "muffle_under_scene": true,
+  "scene_segments": [
+    {
+      "src": "movie",
+      "start_s": 1111.6,
+      "dur_s": 10.8,
+      "src_dur_s": 10.8,
+      "zoom_start": 1.01,
+      "zoom_end": 1.025,
+      "cx_override": 0.5,
+      "include_dialogue": true,
+      "clean_raw_audio": true
+    },
+    {
+      "src": "movie",
+      "start_s": 1122.4,
+      "dur_s": 1.4,
+      "src_dur_s": 1.4,
+      "zoom_start": 1.025,
+      "zoom_end": 1.04,
+      "cx_override": 0.5,
+      "include_dialogue": false
+    }
+  ],
+  "scene_captions": [
+    {
+      "t0": 0.7,
+      "t1": 2.55,
+      "prefix": "I DON'T KNOW IF",
+      "highlight": "I EVER GET OFF.",
+      "suffix": "",
+      "accent_hex": "#FF2E63"
+    },
+    {
+      "t0": 2.6,
+      "t1": 4.2,
+      "prefix": "THEY CALL;",
+      "highlight": "I GO, YOU KNOW.",
+      "suffix": "",
+      "accent_hex": "#FF2E63"
+    },
+    {
+      "t0": 6.55,
+      "t1": 8.55,
+      "prefix": "SO WHAT IS IT",
+      "highlight": "YOU DO?",
+      "suffix": "",
+      "accent_hex": "#FF2E63"
+    },
+    {
+      "t0": 9.5,
+      "t1": 10.7,
+      "prefix": "I'M A",
+      "highlight": "DRIVER.",
+      "suffix": "",
+      "accent_hex": "#FF2E63"
+    }
+  ],
+  "montage_clips": [
+    {
+      "src": "movie",
+      "start_s": 300.0,
+      "src_dur_s": 1.0,
+      "beats": 6,
+      "cx_override": 0.5,
+      "vfx": "z_depth_text",
+      "shake_px": 16,
+      "flash_peak": 0.35,
+      "shockwave": true,
+      "whip_dir": "none",
+      "vfx_text": "BABY DRIVER",
+      "hero_hex": "#FF2E63"
+    },
+    {
+      "src": "movie",
+      "start_s": 110.9,
+      "src_dur_s": 1.4,
+      "beats": 5,
+      "cx_override": 0.55,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "movie",
+      "start_s": 190.0,
+      "src_dur_s": 0.4,
+      "beats": 3,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "movie",
+      "start_s": 210.0,
+      "src_dur_s": 0.5,
+      "beats": 3,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "movie",
+      "start_s": 235.0,
+      "src_dur_s": 0.55,
+      "beats": 3,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "movie",
+      "start_s": 400.0,
+      "src_dur_s": 1.5,
+      "beats": 4,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "gold",
+      "start_s": 102.0,
+      "src_dur_s": 0.45,
+      "beats": 3,
+      "cx_override": 0.5,
+      "vfx": "invert_2f",
+      "shake_px": 12,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "movie",
+      "start_s": 440.0,
+      "src_dur_s": 1.7,
+      "beats": 4,
+      "cx_override": 0.55,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "left"
+    },
+    {
+      "src": "movie",
+      "start_s": 5010.6,
+      "src_dur_s": 1.0,
+      "beats": 5,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 12,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "tokyo",
+      "start_s": 76.0,
+      "src_dur_s": 0.65,
+      "beats": 3,
+      "cx_override": 0.43,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "right"
+    },
+    {
+      "src": "movie",
+      "start_s": 5340.0,
+      "src_dur_s": 0.5,
+      "beats": 3,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 9,
+      "flash_peak": 0.14,
+      "shockwave": false,
+      "whip_dir": "none"
+    },
+    {
+      "src": "movie",
+      "start_s": 320.0,
+      "src_dur_s": 1.6,
+      "beats": 6,
+      "cx_override": 0.5,
+      "vfx": "none",
+      "shake_px": 6,
+      "flash_peak": 0.08,
+      "shockwave": false,
+      "whip_dir": "none"
+    }
+  ],
+  "sfx_events": [],
+  "credit_line": "Spec fan edit; not for sale. Not affiliated with the filmmakers/studios. Footage: Baby Driver, The Goldfinch, Tokyo Vice. Music: Chase Me — Danger Mouse feat. Run the Jewels & Big Boi.",
+  "measured": {
+    "song_drop_source_s": 18.250884353741498,
+    "edit_drop_s": 12.2,
+    "music_pickup_s": 10.8,
+    "song_duration_s": 224.52244897959184,
+    "act1_source_range_s": [
+      1111.6,
+      1123.8
+    ],
+    "dialogue_source_range_s": [
+      1111.6,
+      1122.4
+    ],
+    "reaction_bridge_source_range_s": [
+      1122.4,
+      1123.8
+    ],
+    "dialogue_lines": 4,
+    "baby_driver_montage_shots": 10,
+    "cross_film_montage_shots": 2
+  },
+  "song_url": "https://cs1.mp3.pm/download/80136086/cXBqc3ZHalJyZEZ4Wlo2M3d1NndsbXF3RUVFSWJwcUVHbVB5V3hFcitiWkFQVUNzVStjQlZjUEE3ZHYxZjhLeFUvc0hZSy9tOWRSTk10NDdoZVoyTjhMQmJBRmdpb3dFOHAvY3B6QVBTRzJRWmlMVDNDVE1WNURabTlSYVd0MG4/Danger_Mouse_feat_Run_The_Jewels_Big_Boi_-_Chase_Me_(mp3.pm).mp3",
+  "song_fallback_url": "https://cs1.mp3.pm/download/80653290/cXBqc3ZHalJyZEZ4Wlo2M3d1NndsbXF3RUVFSWJwcUVHbVB5V3hFcitiWnVBY0dYcHhyaWJEcFYyQWdZdjJwYlVWdFd6bVJhWEVrNkhsdUUxY2hFVGk5V1pFcDA1Q01qckdjcDFSTTZ4R2RIZ0JLckNreWVkaCtBbUZORWpPWmg/Danger_Mouse_-_Chase_Me_Music_From_The_Motion_Picture_Baby_Driver_ft._RTJ_Big_Boi_(mp3.pm).mp3",
+  "out_name": "BabyDriver_Style2_MovieFocus_ChaseMe_9x16.mp4"
+}

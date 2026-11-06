@@ -1,0 +1,42 @@
+{
+  "mode": "aura_edit",
+  "runner_ram_gb": 15.61,
+  "runner_cpus": 4,
+  "out_mp4": "studio/cloud_out/BabyDriver_Style2_MovieFocus_ChaseMe_9x16.mp4",
+  "style": "style2_scene_to_drop_4k_cc_v3",
+  "resolution": "1080x1920",
+  "active_viewport": "1080x1200 (9:10)",
+  "drop_s": 12.2,
+  "duration_s": 30.0,
+  "scene_clips": 2,
+  "montage_clips": 12,
+  "vfx_applied": [
+    "5_layer_4k_quality_cc",
+    "invert_2f",
+    "optical_velocity",
+    "z_depth_text"
+  ],
+  "vocal_isolation": [
+    "clean_studio_dialogue",
+    "music_pickup_bridge"
+  ],
+  "music_mode": "style2_muffled_to_drop (real_song.mp3 @ 6.05s, open_at=10.80s)",
+  "size_mb": 33.36,
+  "qa": {
+    "passed": false,
+    "file": "studio/cloud_out/BabyDriver_Style2_MovieFocus_ChaseMe_9x16.mp4",
+    "size_mb": 33.36,
+    "resolution": "1080x1920",
+    "fps": 30.0,
+    "duration_s": 30.0,
+    "integrated_lufs": -12.5,
+    "lra_lu": 4.9,
+    "true_peak_dbfs": -0.9,
+    "caption_occlusion_frames": 0,
+    "sheet_out": "studio/cloud_out/qa_sheet.jpg",
+    "errors": [
+      "True peak -0.9 dBFS exceeds ceiling -1.0 dBFS"
+    ],
+    "warnings": []
+  }
+}

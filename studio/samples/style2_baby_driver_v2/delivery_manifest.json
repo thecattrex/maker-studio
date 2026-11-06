@@ -1,0 +1,87 @@
+{
+  "movie": "Baby Driver",
+  "style": "Style 2",
+  "version": "movie_focus_v2",
+  "status": "delivered",
+  "date": "2026-11-06",
+  "local_master": "/home/user/Baby_Driver_Style2_MovieFocus_ChaseMe_9x16.mp4",
+  "bytes": 30380493,
+  "md5": "8a4d494760b8ffc525c51994f64e73a4",
+  "drive": {
+    "file_id": "1t1maBDmOwyiDiORmx1iSfpGqbMy2RWxY",
+    "parent_id": "1vehwtuYIsqcrbzM9eQfZDFGanW67XmyB",
+    "web_view_link": "https://drive.google.com/file/d/1t1maBDmOwyiDiORmx1iSfpGqbMy2RWxY/view?usp=drivesdk",
+    "metadata_md5_verified": true
+  },
+  "render": {
+    "github_repository": "thecattrex/maker-studio",
+    "actions_run_id": 42195563577,
+    "source_commit": "cabf66ef891bfcaa614e595025240d924153744f",
+    "cloud_conclusion": "failure_only_due_to_audio_true_peak",
+    "cloud_artifact_frames": 900
+  },
+  "timeline": {
+    "resolution": "1080x1920",
+    "fps": 30,
+    "frames": 900,
+    "duration_s": 30.0,
+    "act1_s": 12.2,
+    "dialogue_s": 10.8,
+    "reaction_music_pickup_s": 1.4,
+    "act2_s": 17.8,
+    "drop_s": 12.2,
+    "pre_drop_black_frames": 0
+  },
+  "creative": {
+    "baby_driver_shots": 10,
+    "cross_film_accent_shots": 2,
+    "cross_film_sources": [
+      "The Goldfinch",
+      "Tokyo Vice"
+    ],
+    "baby_driver_beat_share": 0.875,
+    "minimum_shot_frames": 33,
+    "title": "BABY DRIVER",
+    "song": "Chase Me \u2014 Danger Mouse feat. Run The Jewels & Big Boi",
+    "real_song_only": true,
+    "act2_source_dialogue": false
+  },
+  "corrections": [
+    {
+      "kind": "audio_only",
+      "gain_db": -1.5,
+      "result_integrated_lufs": -14.0,
+      "result_true_peak_dbfs": -2.2
+    },
+    {
+      "kind": "first_clip_rebuild",
+      "frames": [
+        366,
+        433
+      ],
+      "reason": "cloud title was applied before impact shake and became edge-cut",
+      "fix": "same crop/optical velocity/CC/shake; BABY DRIVER title applied after shake",
+      "other_frames": "unchanged",
+      "audio": "stream copy"
+    }
+  ],
+  "acceptance": {
+    "full_decode": true,
+    "decoded_frames": 900,
+    "unexpected_black_frames": [],
+    "canvas_bar_failures": [],
+    "motion_failures": [],
+    "integrated_lufs": -14.0,
+    "true_peak_dbfs": -2.2,
+    "encoded_asr_passed": true,
+    "clean_dialogue_lines": 4,
+    "no_fifth_line_or_chauffeur": true,
+    "title_visual_audit": "drop_title_fixed_audit.jpg \u2014 fully visible in all 10 sampled first-shot frames"
+  },
+  "qa_files": [
+    "encoded_qa.json",
+    "encoded_asr.json",
+    "title_fix_report.json",
+    "cloud/cloud_report.json"
+  ]
+}

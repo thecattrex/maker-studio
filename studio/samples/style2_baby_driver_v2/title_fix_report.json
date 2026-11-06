@@ -1,0 +1,14 @@
+{
+  "output": "/home/user/Baby_Driver_Style2_MovieFocus_ChaseMe_9x16.mp4",
+  "frames": 900,
+  "rebuilt_frame_range": [
+    366,
+    433
+  ],
+  "title": "BABY DRIVER",
+  "title_mode": "same neon title applied after impact shake; stable/full-width",
+  "audio": "stream copy",
+  "audit_sheet": "/home/user/studio/samples/style2_baby_driver_v2/drop_title_fixed_audit.jpg",
+  "ffmpeg_log": "/var/tmp/style2_baby_driver_v2/qa/title_fix_ffmpeg.log",
+  "delivered_drive_id": "1t1maBDmOwyiDiORmx1iSfpGqbMy2RWxY"
+}
